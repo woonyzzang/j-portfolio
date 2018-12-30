@@ -1,0 +1,25 @@
+<div id="first-lid" class="lid first">
+	<div id="first-lid-in" class="in">
+		<p class="txt"><a href="#">ART DIRECTION</a><br>/ HOLISTIC</p>
+		<p class="txt2">We have an interest in media, the mysterious alliance between the message, the tool and graphic design.</p>
+	</div>
+</div>
+<div id="second-lid" class="lid second">
+	<div id="second-lid-in" class="in">
+		<p class="txt">A project is vital.<br>What is vital is simple.<br>A PROJECT IS SIMPLE !</p>
+		<a href="#" class="qusetion">?</a>
+	</div>
+</div>
+<span class="clearfix"></span>
+<div id="third-lid" class="lid third">
+	<div id="third-lid-in" class="in">
+		<p class="txt"><a href="#">ORGANIZED SYSTEM</a><br>SYSTEMIC</p>
+		<p class="txt2">We give your projects an architecture that links the minds, a structure that stabilizes and an organization that energizes.</p>
+	</div>
+</div>
+<div id="fourth-lid" class="lid fourth">
+	<div id="fourth-lid-in" class="in">
+		<p class="txt"><a href="#">ADVANCED TECHNOLOGY</a><br>ORGANIC</p>
+		<p class="txt2">Whether if you are at your desk, on the train or drinking a coffee, we adapt our tools at your own pace.</p>
+	</div>
+</div>

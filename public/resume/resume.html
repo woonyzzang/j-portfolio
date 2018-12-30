@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Resume</title>
+<style media="print">
+@page a4sheet{size:21.0cm 29.7cm}
+.a4{page:a4sheet;page-break-after:always}
+</style>
+<style media="screen,print">
+@page{size:a4;page-break-after:always}
+
+/* =Reset */
+body{margin:0;padding:0;font-size:.75em;font-family:'Malgun Gothic','Lucida Grande',Tahoma,Verdana,AppleGothic,sans-serif}
+h1,p,th,td,dl,dd{margin:0;padding:0}
+table{width:100%;border-spacing:0;border-collapse:collapse;border:1px solid;}
+hr{display:none}
+
+.clearfix{overflow:hidden;zoom:1}
+.clear{clear:both}
+.fl{float:left}
+.fr{float:right}
+
+/* =Base */
+h1.title{padding:.2em .25em .2em;text-transform:uppercase;border-bottom:3px solid #044C23}
+h1.title span{font-size:.85em;color:#444}
+#container{padding:1.5em 0}
+.group{padding:1em;border:2px solid #044C23}
+.tb-lst{margin-top:1.5em}
+.tb-lst table{border:0}
+.tb-lst caption{padding-bottom:.25em;font-weight:bold;font-size:1.1em;color:#0383bf;text-align:left}
+.tb-lst caption:before{content:'::'}
+.tb-lst th,.tb-lst td{border:1px solid #e4e4e3;backgorund-color:#fbfbfb}
+.tb-lst th{padding:.6em .45em;border-top:2px solid #0383bf;background-color:#f8f8f8}
+.tb-lst td{padding:.45em;text-align:center}
+.tb-lst tbody tr:hover{background-color:#f7fcff}
+.group .tb-lst caption{color:#028e4b}
+.group .tb-lst th,
+.group .tb-lst td{}
+.group .tb-lst th{border-top-color:#028e4b}
+#info .pic{width:2.5cm;border:1px solid #666}
+#info .pic img{width:100%;vertical-align:top}
+#info .data{margin:1em 0 0 2.5em;width:43.5%}
+#info .data dt,#info .data dd{float:left;height:30px;line-height:30px;border-bottom:1px solid #ccc}
+#info .data dt{position:relative;width:25%;font-weight:bold}
+#info .data dt:after{display:inline-block;content:":";position:absolute;top:0;right:.5em}
+#info .data dd{width:75%}
+#education,
+#academy,
+#individual,
+#military{padding:0 1em}
+</style>
+</head>
+<body>
+<div id="wrap">
+	<h1 class="title">resume <span>이력서</span></h1>
+	<!-- container -->
+	<div id="container">
+		<div class="group">
+			<!-- info -->
+			<div id="info" class="clearfix">
+				<p class="pic fl"><img src="../img/pic.jpg" alt="반명함 증명사진"></p>
+				<div class="clearfix">
+					<dl class="data fl">
+						<dt>이름</dt>
+						<dd>조승운</dd>
+						<dt class="clear">생년월일</dt>
+						<dd>1984.06.28</dd>
+						<dt class="clear">연락처</dt>
+						<dd>010-7757-7553</dd>
+					</dl>
+					<dl class="data fl">
+						<dt>성별</dt>
+						<dd>남</dd>
+						<dt>이메일</dt>
+						<dd>seungwoonjjang@gmail.com</dd>
+						<dt>주소</dt>
+						<dd>인천 계양구 장제로 863번길, 5</dd>
+					</dl>
+				</div>
+			</div>
+			<!-- //info -->
+			<hr>
+			<!-- personalHistory -->
+			<div id="personalHistory" class="tb-lst">
+				<table>
+				<caption>주요경력</caption>
+				<thead>
+				<tr>
+				<th scope="col">기간</th>
+				<th scope="col">근무처</th>
+				<th scope="col">직위</th>
+				<th scope="col">업무내용</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td>2017.05 ~ 재직중</td>
+				<td>유플리트</td>
+				<td>과장</td>
+				<td>웹 퍼블리싱, UI개발, 프론트엔드개발</td>
+				</tr>
+				<tr>
+				<td>2017.02 ~ 2017.04</td>
+				<td>(주)크나큰</td>
+				<td>프리</td>
+				<td>UI개발, 프론트엔드개발</td>
+				</tr>
+				<tr>
+				<td>2016.02 ~ 2016.09</td>
+				<td>브이더블유</td>
+				<td>선임</td>
+				<td>웹 퍼블리싱, UI개발, 프론트엔드개발</td>
+				</tr>
+                <tr>
+				<td>2012.08 ~ 2016.01</td>
+				<td>(주)블루웨이브컨설팅</td>
+				<td>대리</td>
+				<td>웹 퍼블리싱, UI개발, 프론트엔드개발</td>
+				</tr>
+				<tr>
+				<td>2010.12 ~ 2012.06</td>
+				<td>AIMUDK</td>
+				<td>사원</td>
+				<td>웹 퍼블리싱, UI개발</td>
+				</tr>
+				</tbody>
+				</table>
+			</div>
+			<!-- //personalHistory -->
+			<hr>
+			<!-- certification -->
+			<div id="certification" class="tb-lst">
+				<table>
+				<caption>보유기술&#47;자격증</caption>
+				<thead>
+				<tr>
+				<th scope="col">취득년월일</th>
+				<th scope="col">자격&#47;면허증</th>
+				<th scope="col">시행처</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td>2007.07.12</td>
+				<td>1종 운전면허</td>
+				<td>경기지방경찰청</td>
+				</tr>
+				<tr>
+				<td>2002.07.22</td>
+				<td>전기공사기능사</td>
+				<td>한국산업인력공단</td>
+				</tr>
+				<tr>
+				<td>2009.10.09</td>
+				<td>워드프로세스 1급</td>
+				<td>대한상공회의소</td>
+				</tr>
+				<tr>
+				<td>2009.12.30</td>
+				<td>컴퓨터활용능력 2급</td>
+				<td>대한상공회의소</td>
+				</tr>
+				<tr>
+				<td>2010.10.01</td>
+				<td>컴퓨터그래픽스 운용기능사</td>
+				<td>한국산업인력공단</td>
+				</tr>
+				<tr>
+				<td>2010.04.09</td>
+				<td>웹 디자인 기능사</td>
+				<td>한국산업인력공단</td>
+				</tr>
+				<tr>
+				<td>2009.11.30</td>
+				<td>게임 그래픽 전문가</td>
+				<td>한국콘텐츠진흥원</td>
+				</tr>
+				<tr>
+				<td>2011.09.02</td>
+				<td>컬러리스트 산업기사</td>
+				<td>한국산업인력공단</td>
+				</tr>
+				</tbody>
+				</table>
+			</div>
+			<!-- //certification -->
+            <hr>
+            <!-- seminar -->
+			<div id="seminar" class="tb-lst">
+				<table>
+				<caption>세미나&#47;컨퍼런스 참가내역</caption>
+				<thead>
+				<tr>
+				<th scope="col">일자</th>
+				<th scope="col">내용</th>
+				<th scope="col">수행처</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				<td>2016.12.10</td>
+				<td>프론트엔드 개발 세미나</td>
+				<td>하드코딩하는사람들</td>
+				</tr>
+				<tr>
+				<td>2016.12.09</td>
+				<td>2016 정보접근성 기술 컨퍼런스</td>
+				<td>한국웹접근성평가센터</td>
+				</tr>
+                <tr>
+				<td>2015.12.05</td>
+				<td>Adieu 2015, 하드코딩하는사람들 송년 세미나</td>
+				<td>하드코딩하는사람들</td>
+				</tr>
+                <tr>
+				<td>2015.10.07</td>
+				<td>웹프론트엔드 개발자를 위한 학습 가이드 세미나</td>
+				<td>웹동네</td>
+				</tr>
+                <tr>
+				<td>2015.02.10</td>
+				<td>진화하는 사용자환경의 접근성 전략 세미나</td>
+				<td>BlueGrid</td>
+				</tr>
+                <tr>
+				<td>2014.08.23</td>
+				<td>2014 널리 접근성 세미나</td>
+				<td>NHN</td>
+				</tr>
+                <tr>
+				<td>2013.10.09</td>
+				<td>하코사와 함께하는 jQuery 핵심노트 세미나</td>
+				<td>하드코딩하는사람들</td>
+				</tr>
+                <tr>
+				<td>2013.08.06</td>
+				<td>2013 널리 접근성 세미나</td>
+				<td>NHN</td>
+				</tr>
+                <tr>
+				<td>2013.04.27</td>
+				<td>CSS Nite in Seoul, Vol.4</td>
+				<td>CSS Nite in Seoul</td>
+				</tr>
+				</tbody>
+				</table>
+			</div>
+			<!-- //seminar -->
+            <hr>
+            <!-- study -->
+			<div id="study" class="tb-lst">
+				<table>
+				<caption>스터디 참가내역</caption>
+				<thead>
+				<tr>
+				<th scope="col">일자</th>
+				<th scope="col">내용</th>
+				<th scope="col">수행처</th>
+				</tr>
+				</thead>
+				<tbody>				
+                <tr>
+				<td>2015.10.09</td>
+				<td>스크롤효과+패럴랙스 효과 구현하기 특강</td>
+				<td>웹동네</td>
+				</tr>
+                <tr>
+				<td>2012.09.15</td>
+				<td>하코사 보이와 함께하는 웹표준 파헤치기</td>
+				<td>하드코딩하는사람들</td>
+				</tr>
+                <tr>
+				<td>2012.08.25</td>
+				<td>하코사 회원분들과 JavaScript 기초 배우기</td>
+				<td>하드코딩하는사람들</td>
+				</tr>
+                <tr>
+				<td>2011.11.22</td>
+				<td>HTML5 퍼블리싱 스터디</td>
+				<td>하드코딩하는사람들</td>
+				</tr>
+				</tbody>
+				</table>
+			</div>
+			<!-- //study -->
+		</div>
+		<hr>
+        <!-- academy -->
+		<div id="academy" class="tb-lst">
+			<table>
+			<caption>교육수료내역</caption>
+			<thead>
+			<tr>
+			<th scope="col">기간</th>
+			<th scope="col">내용</th>
+			<th scope="col">수행처</th>
+			</tr>
+			</thead>
+			<tbody>
+            <tr>
+			<td>2011.07.07 ~ 2011.08.07</td>
+			<td>컬러리스트실기</td>
+			<td>선앤미(종로)</td>
+			</tr>
+            <tr>
+			<td>2010.10.13 ~ 2010.11.10</td>
+			<td>웹퍼블리싱과정</td>
+			<td>SBS아카데미컴퓨터아트(신촌캠퍼스)</td>
+			</tr>
+            <tr>
+			<td>2010.09.15 ~ 2010.10.12</td>
+			<td>웹디자인컨텐츠과정</td>
+			<td>하이미디어컴퓨터학원(신촌캠퍼스)</td>
+			</tr>
+            <tr>
+			<td>2010.07.21 ~ 2010.09.10</td>
+			<td>웹디자인컨텐츠 3.0(고급)</td>
+			<td>더조은컴퓨터아트학원(부천캠퍼스)</td>
+			</tr>
+            <tr>
+			<td>2010.06.15 ~ 2010.07.12</td>
+			<td>웹디자인컨텐츠 3.0(중급)</td>
+			<td>더조은컴퓨터아트학원(부천캠퍼스)</td>
+			</tr>
+            <tr>
+			<td>2010.06.09 ~ 2010.07.06</td>
+			<td>DTP편집디자인(초급)</td>
+			<td>더조은컴퓨터아트학원(부천캠퍼스)</td>
+			</tr>
+            <tr>
+			<td>2010.04.05 ~ 2010.05.03</td>
+			<td>ACTIONSCRIPT 2.0</td>
+			<td>파레스컴퓨터아트학원(부평캠퍼스)</td>
+			</tr>
+            <tr>
+			<td>2010.02.03 ~ 2010.03.05</td>
+			<td>어도비플래시&#47;드림위버</td>
+			<td>파레스컴퓨터아트학원(부평캠퍼스)</td>
+			</tr>
+            <tr>
+			<td>2009.12.04 ~ 2010.02.02</td>
+			<td>2D디자인</td>
+			<td>더조은컴퓨터아트학원(의정부캠퍼스)</td>
+			</tr>
+			<tr>
+			<td>2009.11.06 ~ 2009.12.03</td>
+			<td>사무자동화</td>
+			<td>더조은컴퓨터아트학원(의정부캠퍼스)</td>
+			</tr>
+			</tbody>
+			</table>
+		</div>
+		<!-- //academy -->
+		<hr>
+		<!-- education -->
+		<div id="education" class="tb-lst">
+			<table>
+			<caption>학력사항</caption>
+			<thead>
+			<tr>
+			<th scope="col">졸업년월</th>
+			<th scope="col">학교명</th>
+			<th scope="col">지역&#47;전공분야</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+			<td>1997.02</td>
+			<td>청학 초등학교 졸업</td>
+			<td>인천</td>
+			</tr>
+			<tr>
+			<td>2000.02</td>
+			<td>의정부 중학교 졸업</td>
+			<td>의정부</td>
+			</tr>
+			<tr>
+			<td>2003.02</td>
+			<td>의정부 공업 고등학교 졸업</td>
+			<td>의정부&#47;전기과</td>
+			</tr>
+			<tr>
+			<td>2009.02</td>
+			<td>한국폴리텍1대학정수캠퍼스 졸업</td>
+			<td>서울&#47;컴퓨터 애니메이션과</td>
+			</tr>
+			</tbody>
+			</table>
+		</div>
+		<!-- //education -->
+		<hr>
+		<!-- individual -->
+		<div id="individual" class="tb-lst">
+			<table>
+			<caption>개인신상</caption>
+			<thead>
+			<tr>
+			<th scope="col">신장</th>
+			<th scope="col">체중</th>
+			<th scope="col">종교</th>
+			<th scope="col">특기</th>
+			<th scope="col">소속사</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+			<td>171cm</td>
+			<td>69kg</td>
+			<td>무</td>
+			<td>그림그리기, 운동</td>
+			<td>구인중</td>
+			</tr>
+			</tbody>
+			</table>
+		</div>
+		<!-- //individual -->
+        <hr>
+		<!-- military -->
+		<div id="military" class="tb-lst">
+			<table>
+			<caption>병역사항</caption>
+			<thead>
+			<tr>
+			<th scope="col">복무기간</th>
+			<th scope="col">복무처</th>
+			<th scope="col">병과</th>
+			<th scope="col">전역사유</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+			<td>2004.11.21 ~ 2006.11.19</td>
+			<td>27사단 육군</td>
+			<td>공병(발전기운용&#47;정비)</td>
+			<td>육군 병장 제대</td>
+			</tr>
+			</tbody>
+			</table>
+		</div>
+		<!-- //military -->
+	</div>
+	<!-- //container -->
+</div>
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>CMS Template</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/cms.css">
+</head>
+<body>
+<div id="wrap">
+	<header>
+		<h1><a href="#"><span>CMS Templ</span></a></h1>		
+		<nav id="gnb">
+			<!-- func -->
+			<span class="func">
+				<a href="#"><i class="fa fa-dedent"></i></a>
+				<a href="#"><i class="fa fa-user"></i></a>
+			</span>
+			<!-- //func -->
+			<!-- menu -->
+			<!-- [D] 메뉴 클릭시 .active 클래스 추가/제거 -->
+			<ul class="menu">
+			<li class="m1 active"><a href="#">Mega</a>
+				<!-- [D] Mega 메뉴  클릭시 노출/제거 -->
+				<!-- fmenu -->				
+				<div class="fmenu" style="display:none">
+					<div class="group">
+						<div class="item">
+							<p class="tit"><strong>Pages</strong> <em class="badge">10</em></p>
+							<ul>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Profile</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Price</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Post</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Lock Screen</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Search</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Sign in</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Invoice</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Sign up</a></li>							
+							</ul>
+						</div>
+					</div>
+					<div class="group">
+						<div class="item">
+							<p class="tit"><strong>UI Kits</strong> <em class="label label_v2">10</em></p>
+							<ul>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Buttons</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Bootstrap</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Icons <span class="badge">1000+</span></a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Sortable</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Grid</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Portlet</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Widgets</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i> Timeline</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="group">
+						<div class="item">
+							<p class="tit"><strong>Analysis</strong></p>
+						</div>
+					</div>
+				</div>
+				<!-- //fmenu -->
+			</li>
+			<li class="m2"><a href="#">New</a>
+				<!-- [D] New 메뉴  클릭시 노출/제거 -->
+				<!-- dmenu -->
+				<div class="dmenu" style="display:none">
+					<ul>
+					<li><a href="#">Projects</a></li>
+					<li><a href="#">Task <span class="badge">5</span></a></li>
+					<li><a href="#">User</a></li>
+					<li class="divider"><a href="#">Email <span class="badge">77</span></a></li>
+					</ul>
+				</div>
+				<!-- //dmenu -->
+			</li>
+			</ul>
+			<div class="srch_area">
+				<fieldset>
+					<legend class="blind">검색영역</legend>
+					<div class="inpt_group">
+						<input type="search" placeholder="Search Projects...">
+						<button type="submit"><i class="fa fa-search"><span>검색</span></i></button>
+					</div>
+				</fieldset>
+			</div>
+			<!-- //menu -->
+			<!-- util -->
+			<ul class="util">
+			<li class="m1">
+				<a href="#"><i class="fa fa-bell-o"><span>알림</span></i> <span class="badge badge_v1">2</span></a>
+				<!-- [D] 알림  클릭시 노출/제거 -->
+				<!-- panel -->
+				<div class="panel" style="display:none">
+					<strong class="tit">You have 2 notifications</strong>
+					<ul class="lst">
+					<li><a href="#"><span>Use awesome animate.css</span><small>10 minutes ago</small></a></li>
+					<li><a href="#"><span>1.0 initial released</span><small>1 hour ago</small></a></li>
+					</ul>
+					<p>
+						<a href="#">See all the notifications</a>
+						<a href="#" class="config"><i class="fa fa-cog"><span>설정</span></i></a>
+					</p>
+				</div>
+				<!-- //panel -->
+			</li>
+			<li class="m2">
+				<a href="#">
+					<span class="thumb">
+						<img src="http://placehold.it/40x40" alt="">
+						<i class="fa fa-circle"></i>
+					</span>
+				</a>
+				<!-- [D] 썸네일  클릭시 노출/제거 -->
+				<!-- dmenu -->
+				<div class="dmenu" style="display:none">
+					<ul>
+					<li class="used">
+						<p>300mb of 500mb used</p>
+						<div class="progress">
+							<span class="progress_bar" style="width:50%"></span>
+						</div>
+					</li>
+					<li><a href="#">Settings <span class="badge badge_v1">30%</span></a></li>
+					<li><a href="#">Profile</a></li>
+					<li><a href="#">Help <span class="label">new</span></a></li>
+					<li class="divider"><a href="#">Logout</a></li>
+					</ul>
+				</div>
+				<!-- //dmenu -->
+			</li>
+			</ul>
+			<!-- //util -->
+		</nav>	
+	</header>
+	<div id="container">
+		<!-- aside -->
+		<aside id="aside">
+			<nav>				
+				<strong>Navigation</strong>
+				<!-- [D] 메뉴 클릭시 활성화 .active 클래스 추가/제거 -->
+				<ul>
+				<li class="active">
+					<a href="#">
+						<i class="fa fa-bar-chart"></i>
+						<span>Dashboard</span>
+						<span class="more"><i class="fa fa-angle-down"><span>더보기</span></i></span>
+					</a>					
+					<ul style="display:none">
+					<!-- <li class="tit">Dashboard</li> -->
+					<li><a href="#">Dashboard v1</a></li>
+					<li><a href="#">Dashboard v2 <span class="label">N</span></a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-envelope"></i>
+						<span>Email</span>
+						<span class="badge">9</span>
+					</a>
+				</li>
+				</ul>				
+			</nav>
+			<nav>				
+				<strong>Components</strong>
+				<ul>
+				<li>
+					<a href="#">
+						<i class="fa fa-th"></i>
+						<span>Layout <span class="badge">3</span></span>
+						<span class="more"><i class="fa fa-angle-down"><span>더보기</span></i></span>
+					</a>
+					<ul style="display:none">					
+					<li><a href="#">Application</a></li>
+					<li><a href="#">Full width</a></li>
+					<li><a href="#">Boxed layout</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-cubes"></i>
+						<span>UI Kits</span>
+						<span class="more"><i class="fa fa-angle-right"><span>더보기</span></i></span>
+					</a>
+					<ul style="display:none">					
+					<li><a href="#">Buttons</a></li>
+					<li><a href="#">Icons <span class="badge">7</span></a></li>
+					<li><a href="#">Grid</a></li>
+					<li><a href="#">Widgets <span class="badge badge_v3">13</span></a></li>
+					<li><a href="#">Sortable</a></li>
+					<li><a href="#">Portlet</a></li>
+					<li><a href="#">Timeline</a></li>
+					<li><a href="#">Vertor Map</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-table"></i>
+						<span>Table <span class="label label_v2">2</span></span>
+						<span class="more"><i class="fa fa-angle-right"><span>더보기</span></i></span>
+					</a>
+					<ul style="display:none">					
+					<li><a href="#">Table static</a></li>
+					<li><a href="#">Datatable</a></li>
+					<li><a href="#">Footable</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-pencil-square-o"></i>
+						<span>Form</span>
+						<span class="more"><i class="fa fa-angle-right"><span>더보기</span></i></span>
+					</a>
+					<ul style="display:none">					
+					<li><a href="#">Form elements</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-signal"></i>
+						<span>Chart</span>						
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-file"></i>
+						<span>Pages</span>
+						<span class="more"><i class="fa fa-angle-right"><span>더보기</span></i></span>
+					</a>
+					<ul style="display:none">					
+					<li><a href="#">Profile</a></li>
+					<li><a href="#">Post</a></li>
+					<li><a href="#">Search</a></li>
+					<li><a href="#">Invoice</a></li>
+					<li><a href="#">Price</a></li>
+					<li><a href="#">Lock screen</a></li>
+					<li><a href="#">Signin</a></li>
+					<li><a href="#">Signup</a></li>
+					<li><a href="#">Frgeot password</a></li>
+					<li><a href="#">404</a></li>
+					</ul>
+				</li>
+				</ul>				
+			</nav>
+			<nav>				
+				<strong>Your Stuff</strong>				
+				<ul>
+				<li class="active">
+					<a href="#">
+						<i class="fa fa-user"></i>
+						<span>Profile</span>
+						<span class="badge badge_v3">30%</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<i class="fa fa-question-circle"></i>
+						<span>Documents</span>
+					</a>
+				</li>
+				</ul>
+				<div class="volume">
+					<div class="used">
+						<p><span>Milestone</span> <span class="output">60%</span></p>
+						<div class="progress progress_v1">
+							<span class="progress_bar" style="width:60%"></span>
+						</div>
+					</div>
+					<div class="used">
+						<p><span>Release</span> <span class="output">35%</span></p>
+						<div class="progress progress_v1">
+							<span class="progress_bar progress_bar_v1" style="width:35%"></span>
+						</div>
+					</div>
+				</div>		
+			</nav>
+		</aside>
+		<!-- //aside -->
+		<!-- content -->
+		<article id="content">
+			<h2 class="sub_tit">Dashboard <small>Welcome to angulr application</small></h2>
+			<div id="content_group">
+				<!-- notify -->
+				<section class="notify">
+					<h3>알림</h3>
+					<div class="group">
+						<div class="item_lst">
+							<div class="panel">
+								<div class="item">
+									<span>512</span>
+									<strong>New Items</strong>
+									<i class="fa fa-caret-up"><span>new</span></i>
+								</div>
+							</div>
+							<div class="panel">
+								<a href="#" class="upload">
+									<span>930</span>
+									<strong>Uploads</strong>
+									<i class="fa fa-cloud-upload"></i>
+								</a>
+							</div>
+							<div class="panel">
+								<a href="#" class="comment">
+									<span>432</span>
+									<strong>Comments</strong>
+									<i class="fa fa-comment"><span>new</span></i>
+								</a>
+							</div>
+							<div class="panel">
+								<div class="feed">
+									<span>129</span>
+									<strong>Feeds</strong>
+									<i class="fa fa-rss"><span>new</span></i>
+								</div>
+							</div>
+						</div>
+						<div class="panel">
+							<div class="result">
+								<span>$12,670</span>
+								<strong>Revenue, 60% of the goal</strong>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //notify -->
+				<!-- statistics -->
+				<section class="statistics">
+					<h3>방문 통계</h3>
+					<div class="group">
+						<div class="panel">
+							<div class="chart_area">
+								<strong class="stit">Latest Campaign</strong>
+								<div class="flot_overlay">그래프 들어갈 영역</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //statistics -->
+				<!-- report -->
+				<section class="report">
+					<h3>보고서 통계</h3>
+					<div class="panel">
+						<div class="chart_area">
+							<strong class="stit">Managed Services <small>Service report of this year (updated 1 hour ago)</small></strong>
+							<div class="flow_chart">그래프 들어갈 영역</div>
+						</div>
+						<div class="info">
+							<strong class="stit">Reports</strong>
+							<div class="volume">
+								<div class="used">
+									<p><span>Consulting</span> <span class="output">60%</span></p>
+									<div class="progress progress_v2">
+										<span class="progress_bar progress_bar_v1" style="width:60%"></span>
+									</div>
+								</div>
+								<div class="used">
+									<p><span>Online tutorials</span> <span class="output">35%</span></p>
+									<div class="progress progress_v2">
+										<span class="progress_bar" style="width:35%"></span>
+									</div>
+								</div>
+								<div class="used">
+									<p><span>EDU managemen</span> <span class="output">25%</span></p>
+									<div class="progress progress_v2">
+										<span class="progress_bar progress_bar_v2" style="width:25%"></span>
+									</div>
+								</div>
+								<p class="desc">Dales nisi nec adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- //report -->
+				<!-- tasks -->
+				<section class="tasks">
+					<div class="panel">											
+						<div class="task_lst">
+							<strong class="stit">tasks</strong>	
+							<ul>
+							<li>
+								<span class="label">19:30</span>
+								<a href="#">Feed cat</a>
+							</li>
+							<li>
+								<span class="label">19:30</span>
+								<a href="#">Fishing Time</a>
+							</li>
+							<li>
+								<span class="label">19:30</span>
+								<a href="#">Kick-off meeting</a>
+							</li>
+							<li>
+								<span class="label">19:30</span>
+								<a href="#">Morning running</a>
+							</li>
+							</ul>
+							<a href="#" class="more"><i class="fa fa-arrow-circle-o-right"></i></a>
+						</div>
+						<div class="pie_chart">
+							그래프 들어갈 영역
+						</div>
+					</div>
+				</section>
+				<!-- //tasks -->
+			</div>
+		</article>
+		<!-- //content -->
+	</div>
+	<footer>
+		<div>
+			<address>&copy; 2015 Copyright.</address>
+			<span class="ver">0.0.1 <a href="#"><i class="fa fa-long-arrow-up"><span>top</span></i></a></span>
+		</div>
+	</footer>
+</div>
+</body>
+</html>

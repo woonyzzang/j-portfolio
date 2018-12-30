@@ -1,0 +1,22 @@
+{
+	"iPone": [
+		{"name":"iPhone 3&amp;4","wid":320, "hgt":480, "browser": "320 x 416", "idx":"iphone3_4", "desc":"아이폰3&4"},
+		{"name":"iPhone 5", "wid":320, "hgt":563, "browser": "320 x 504", "idx":"iphone5", "desc":"아이폰5"},
+		{"name":"iPad", "wid":768, "hgt":1024, "browser": "768 x 928", "idx":"ipad", "desc":"아이패드"}
+	],
+	"Android": [
+		{"name":"Galaxy S4", "wid":360, "hgt":640, "browser": "360 x 567", "idx":"galaxys4", "desc":"갤럭시S4"},
+		{"name":"Galaxy S3", "wid":360, "hgt":640, "browser": "360 x 615", "idx":"galaxys3", "desc":"갤럭시S3"},
+		{"name":"Galaxy S2", "wid":320, "hgt":533, "browser": "320 x 508", "idx":"galaxys2", "desc":"갤럭시S2"},
+		{"name":"Galaxy Note2", "wid":360, "hgt":640, "browser": "360 x 615", "idx":"galaxys_note2", "desc":"갤럭시 노트2"},
+		{"name":"Galaxy Note", "wid":400, "hgt":640, "browser": "400 x 567", "idx":"galaxys_note", "desc":"갤럭시 노트"},
+		{"name":"Optimus G", "wid":384, "hgt":640, "browser": "384 x 567", "idx":"optimus_g", "desc":"옵티머스 G"},
+		{"name":"Optimus G Pro", "wid":360, "hgt":640, "browser": "360 x 615", "idx":"optimus_g_pro", "desc":"옵티머스 G Pro"},
+		{"name":"Vega No.6", "wid":360, "hgt":640, "browser": "360 x 575", "idx":"vega_no6", "desc":"베가 No.6"},
+		{"name":"Vega R3", "wid":360, "hgt":640, "browser": "360 x 567", "idx":"vega_r3", "desc":"베가 R3"}
+	],
+	"Desktop": [
+		{"name":"PC", "wid":1024, "hgt":768, "browser": "1024 x 768", "idx":"pc", "desc":"데스크탑"},
+		{"name":"PC Wild", "wid":1280, "hgt":1024, "browser": "1280 x 1024", "idx":"pc_wild", "desc":"데스크탑 와일드"}
+	]
+}

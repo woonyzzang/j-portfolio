@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Personality</title>
+<style>
+body,h1,h2,p,blockquote,ul{margin:0;padding:0}
+body{font-family:'Malgun Gothic',Arial,sans-serif;font-size:14px;color:#333}
+img{max-width:100%;height:auto;border:0;vertical-align:top}
+
+#wrap{width:980px;margin:0 auto;padding-bottom:100px}
+#header{padding:15px 0;border-bottom:1px solid #222}
+#container{}
+#content{}
+
+.hgroup{overflow:hidden;margin-top:50px}
+.hgroup h2{float:left}
+.hgroup p{float:right;margin-top:4px;font-size:12px}
+.hgroup p>a{color:#390}
+
+blockquote{margin:35px 0;padding:20px;border:1px dashed #ccc;background-color:#f7f7f7;font-style:italic;font-size:16px}
+blockquote p{margin:0;line-height:1.6;color:#555}
+blockquote span{display:block;font-size:14px;color:#777;text-align:right}
+
+.traits{float:right;/*margin:30px 30px 30px 0*/margin:30px 0 30px 30px}
+.traits .trait{width:470px;margin-top:25px}
+.traits .trait:first-child{margin-top:0}
+.traits .trait>strong{display:block;font-size:18px;text-align:center}
+.traits .graphs{position:relative;height:50px}
+.traits .graphs:after{display:block;content:'';clear:both}
+.traits .graphs .label{position:absolute;top:-22px;font-size:16px}
+.traits .graphs .label_lft{left:5px}
+.traits .graphs .label_lft>.count{float:left}
+.traits .graphs .label_rgt{right:5px}
+.traits .graphs .label_rgt>.count{float:right}
+.traits .graphs .label>em{display:block;font-style:normal}
+.traits .graphs .label .count{display:block;width:50px;height:44px;margin-top:4px;border-radius:50%;background-color:#fff;font-weight:bold;line-height:44px;text-align:center}
+.traits .graphs .graph{float:left;height:100%;background-color:#f5f5f5}
+.traits .graphs .graph_lft{border-radius:25px 0 0 25px}
+.traits .graphs .graph_rgt{border-radius:0 25px 25px 0}
+.traits .graphs .graph_active{background-color:#51a9ab}
+
+.result{font-size:16px;line-height:1.6;color:#666}
+.result p{margin:20px 0}
+.result>strong{font-size:18px;color:#333}
+.result p.desc{padding:25px 40px;border-left:10px solid #51a9ab;border-radius:4px;background-color:#f6f5f4;font-size:18px}
+
+.tag_lst{margin-top:50px;padding-top:50px;border-top:1px dotted #ccc}
+.tag_lst>strong{font-size:16px}
+.tag_lst ul{margin-top:15px;list-style:none}
+.tag_lst li{display:inline-block;min-height:20px;margin-bottom:5px;padding:8px;border-radius:2px;background-color:#f9f9f9}
+</style>
+</head>
+<body>
+<div id="wrap">
+	<div id="header">
+		<h1>성격유형</h1>
+    </div>
+	<div id="container">
+    	<div class="visual">
+        	<img src="img/istp-personality-type-header.png" alt="">
+        </div>
+    	<div id="content">
+        	<div class="hgroup">
+        		<h2>성격유형 : 만능 재주꾼(ISTP-A)</h2>
+            	<p>출처 : <a href="http://www.16personalities.com/" target="_blank">16personalities.com/</a></p>
+            </div>
+            <blockquote>
+            	<p>&#34;저는 그런 삶을 살고 싶었습니다. 무언가 다른 삶 말이지요. 매일 같은 곳을 가고, 같은 사람을 만나고, 매번 같은 일을 하고 싶지 않았습니다. 전 흥미로운 도전을 원했습니다.&#34;</p>
+                <span>- 해리슨 포드</span>
+            </blockquote>
+            <!-- traits -->
+            <div class="traits">
+                <div class="trait">
+                    <strong>마음</strong>
+                    <div class="graphs">
+                        <div class="label label_lft"><em>외향형</em><span class="count">38%</span></div>
+                        <div class="label label_rgt"><em>내향형</em><span class="count">62%</span></div>
+                        <span class="graph graph_lft" style="width:38%"></span>
+                        <span class="graph graph_rgt graph_active" style="width:62%"></span>
+                    </div>
+                </div>
+                <div class="trait">
+                    <strong>에너지</strong>
+                    <div class="graphs">
+                        <div class="label label_lft"><em>직관형</em><span class="count">48%</span></div>
+                        <div class="label label_rgt"><em>현실주의형</em><span class="count">52%</span></div>
+                        <span class="graph graph_lft" style="width:48%"></span>
+                        <span class="graph graph_rgt graph_active" style="width:52%"></span>
+                    </div>
+                </div>
+                <div class="trait">
+                    <strong>본성</strong>
+                    <div class="graphs">
+                        <div class="label label_lft"><em>이성적사고형</em><span class="count">67%</span></div>
+                        <div class="label label_rgt"><em>원칙주의형</em><span class="count">33%</span></div>
+                        <span class="graph graph_lft graph_active" style="width:67%"></span>
+                        <span class="graph graph_rgt" style="width:33%"></span>
+                    </div>
+                </div>
+                <div class="trait">
+                    <strong>전술</strong>
+                    <div class="graphs">
+                        <div class="label label_lft"><em>계획형</em><span class="count">32%</span></div>
+                        <div class="label label_rgt"><em>탐색형</em><span class="count">68%</span></div>
+                        <span class="graph graph_lft" style="width:32%"></span>
+                        <span class="graph graph_rgt graph_active" style="width:68%"></span>
+                    </div>
+                </div>
+                <div class="trait">
+                    <strong>자아</strong>
+                    <div class="graphs">
+                        <div class="label label_lft"><em>자기주장형</em><span class="count">67%</span></div>
+                        <div class="label label_rgt"><em>신중형</em><span class="count">33%</span></div>
+                        <span class="graph graph_lft graph_active" style="width:67%"></span>
+                        <span class="graph graph_rgt" style="width:33%"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- //traits -->
+            <!-- result -->
+            <div class="result">
+                <p>냉철한 이성주의적 성향과 왕성한 호기심을 가진 ISTP형 사람은 직접 손으로 만지고 눈으로 보면서 주변 세상을 탐색하는 것을 좋아합니다. 무엇을 만드는 데 타고난 재능을 가진 이들은 하나가 완성되면 또 다른 과제로 옮겨 다니는 등 실생활에 유용하면서도 자질구레한 것들을 취미 삼아 만드는 것을 좋아하는데, 그러면서 새로운 기술을 하나하나 터득해 나갑니다. 종종 기술자나 엔지니어이기도 한 이들에게 있어 손발을 걷어붙이고 작업에 뛰어들어 직접 분해하고 조립할 때보다 세상에 즐거운 일이 또 없을 것입니다. 매번 전보다 조금씩 향상되는 모습으로 말입니다.</p>
+                <p>ISTP형 사람은 창조와 문제 해결을 위한 이해, 그리고 실행 착오와 실질적인 경험을 통해 아이디어를 탐색합니다. 다른 이들이 그들의 과제에 흥미를 보이는 것을 좋아하며, 간혹 다른 이들로 하여금 작업 중인 과제에 참여하도록 유도하기도 합니다. 단, 그들만의 원리원칙이나 자유를 침범하지 않는 범위에 한해서 말입니다. 사람들은 ISTP형 사람이 동일하다고 생각하고 베푸는 호의에 열린 마음으로 대할 필요가 있습니다.</p>
+                <p>타인을 잘 도우며 그들의 경험을 다른 이들과 공유하는 것을 좋아하기도 하는 이들은 특히나 그들이 아끼는 사람일수록 더욱 그러합니다. 이러한 성향의 이들이 인구의 고작 5%만이 차지하지 않는다는 사실이 그저 안타까울 따름입니다. 더욱이 여성의 경우는 더욱 흔치 않은데, 대개 이 성향의 여성은 사회가 일반적으로 요구하는 이상적인 여성상에 들어맞지 않는 경우가 많으며, 이들은 어릴 적 말괄량이 소리를 듣기도 합니다.</p>
+                
+                <strong>기꺼이 다름을 지향하다</strong>                
+                <p>기술자적인 성향을 내포하고 있는 이들이 얼핏 보면 단순해 보일 수도 있지만, 사실 알고 보면 꽤 복잡한 성향을 가지고 있습니다. 친절하고 상냥하지만 사생활을 중요시 여기며, 침착하면서도 금세 즉흥적인 성향으로 돌변하기도 하며, 호기심이 많으면서도 정규 교육을 받는 데에는 집중하지 못하는 모습을 보입니다. 이로 인해 주변 가까운 친구나 아끼는 사람들조차 이들의 행동을 예측하는 데 어려움을 겪습니다. ISTP형 사람은 한동안 꾸준하고 헌신적인 모습을 보이다가도 충동의 에너지를 서서히 쌓아두고 있다가 어느 순간 예고 없이 터뜨리기도 하는데, 이로 인해 이전과 전혀 다른 방향으로 관심사를 돌리기도 합니다.</p>
+                <p class="desc">이렇듯 휘몰아치는 변화가 한 번씩 있을 때조차 이들은 먼 미래 계획을 위한 재정비 시간을 갖는 것이 아닌 새로 찾은 관심사가 실행 가능할는지 그 여부에만 온통 촉각을 곤두세웁니다.</p>
+                <p>실질적으로 현실에 근거하여 결정을 내리면서도 마음 한가운데에는 '자신이 대접받고 싶은 만큼 다른 이를 대접하라'와 같은 공정함이라는 사고방식이 깊이 박혀있는데, 이는 이들만의 성격적 고유 특성을 잘 설명해 줍니다. 남이 먼저 발을 밟기 전 발부터 먼저 빼고 보는 이들은 너무 지나치리만치 신중하게 행동하는 것을 싫어하며, 그 때문에 종종 필요 이상으로 멀리 가기도 합니다. 이들은 기본적으로 좋은 것이든 나쁜 것이든 자신이 받은 만큼 똑같이 되돌려주는 것이 공정한 행위라고 생각합니다.</p>
+                <p>ISTP형 사람이 당면한 가장 큰 과제는 천성적으로 타인에게 관심이 많은 이들의 성격으로 하여금 다른 이들 역시 그들과 같을 것이라는 착각하에 행동이 먼저 앞선다는 점입니다. 신중치 못한 농담을 먼저 꺼내는 이들을 보면 영락없이 이 유형의 사람입니다. 또한, 타인의 일에 지나치리만치 간섭하여 여기저기 시끄럽게 휘둘리다가 다른 흥미로운 관심거리가 생기면 재빨리 계획을 변경하기도 합니다.</p>
+                
+                <strong>남과 다름의 즐거움</strong>
+                <p>ISTP형 사람은 다른 성격 유형의 사람들이 사회에서 수용 가능한 질서나 행위와 같은 비교적 확고하게 구분된 그들 나름의 선이 있음을 알아차리게 될 것입니다. 타인의 마음을 헤아리지 않는 가벼운 농담 따위를 좋아하는 사람은 아무도 없습니다. 물론 그들 역시 그러한 농담을 던지지 않음은 물론이고 말입니다. 소란스러운 장난을 좋아하는 사람은 아무도 없으며 이는 같이 어울리는 부류 사이에서도 마찬가지입니다. 이미 감정이 많이 상해 있는 상태에서 선을 넘어가는 경우 이는 훗날 뒷감당하기 힘든 상황을 초래할 수 있기 때문입니다.</p>
+                <p>특히나 타인의 감정을 파악하는 데 있어 애를 먹는 이들은 그 이유를 자신의 감정이나 동기조차 파악하지 못하는 이들의 천성과 공정함을 추구하고자 하는 성격에서 기인한다고 할 수 있습니다. 게다가 인간관계 형성 시 타인을 향한 정서적 공감이 아닌 행동으로 탐색하고자 하는 성향이 있어 간혹 원치 않는 상황을 초래하기도 합니다. 사람들 간의 보이지 않는 선이나 규칙을 지키는 데 어려움을 호소하는 이들은 인간관계 시 자유롭게 그 경계를 넘나들다가 때로 필요하면 선을 넘어 다른 색으로 물들이고 싶어 하기도 합니다.</p>
+                <p>창의적이며 유머를 겸비한 동시에 실질적으로 문제 해결을 위해 무언가를 만들어 내는 ISTP형 사람의 실용적인 접근 방식이 이들의 예측 불허한성격이나 스타일을 이해하는 좋은 사람들과 합쳐져 일하는 환경이 조성된다면, 이들은 마치 물 만난 고기처럼 신이 나 몇 년이고 이것저것 유용한 장난감 거리를 만드는 재미에 흠뻑 빠져 살 수 있을 것입니다. 만인의 우러름을 받으면서 말입니다.</p>
+            </div>            
+			<!-- //result -->
+            <div class="tag_lst">
+            	<strong>ISTP형에 속하는 유명인</strong>
+            	<ul>
+                <li>클린트 이스트우드</li>
+                <li>밀라 요보비치</li>
+                <li>프랭크 자파</li>
+                <li>재커리 테일러</li>
+                <li>톰 크루즈 '번 노티스'에 나오는 '마이클 웨스턴'</li>
+                <li>'24'에 나오는 '잭 바우어'</li>
+                <li>인디아나 존스 시리즈에 나오는 '인디아나 존스'</li>
+                <li>다이하드 시리즈에 나오는 '존 맥클레인'</li>
+                <li>'맥가이버'에 나오는 '앵거스 맥가이버'</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

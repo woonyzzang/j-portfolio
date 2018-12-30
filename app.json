@@ -1,0 +1,6 @@
+{
+  "name": "j-portfolio",
+  "description": "web portfolio",
+  "repository": "heroku/app/j-portfolio",
+  "keywords": ["node", "express", "static"]
+}

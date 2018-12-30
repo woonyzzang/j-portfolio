@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko" data-ng-app="jPortfolio">
+<head>
+<% include ../inc/head.ejs %>
+</head>
+<body>
+<div id="wrap" data-ng-controller="MainCtrl">
+	<div class="home">
+		<!-- [D] swipe 기능 활성화시 v1 클래스 추가/제거 -->
+		<div class="swipe">
+			<header role="banner">
+				<div class="intro">
+					<div class="inr">
+						<h1 class="logo"><a href="#"><span><b>J</b></span> Portfolio</a></h1>
+						<p>Web Accessibility &amp; Web Standard<br>Responsive And Mobile Web<br>Web UI, UX Development</p>
+					</div>
+				</div>
+				<!-- [D] swipe 기능 활성화시 v1 클래스 추가/제거 -->
+				<nav role="navigation" id="gnb" class="gnb">
+					<h2>Main Menu</h2>
+					<ul>
+					<li data-ng-repeat="gnb in gnbMenu"><a href="#{{gnb.name}}" title="{{gnb.title}}" data-ng-click="evtListener.nav()"><span>{{gnb.name}}</span></a></li>
+					</ul>
+				</nav>
+				<div role="complementary" class="util">
+					<h3>Util Menu</h3>
+					<p>GET STARTED</p>
+					<ul>
+					<li data-ng-repeat="util in utileMenu"><a href="{{util.url}}" title="{{util.title}}" target="_blank">{{util.name}}</a></li>
+					</ul>
+					<a href="{{menu.resume.url}}" title="{{menu.resume.title}}" target="_blank" id="resume" class="contact" data-ng-click="evtListener.resume($event)"><i class="fa fa-user"><span>{{menu.resume.name}}</span></i></a>
+				</div>
+			</header>
+			<div id="container">
+				<article role="main" id="content">
+					<h2>Main Content</h2>
+					<!-- features -->
+					<section id="{{menu.features.name}}" class="{{menu.features.name}}">
+						<h2>{{menu.features.name}}</h2>
+						<div class="lid-area">
+							<div class="lid first">
+								<div class="in">
+									<h3 class="stit"><i class="fa fa-check-circle"></i> 웹표준 &amp; 웹접근성 준수</h3>
+									<p>장애인차별금지법이 시행됨에 따라<br>기업의 웹사이트 접근성 구축은 필수가 되었습니다.<br>웹접근성 구축부터 인증획득 까지 관련 업무를 수행하고 있습니다.</p>
+									<h3 class="stit v1"><i class="fa fa-cogs"></i> 웹 UI 개발 <a href="#" class="qusetion">?</a></h3>
+									<p>Web UI Development Knowhow</p>
+								</div>
+							</div>
+							<div class="lid second">
+								<div class="in">
+									<h2 class="stit"><i class="fa fa-bar-chart"></i> 성능 최적화</h2>
+									<p>site optimization Knowhow<p>
+									<p>웹 서비스 규모가 커지면 커질수록 성능 최적화가 중요시 되고 있습니다.<br>모바일 서비스 또한 이제 반드시 필요한 고객채널이 되었습니다.<br>반응형웹, HTML5, jQuery 등 최적화된 모바일 서비스 제공을 위한<br>최적화 기술은 물론, 프론트엔드 개발을 위한 선도적인 기술을 통해<br>보다 안정화된 높은 품질 코드 향상의 프로젝트를 약속드립니다.</p>
+								</div>
+							</div>
+							<div class="lid third">
+								<div class="in">
+									<h2 class="stit"><i class="fa fa-mobile"></i> <i class="fa fa-arrows-h"></i> <i class="fa fa-tablet"></i> <i class="fa fa-arrows-h"></i> <i class="fa fa-laptop"></i> 반응형 컨텐츠</h2>
+									<p>Responsive Contents Knowhow</p>
+									<p>데스크탑, 스마트폰, 태블릿의 다양한 화면 사이즈 변경에<br>대응하는 컨텐츠를 제작합니다.</p>
+									<h3 class="stit"><i class="fa fa-laptop"></i> 크로스브라우징 노하우</h3>
+									<p>Cross-Browser optimizing Knowhow</p>
+								</div>
+							</div>
+							<div class="lid fourth">
+								<div class="in">
+									<div class="covered covered-first" data-passive="img/@tmp_covering_a11.jpg" data-active="img/@tmp_covering_a1.jpg">
+										<div class="handle"></div>
+										<div class="changeable"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- //features -->
+					<!-- history -->
+                    <section id="{{menu.licences.name}}" class="{{menu.licences.name}}">
+						<div class="chapter-tit">
+							<h2><i class="fa fa-credit-card"></i> {{menu.licences.name}}</h2>
+							<!--audio class="velo-sound"><source src="sound/bicycle.mp3" type="audio/mp3"></audio-->
+						</div>
+						<!-- [D] 스크롤 사용시 slim-scroll 클래스 추가 -->
+						<div class="inr">
+                            <strong class="velo-bubble"><span>time tree<br>history</span></strong>
+                            <select title="년도별 자격증 선택" ng-model="q">
+                            <option value="">전체기간</option>
+                            <option value="2002">2002년</option>
+                            <option value="2007">2007년</option>
+                            <option value="2009">2009년</option>
+                            <option value="2010">2010년</option>
+                            <option value="2011">2011년</option>
+                            </select>
+                            <div class="timeline" data-ng-repeat="timeline in licences | filter:q as results">
+                                <h3 class="year">{{timeline[0]}}</h3>
+                                <ul>
+                                    <li data-ng-repeat="timeline in timeline[1]">
+                                        <div class="note">
+                                            <strong class="pjt_tit">{{timeline.title}}</strong>
+                                            <p class="desc"><i title="시행처" class="fa fa-building-o"></i> {{timeline.Issued}}</p>
+                                            <span class="date"><i title="취득일" class="fa fa-calendar-o"></i> {{timeline.date}}</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+						</div>
+					</section>
+					<!-- //history -->
+					<!-- technique -->
+					<section id="{{menu.technique.name}}" class="{{menu.technique.name}}">
+						<h2><i class="fa fa-file-code-o"></i> {{menu.technique.name}}</h2>
+						<div class="inr">
+							<h3>Front end</h3>
+							<ul>
+							<li data-ng-repeat="lists in technique.front">{{lists}}</li>
+							</ul>
+							<hr>
+							<h3>Back end</h3>
+							<ul>
+							<li data-ng-repeat="lists in technique.back">{{lists}}</li>
+							</ul>
+						</div>
+					</section>
+					<!-- //technique -->
+					<!-- workbench -->
+					<div id="{{menu.workbench.name}}" class="{{menu.workbench.name}}">
+						<h2><i class="fa fa-calendar-o"></i> {{menu.workbench.name}}</h2>
+						<div class="inr">
+							<div class="func_area">
+								<span class="combo">
+									<label for="srch">검색</label> <input type="search" title="검색어를 입력하시면 필터링 처리 됩니다." placeholder="필터링 검색어 입력" id="srch" ng-model="searchText">
+								</span>
+								<span class="label_area">
+									<i title="가이드" class="guide">G</i> <span>가이드</span>
+									<i title="마크업" class="markup">M</i> <span>마크업</span>
+									<i title="UI개발" class="uidev">UI</i> <span>UI개발</span>
+									<i title="프론트엔드개발" class="frontdev">FE</i> <span>프론트엔드개발</span>
+								</span>
+							</div>
+							<table>
+							<caption>프로젝트 작업 요약 목록</caption>
+							<thead>
+							<tr>
+							<th scope="col">프로젝트</th>
+							<th scope="col">시작일</th>
+							<th scope="col">완료일</th>
+							<th scope="col">역할</th>
+							<th scope="col">담당업무</th>
+							<th scope="col">사용기술</th>
+							</tr>
+							</thead>
+							<tbody data-ng-repeat="workbench in workbenchs" data-idx="{{$index}}">
+							<tr data-ng-repeat="workbench in workbench | filter:searchText">
+								<td class="pjt">{{workbench.project}}</td>
+								<td class="start">{{workbench.start}}</td>
+								<td class="end">{{workbench.end}}</td>
+								<td class="role">{{workbench.role}}</td>
+								<td class="work">
+                                    <span class="label_area">
+                                        <i title="가이드" class="guide" data-ng-if="workbench.works.guide">G</i>
+                                        <i title="마크업" class="markup" data-ng-if="workbench.works.markup">M</i>
+                                        <i title="UI개발" class="uidev" data-ng-if="workbench.works.uidev">UI</i>
+                                        <i title="프론트엔드개발" class="frontdev" data-ng-if="workbench.works.frontdev">FE</i>
+                                    </span>
+								</td>
+								<td class="work">
+								    <span data-ng-repeat="skill in workbench.skills">{{($first)? '' : ', '}}{{skill}}</span>
+								 </td>
+							</tr>
+							</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- //workbench -->
+					<!-- portfolio -->
+					<!-- [D] swipe 기능 활성화시 v1 클래스 추가/제거 -->
+					<section id="{{menu.portfolio.name}}" class="{{menu.portfolio.name}}">
+						<h2>{{menu.portfolio.name}}</h2>
+						<div class="inr">
+							<nav>
+								<h3>Filter Menu</h3>
+								<!-- [D] 활성화 확장 클래스 .active 추가/제거 -->
+								<ul id="mfilter" class="mfilter">
+								<li><a class="filter" title="전체" data-filter="all" data-ng-click="evtListener.mfilter($event)">all</a></li>
+								<li><a class="filter" title="신규" data-filter=".new" data-ng-click="evtListener.mfilter($event)">new</a></li>
+								<li><a class="filter" title="유지보수" data-filter=".sustaining" data-ng-click="evtListener.mfilter($event)">sustaining</a></li>
+								<li><a class="filter" title="웹 접근성" data-filter=".accessibility" data-ng-click="evtListener.mfilter($event)">accessibility</a></li>
+								<li><a class="filter" title="반응형웹" data-filter=".responsive" data-ng-click="evtListener.mfilter($event)">responsive</a></li>
+								<li><a class="filter" title="웹" data-filter=".web" data-ng-click="evtListener.mfilter($event)">web</a></li>
+								<li><a class="filter" title="모바일웹" data-filter=".mobile" data-ng-click="evtListener.mfilter($event)">mobile</a></li>
+								<li><a class="filter" title="앱" data-filter=".app" data-ng-click="evtListener.mfilter($event)">App</a></li>
+								</ul>
+
+								<h3>Sort Menu</h3>
+								<ul class="msort">
+								<li><a class="sort" title="새로고침" data-sort="default"><i class="fa fa-refresh"><span>default</span></i></a></li>
+								<li><a class="sort" title="오름차순 정렬" data-sort="order:asc"><i class="fa fa-sort-numeric-asc"><span>asc</span></i></a></li>
+								<li><a class="sort" title="내림차순 정렬" data-sort="order:desc"><i class="fa fa-sort-numeric-desc"><span>desc</span></i></a></li>
+								<li><a class="sort" title="랜덤 정렬" data-sort="random"><i class="fa fa-random"><span>random</span></i></a></li>
+								<li><a title="썸네일형 보기" data-ng-click="evtListener.msort('thumb')"><i class="fa fa-th-large"><span>thumbnail layout</span></i></a></li>
+								<li><a title="리스트형 보기" data-ng-click="evtListener.msort('list')"><i class="fa fa-align-justify"><span>list layout</span></i></a></li>
+								</ul>
+							</nav>
+							<!-- [D] 리스트형 레이아웃 사용시 .gallery에 .list 다중 클래스 추가/제거 -->
+							<div id="gallery" class="gallery">
+								<div class="mix {{thumbs.category}}" data-order="{{$index + 1}}" data-ng-repeat="thumbs in gallery" style="display:inline-block">
+									<figure>
+										<span class="fluid_thumb"><img data-ng-src="img/gallery/{{thumbs.imageUrl}}" width="265" height="164" alt="{{thumbs.name}}"></span>
+										<figcaption>
+											<strong>
+												<i class="fa fa-quote-left"></i> {{thumbs.title}} <i class="fa fa-quote-right"></i>
+												<span>{{thumbs.company}}</span>
+											</strong>
+											<a href="{{thumbs.link}}" target="_blank" data-ng-click="evtListener.gallery($event)"><i class="fa fa-arrow-right"><span>바로가기</span></i></a>
+											<time datetime="{{thumbs.start}}"><i class="fa fa-clock-o"></i> {{thumbs.year}}</time>
+											<div class="tech-spec">
+												<span class="access" data-ng-if="thumbs.techSpec.access">accessibility</span>
+												<span class="respon" data-ng-if="thumbs.techSpec.respon">responsive</span>
+												<span class="mobile" data-ng-if="thumbs.techSpec.mobile">mobile</span>
+												<span class="html5" data-ng-if="thumbs.techSpec.html5">html5</span>
+												<span class="css3" data-ng-if="thumbs.techSpec.css3">css3</span>
+												<span class="jquery" data-ng-if="thumbs.techSpec.jquery">jquery</span>
+											 </div>
+										</figcaption>
+									</figure>
+								</div>
+								<div class="gap"></div>
+								<div class="gap"></div>
+							</div>
+						</div>
+					</section>
+					<!-- //portfolio -->
+					<!-- development -->
+					<div id="{{menu.development.name}}" class="{{menu.development.name}}">
+						<h2><i class="fa fa-inbox"></i> {{menu.development.name}}</h2>
+                        <h3>j Lab</h3>
+                        <div class="inr">
+                            <hr>
+                            <ul>
+                            <li data-ng-repeat="dev in development[0]"><a href="{{dev.url}}" target="_blank">{{dev.name}} <i class="fa fa-external-link"></i></a></li>
+                            </ul>
+                            <hr>
+                            <ul>
+                            <li data-ng-repeat="dev in development[1]"><a href="{{dev.url}}" target="_blank">{{dev.name}} <i class="fa fa-external-link"></i></a></li>
+                            </ul>
+                            <hr>
+                        </div>
+					</div>
+					<!-- //development -->
+					<!-- wiki -->
+					<section id="{{menu.wiki.name}}" class="{{menu.wiki.name}}">
+						<h2><i class="fa fa-file-archive-o"></i> <a href="{{menu.wiki.url}}" target="_blank">{{menu.wiki.name}}</a></h2>
+						<div class="inr">
+							<dl>
+							<dt><i class="fa fa-check-square-o"></i> J Snippet</dt>
+							<dd>웹표준 &#47; 웹 접근성 및 Front-end 성능 향상을 위해 HTML &#47; CSS와 관련한 여러가지 통일된 규칙을 적용해서 마크업 협업 개발 시 효율적으로 작업 능력을 향상 시킬수 있게 마크업 코딩 컨벤션 가이드 문서 입니다.</dd>
+							</dl>
+							<dl>
+
+							<dt><i class="fa fa-check-square-o"></i> 웹표준(Web Standard)</dt>
+							<dd>표준적으로 적용되는 기술이나 규칙을 의미하는데, 웹에서의 표준은 W3C의 토론을 통해 나온 권고안을 말하며, 권고안 이외 단계수준의 스펙은 비표준이거나 독자확장 요소를 의미하기 대문에 구분해야 사용해야 합니다.</dd>
+							</dl>
+
+							<p><strong><i class="fa fa-check-square-o"></i> 웹표준 관련 기술 : HTML(구조언어), CSS(표현), script(동작)</strong></p>
+
+							<p><strong><i class="fa fa-check-square-o"></i> 웹표준의 장점</strong></p>
+							<ul>
+							<li>웹 접근성 수준의 향상: 웹표준을 준수한 웹사이트는 다양한 웹 브라우저나 새로운 기기에서도 올바르게 표시되므로 자연스럽게 웹접근성아 향상됩니다. 스크린 리더, 최신의 웹브라우저, 모바일등 다양한 환경에서 접속해도 일관성을 유지하기 때문입니다.</li>
+							<li>검색 친화적인 웹사이트 구현: meta요소를 이용한 정확한 문서 정보의 제공과 적절한 제목 (Heading요소)의 사용, 의미에 맞는 마크업은 검색시 결과에 영향을 미칠 수 있는 중요한 정보입니다. 따로 홍보를 위한 비용을 지출하지 않아도 충실하게 작성된 문서 정보만으로도 검색의 효율성을 높일 수 있습니다.</li>
+							<li>구조와 표현의 분리</li>
+							<li>손쉬운 유지 보수 및 비용 절감 효과: 구조와 표현을 분리했을 경우, 소스의 경량화로 인해 서버의 트래픽 비용이 감소하는 부수적인 효과도 얻을 수 있습니다.</li>
+							</ul>
+
+							<dl>
+							<dt><i class="fa fa-check-square-o"></i> 웹 접근성(Web Accessibility)</dt>
+							<dd>법적 관점에서의 웹 접근성은 &#39;모든 사용자가 신체적, 환경적 조건에 관계없이 웹에 접근하여 이용할 수 있도록 보장하는 것&#39;입니다. 좀 더 보편적인 의미에서는 웹 사이트에서 제공하는 정보를 차별 및 제한 없이 동등하게 이용할 수 있도록 보장하는 것입니다.</dd>
+							<dd>
+								<ul>
+								<li>장애인 및 고령자 등을 포함한 모든 사람</li>
+								<li>다양한 플랫폼 및 장치, 웹 브라우저 등의 모든 환경</li>
+								</ul>
+							</dd>
+							</dl>
+
+							<p><strong><i class="fa fa-check-square-o"></i> 웹접근성 준수시 기대효과</strong></p>
+							<ul>
+							<li>장애인, 고령자 등을 포함한 사용자층 확대</li>
+							<li>규정과 법적 요구 사항에 대한 준수(2013년까지)</li>
+							<li>다양한 환경, 새로운 기기에서의 이용</li>
+							<li>개발 및 운용의 효율성 제고</li>
+							<li>사회 공헌 및 복지 기업으로서의 기업 이미지 향상</li>
+							<li>웹 표준 방식의 콘텐츠 논리적 레이아웃 선형화</li>
+							<li>파일의 용량을 50% 이상 비용 절감</li>
+							<li>사람이나 로봇(컴퓨터)이 이해하기 쉬운 구조</li>
+							<li>유지보수가 쉽고, 유지보수 비용을 절감</li>
+							<li>웹 접근성 문제는 웹 표준만 지키면 90% 이상 해결 가능</li>
+							</ul>
+						</div>
+					</section>
+					<!-- //wiki -->
+					<!-- blog -->
+					<section id="{{menu.blog.name}}" class="{{menu.blog.name}}">
+						<h2><i class="fa fa-newspaper-o"></i> <a href="{{menu.blog.url}}" target="_blank">{{menu.blog.name}}</a></h2>
+						<h3>j dev</h3>
+						<div class="inr">
+							<p><q>github 및 hexo 기반으로 정적 템플릿을 활용해서 제작한 개인 블로그 입니다.</q></p>
+							<hr>
+							<p>웹 개발시 프론트엔드 및 백 엔드 기술 공유 목적으로 바탕으로 전반적으로 마크업 &#47; UI개발 시 실무에 도움이 될 만한 이슈나 팁 등의 컨텐츠들이 주로 구성되어 있으며 개인적으로 관심있는 디자인이나 서버에 대한 컨텐츠들도 기재 되고 있습니다.</p>
+							<hr>
+						</div>
+					</section>
+					<!-- //blog -->
+				</article>
+			</div>
+
+			<a href="./" title="메인 바로가기" id="btnHome" class="btn_home" data-ng-click="evtListener.home()"><i class="fa fa-home"></i> <span>J Portfolio</span></a>
+		</div>
+	</div>
+	<footer role="contentinfo">
+		<div class="column">
+			<div class="col-inr">
+				<p class="email"><i class="fa fa-envelope"><span>email</span></i> <a href="mailto://seungwoonjjang@gmail.com">seungwoonjjang@gmail.com</a></p>
+				<p class="phone"><i class="fa fa-phone-square"><span>mobile</span></i> 010-7757-7553</p>
+			</div>
+		</div>
+		<div class="column">
+			<div class="col-inr">
+				<p class="copyright"><i class="fa fa-leaf"></i> <small>copyright &copy; 2014 J Portfolio all rights reserved. dev by woonyzzang</small></p>
+			</div>
+		</div>
+		<div class="column">
+			<div class="col-inr">
+				<strong class="law"><i class="fa fa-info-circle"></i> all designs are protected under copyright law and unauthorized use is strictly prohibited.</strong>
+				<address><i class="fa fa-map-marker"></i> Imhak, Incheon, Gyeyang</address>
+			</div>
+		</div>
+	</footer>
+</div>
+<!-- ng-view></ng-view -->
+
+<script src="/components/jquery/dist/jquery.min.js"></script>
+<script src="/components/angular/angular.min.js"></script>
+<script src="/components/angular-route/angular-route.min.js"></script>
+<script src="/lib/coveringBad.min.js"></script>
+<script src="/lib/jquery.mixitup.min.js"></script>
+<script src="/js/controllers.js"></script>
+</body>
+</html>

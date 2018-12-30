@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!-- [D] IE 브라우저는 로컬드라이브에 위치한 동적 콘텐츠를 위험요소로 감주해서 Active 알림 표시줄을 나타내게 되는데
+	코드 삽입 시 로컬 컴퓨터 지역을 사용하지 않고 인터넷 지역에서 활성 내용을 실행하라는 의미로 IE 브라우저에서 Active 알림표시줄 경고가 안나타나게 됨 -->
+<!-- saved from url=(0014)about:internet -->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Joe Seung Woon">
+<title>Responsive Design Veiew Testing</title>
+<link rel="stylesheet" href="css/common.css">
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<header>
+		<h1><span>R</span>esponsive <span>D</span>esign <span>V</span>iew</h1>
+		<div class="info">
+			<p>Developer <span>by</span> <a href="#">woonyzzang</a>.
+			<a href="#" title="도움말" class="help">How it works?</a></p>
+		</div>
+		<section class="set_area">
+			<form action="index.html" method="get" autocomplete="on">
+			<fieldset>
+			<legend class="blind">Web URL Address</legend>
+				<label for="srch"><b>ENTER</b> URL</label>
+				<input type="search" title="URL 주소 입력" name="srch" id="srch" placeholder="http://m.naver.com" pattern="^(https?:\/\/)\S*" autofocus required><button type="submit" title="검색">Go</button>
+			</fieldset>
+			</form>
+			<div id="devices">
+				<button type="button" id="btnSingle" title="Single View" class="tablet_portrait active"><span>Tablet Portrait</span></button>
+				<button type="button" id="btnDouble" title="Double View" class="tablet_landscape"><span>Tablet Landscape</span></button>
+				<button type="button" id="btnHori" title="Horizontal Alignment " class="smartphone_landscape"><span>iPhone Landscape</span></button>
+				<button type="button" id="btnVert" title="Vertical Alignment" class="smartphone_portrait"><span>iPhone Portrait</span></button>
+				<button type="button" id="btnMulti" title="Multi View" class="multi"><span>Multi</span></button>
+			</div>
+		</section>
+	</header>
+	<article class="container">
+		<section id="agentLst" class="agent_lst">
+			<h2 class="blind">Device Resolution Category List</h2>
+			<!--
+			<ul>
+			<li><a href="#iphone" class="tit"><strong>iPhone</strong></a>
+				<ul id="iphone" class="category" style="display:block">
+				<li>
+					<a href="#" class="on">
+						<img src="img/iphone3gs.jpg" width="100" height="100" alt="iPhone 3GS">
+						<em class="device_name">iPhone 3 &amp; 4</em>
+						<small>320 x 480</small>
+						<small class="label">(브라우저 360 x 416)</small>
+					</a>
+					<span class="chk">
+						<label for="iphone3_4" class="blind">iPhone 3 &amp; 4 뷰 보기</label>
+						<input type="checkbox" checked disabled id="iphone3_4" name="iphone3_4" title="아이폰3&amp;4 뷰 선택 &frasl; 해제">
+					</span>
+				</li>
+				-->
+				<!--
+				<li>
+					<a href="#">
+						<img src="img/iphone4.png" width="100" height="100" alt="iPhone 4">
+						<em class="device_name">iPhone 4</em>
+						<small>320 x 480</small>
+						<small class="label">(브라우저 360 x 416)</small>
+					</a>
+				</li>
+				-->
+				<!--
+				<li>
+					<a href="#">
+						<img src="img/iphone5.png" width="110" height="110" alt="iPhone 5">
+						<em class="device_name">iPhone 5</em>
+						<small>320 x 563</small>
+						<small class="label">(브라우저 320 x 504)</small>
+					</a>
+					<span class="chk">
+						<label for="iphone5" class="blind">iPhone 5 뷰 보기</label>
+						<input type="checkbox" disabled id="iphone5" name="iphone5" title="아이폰5 뷰 선택 &frasl; 해제">
+					</span>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/ipad3.jpg" width="140" height="140" alt="iPad">
+						<em class="device_name">iPad</em>
+						<small>768 x 1024</small>
+						<small class="label">(브라우저 768 x 928)</small>
+					</a>
+					<span class="chk">
+						<label for="ipad" class="blind">iPad 뷰 보기</label>
+						<input type="checkbox" disabled id="ipad" name="ipad" title="아이패드 뷰 선택 &frasl; 해제">
+					</span>
+				</li>
+				</ul>
+			</li>
+			<li><a href="#android" class="tit"><strong>Android</strong></a>
+				<ul id="android" class="category" style="display:block">
+				<li>
+					<a href="#">
+						<img src="img/galaxys4.jpg" width="120" height="111" alt="Galaxy S4">
+						<em class="device_name">Galaxy S4</em>
+						<small>360 x 640</small>
+						<small class="label">(브라우저 360 x 567)</small>
+					</a>
+					<span class="chk">
+						<label for="galaxys4" class="blind">Galaxy S4 뷰 보기</label>
+						<input type="checkbox" disabled id="galaxys4" name="galaxys4" title="갤럭시4 뷰 선택 &frasl; 해제">
+					</span>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/galaxys3.jpg" width="160" height="120" alt="Galaxy S3">
+						<em class="device_name">Galaxy S3</em>
+						<small>360 x 640</small>
+						<small class="label">(브라우저 360 x 615)</small>
+					</a>
+					<span class="chk">
+						<label for="galaxys3" class="blind">Galaxy S3 뷰 보기</label>
+						<input type="checkbox" disabled id="galaxys3" name="galaxys3" title="갤럭시3 뷰 선택 &frasl; 해제">
+					</span>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/galaxys2.jpg" width="75" height="113" alt="Galaxy S2">
+						<em class="device_name">Galaxy S2</em>
+						<small>320 x 533</small>
+						<small class="label">(브라우저 320 x 508)</small>
+					</a>
+					<span class="chk">
+						<label for="galaxys2" class="blind">Galaxy S2 뷰 보기</label>
+						<input type="checkbox" disabled id="galaxys2" name="galaxys2" title="갤럭시2 뷰 선택 &frasl; 해제">
+					</span>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/galaxynote2.jpg" width="78" height="121" alt="Galaxy Note2">
+						<em class="device_name">Galaxy Note2</em>
+						<small>360 x 640</small>
+						<small class="label">(브라우저 360 x 615)</small>
+					</a>
+					<span class="chk">
+						<label for="galaxys_note2" class="blind">Galaxy Note2 뷰 보기</label>
+						<input type="checkbox" disabled id="galaxys_note2" name="galaxys_note2" title="갤럭시노트2 뷰 선택 &frasl; 해제">
+					</span>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/galaxynote1.jpg" width="140" height="108" alt="Galaxy Note">
+						<em class="device_name">Galaxy Note</em>
+						<small>400 x 640</small>
+						<small class="label">(브라우저 400 x 567)</small>
+					</a>
+					<span class="chk">
+						<label for="galaxys_note" class="blind">Galaxy Note 뷰 보기</label>
+						<input type="checkbox" disabled id="galaxys_note" name="galaxys_note" title="갤럭시노트 뷰 선택 &frasl; 해제">
+					</span>
+				</li>
+				</ul>
+			</li>
+			-->
+			<!--
+			<li><a href="#lg" class="tit"><strong>LG</strong></a>
+				<ul id="lg" class="category" style="display:block">
+				<li>
+					<a href="#">
+						<img src="img/optimusg.jpg" width="130" height="130" alt="Optimus G">
+						<em class="device_name">Optimus G</em>
+						<small>384 x 640</small>
+						<small class="label">(브라우저 384 x 567)</small>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/optimusgpro.jpg" width="90" height="117" alt="Optimus G Pro">
+						<em class="device_name">Optimus G Pro</em>
+						<small>360 x 640</small>
+						<small class="label">(브라우저 360 x 615)</small>
+					</a>
+				</li>
+				</ul>
+			</li>
+			<li><a href="#pantech" class="tit"><strong>Pantech</strong></a>
+				<ul id="pantech" class="category" style="display:block">
+				<li>
+					<a href="#">
+						<img src="img/vegano6.png" width="120" height="120" alt="Vega No.6">
+						<em class="device_name">Vega No.6</em>
+						<small>360 x 640</small>
+						<small class="label">(브라우저 360 x 565)</small>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/vegar3.png" width="80" height="110" alt="Vega R3">
+						<em class="device_name">Vega R3</em>
+						<small>360 x 640</small>
+						<small class="label">(브라우저 360 x 567)</small>
+					</a>
+				</li>
+				</ul>
+			</li>
+			-->
+			<!--
+			<li><a href="#pc" class="tit"><strong>Desktop</strong></a>
+				<ul id="pc" class="category" style="display:block">
+				<li>
+					<a href="#">
+						<img src="img/vegano6.png" width="120" height="120" alt="Vega No.6">
+						<em class="device_name">PC</em>
+						<small>1024 x 768</small>
+						<small class="label">(브라우저 1024 x 768)</small>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="img/vegar3.png" width="80" height="110" alt="Vega R3">
+						<em class="device_name">PC</em>
+						<small>1280 x 1024</small>
+						<small class="label">(브라우저 1280 x 1024)</small>
+					</a>
+				</li>
+				</ul>
+			</li>
+			</ul>
+			-->
+		</section>
+		<section id="content">
+			<h3 class="blind">Device View Content</h3>
+			<!-- [D] 디바이스 나열 클래스 정의
+				cols: 세로열
+				rows: 가로열 -->
+			<div id="deviceFrame" class="device_frame rows">
+				<div class="device iphone3_4 port" data-orientation="portrait">
+					<div class="frame_wrap">
+						<iframe src="http://bluewaves.co.kr" frameborder="0" scrolling="yes"></iframe>
+						<!-- <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index:1000"></div> -->
+					</div>
+					<!--
+					<div id="grid" style="display:none">
+						<div class="grid_width"></div>
+						<div class="grid_height"></div>
+						<div class="paper"></div>
+					</div>
+					-->
+					<span class="desc"><span><strong>iPhone 3&amp;4</strong> (세로:portrait) 320 x 480</span></span>
+					<!-- <span id="deviceWidth" class="resolution wid"><span>480px</span></span> -->
+					<!-- <span id="deviceHeight" class="resolution hgt"><span>480px</span></span> -->
+				</div>
+				<!--
+				<div class="device iphone3_4 land" data-orientation="landscape">
+					<div class="frame_wrap">
+						<iframe src="http://bluewaves.co.kr" frameborder="0" scrolling="yes"></iframe>
+					</div>
+					<span class="desc"><span><strong>iPhone 3&amp;4</strong> (가로:landscape) 480 x 320</span></span>
+				</div>
+
+				<div class="device iphone5 port" data-orientation="portrait">
+					<div class="frame_wrap">
+						<iframe src="http://bluewaves.co.kr" frameborder="0" scrolling="yes"></iframe>
+					</div>
+					<span class="desc"><span><strong>iPhone5</strong> (portrait) 320 x 563</span></span>
+				</div>
+
+				<div class="device iphone5 land" data-orientation="landscape">
+					<div class="frame_wrap">
+						<iframe src="http://bluewaves.co.kr" frameborder="0" scrolling="yes"></iframe>
+					</div>
+					<span class="desc"><span><strong>iPhone5</strong> (landscape) 320 x 563</span></span>
+				</div>
+
+				<div class="device ipad port" data-orientation="portrait">
+					<div class="frame_wrap">
+						<iframe src="http://bluewaves.co.kr" frameborder="0" scrolling="yes"></iframe>
+					</div>
+					<span class="desc"><span><strong>iPad</strong> (portrait) 768 x 1024</span></span>
+				</div>
+
+				<div class="device ipad land" data-orientation="landscape">
+					<div class="frame_wrap">
+						<iframe src="http://bluewaves.co.kr" frameborder="0" scrolling="yes"></iframe>
+					</div>
+					<span class="desc"><span><strong>iPad</strong> (landscape) 1024 x 768</span></span>
+				</div>
+				-->
+			</div>
+		</section>
+	</article>
+</div>
+
+<script src="js/custom.js"></script>
+</body>
+</html>

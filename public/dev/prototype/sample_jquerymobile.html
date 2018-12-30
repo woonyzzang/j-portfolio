@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Joe Seung Woon">
+<title>Prototype</title>
+<!--  아이폰 114x114 사이즈로 지정하면 자동 리사이즈 됨 -->
+<!-- link rel="apple-touch-icon" href="{@path}.png">
+<link rel="apple-touch-icon-precomposed" href="{@path}.png" -->
+<!--  안드로이드 72x72의 png이미지를 지정 -->
+<!-- link rel="shortcut icon" href="{@path}.ico || .png" -->
+<style>
+*{margin:0;padding:0}
+img{max-width:100%;height:auto;border:0;vertical-align:top}
+.page,
+header,
+section,
+footer{position:relative}
+.show{visibility:visible;width:auto;height:auto}
+.hide{visibility:hidden;width:0;height:0}
+/*.page{display:none}
+.page:nth-of-type(1){display:block}*/
+/*section{background-repeat:no-repeat;background-size:50% auto}*/
+@-webkit-keyframes slide {
+    from{left:0}
+    to{left:-100%}
+}
+@keyframes slide {
+    from{left:0}
+    to{left:-100%}
+}
+
+@-webkit-keyframes slideup {
+    from{top:0}
+    to{top:-100%}
+}
+@keyframes slideup {
+    from{top:0}
+    to{top:-100%}
+}
+
+.page[data-transition=slide]{-webkit-transform:translate3d(100%,-100%,0);transform:translate3d(100%,-100%,0)}
+.page[data-transition=slide].show{-webkit-animation:slide .5s both;animation:slide .5s both}
+
+.page[data-transition=slideup]{border:10px solid red;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0);}
+.page[data-transition=slideup].show{-webkit-animation:slideup .5s both;animation:slideup .5s both}
+
+.fixed header,
+.fixed footer{overflow:hidden;position:fixed;right:0;left:0;z-index:5;/*outline:4px solid red*/}
+.fixed header{top:0}
+.fixed footer{bottom:0}
+.fixed header img,
+.fixed footer img{position:absolute;right:0;left:0}
+.fixed header img{top:0}
+.fixed footer img{bottom:0}
+</style>
+</head>
+<body>
+<div id="wrap">
+    <!-- article class="page" data-idx="0">
+        <header></header>
+        <section style="height:576px">
+            <img src="@imgPath" alt="" data-idx="0" usemap="#map0">
+            <a href="#1" class="map_area" style="top: 60px; left: 18px; width: 96px; height: 45px;"></a>
+            <map id="map0" name="map0">
+            <area shape="rect" coords="148, 52, 493, 110" href="http://naver.com" alt="">
+            </map>
+        </section>
+        <footer></footer>
+    </article -->
+</div>
+
+<script type="text/x-jsrender" id="tmpl">
+<article class="page" data-role="{{:idx}}">
+    <header></header>
+    <section>
+        <img src="{{:src}}" alt="" data-idx="{{:idx}}" usemap="#map{{:idx}}">
+    </section>
+    <footer></footer>
+</article>
+</script>
+
+<script src="lib/jquery-1.11.3.min.js"></script>
+<script src="lib/jquery.mobile-1.4.5.min.js"></script>
+<script src="lib/jsrender.min.js"></script>
+<script src="lib/jquery.rwdImageMaps.min.js"></script>
+<script>
+'use strict';
+
+(function($){
+
+    //var devicePixelRatio = window.devicePixelRatio;
+    var mapAreaCache = window.opener.mapAreaCache;
+    var fiexdCache = window.opener.fiexdCache;
+    var protoItemCloneAll = window.opener.protoItemCloneAll;
+    var template  = $.templates('#tmpl');
+    var data = [];
+
+    //이미지 노드 리스트
+    for (var i = 0, len = protoItemCloneAll.length; i < len; i++) {
+        data.push({
+            src : $(protoItemCloneAll[i]).attr('src'),
+            idx : $(protoItemCloneAll[i]).data('idx')
+        });
+    }
+
+    $('#wrap').html( template.render(data) );
+
+    var $map = $('<map></map>');
+    var $mapArea = $('<area shape="rect" href="#" alt="">');
+
+    //맵 영역
+    for (var idx in mapAreaCache) {
+        $('.page[data-role=' + idx + ']').append( $map.clone().attr({
+            id :'map' + idx,
+            name : 'map' + idx
+        }) );
+
+        for (var item in mapAreaCache[idx]) {
+            $('#map' + idx).append(
+                $mapArea.clone().attr({
+                    coords : mapAreaCache[idx][item].cx + ',' + mapAreaCache[idx][item].cy + ',' + mapAreaCache[idx][item].cx2 + ',' + mapAreaCache[idx][item].cy2,
+                    href : mapAreaCache[idx][item].href,
+                    //data-role="button",
+                    'data-transition' : mapAreaCache[idx][item].transition
+                })
+            );
+        }
+    }
+
+    //픽스 영역
+    for (var idx in fiexdCache) {
+        var $img = $('.page[data-role=' + idx + ']').find('img'),
+            ratio = fiexdCache[idx].imgHgt / $img.height();
+
+        $('.page[data-role=' + idx + ']').addClass('fixed');
+        $('.page[data-role=' + idx + ']').children('header').height(fiexdCache[idx].top / ratio).append($img.clone());
+        $('.page[data-role=' + idx + ']').children('footer').height(fiexdCache[idx].btmArea / ratio).append($img.clone());
+    }
+
+    /**
+     * @description 반응형 이미지맵 사이즈 조절 플러그인
+     */
+    $('img[usemap]').rwdImageMaps();
+
+    $(document).on('click', 'area', function(e) {
+        var regexp = /((http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\wㄱ-ㅎㅏ-ㅣ가-힣\;\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?)/g;
+        var $this = $(this),
+            target = $this.attr('href'),
+            transitionType = $this.data('transition');
+
+        console.log( transitionType );
+
+        if ( !regexp.test(target) ) {
+            e.preventDefault();
+
+            switch ( transitionType ) {
+                case 'none' :
+                    $('.page').addClass('hide');
+                    $('.page[data-role=' + target.replace(/[^0-9]/g, '') + ']').removeClass('hide').addClass('show');
+                break;
+                case 'slide' :
+                case 'sildeup' :
+                case 'sildedwon' :
+                case 'pop' :
+                case 'filp' :
+                    $('.page[data-role=' + target.replace(/[^0-9]/g, '') + ']')
+                        .removeClass('hide')
+                        .attr('data-transition', transitionType)
+                        .addClass('show')
+                break;
+            }
+        }
+    });
+
+    $(window).on('load', function() {
+        $('.page').eq(0).addClass('show').end().not(':first-child').addClass('hide');
+    });
+
+})(jQuery);
+</script>
+</body>
+</html>

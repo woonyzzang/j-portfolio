@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Joe Seung Woon">
+<title>Prototype</title>
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/jquery.Jcrop.css">
+<link rel="stylesheet" href="css/prototype.css">
+</head>
+<body>
+<div id="wrap" class="full_size">
+    <!-- main -->
+    <div id="main" class="page">
+        <header role="banner">
+            <h1>Prototype <small>beta v0.0.1</small></h1>
+            <ul class="util">
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Help</a></li>
+            <!-- <li><a href="#">Sign up</a></li>
+            <li><a href="#">Sign in</a></li> -->
+            <li class="signin"><a href="#lySignIn" id="btnSignIn" class="btn btn_default">Sign in</a></li>
+            <li class="signup"><a href="#lySignUp" id="btnSignUp" class="btn btn_primary">Sign up</a></li>
+            </ul>
+        </header>
+        <main role="main" id="container">
+            <!-- [D] 프로젝트 생성시 .proto_area_v1 확장 클래스 추가 -->
+            <section id="protoArea" class="proto_area">
+                <h2>Prototype Control</h2>
+                <div class="group">
+                    <div class="proto_info">
+                        <div class="favicon_area">
+                            <!-- [D] 파비콘 아이콘 삽입시 .on 확장 클래스 추가 -->
+                            <div id="favicon" class="favicon">
+                                <label for="favicon_find" title="Add Favicon"><input type="file" accept="image/x-icon" id="favicon_find"></label>
+                                <button type="button" title="Delete Favicon"><i class="icon-remove-sign"></i></button>
+                            </div>
+                        </div>
+                        <div class="stit_area">
+                            <!-- [D] 수정버튼 클릭시 .edit 확장 클래스 추가 -->
+                            <div id="stit" class="stit">
+                                <h2>My Projects</h2>
+                                <form id="editForm">
+                                <span class="inpt_group">
+                                    <input type="text" spellcheck="true" id="inpt_edit">
+                                    <button type="submit" class="btn btn_default">Modify</button>
+                                </span>
+                                </form>
+                                <label for="inpt_edit" title="Title Modify"><i class="icon-pencil icon-0x"></i></label>
+                            </div>
+                            <p id="screen" class="screen">screens : <span>http://prototype/<em></em></span> <button type="button" title="Copy to clipboard">Copy</button></p>
+                        </div>
+                    </div>
+                    <div class="proto_func">
+                        <a href="#lyCreatePjt" role="button" id="btnCreatePjt" class="btn btn_success">Create Projects</a> <!-- aria-disabled="true" -->
+                        <nav role="navigation">
+                            <ul>
+                            <li><a href="#" id="btnSettings"><i class="icon-cog icon-large"></i> <span>Settings</span></a></li>
+                            <li>
+                                <a href="#" id="btnQR"><i class="icon-qrcode icon-large"></i> <span>QR Code</span></a>
+                                <div id="qrcode" class="qrcode"></div>
+                            </li>
+                            <li><a href="#"><i class="icon-download-alt icon-large"></i> <span>Download</span></a></li>
+                            <li><a href="#" id="btnPlay"><i class="icon-play icon-large"></i> <span>Play</span></a></li>
+                            <li><a href="#" id="btnShare"><i class="icon-share icon-large"></i> <span>Share</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="proto_func_opt">
+                    <div class="files">
+                        <form id="addImgForm">
+                            <label for="add_img"><i class="icon-copy"></i> Add Image</label>
+                            <input type="file" accept="image/*" multiple id="add_img">
+                            <button type="submit" class="btn btn_warning">Upload</button>
+                        </form>
+                    </div>
+                    <div id="settings" class="settings">
+                        <button type="button" id="btnFullScreen" class="btn btn_default"><i class="icon-fullscreen"></i> Full Screen</button>
+                        <span id="slider" class="slider">
+                            <button type="button" title="Scale zoom out" id="btnZoomOut"><i class="icon-mobile-phone"></i></button>
+                            <input type="range" min="1" max="10" step="1" value="5" title="Scale Control">
+                            <button type="button" title="Scale zoom in" id="btnZoomIn"><i class="icon-mobile-phone icon-2x"></i></button>
+                        </span>
+                        <!-- button type="button" title="Scale Zoom Default" id="btnSliderDefault" class="btn btn_default">Default</button -->
+                        <button type="button" id="btnSortSync" class="btn btn_default"><i class="icon-refresh"></i> Sort Sync</button>
+                    </div>
+                </div>
+            </section>
+            <!-- [D] 콘텐츠 황성화시 .active 클래스 추가 -->
+            <section id="content">
+                <h2>Prototype Application</h2>
+                <!-- http://m.mkexdev.net/87 -->
+                <!-- <div id="dropbox" ondragenter="onDragEnter(event)" ondragover="onDragOver(event)" ondrop="onDrop(event)"></div> -->
+                <div id="noProjectDesc" class="desc_area on">
+                    <p><strong>No Projects Created.</strong><br><span>Click the big green button to get stared.</span></p>
+                </div>
+                <article id="dropbox" role="application" class="dropbox">
+                    <!-- [D] 마우스 오버시 .on 확장 클래스 추가/제거 -->
+                    <!-- div class="proto_item">
+                        <div class="thumb">
+                            <img src="All_Links.png" alt="">
+                            <a href="#" class="btn btn_success">Edit</a>
+                            <span class="label label_primary">PNG</span>
+                            <button type="button" title="Delete" class="btn btn_danger"><i class="icon-bitbucket"></i></button>
+                        </div>
+                        <div class="desc">
+                            <strong class="fname">Home</strong>
+                            <p><span class="fsize">404 <span class="ext">bytes</span></span></p>
+                        </div>
+                        <div class="fixed_header"></div>
+                        <div class="fixed_footer"></div>
+                    </div -->
+                    <div id="imgUploadDesc" class="desc_area">
+                        <p><strong>Please upload an image.</strong><br><span>Upload manner is available in the drag-and-drop or find files on the browser screen.</span></p>
+                    </div>
+                </article>
+                <!--<div id="dropboxDimmed" class="dimmed"></div>-->
+            </section>
+        </main>
+        <!--<footer id="footer" role="contentinfo"></footer>-->
+    </div>
+    <!-- //main -->
+
+    <!-- detail -->
+    <!-- [D] 활성화시 .active 클래스 추가 -->
+    <div id="detail" class="page">
+        <header role="banner">
+            <h1>File Type</h1>
+            <ul class="util">
+                <li>
+                    <a href="#" id="btnBg">Background</a>
+                    <span id="bgChoose" class="bg_choose">
+                        <!-- [D] 체크박스 ckecked=ture 일시 label 엘리먼트에 .on 확장 클래스 추가 -->
+                        <label title="White" class="bg_white on"><input type="radio" checked name="bg_seleted"><i class="icon-ok"></i></label>
+                        <label title="Black" class="bg_black"><input type="radio" name="bg_seleted"><i class="icon-ok"></i></label>
+                        <label title="Transparent" class="bg_transparent"><input type="radio" name="bg_seleted"><i class="icon-ok"></i></label>
+                        <label title="Custom" class="bg_custom"><input type="color"><i class="icon-ok"></i></label>
+                    </span>
+                </li>
+                <li>
+                    <a href="#" id="allApply">All Apply</a>
+                    <span id="applyChoose" class="apply_choose">
+                        <!-- [D] 체크박스 ckecked=ture 일시 label 엘리먼트에 .on 확장 클래스 추가 -->
+                        <label class="fixed"><input type="checkbox"> Fixed</label>
+                        <label class="transition"><input type="checkbox"> Transition</label>
+                    </span>
+                </li>
+                <li><a href="#" role="button" id="btnDetailClse">Close</a></li>
+            </ul>
+            <div id="pagenate" class="pagenate">
+                <button type="button" title="Prev" id="btnPrev" class="btn btn_default"><i class="icon-angle-left"></i></button>
+                <span class="num"><strong id="currentPage"></strong> &#47; <span id="totalPage"></span></span>
+                <button type="button" title="Next" id="btnNext" class="btn btn_default"><i class="icon-angle-right"></i></button>
+            </div>
+        </header>
+        <article role="article" id="container_view">
+            <h2>Prototype Detail Content</h2>
+            <section role="main" id="content_view">
+                <h3>Prototype Viewer</h3>
+                <div id="viewerArea" class="viewer_area">
+                    <div id="viewer" class="viewer">
+                        <!-- <figure id="webview"><img src="All_Links.png" alt=""></figure> -->
+                    </div>
+                    <!-- [D] 활성화시 .on 클래스 추가 -->
+                    <div id="fixedLabelTop" class="fixed_line top"><span>Fixed Header</span></div>
+                    <div id="fixedLabelBtm" class="fixed_line btm"><span>Fixed Footer</span></div>
+                </div>
+                <div id="viewerDimmed" class="dimmed"></div>
+            </section>
+            <!-- [D] 활성화시 .active 클래스 추가 -->
+            <section id="config" class="config">
+                <h3>Prototype Properties</h3>
+                <div class="options">
+                    <div class="prop">
+                        <div id="setting" class="setting">
+                            <strong><span>Preferences</span></strong>
+                            <!-- [D] 버튼 클릭시 .on 클래스 추가/제거 -->
+                            <a href="#transitions" role="button"><span><i class="icon-circle"></i> Transtions <i class="icon-angle-right"></i><i class="icon-angle-down"></i></span></a>
+                            <a href="#actions" role="button"><span><i class="icon-hand-up"></i> Actions <i class="icon-angle-right"></i><i class="icon-angle-down"></i></span></a>
+                            <div id="link" class="link">
+                                <form id="linkForm">
+                                <label for="link_url"><i class="icon-link"></i> Link</label>
+                                <input type="url" disabled list="url_list" placeholder="Target" id="link_url">
+                                <!-- TODO : 자동완성 레이어 미구현 -->
+                                <!-- div id="datalist" class="datalist">
+                                    <ul>
+                                    <li><a href="#">http://m.naver.com</a><button type="button"><i class="icon-remove-sign"></i></button></li>
+                                    <li><a href="#">http://m.daum.net</a><button type="button"><i class="icon-remove-sign"></i></button></li>
+                                    <li><a href="#">http://nate.com</a><button type="button"><i class="icon-remove-sign"></i></button></li>
+                                    <li><a href="#">http://yahoo.co.kr</a><button type="button"><i class="icon-remove-sign"></i></button></li>
+                                    </ul>
+                                </div -->
+                                <i class="icon-refresh icon-spin"></i>
+                                </form>
+                            </div>
+                        </div>
+                        <ul class="util">
+                        <li><button type="button" title="Delete Link" id="btnMapAreaDel"><i class="icon-trash"></i></button></li>
+                        <li><a href="#" role="button" title="Close" id="btnConfigClse" class="clse"><span><i class="icon-remove"></i></span></a></li>
+                        </ul>
+                    </div>
+                    <div id="transitions" class="prop_conf">
+                        <ul>
+                        <li><a href="#" role="button" data-transition="none"><i class="icon-remove"></i> <span>none</span></a></li>
+                        <li><a href="#" role="button" data-transition="slideleft"><i class="icon-circle"></i> <span>slideleft</span></a></li>
+                        <li><a href="#" role="button" data-transition="slideright"><i class="icon-circle"></i> <span>slideright</span></a></li>
+                        <li><a href="#" role="button" data-transition="sildeup"><i class="icon-circle"></i> <span>sildeup</span></a></li>
+                        <li><a href="#" role="button" data-transition="sildedown"><i class="icon-circle"></i> <span>sildedwon</span></a></li>                        
+                        <li><a href="#" role="button" data-transition="fade"><i class="icon-circle"></i> <span>fade</span></a></li>
+                        <li><a href="#" role="button" data-transition="slidefade"><i class="icon-circle"></i> <span>slidefade</span></a></li>
+                        <li><a href="#" role="button" data-transition="pop"><i class="icon-circle"></i> <span>pop</span></a></li>
+                        <li><a href="#" role="button" data-transition="flow"><i class="icon-circle"></i> <span>flow</span></a></li>
+                        <!-- li><a href="#" role="button" data-transition="filp"><i class="icon-circle"></i> <span>filp</span></a></li>
+                        <li><a href="#" role="button" data-transition="turn"><i class="icon-circle"></i> <span>turn</span></a></li -->
+                        </ul>
+                    </div>
+                    <!-- TODO : 스와이프 기능 기능 미구현 -->
+                    <!-- div id="actions" class="prop_conf">
+                        <ul>
+                        <li class="on"><a href="#"><i class="icon-remove"></i> <span>None</span></a></li>
+                        <li><a href="#"><i class="icon-circle"></i> <span>Swipe</span></a></li>
+                        <li><a href="#"><i class="icon-circle"></i> <span>Return</span></a></li>
+                        </ul>
+                    </div -->
+                </div>
+                <div id="connection" class="connection">
+                    <!-- ul>
+                    <li class="on"><a href="#"><img src="All_Links.png" alt=""><i class="icon-ok-circle icon-4x"></i></a></li>
+                    <li class="current"><a href="#"><img src="All_Links.png" alt=""><i class="icon-ok-circle icon-4x"></i></a><strong>Current Image</strong></li>
+                    <li><a href="#"><img src="All_Links.png" alt=""><i class="icon-ok-circle icon-4x"></i></a></li>
+                    </ul -->
+                    <div id="connectionDimmed" class="dimmed"></div>
+                </div>
+            </section>
+        </article>
+        <!--<footer role="contentinfo"></footer>-->
+    </div>
+    <!-- //detail -->
+    <div id="dimmed" class="dimmed dimmed_v1"></div>
+</div>
+
+<!-- ly_signin -->
+<div data-transition="flip" id="lySignIn" class="ly_pop ly_signin">
+    <article class="inr">
+        <form id="signinFrom">
+        <fieldset>
+            <legend>Good evening! Welcome back.</legend>
+            <p class="desc">Log into your account here:</p>            
+            <div class="inpt_box">
+                <label for="signin_email">Email</label>
+                <input type="email" placeholder="Email adress" required id="signin_email">
+            </div>
+            <div class="inpt_box">
+                <label for="signin_pw">Password</label>
+                <input type="password" placeholder="Password" required id="signin_pw">
+            </div>
+            <p class="forgot_pw"><a href="#lyforgotPW" id="btnForgotPW">Forgot password?</a></p>
+            <p class="btn_area"><button type="submit" class="btn btn_success">Sign in</button></p>
+        </fieldset>
+        </form>
+    </article>
+    <a href="#btnSignIn" role="button" title="close" class="clse"><span><i class="icon-remove"></i></span></a>
+</div>
+<!-- //ly_signin -->
+<!-- ly_forgotpw -->
+<div data-transition="flip" id="lyforgotPW" class="ly_pop ly_forgotpw">
+    <article class="inr">
+        <form id="forgotPWFrom">
+        <fieldset>
+            <legend>Forgot your password?</legend>
+            <p class="desc">We'll email you instructions on how to reset it.</p>            
+            <div class="inpt_box">
+                <label for="forgotpw_email">Email</label>
+                <input type="email" placeholder="Email adress" required id="forgotpw_email">
+            </div>
+            <p class="btn_area"><button type="submit" class="btn btn_default">Reset Password</button></p>
+        </fieldset>
+        </form>
+    </article>
+    <a href="#lySignIn" id="btnForgotPWBack" class="back"><i class="icon-long-arrow-left"></i> <span>back</span></a>
+    <a href="#btnSignIn" role="button" title="close" class="clse"><span><i class="icon-remove"></i></span></a>
+</div>
+<!-- //ly_forgotpw -->
+<!-- ly_signup -->
+<div data-transition="flip" id="lySignUp" class="ly_pop ly_signup">
+    <article class="inr">
+        <form id="signupFrom">
+        <fieldset>
+            <legend>Sign up for free prototye!</legend>
+            <p class="desc">Prototype is free to use for as long as you want and with an unlimited number of projects.</p>
+            <div class="inpt_box">
+                <label for="signup_name">Name</label>
+                <input type="text" placeholder="Your full name" required id="signup_name">
+            </div>
+            <div class="inpt_box">
+                <label for="signup_email">Email</label>
+                <input type="email" placeholder="Email adress" required id="signup_email">
+            </div>
+            <div class="inpt_box">
+                <label for="signup_pw">Password</label>
+                <input type="password" placeholder="Password (min 6 characters)" required id="signup_pw">
+            </div>
+            <p class="btn_area"><button type="submit" class="btn btn_success">Create an account</button></p>
+        </fieldset>
+        </form>
+    </article>
+    <a href="#btnSignUp" role="button" title="close" class="clse"><span><i class="icon-remove"></i></span></a>
+</div>
+<!-- //ly_signup -->
+<!-- ly_create_pjt -->
+<div data-transition="pop" id="lyCreatePjt" class="ly_pop ly_create_pjt">
+    <article class="inr">
+        <form id="createPjtFrom">
+        <fieldset>
+            <legend>Create new project</legend>
+            <div class="inpt_box">
+                <label for="pjt_name">Name</label>
+                <input type="text" placeholder="New Project Name" spellcheck="true" id="pjt_name">
+            </div>
+            <p class="btn_area"><button type="submit" class="btn btn_success">Create project</button></p>
+        </fieldset>
+        </form>
+    </article>
+    <a href="#btnCreatePjt" role="button" title="close" class="clse"><span><i class="icon-remove"></i></span></a>
+</div>
+<!-- //ly_create_pjt -->
+
+<script type="text/x-jsrender" id="tmplProtoItem">
+<figure class="proto_item">
+    <div class="thumb">
+        <img src="{{:src}}" alt="" data-idx="{{:idx}}">
+        <a href="#detail" role="button" class="btn btn_success">Edit</a>
+        <span class="label label_primary">{{:ftype}}</span>
+        <button type="button" title="Delete" class="btn btn_danger"><i class="icon-trash"></i></button>
+    </div>
+    <figcaption class="desc">
+        <strong class="fname">{{:fname}}</strong>
+        <p><span class="fsize">{{:fsize}} <span class="ext">bytes</span></span></p>
+    </figcaption>
+</figure>
+</script>
+<script type="text/x-jsrender" id="tmplConnectionItem">
+<a href="#" title="{{:fname}}">
+    <img src="{{:src}}" data-fname="{{:fname}}" data-idx="{{:idx}}" alt="">
+    <i class="icon-ok-circle icon-4x"></i>
+</a>
+</script>
+
+<script src="lib/jquery-1.11.3.min.js"></script>
+<script src="lib/jquery-ui.min.js"></script>
+<script src="lib/jsrender.min.js"></script>
+<script src="lib/jquery.Jcrop.min.js"></script>
+<script src="lib/qrcode.min.js"></script>
+<script src="lib/screenfull.min.js"></script>
+<script src="js/prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!ELEMENT items (tit,project,workers,lst*)>
+<!ELEMENT workers (worker)>
+<!ELEMENT lst (area,prenum,section,item,planningID,markupURL,worker,progress,complete,planningValid,designValid,ex)>
+<!ELEMENT tit (#PCDATA)>
+<!ELEMENT area (#PCDATA)>
+<!ELEMENT prenum (#PCDATA)>
+<!ELEMENT section (#PCDATA)>
+<!ELEMENT item (#PCDATA)>
+<!ELEMENT planningID (#PCDATA)>
+<!ELEMENT markupURL (#PCDATA)>
+<!ELEMENT worker (#PCDATA)>
+<!ELEMENT progress (#PCDATA)>
+<!ELEMENT complete (#PCDATA)>
+<!ELEMENT planningValid (#PCDATA)>
+<!ELEMENT designValid (#PCDATA)>
+<!ELEMENT ex (#PCDATA)>
+<!ATTLIST items title CDATA #IMPLIED>
+<!ATTLIST project year CDATA #REQUIRED>
+<!ATTLIST worker color CDATA #REQUIRED>
+<!ATTLIST markupURL link CDATA #REQUIRED type CDATA #REQUIRED>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="Joe Seung Woon">
+<meta name="description" content="Test Responsive WebSites On Actually Measured Screen.">
+<title>Responsive Design Veiew Testing</title>
+<!-- <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"> -->
+<link rel="stylesheet" href="css/common.css">
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+</head>
+<body>
+<div id="wrap">
+	<!-- header -->
+	<header>
+		<h1><a href="index.html"><span>R</span>esponsive <span>D</span>esign <span>V</span>iew</a></h1>
+		<div class="info">
+			<p>Developer <span>by</span> <a href="mailto://seungwoonjjang@gmail.com">woonyzzang</a>.
+			<a href="#" title="도움말" id="help" class="help">How it works?</a></p>
+		</div>
+		<section class="set_area">
+			<form id="enterURL" action="index.html" method="get" autocomplete="on">
+			<fieldset>
+			<legend class="blind">Web URL Address</legend>
+				<label for="srch"><b>ENTER</b> URL</label>
+				<input type="url" title="URL 주소 입력" name="srch" id="srch" placeholder="http://m.naver.com" pattern="^(https?:\/\/)\S*" autofocus required><button type="submit" title="검색">Go</button>
+			</fieldset>
+			</form>
+			<div id="devices" class="devices">
+				<button type="button" id="btnSingle" title="Single View" class="btn_single active"><span>Single</span></button>
+				<button type="button" id="btnCustom" title="Custom View" class="btn_custom"><span>Custom</span></button>
+				<button type="button" disabled id="btnHori" title="Horizontal Alignment " class="btn_hori"><span>Horizontal</span></button>
+				<button type="button" disabled id="btnVert" title="Vertical Alignment" class="btn_vert"><span>Vertical</span></button>
+				<button type="button" id="btnMulti" title="Multi View" class="multi"><span>Multi</span></button>
+			</div>
+			<form id="customSize" action="index.html" method="get">
+			<fieldset>
+			<legend class="blind">Device Custom Size</legend>
+				<div class="customs size">
+					<label for="nWid" class="blind">Width:</label>
+					<input type="number" title="Custom Device Width" name="nWid" id="nWid" placeholder="Width" min="10" step="1">
+					<span class="multiply">x</span>
+					<label for="nHgt" class="blind">Height:</label>
+					<input type="number" title="Custom Device Height" name="nHgt" id="nHgt" placeholder="Height" min="10" step="1">
+				</div>
+			</fieldset>
+			</form>
+			<form id="customScale" action="index.html" method="get">
+			<fieldset>
+			<legend class="blind">Device Custom Scale</legend>
+				<div class="customs scale">
+					<label for="rScale">Scale:</label>
+					<input type="range" title="Custom Device Adjustment" name="rScale" id="rScale" value="1" min="0.1" max="2" step="0.1">
+				</div>
+			</fieldset>
+			</form>
+		</section>
+	</header>
+	<!-- //header -->
+	<!-- container -->
+	<article id="container">
+		<section id="agentLst" class="agent_lst">
+			<h2 class="blind">Device Resolution Category List</h2>
+		</section>
+		<section id="content">
+			<h3 class="blind">Device View Content</h3>
+			<div id="deviceFrame" class="device_frame"></div>
+		</section>
+	</article>
+	<!-- //container -->
+</div>
+
+<div id="dimmed"></div>
+<div id="lyWorks" class="ly_works">
+	<h1>How it works</h1>
+	<p>반응형 웹 개발시 각 디바이스별 해상도의 <strong>기본 브라우저</strong> 실제크기 화면을 확인할수 있는 웹 어플리케이션 테스트 도구 입니다. <strong>디바이스의 운영체제별 특성, 버그는 실제 디바이스를 통해 확인하세요.</strong></p>
+
+	<h2>기능 요약</h2>
+	<dl>
+	<dt>ENTER URL:</dt>
+	<dd>특정 페이지를 테스트하려면 주소 표시 줄에 웹 사이트의 URL 주소를 입력 할 수 있습니다.</dd>
+	<dt>Single View:</dt>
+	<dd>각 디바이스 카테고리 메뉴의 해상도를 확인할 수 있습니다.</dd>
+	<dt>Custom View:</dt>
+	<dd>사용자가 직접 해상도 설정을 정의하여 확인할 수 있습니다.</dd>
+	<dt>Horizontal Alignment:</dt>
+	<dd>멀티 디바이스 정렬기준을 가로로 정렬하여 확인할 수 있습니다.(멀티 뷰 모드일시 활성화)</dd>
+	<dt>Vertical Alignment:</dt>
+	<dd>멀티 디바이스 정렬기준을 세로로 정렬하여 확인할 수 있습니다.(멀티 뷰 모드일시 활성화)</dd>
+	<dt>Multi View:</dt>
+	<dd>모든 디바이스 종류의 해상도를 한눈에 확인할 수 있습니다.</dd>
+	</dl>
+
+	<h3>브라우저 지원</h3>
+	<span class="suport">
+		<img src="img/browser_support.png" width="122" height="40" alt="크롬, 오페라, 사파리">
+		<em>기타 브라우저에서는 기능이 제한적일 수 있습니다.(단, IE9 이하 브라우저에서는 지원 안됨)</em>
+	</span>
+
+	<a href="#" class="btn_clse">확인</a>
+</div>
+
+<script src="js/custom.js"></script>
+</body>
+</html>
