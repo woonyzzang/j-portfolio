@@ -853,5 +853,43 @@
       "css3": true,
       "jquery": true
     }
+  },
+  {
+    "category": "new web mobile",
+    "link": "https://www.kyobostory.co.kr/with/main.do?menuId=KSMEU00082",
+    "imageUrl": "kyobo/kyobo_events.jpg",
+    "name": "교보스토리",
+    "title": "읽거느 이벤트",
+    "company": "KYOBO",
+    "year": "January 2019",
+    "start": "2019-01-09",
+    "end": "2019-03-12",
+    "techSpec": {
+      "access": true,
+      "respon": false,
+      "mobile": true,
+      "html5": true,
+      "css3": true,
+      "jquery": true
+    }
+  },
+  {
+    "category": "new accessibility web mobile",
+    "link": "http://xpleat.kr/",
+    "imageUrl": "xpleat/xpleat.jpg",
+    "name": "XPLEAT",
+    "title": "XPLEAT",
+    "company": "XPLEAT",
+    "year": "January 2019",
+    "start": "2019-01-15",
+    "end": "2019-02-15",
+    "techSpec": {
+      "access": true,
+      "respon": false,
+      "mobile": true,
+      "html5": true,
+      "css3": true,
+      "jquery": true
+    }
   }
 ]

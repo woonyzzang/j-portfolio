@@ -21,7 +21,7 @@
 					<ul>
 					<li data-ng-repeat="gnb in gnbMenu"><a href="#{{gnb.name}}" title="{{gnb.title}}" data-ng-click="evtListener.nav()"><span>{{gnb.name}}</span></a></li>
 					</ul>
-				</nav>
+				</nav>complementary
 				<div role="complementary" class="util">
 					<h3>Util Menu</h3>
 					<p>GET STARTED</p>
@@ -134,6 +134,7 @@
 									<i title="마크업" class="markup">M</i> <span>마크업</span>
 									<i title="UI개발" class="uidev">UI</i> <span>UI개발</span>
 									<i title="프론트엔드개발" class="frontdev">FE</i> <span>프론트엔드개발</span>
+									<i title="백엔드개발" class="backdev">BE</i> <span>백엔드개발</span>
 								</span>
 							</div>
 							<table>
@@ -160,11 +161,12 @@
                                         <i title="마크업" class="markup" data-ng-if="workbench.works.markup">M</i>
                                         <i title="UI개발" class="uidev" data-ng-if="workbench.works.uidev">UI</i>
                                         <i title="프론트엔드개발" class="frontdev" data-ng-if="workbench.works.frontdev">FE</i>
+                                        <i title="백엔드개발" class="backdev" data-ng-if="workbench.works.backdev">BE</i>
                                     </span>
 								</td>
 								<td class="work">
 								    <span data-ng-repeat="skill in workbench.skills">{{($first)? '' : ', '}}{{skill}}</span>
-								 </td>
+								</td>
 							</tr>
 							</tbody>
 							</table>

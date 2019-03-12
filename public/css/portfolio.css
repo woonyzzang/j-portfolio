@@ -881,6 +881,8 @@ a.contact {
       background-color: #f2b600; }
     .workbench .label_area i.frontdev {
       background-color: #800080; }
+    .workbench .label_area i.backdev {
+      background-color: #333; }
   .workbench .label_area span {
     font-size: 11px;
     text-shadow: 0 0 2px #fff; }

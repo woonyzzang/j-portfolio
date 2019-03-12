@@ -26,11 +26,12 @@ var jPortfolio = angular.module('jPortfolio', ['ngRoute']);
 
 jPortfolio.controller('MainCtrl', ['$scope', '$filter', '$http', '$window', function ($scope, $filter, $http, $window) {
     var GNBITEM = ['features', 'licences', 'technique', 'workbench', 'portfolio', 'development', 'wiki', 'blog'],
-        UTILITEM = ['introduction', 'personality', 'wiki', 'blog'];
+        UTILITEM = ['introduction', 'personality', 'github', 'blog'];
 
     $scope.menu = {
         introduction: {url:'resume/introduction.html', title:'자기소개', name:'introduction'},
 		personality: {url:'resume/personality_type.html', title:'성격유형', name:'personality'},
+        github: {url:'https://github.com/woonyzzang?tab=repositories', title:'깃허브 레파지토리', name:'github'},
         resume: {url:'resume/resume.html', title:'이력서', name:'resume'},
         features: {title:'기능소개', name:'features'},
         licences: {title:'자격증', name:'licences'},
@@ -38,21 +39,22 @@ jPortfolio.controller('MainCtrl', ['$scope', '$filter', '$http', '$window', func
         workbench: {title:'작업내역', name:'workbench'},
         portfolio: {title:'포트폴리오', name:'portfolio'},
         development: {title:'UI개발', name:'development'},
-        wiki: {url:'http://kangyoo80.dothome.co.kr/wiki/', title:'위키소개', name:'wiki'},
+        wiki: {url:'#', title:'위키소개', name:'wiki'},
         blog: {url:'https://woonyzzang.github.io/', title:'블로그소개', name:'blog'}
     };
 
     $scope.utileMenu = [];
     $scope.gnbMenu = [];
+
     angular.forEach($scope.menu, function(value, key) {
         // UTILITEM 배열 필터링
         for (var i = 0, len = UTILITEM.length; i < len; i++) {
-            if(key === UTILITEM[i]) $scope.utileMenu.push($scope.menu[key]);
+            if (key === UTILITEM[i]) { $scope.utileMenu.push($scope.menu[key]); }
         }
 
         // GNBITEM 배열 필터링
         for (var i = 0, len = GNBITEM.length; i < len; i++) {
-            if(key === GNBITEM[i]) $scope.gnbMenu.push($scope.menu[key]);
+            if (key === GNBITEM[i]) { $scope.gnbMenu.push($scope.menu[key]); }
         }
     });
 
