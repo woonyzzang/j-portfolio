@@ -619,7 +619,9 @@
         "backdev": false
       },
       "skills": ["HTML5", "CSS3", "jQuery", "Lodash"]
-    },
+    }
+  ],
+  [
     {
       "project": "교보스토리 읽거느 이벤트 / Admin",
       "start": "19.01.09",
