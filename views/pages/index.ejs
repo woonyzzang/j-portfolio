@@ -4,11 +4,17 @@
 <% include ../inc/head.ejs %>
 </head>
 <body>
+<!-- skip -->
+<div id="skip">
+    <a href="#content">본문 바로가기</a>
+    <a href="#gnb">메뉴 바로가기</a>
+</div>
+<!-- //skip -->
 <div id="wrap" data-ng-controller="MainCtrl">
 	<div class="home">
 		<!-- [D] swipe 기능 활성화시 v1 클래스 추가/제거 -->
 		<div class="swipe">
-			<header role="banner">
+			<header id="header">
 				<div class="intro">
 					<div class="inr">
 						<h1 class="logo"><a href="#"><span><b>J</b></span> Portfolio</a></h1>
@@ -26,16 +32,15 @@
 					<h3>Util Menu</h3>
 					<p>GET STARTED</p>
 					<ul>
-					<li data-ng-repeat="util in utileMenu"><a href="{{util.url}}" title="{{util.title}}" target="_blank">{{util.name}}</a></li>
+					<li data-ng-repeat="util in utileMenu"><a href="{{util.url}}" rel="noopener" title="{{util.title}}" target="_blank">{{util.name}}</a></li>
 					</ul>
-					<a href="{{menu.resume.url}}" title="{{menu.resume.title}}" target="_blank" id="resume" class="contact" data-ng-click="evtListener.resume($event)"><i class="fa fa-user"><span>{{menu.resume.name}}</span></i></a>
+					<a href="{{menu.resume.url}}" rel="noopener" title="{{menu.resume.title}}" target="_blank" id="resume" class="contact" data-ng-click="evtListener.resume($event)"><i class="fa fa-user"><span>{{menu.resume.name}}</span></i></a>
 				</div>
 			</header>
 			<div id="container">
-				<article role="main" id="content">
-					<h2>Main Content</h2>
+				<main id="content">
 					<!-- features -->
-					<section id="{{menu.features.name}}" class="{{menu.features.name}}">
+					<article id="{{menu.features.name}}" class="{{menu.features.name}}">
 						<h2>{{menu.features.name}}</h2>
 						<div class="lid-area">
 							<div class="lid first">
@@ -64,17 +69,17 @@
 							</div>
 							<div class="lid fourth">
 								<div class="in">
-									<div class="covered covered-first" data-passive="img/@tmp_covering_a11.jpg" data-active="img/@tmp_covering_a1.jpg">
+									<div data-passive="img/@tmp_covering_a11.jpg" data-active="img/@tmp_covering_a1.jpg" class="covered covered-first">
 										<div class="handle"></div>
 										<div class="changeable"></div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</section>
+					</article>
 					<!-- //features -->
 					<!-- history -->
-                    <section id="{{menu.licences.name}}" class="{{menu.licences.name}}">
+                    <article id="{{menu.licences.name}}" class="{{menu.licences.name}}">
 						<div class="chapter-tit">
 							<h2><i class="fa fa-credit-card"></i> {{menu.licences.name}}</h2>
 							<!--audio class="velo-sound"><source src="sound/bicycle.mp3" type="audio/mp3"></audio-->
@@ -103,10 +108,10 @@
                                 </ul>
                             </div>
 						</div>
-					</section>
+					</article>
 					<!-- //history -->
 					<!-- technique -->
-					<section id="{{menu.technique.name}}" class="{{menu.technique.name}}">
+					<article id="{{menu.technique.name}}" class="{{menu.technique.name}}">
 						<h2><i class="fa fa-file-code-o"></i> {{menu.technique.name}}</h2>
 						<div class="inr">
 							<h3>Front end</h3>
@@ -119,15 +124,15 @@
 							<li data-ng-repeat="lists in technique.back">{{lists}}</li>
 							</ul>
 						</div>
-					</section>
+					</article>
 					<!-- //technique -->
 					<!-- workbench -->
-					<div id="{{menu.workbench.name}}" class="{{menu.workbench.name}}">
+					<article id="{{menu.workbench.name}}" class="{{menu.workbench.name}}">
 						<h2><i class="fa fa-calendar-o"></i> {{menu.workbench.name}}</h2>
 						<div class="inr">
 							<div class="func_area">
 								<span class="combo">
-									<label for="srch">검색</label> <input type="search" title="검색어를 입력하시면 필터링 처리 됩니다." placeholder="필터링 검색어 입력" id="srch" ng-model="searchText">
+									<label for="srch"><span>검색</span></label> <input type="search" title="검색어를 입력하시면 필터링 처리 됩니다." placeholder="필터링 검색어 입력" id="srch" ng-model="searchText">
 								</span>
 								<span class="label_area">
 									<i title="가이드" class="guide">G</i> <span>가이드</span>
@@ -171,11 +176,11 @@
 							</tbody>
 							</table>
 						</div>
-					</div>
+					</article>
 					<!-- //workbench -->
 					<!-- portfolio -->
 					<!-- [D] swipe 기능 활성화시 v1 클래스 추가/제거 -->
-					<section id="{{menu.portfolio.name}}" class="{{menu.portfolio.name}}">
+					<article id="{{menu.portfolio.name}}" class="{{menu.portfolio.name}}">
 						<h2>{{menu.portfolio.name}}</h2>
 						<div class="inr">
 							<nav>
@@ -212,7 +217,7 @@
 												<i class="fa fa-quote-left"></i> {{thumbs.title}} <i class="fa fa-quote-right"></i>
 												<span>{{thumbs.company}}</span>
 											</strong>
-											<a href="{{thumbs.link}}" target="_blank" data-ng-click="evtListener.gallery($event)"><i class="fa fa-arrow-right"><span>바로가기</span></i></a>
+											<a href="{{thumbs.link}}" rel="noopener" aria-hidden="true" target="_blank" data-ng-click="evtListener.gallery($event)"><i class="fa fa-arrow-right"><span>바로가기</span></i></a>
 											<time datetime="{{thumbs.start}}"><i class="fa fa-clock-o"></i> {{thumbs.year}}</time>
 											<div class="tech-spec">
 												<span class="access" data-ng-if="thumbs.techSpec.access">accessibility</span>
@@ -229,28 +234,28 @@
 								<div class="gap"></div>
 							</div>
 						</div>
-					</section>
+					</article>
 					<!-- //portfolio -->
 					<!-- development -->
-					<div id="{{menu.development.name}}" class="{{menu.development.name}}">
+					<article id="{{menu.development.name}}" class="{{menu.development.name}}">
 						<h2><i class="fa fa-inbox"></i> {{menu.development.name}}</h2>
                         <h3>j Lab</h3>
                         <div class="inr">
                             <hr>
                             <ul>
-                            <li data-ng-repeat="dev in development[0]"><a href="{{dev.url}}" target="_blank">{{dev.name}} <i class="fa fa-external-link"></i></a></li>
+                            <li data-ng-repeat="dev in development[0]"><a href="{{dev.url}}" rel="noopener" target="_blank">{{dev.name}} <i class="fa fa-external-link"></i></a></li>
                             </ul>
                             <hr>
                             <ul>
-                            <li data-ng-repeat="dev in development[1]"><a href="{{dev.url}}" target="_blank">{{dev.name}} <i class="fa fa-external-link"></i></a></li>
+                            <li data-ng-repeat="dev in development[1]"><a href="{{dev.url}}" rel="noopener" target="_blank">{{dev.name}} <i class="fa fa-external-link"></i></a></li>
                             </ul>
                             <hr>
                         </div>
-					</div>
+					</article>
 					<!-- //development -->
 					<!-- wiki -->
-					<section id="{{menu.wiki.name}}" class="{{menu.wiki.name}}">
-						<h2><i class="fa fa-file-archive-o"></i> <a href="{{menu.wiki.url}}" target="_blank">{{menu.wiki.name}}</a></h2>
+					<article id="{{menu.wiki.name}}" class="{{menu.wiki.name}}">
+						<h2><i class="fa fa-file-archive-o"></i> <a href="{{menu.wiki.url}}" rel="noopener" target="_blank">{{menu.wiki.name}}</a></h2>
 						<div class="inr">
 							<dl>
 							<dt><i class="fa fa-check-square-o"></i> J Snippet</dt>
@@ -297,11 +302,11 @@
 							<li>웹 접근성 문제는 웹 표준만 지키면 90% 이상 해결 가능</li>
 							</ul>
 						</div>
-					</section>
+					</article>
 					<!-- //wiki -->
 					<!-- blog -->
-					<section id="{{menu.blog.name}}" class="{{menu.blog.name}}">
-						<h2><i class="fa fa-newspaper-o"></i> <a href="{{menu.blog.url}}" target="_blank">{{menu.blog.name}}</a></h2>
+					<article id="{{menu.blog.name}}" class="{{menu.blog.name}}">
+						<h2><i class="fa fa-newspaper-o"></i> <a href="{{menu.blog.url}}" rel="noopener" target="_blank">{{menu.blog.name}}</a></h2>
 						<h3>j dev</h3>
 						<div class="inr">
 							<p><q>github 및 hexo 기반으로 정적 템플릿을 활용해서 제작한 개인 블로그 입니다.</q></p>
@@ -309,15 +314,15 @@
 							<p>웹 개발시 프론트엔드 및 백 엔드 기술 공유 목적으로 바탕으로 전반적으로 마크업 &#47; UI개발 시 실무에 도움이 될 만한 이슈나 팁 등의 컨텐츠들이 주로 구성되어 있으며 개인적으로 관심있는 디자인이나 서버에 대한 컨텐츠들도 기재 되고 있습니다.</p>
 							<hr>
 						</div>
-					</section>
+					</article>
 					<!-- //blog -->
-				</article>
+				</main>
 			</div>
 
 			<a href="./" title="메인 바로가기" id="btnHome" class="btn_home" data-ng-click="evtListener.home()"><i class="fa fa-home"></i> <span>J Portfolio</span></a>
 		</div>
 	</div>
-	<footer role="contentinfo">
+	<footer id="footer">
 		<div class="column">
 			<div class="col-inr">
 				<p class="email"><i class="fa fa-envelope"><span>email</span></i> <a href="mailto://seungwoonjjang@gmail.com">seungwoonjjang@gmail.com</a></p>
@@ -337,7 +342,7 @@
 		</div>
 	</footer>
 </div>
-<!-- ng-view></ng-view -->
+<%# ng-view></ng-view %>
 
 <script src="/components/jquery/dist/jquery.min.js"></script>
 <script src="/components/angular/angular.min.js"></script>

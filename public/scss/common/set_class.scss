@@ -1,0 +1,14 @@
+/** Set Class */
+/* =Font Awesome */
+.fa {
+    span {
+        @extend %blind;
+    }
+}
+
+/* =Icons */
+@each $animal in puma, sea-slug, egret, salamander {
+    .#{$animal}-icon {
+        background-image:url(#{$FILE-PATH}img/#{$animal}.png);
+    }
+}

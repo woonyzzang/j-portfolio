@@ -1,0 +1,26 @@
+// @Placeholder
+// use: @extend %{{placeholder name}}
+
+%blind {
+    overflow: hidden;
+    //clip: rect(0 0 0 0); // IE 6, 7
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+%unblind {
+    overflow: visible;
+    clip: auto;
+    position: static;
+    width: auto;
+    height: auto;
+}
+
+%clearfix {
+    display: table;
+    content: '';
+    clear: both;
+}

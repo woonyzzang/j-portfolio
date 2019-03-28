@@ -1,0 +1,39 @@
+/* =Technique */
+.technique {
+    padding: unitsConverter(6) unitsConverter(3.4) unitsConverter(14) unitsConverter(9);
+    background-color: #f2b701;
+    color: #fff;
+
+    h2 {
+        font-weight: normal;
+        font-size: unitsConverter(2.2);
+        text-transform: capitalize;
+    }
+
+    .inr {
+        margin-top: unitsConverter(2);
+    }
+
+    h3 {
+        display: inline-block;
+        padding: unitsConverter(.4) unitsConverter(1);
+        background-color: #fecc2d;
+        font-size: unitsConverter(2);
+    }
+
+    ul {
+        margin-top: unitsConverter(1);
+
+        li {
+            padding: unitsConverter(.2) 0;
+            font-size: unitsConverter(1.4);
+        }
+    }
+
+    hr {
+        clear: both;
+        margin: unitsConverter(3.5) 0;
+        border-top: 1px solid #fff;
+        border-bottom: 0;
+    }
+}

@@ -1,0 +1,240 @@
+/* =Intro */
+.intro {
+    //background-color: #fff;
+    //@include border-radius(0 45% 45% 0);
+    .inr{
+        padding: unitsConverter(15) unitsConverter(5) unitsConverter(10);
+    }
+}
+
+/* =Logo */
+.logo {
+    font-weight: bold;
+
+    a {
+        color: #f05339;
+        @include text-shadow(1px 1px 2px #888);
+
+        &:after {
+            content: '.';
+        }
+
+        &:hover,
+        &:focus {
+            span {
+                @include animation(spin 3s infinite);
+            }
+        }
+    }
+
+    span {
+        @at-root {
+            @include keyframes(spin) {
+                from {
+                    @include transform(rotate(-20deg));
+                }
+
+                to {
+                    @include transform(rotate(-380deg));
+                }
+            }
+        }
+
+        display: inline-block;
+        overflow: hidden;
+        width: unitsConverter(6.8);
+        height: unitsConverter(6.8);
+        margin: unitsConverter(2.6) unitsConverter(.4) 0 0;
+        border: 1px solid #f15a3a;
+        @include background-gradient(#f68f4a, #f0583a);
+        vertical-align: top;
+        text-align: right;
+        @include border-radius(unitsConverter(.5));
+        @include transform(rotate(-20deg));
+
+        b {
+            display: block;
+            margin-right: unitsConverter(.2);
+            font: unitsConverter(9.6)/unitsConverter(6) Tahoma;
+            color: #fff;
+            @include text-shadow(1px 1px 2px #333);
+            @include transform(rotate(26deg));
+        }
+    }
+}
+
+/* =GNB */
+.gnb {
+    ul {
+        height: inherit;
+    }
+
+    li {
+        height: 12.5%;
+        @for $i from 1 through 8 {
+            &:nth-of-type(#{$i}) {
+                @if $i == 1 {
+                    background-color: #dc0030;
+                } @else if $i == 2 {
+                    background-color: #e57d04;
+                } @else if $i == 3 {
+                    background-color: #f2b701;
+                } @else if $i == 4 {
+                    background-color: #7cb854;
+                } @else if $i == 5 {
+                    background-color: #09a275;
+                } @else if $i == 6 {
+                    background-color: #3465aa;
+                } @else if $i == 7 {
+                    background-color: #7c378a;
+                } @else if $i == 8 {
+                    background-color: #b10058;
+                } @else {
+                    background-color: #333;
+                }
+            }
+        }
+    }
+
+    a {
+        -webkit-transition: margin-left .25s;
+        transition: margin-left .25s;
+        display: block;
+        position: relative;
+        height: 100%;
+        background-color: inherit;
+        color: #fff;
+
+        span {
+            position: absolute;
+            top: 50%;
+            right: unitsConverter(3);
+            margin-top: unitsConverter(-1);
+            padding-right: unitsConverter(2.6);
+            font-weight: bold;
+            font-size: unitsConverter(1.4);
+            text-align: right;
+            text-transform: uppercase;
+            @include text-shadow(1px 1px 1px #000);
+        }
+
+        &:hover,
+        &:focus {
+            width: 110%;
+            margin-left: -10%;
+            //@include text-shadow(2px 2px #333);
+        }
+    }
+
+    &.v1 {
+        a {
+            &:hover,
+            &:focus {
+                width: 115%;
+                margin-left: 15%;
+            }
+        }
+    }
+}
+
+/* =Util */
+.util {
+    position: relative;
+
+    p {
+        float: left;
+        padding: unitsConverter(.3) unitsConverter(1.5);
+        background-color: #333;
+        color: #fff;
+        @include border-radius(unitsConverter(1.5));
+    }
+
+    ul {
+        float: left;
+    }
+
+    li {
+        float: left;
+        position: relative;
+        margin-left: unitsConverter(1.2);
+
+        a {
+            display: block;
+            padding-top: unitsConverter(.4);
+            color: #333;
+            text-align: center;
+            text-transform: uppercase;
+
+            &:hover,
+            &:focus {
+                color: #f60;
+                text-decoration: underline;
+            }
+
+            &:after {
+                display: none;
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin-left: unitsConverter(-.6);
+                border-width: unitsConverter(.6) unitsConverter(.6) 0;
+                border-style: solid;
+                border-color: transparent;
+                border-top-color: #f30;
+            }
+
+            &:hover:after,
+            &:focus:after {
+                display: block;
+            }
+        }
+    }
+
+    a.contact {
+        position: absolute;
+        top: unitsConverter(-.2);
+        right: unitsConverter(-4);
+        width: unitsConverter(3);
+        height: unitsConverter(3);
+        background-color: #666;
+        font-size: unitsConverter(1.6);
+        line-height: 1.8;
+        color: #fff;
+        text-align: center;
+        @include border-radius(50%);
+
+        &:hover,
+        &:focus {
+            background-color: #000;
+        }
+    }
+
+    &:after {
+        @extend %clearfix;
+    }
+}
+
+/* =Btn Home */
+a.btn_home {
+    position: fixed;
+    top: unitsConverter(1);
+    right: unitsConverter(1.7);
+    padding: unitsConverter(1.5) unitsConverter(2);
+    background-color: #333;
+    color: #fff;
+
+    span {
+        display: none;
+    }
+
+    &:hover {
+        //background-color: #ffd500;
+        //color: #333;
+        @include text-shadow(1px 1px #000);
+
+        span {
+            display: inline-block;
+        }
+    }
+}

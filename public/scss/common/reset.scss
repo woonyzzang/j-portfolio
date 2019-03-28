@@ -1,0 +1,115 @@
+/* =Reset */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, abbr, address, cite, code, del, dfn,
+em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b ,i,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup,
+menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+}
+
+body, h1, h2, h3, h4, h5, h6, select, input, textarea, button {
+    font-family: 'Open Sans', Helvetica, 'Apple SD Gothic Neo', sans-serif;
+}
+
+body {
+    // webkit-text-size-adjust: none;
+    font-size: unitsConverter(1.4);
+    color: #222;
+    word-break: break-all;
+}
+
+input, select, textarea, button {
+    font-size: unitsConverter(1.4);
+    vertical-align: top;
+}
+
+button, input, textarea {
+    @include border-radius(0);
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+em, address {
+    font-style: normal;
+}
+
+img, fieldset, iframe {
+    border: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+area {
+    outline: 0;
+}
+
+input {
+    &::-ms-clear {
+        display: none;
+    }
+
+    &[type=date] {
+        &::-webkit-inner-spin-button {
+            display: none;
+        }
+    }
+
+    &[type=number] {
+        -moz-appearance: textfield;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-calendar-picker-indicator {
+            display:none;
+        }
+    }
+}
+
+select {
+    border-radius: 0;
+}
+
+//dialog::backdrop {
+//    background-color: rgba(255,0,0,.25);
+//}
+
+::-moz-selection{
+    background: #000;
+    color:#fff;
+    text-shadow: none;
+}
+
+::selection {
+    background:#000;
+    color:#fff;
+    text-shadow: none;
+}

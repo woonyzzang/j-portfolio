@@ -1,0 +1,26 @@
+/* =Skip Navigation */
+#skip {
+    position: relative;
+    z-index: 1000;
+
+    a {
+        position: absolute;
+        top: -50px;
+        left: 0;
+        padding: unitsConverter(.6) unitsConverter(1.6);
+        background-color: #231f20;
+        border: 1px solid #ed1c24;
+        color: #fff;
+
+        &:active,
+        &:focus {
+            top: 0;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+
+    span {
+        display: inline-block;
+    }
+}

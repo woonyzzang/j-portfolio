@@ -1,0 +1,219 @@
+// @ Mixins
+// use: @include {{mixin name}}
+
+@function unitsConverter($num) {
+    @if ($fontUnit != 'rem') { // rem이 아닐 때
+        @return #{$num * $defaultFontSize}#{$fontUnit}; // px, pt 등 절대 수치 사용
+    } @else { // rem
+        @return #{$num}#{$fontUnit};
+    }
+}
+
+@function str-replace($string, $search, $replace: '') {  // String Replace
+    $index: str-index($string, $search);
+
+    @if ($index) {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+// web-font
+@mixin web-font($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src: null;
+    $extmods: (eot: '?', svg: '#' + str-replace($name, ' ', '_'));
+    $formats: (otf: 'opentype', ttf: 'truetype');
+
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + '.' + $extmod)) format(quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: quote($name);
+        font-display: auto;
+        font-style: $style;
+        font-weight: $weight;
+        src: local(quote($name)), $src;
+    }
+}
+
+// media-breakpoint
+@mixin media-breakpoint($point) {
+    @if ($point == 'phone') { //mobile
+        $point: $phone;
+    } @else if ($point == 'mobile') { //tablet
+        $point: $mobile;
+    } @else if ($point == 'tablet') { //descktop
+        $point: $tablet;
+    }
+
+    @media only screen and #{$point} {
+        @content;
+    }
+}
+
+// adjust-location
+//@mixin adjust-location($x, $y) {
+//    @if unitless($x) {
+//        @warn "Assuming #{$x} to be in pixels";
+//        $x: 1px * $x;
+//    }
+//
+//    @if unitless($y) {
+//        @warn "Assuming #{$y} to be in pixels";
+//        $y: 1px * $y;
+//    }
+//
+//    position:relative;left:$x;top: $y;
+//}
+
+// display
+@mixin display($val) {
+    display: -webkit-#{$val};
+    display: $val;
+}
+
+// flex-direction
+@mixin flex-direction($val) {
+    -webkit-flex-direction: $val;
+    flex-direction: $val;
+}
+
+// flex
+@mixin flex($val) {
+    -webkit-flex: $val;
+    -ms-flex: $val;
+    flex: $val;
+}
+
+// user-select
+@mixin user-select($val) {
+    -webkit-user-select: $val;
+    -moz-user-select: $val;
+    -ms-user-select: $val;
+    user-select: $val;
+}
+
+// border-radius
+@mixin border-radius($val) {
+    -webkit-border-radius: $val;
+    border-radius: $val;
+}
+
+// background-size
+@mixin background-size($val) {
+    -webkit-background-size: $val;
+    -moz-background-size: $val;
+    -o-background-size: $val;
+    background-size: $val;
+}
+
+// background-gradient
+@mixin background-gradient($from, $to) {
+    background: -webkit-linear-gradient($from, $to);
+    background: linear-gradient($from, $to);
+}
+
+// opacity
+@mixin opacity($val) {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$val * 100})";
+    filter: alpha(opacity=#{$val * 100});
+    opacity: $val;
+}
+
+// keyframes
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+// animation
+@mixin animation($val) {
+    -webkit-animation: $val;
+    -moz-animation: $val;
+    -o-animation: $val;
+    animation: $val;
+}
+
+// transition
+@mixin transition($val) {
+    -webkit-transition: $val;
+    -moz-transition: $val;
+    -ms-transition: $val;
+    -o-transition: $val;
+    transition: $val;
+}
+
+// translate3d
+@mixin translate3d($tx, $ty, $tz) {
+    -webkit-transform: translate3d($tx, $ty, $tz);
+    -moz-transform: translate3d($tx, $ty, $tz);
+    -ms-transform: translate3d($tx, $ty, $tz);
+    -o-transform: translate3d($tx, $ty, $tz);
+    transform: translate3d($tx, $ty, $tz);
+}
+
+// transform
+@mixin transform($val) {
+    -webkit-transform: $val;
+    -moz-transform: $val;
+    -ms-transform: $val;
+    -o-transform: $val;
+    transform: $val;
+}
+
+// transform-style
+@mixin transform-style($val) {
+    -webkit-transform-style: $val;
+    -moz-transform-style: $val;
+    -ms-transform-style: $val;
+    -o-transform-style: $val;
+    transform-style: $val;
+}
+
+// transform-origin
+@mixin transform-origin($x-axis, $y-axis) {
+    -webkit-transform-origin: $x-axis $y-axis;
+    -moz-transform-origin: $x-axis $y-axis;
+    -ms-transform-origin: $x-axis $y-axis;
+    -o-transform-origin: $x-axis $y-axis;
+    transform-origin: $x-axis $y-axis;
+}
+
+// text-shadow
+@mixin text-shadow($val) {
+    -webkit-text-shadow: $val;
+    text-shadow: $val;
+}
+
+// ellipsis
+@mixin ellipsis($lines: 1) {
+    @if ($lines == 1) {
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    } @else {
+        display: -webkit-box;
+        display: box;
+        overflow: hidden;
+        // [I] height 공식
+        // line-height 단위가 없을경우: ((fonct-size * line-height) * -webkit-line-clamp)
+        // line-height 단위가 있을경우: (line-height * -webkit-line-clamp)
+        text-overflow: ellipsis;
+        -webkit-line-clamp: $lines;
+        -webkit-box-orient: vertical;
+    }
+}

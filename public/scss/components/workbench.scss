@@ -1,0 +1,202 @@
+/* =Workbench */
+.workbench {
+    padding: unitsConverter(6) unitsConverter(3.4) unitsConverter(14) unitsConverter(9);
+    background-color: #7cb854;
+
+    h2 {
+        font-weight: normal;
+        font-size: unitsConverter(2.2);
+        color: #fff;
+        text-transform: capitalize;
+    }
+
+    .inr {
+        margin-top: unitsConverter(2);
+    }
+
+    .func_area {
+        .combo,
+        .label_area {
+            vertical-align: top;
+        }
+
+        .combo {
+            float: left;
+
+            label {
+                > span {
+                    @extend %blind;
+                }
+            }
+
+            input {
+                //-webkit-appearance: none;
+                padding: unitsConverter(.6) unitsConverter(1.2);
+                border: 0;
+                border-left: 4px solid #1b809e;
+                @include border-radius(unitsConverter(.4));
+                background-color: #fff;
+            }
+        }
+
+        .label_area {
+            float: right;
+        }
+
+        &:after {
+            @extend %clearfix;
+        }
+    }
+
+    .label_area {
+        i {
+            display: inline-block;
+            padding: unitsConverter(.2) unitsConverter(.6);
+            @include border-radius(unitsConverter(.4));
+            background-color: #fff;
+            font-weight: bold;
+            font-style: normal;
+            color: #fff;
+            text-align: center;
+            @include text-shadow((0 0 2px #000, 0 0 4px #fff));
+
+            &.guide {
+                background-color: #008080;
+            }
+
+            &.markup {
+                background-color: #da2315;
+            }
+
+            &.uidev {
+                background-color: #f2b600;
+            }
+
+            &.frontdev {
+                background-color: #800080;
+            }
+
+            &.backdev {
+                background-color: #333;
+            }
+        }
+
+        span {
+            font-size: unitsConverter(1.1);
+            @include text-shadow(0 0 2px #fff);
+        }
+    }
+
+    table {
+        table-layout: fixed;
+        width: 100%;
+        margin-top: unitsConverter(1);
+        border-collapse: collapse;
+        border-spacing: 0;
+        box-shadow: 0 0 4px rgba(0, 0, 0, .5);
+    }
+
+    caption {
+        @extend %blind;
+    }
+
+    th,
+    td {
+        border: 1px solid #bbb;
+        border-width: 0 0 1px 1px;
+        background-color: #fff;
+        text-align: center;
+
+        &:first-child {
+            border-left: 0;
+        }
+    }
+
+    th {
+        padding: unitsConverter(1.2);
+        border-bottom-width: 4px;
+        background-color: #f0f0f0;
+        font-weight: bold;
+        @include text-shadow(1px 1px #fff);
+
+        &:nth-of-type(1) {
+            width: 40%;
+            border-bottom-color: #bce44d;
+        }
+
+        &:nth-of-type(2) {
+            width: 10%;
+            border-bottom-color: #8adb65;
+        }
+
+        &:nth-of-type(3) {
+            width: 10%;
+            border-bottom-color: #4dd9aa;
+        }
+
+        &:nth-of-type(4) {
+            width: 5%;
+            border-bottom-color: #57d6df;
+        }
+
+        &:nth-of-type(5) {
+            width: 15%;
+            border-bottom-color: #4e8e0a;
+        }
+
+        &:nth-of-type(6) {
+            width: 20%;
+            border-bottom-color: #8c8e0a;
+        }
+    }
+
+    tbody {
+        tr {
+            &:first-child {
+                td {
+                    border-top: 2px solid #666;
+                }
+            }
+
+            &:last-child {
+                td {
+                    border-bottom: 0;
+                }
+            }
+
+            &:hover {
+                td {
+                    background-color: #cef;
+                }
+            }
+        }
+
+        &:nth-of-type(1) {
+            tr {
+                &:first-child {
+                    td {
+                        border-top: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    td {
+        padding: unitsConverter(1.5);
+        word-break: break-word;
+
+        &.pjt,
+        &.work {
+            text-align: left;
+        }
+
+        &.pjt {
+            background-color: #eff;
+        }
+
+        &.role {
+            background-color: #ffc;
+        }
+    }
+}

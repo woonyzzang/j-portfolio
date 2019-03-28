@@ -1,0 +1,8 @@
+/* =Webfont */
+@include web-font('UPleatWeb', '#{$FONT-PATH}/fonts/upleat', normal, normal);
+@include web-font('KlavikaRegularWeb', '#{$FONT-PATH}/fonts/klavika-regular', bold, normal);
+@include web-font('KlavikaBoldWeb', '#{$FONT-PATH}/fonts/klavika-bold', normal, normal);
+@include web-font('KlavikaMedCapsWeb', '#{$FONT-PATH}/fonts/klavika-med-caps', normal, normal);
+@include web-font('KlavikaLightItalicWeb', '#{$FONT-PATH}/fonts/klavika-light-italic', normal, italic);
+@include web-font('KlavikaRegCapsWeb', '#{$FONT-PATH}/fonts/klavika-reg-caps', normal, normal);
+@include web-font('NanumGothicWeb', '#{$FONT-PATH}/fonts/nanumgothic', normal, normal);

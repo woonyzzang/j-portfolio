@@ -1,26 +1,39 @@
 {
   "name": "j-portfolio",
   "version": "1.0.0",
-  "description": "Portfolio Web Site",
+  "description": "J Portfolio Web Site",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
     "ejs": "2.3.3",
-    "express": "4.13.3"
+    "express": "4.13.3",
+    "npm": "^6.9.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0"
   },
   "engines": {
     "node": "0.12.7"
   },
   "repository": {
     "type": "git",
-    "url": "http://j-portfolio.herokuapp.com"
+    "url": "https://github.com/woonyzzang/j-portfolio.git"
   },
   "keywords": [
     "node",
     "heroku",
     "express"
   ],
+  "author": {
+    "name": "Joe Seung Woon",
+    "email": "seungwoonjjang@gmail.com",
+    "url": "http://j-portfolio.herokuapp.com"
+  },
+  "bugs": {
+    "url": "https://github.com/woonyzzang/j-portfolio/issues",
+    "email": "seungwoonjjang@gmail.com"
+  },
   "license": "ISC"
 }
