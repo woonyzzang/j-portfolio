@@ -102,7 +102,7 @@
         "frontdev": false,
         "backdev": false
       },
-      "skills": ["HTML5", "Sass"]
+      "skills": ["HTML5", "SCSS"]
     },
     {
       "project": "네이버 웹소설",
@@ -416,7 +416,7 @@
         "frontdev": true,
         "backdev": false
       },
-      "skills": ["Jade", "Sass", "jQuery", "CoffeeScript", "Grunt", "Bower", "PHP"]
+      "skills": ["Jade", "SCSS", "jQuery", "CoffeeScript", "Grunt", "Bower", "PHP"]
     },
     {
       "project": "신라호텔 유지 / 보수",
@@ -588,7 +588,7 @@
         "frontdev": true,
         "backdev": false
       },
-      "skills": ["HTML5", "Sass", "jQuery", "CoffeeScript", "Webpack"]
+      "skills": ["HTML5", "SCSS", "jQuery", "CoffeeScript", "Webpack"]
     }
   ],
   [
@@ -649,6 +649,20 @@
         "backdev": true
       },
       "skills": ["jQuery", "CodeIgniter", "MySQL"]
+    },
+    {
+      "project": "UPLEAT 홈페이지",
+      "start": "19.02.18",
+      "end": "19.04.03",
+      "role": "PL",
+      "works": {
+        "guide": false,
+        "markup": true,
+        "uidev": true,
+        "frontdev": true,
+        "backdev": true
+      },
+      "skills": ["HTML5", "SCSS", "jQuery", "Gulp", "CodeIgniter", "MySQL"]
     }
   ]
 ]

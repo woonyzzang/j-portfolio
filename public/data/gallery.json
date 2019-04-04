@@ -878,7 +878,7 @@
     "link": "http://xpleat.kr/",
     "imageUrl": "xpleat/xpleat.jpg",
     "name": "XPLEAT",
-    "title": "XPLEAT",
+    "title": "XPLEAT 홈페이지",
     "company": "XPLEAT",
     "year": "January 2019",
     "start": "2019-01-15",
@@ -887,6 +887,25 @@
       "access": true,
       "respon": false,
       "mobile": true,
+      "html5": true,
+      "css3": true,
+      "jquery": true
+    }
+  },
+  {
+    "category": "new accessibility responsive",
+    "link": "http://www.upleat.com/",
+    "imageUrl": "upleat/upleat.jpg",
+    "name": "UPLEAT",
+    "title": "UPLEAT 홈페이지",
+    "company": "UPLEAT",
+    "year": "January 2019",
+    "start": "2019-02-18",
+    "end": "2019-04-03",
+    "techSpec": {
+      "access": true,
+      "respon": true,
+      "mobile": false,
       "html5": true,
       "css3": true,
       "jquery": true
