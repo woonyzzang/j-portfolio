@@ -662,7 +662,7 @@
         "frontdev": true,
         "backdev": true
       },
-      "skills": ["HTML5", "SCSS", "jQuery", "Gulp", "CodeIgniter", "MySQL"]
+      "skills": ["HTML5", "SCSS", "jQuery", "Lodash", "Gulp", "CodeIgniter", "MySQL"]
     }
   ]
 ]
