@@ -1,15 +1,18 @@
 # J Portfolio
+> 포트폴리오 웹 사이트
 
-포트폴리오 웹 사이트
+- Web Accessibility & Web Standard
+- Responsive And Mobile Web
+- Web UI, UX Development
 
-Web Accessibility & Web Standard
-Responsive And Mobile Web
-Web UI, UX Development
-
-## Menu
+## Util
 - INTRODUCTION
 - PERSONALITY
+- GITHUB
+- BLOG
 - RESUME
+
+## Menu
 - FEATURES
 - LICENCES
 - TECHNIQUE
@@ -19,5 +22,5 @@ Web UI, UX Development
 - WIKI
 - BLOG
 
-## URL
+### URL
 - [http://j-portfolio.herokuapp.com](http://j-portfolio.herokuapp.com)
