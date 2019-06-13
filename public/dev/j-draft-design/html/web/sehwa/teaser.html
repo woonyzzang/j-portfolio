@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>sehwa</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+img{border:0;vertical-align:top}
+.page{position:absolute;top:50%;left:50%;margin:-400px 0 0 -640px}
+.page:not(:first-child){display:none}
+</style>
+</head>
+<body>
+<div id="wrap">
+	<section id="page1" class="page">
+		<a href="#page2" style="display:block"><img src="img/teaser1.jpg" alt=""></a>
+	</section>
+	<section id="page2" class="page">
+		<a href="index.html"><img src="img/teaser2.jpg" alt=""></a>
+	</section>
+</div>
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script>
+$('#page1').on('click', 'a', function(e) {
+	e.preventDefault();
+
+	var target = $(this).attr('href');
+
+	$('.page').hide();
+	$(target).show();
+});
+</script>
+</body>
+</html>

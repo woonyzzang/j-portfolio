@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>Sehwa</title>
+<link rel="stylesheet" href="css/sehwa.css">
+<style>
+html,body,#wrap{height:100%}
+</style>
+</head>
+<body class="history">
+<div id="wrap">
+	<h1><img src="img/hlogo.png" width="198" height="18" alt=""></h1>
+	<div id="thumb" class="thumb">
+		<ul>
+		<li style="display:block;width:100%;opacity:1">
+			<a href="history_sub.html"><img src="img/thumb1.png" width="760" height="400" alt=""></a>
+			<span class="next"><img src="img/thumb1_next.png" width="38" height="91" alt=""></span>
+		</li>
+		<li style="display:none;width:0;opacity:0">
+			<a href="history_sub.html"><img src="img/thumb2.png" width="760" height="400" alt=""></a>
+			<span class="next"><img src="img/thumb2_next.png" width="38" height="91" alt=""></span>
+		</li>
+		</ul>
+	</div>
+	<div class="year"><img src="img/years.png" width="38" height="232" alt=""></div>
+	<a href="sub.html" class="clse"><img src="img/hclse.png" width="16" height="16" alt=""></a>
+</div>
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script>
+$('#thumb').on('click', '.next', function() {
+	var $this = $(this);
+	var $img = $this.prev('a');
+	var $parent = $img.parent('li');
+
+	$parent.stop().animate({
+		width : 0,
+		opacity : 0
+	}, function() {
+		var $this = $(this);
+
+		$this.hide();
+		$this.next().show().stop().animate({
+			width : '100%',
+			opacity: 1
+		});
+		$this.parent('ul').append($this);
+	});
+});
+</script>
+</body>
+</html>

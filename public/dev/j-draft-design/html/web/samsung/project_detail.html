@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>Project : Samsung</title>
+<link rel="stylesheet" href="css/samsung.css">
+</head>
+<body>
+<!-- [D] 확장 클래스 정의
+	GNB고정 : fixed
+	GNB세로 : vertical -->
+<div id="wrap">
+	<header>
+		<div class="inr">
+			<nav id="gnb" class="gnb">
+				<!-- [D] 메뉴 활성화시 .on 클래스 추가/제거 -->
+				<ul>
+				<li class="home"><a href="main.html">home</a></li>
+				<li class="m1 on">
+					<a href="project.html">Project</a>
+					<div class="dir">
+						<ul>
+						<li class="sm1"><a href="#"><span>My Project</span></a></li>
+						<li class="sm2"><a href="#"><span>ALL</span></a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="m2">
+					<a href="document.html">Document</a>
+					<div class="dir">
+						<ul>
+						<li class="sm1"><a href="#"><span>CMF</span></a></li>
+						<li class="sm2"><a href="#"><span>Research</span></a></li>
+						<li class="sm3"><a href="#"><span>Guide</span></a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="m3"><a href="admin.html">admin</a></li>
+				<li class="m4">
+					<a href="setting.html">setting</a>
+					<!-- <div class="dir">
+						<ul>
+						<li class="sm1"><a href="#"><span>레이아웃</span></a></li>
+						<li class="sm2"><a href="#"><span>컬러셋팅</span></a></li>
+						<li class="sm3"><a href="#"><span>메인설정</span></a></li>
+						</ul>
+					</div> -->
+				</li>
+				<li class="m5">
+					<a href="#">search</a>
+					<div class="dir dir_v1">
+						<div id="srch" class="srch">
+							<input type="text" placeholder="검색어 입력"><input type="image" src="img/btn_srch.jpg" width="45" height="41" alt="검색">
+						</div>
+					</div>
+				</li>
+				</ul>
+			</nav>
+			<nav class="util">
+				<ul>
+				<li class="date"><span>date</span></li>
+				<li class="m1">
+					<a href="#">bookmark</a>
+					<div class="dir">
+						<img src="img/bookmark.png" width="246" height="623" alt="">
+					</div>
+				</li>
+				<li class="m2">
+					<a href="#">alarm</a>
+					<div class="dir">
+						<img src="img/alarm.png" width="298" height="201" alt="">
+					</div>
+				</li>
+				<li class="m3">
+					<a href="#">log</a>
+					<div class="dir">
+						<img src="img/log.png" width="344" height="200" alt="">
+						<a href="mypage.html" class="mypage">View Mypage</a>
+						<a href="login.html" class="logout">LOGOUT</a>
+					</div>
+				</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div id="container">
+		<section id="content">
+			<div id="links" class="links">
+				<a href="#" title="공유하기">공유하기</a>
+				<a href="#" title="즐겨찾기">즐겨찾기</a>
+				<a href="#" title="인쇄">인쇄</a>
+			</div>
+			<div id="tabs" class="tabs">
+				<ul>
+				<li><a href="#tabCont1">OVERVIEW</a></li>
+				<li><a href="#tabCont2">MEMBER</a></li>
+				<li><a href="#tabCont3">ACTIVITY</a></li>
+				<li><a href="#tabCont4">FINAL</a></li>
+				</ul>
+			</div>
+			<div id="tabCont1" class="tab_cont" style="display:block">
+				<img src="img/project_detail_content.jpg" width="1240" height="1017" alt="">
+			</div>
+			<div id="tabCont2" class="tab_cont" style="display:none">
+				<img src="img/project_detail_content2.jpg" width="1240" height="835" alt="">
+			</div>
+			<div id="tabCont3" class="tab_cont" style="display:none">
+				<img src="img/project_detail_content3.jpg" width="1240" height="1262" alt="">
+				<div class="design_view">
+					<a href="#lySlideShow" id="btnSlideShow" class="slide_show">SIDESHOW</a>
+				</div>
+			</div>
+			<div id="tabCont4" class="tab_cont" style="display:none">
+				<img src="img/project_detail_content4.jpg" width="1240" height="1838" alt="">
+			</div>
+		</section>
+		<div id="func" class="func">
+			<a href="#lyPop" title="글쓰기" class="write">
+				<img src="img/btn_write.gif" width="79" height="79" alt="">
+				<span class="ico"><img src="img/btn_write_plus.gif" width="51" height="51" alt=""></span>
+			</a>
+		</div>
+	</div>
+	<footer>
+		<img src="img/footer.jpg" width="412" height="17" alt="">
+	</footer>
+</div>
+
+<div id="dimmed" class="dimmed" style="display:none"></div>
+
+<div id="lyPop" class="ly_pop" style="display:none">
+	<img src="img/ly_pop.jpg" width="1240" height="710" alt="">
+	<a href="#lyPop" class="clse">close</a>
+</div>
+
+<div id="lySlideShow" class="ly_pop2" style="display:none">
+	<div class="pop_header">
+		<a href="#lySlideShow" class="clse"><img src="img/ly_slide_show_header.jpg" width="1240" height="53" alt=""></a>
+	</div>
+	<div class="pop_content">
+		<div class="tbl">
+			<div class="cell">
+				<img src="img/ly_slide_show.png" width="1068" height="753" alt="">
+			</div>
+		</div>
+	</div>
+	<div class="pop_footer">
+		<img src="img/ly_slide_show_footer.jpg" width="1240" height="106" alt="">
+	</div>
+</div>
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="js/samsung.js"></script>
+<script>
+/*$('.edit').on('click', 'a', function(e) {
+	e.preventDefault();
+
+	var $this = $(this);
+	var $edit = $this.parent('.edit');
+	var $item = $this.next('.item');
+
+	if ( $item.is(':hidden') ) {
+		$edit.addClass('on');
+		$item.show();
+	} else {
+		$edit.removeClass('on');
+		$item.hide();
+	}
+});*/
+
+$('#links').on('click', 'a', function(e) {
+	e.preventDefault();
+});
+
+$('#btnSlideShow').on('click', function(e) {
+	e.preventDefault();
+
+	var $this = $(this);
+	var target = $this.attr('href');
+
+	if ( !$('#wrap').hasClass('vertical') ) {
+		$(target).css({
+			marginTop : '',
+			marginLeft : ''
+		});
+	} else {
+		$(target).css({
+			marginTop : '20px',
+			marginLeft : '-578px'
+		});
+	}
+
+	$(target).show();
+});
+
+$('#lySlideShow').on('click', 'a.clse', function(e) {
+	e.preventDefault();
+
+	var $this = $(this);
+	var target = $this.attr('href');
+
+	$(target).hide();
+});
+</script>
+</body>
+</html>

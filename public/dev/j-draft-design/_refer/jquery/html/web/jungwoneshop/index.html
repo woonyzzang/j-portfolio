@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>시안코딩 : 청정원</title>
+<style>
+*{margin:0;padding:0}
+body{text-align:center}
+</style>
+</head>
+<body>
+<img src="img/concept.jpg" alt="" usemap="#Map">
+<map name="Map">
+<area shape="rect" coords="317,4016,708,4105" href="main.html" target="_blank" id="btnViewDesign">
+</map>
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script>
+function openWin(src, winWid, winHgt){
+    window.open(src, 'sample', 'width=' + winWid + ', height=' + winHgt + ', toolbar=no, scrollbars=yes, resizable=yes');
+}
+
+var gDblClick = false;
+
+$('#btnViewDesign').on('click', function(e) {
+	e.preventDefault();
+
+	var src= $(this).attr('href');
+
+	setTimeout(function() {
+		if ( gDblClick === false ) {
+			openWin(src, 1280 + 20, 1024);
+		}
+	}, 300);
+});
+
+$('#btnViewDesign').on('dblclick', function(e) {
+	e.preventDefault();
+
+	var src= $(this).attr('href');
+
+	gDblClick = true;
+
+	setTimeout(function() {
+		gDblClick = false;
+
+		openWin(src, 640 + 20, 960);
+		console.log('dblclick');
+	}, 300);
+});
+</script>
+</body>
+</html>

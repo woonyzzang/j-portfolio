@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="제안 시안 디자인 갤러리">
+<meta name="author" content="Joe Seung Woon">
+<link rel="shortcut icon" href="favicon.ico">
+<title>J Draft Design Gallery</title>
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/hover-min.css">
+<style>
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}
+body,html,#wrap{width:100%;height:100%;min-height:100%}
+body{font-family:'Malgun Gothic','Avenir Next',Avenir,'Helvetica Neue',Helvetica,Arial,sans-serif}
+#wrap{position:relative}
+.effect{height:100%}
+.smoky{width:100%;height:100%;vertical-align:top}
+
+.main{display:-webkit-flex;display:flex;-webkit-justify-content:center;justify-content:center;-webkit-align-items:center;align-items:center;position:fixed;top:0;;right:0;bottom:0;left:0}
+.hgroup{color:#fff;text-align:center}
+.hgroup{-webkit-animation-duration:.8s;animation-duration:.8s;-webkit-animation-delay:2.5s;animation-delay:2s}
+.hgroup>h1{font-size:160px;letter-spacing:10px;text-shadow:2px 2px 1px rgba(0,0,0,.45)}
+.hgroup>small{font-size:26px}
+.btn_area{-webkit-animation-delay:2.6s;animation-delay:2.6s;display:-webkit-flex;display:flex;justify-content:center;-webkit-align-items:center;margin-top:64px}
+.btn_area a.btn{margin:0 14px;padding:12px 24px;border-radius:6px;color:#fff;text-decoration:none}
+.btn_primary{background-color:#1abc9c}
+.btn_inverse{background-color:#34495e}
+
+@keyframes hue-rotate {
+	from{-webkit-filter:hue-rotate(0);-moz-filter:hue-rotate(0);-ms-filter:hue-rotate(0);filter:hue-rotate(0)}
+	to{-webkit-filter:hue-rotate(360deg);-moz-filter:hue-rotate(360deg);-ms-filter:hue-rotate(360deg);filter: hue-rotate(360deg)}
+}
+
+.button--1,
+.button--1 .button__bg{display:inline-block;-webkit-font-smoothing:antialiased;user-select:none}
+.button--1{overflow:visible;position:relative;z-index:0}
+.button--1 .button__container{display:block;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);-webkit-transition:all 0.1s ease-out;-moz-transition:all 0.1s ease-out;transition:all 0.1s ease-out;position:absolute;top:-150%;left:-50%;z-index:-1;width:200%;height:400%;pointer-events:none}
+.button--1 .button__bg{-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);-o-transform:translateY(-50%);transform:translateY(-50%);position:absolute;top:50%;left:25%;width:50%;height:25%}
+.button--1 .circle{position:absolute;width:25px;height:25px;border-radius:15px;background-color:#34495e}
+.button--1 .circle.top-left{top:40%;left:27%}
+.button--1 .circle.bottom-right{bottom:40%;right:27%}
+</style>
+</head>
+<body>
+<div id="wrap">
+	<div id="effect" class="effect">
+		<canvas class="smoky"></canvas>
+	</div>
+	<div class="main">
+		<div>
+			<div class="hgroup">
+				<h1>J Draft Design</h1>
+				<small>- 제안 시안 디자인 갤러리 -</small>
+			</div>
+			<div id="btnArea" class="btn_area">
+				<a href="index.html?draftType=design" id="component-1" class="button button--1 btn btn_inverse hvr-buzz-out hvr-underline-from-center">제안 시안 디자인
+					<span class="button__container">
+						<span class="circle top-left"></span>
+						<span class="circle top-left"></span>
+						<span class="circle top-left"></span>
+						<span class="button__bg"></span>
+						<span class="circle bottom-right"></span>
+						<span class="circle bottom-right"></span>
+						<span class="circle bottom-right"></span>
+					</span>
+				</a>
+				<a href="index.html?draftType=markup" id="component-2" class="button button--1 btn btn_inverse hvr-buzz-out hvr-underline-from-center">제안 시안 마크업
+					<span class="button__container">
+						<span class="circle top-left"></span>
+						<span class="circle top-left"></span>
+						<span class="circle top-left"></span>
+						<span class="button__bg"></span>
+						<span class="circle bottom-right"></span>
+						<span class="circle bottom-right"></span>
+						<span class="circle bottom-right"></span>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="lib/jquery-1.12.4.min.js"></script>
+<script src="lib/TweenMax.min.js"></script>
+<script src="lib/waterpipe.js"></script>
+<script>
+(function($){
+
+	/**
+	 * @인트로 모션
+	 */
+	function smokyBG() {
+		$('#effect').waterpipe({
+			gradientStart: '#313849',
+			gradientEnd: '#445276',
+			smokeOpacity: 0.1,
+			numCircles: 1,
+			maxMaxRad: 'auto',
+			minMaxRad: 'auto',
+			minRadFactor: 0,
+			iterations: 8,
+			drawsPerFrame: 10,
+			lineWidth: 2,
+			speed: 1,
+			bgColorInner: '#d4d2e0',
+			bgColorOuter: '#aeaac4'
+		});
+
+		$('.hgroup').addClass('animated lightSpeedIn');
+		$('.btn_area').addClass('animated zoomInDown');
+	}
+
+	/**
+	 * @버튼 SVG 모션
+	 */
+	function initBt(selecter) {
+		var bt1 = document.querySelectorAll(selecter)[0];
+		var $circlesTopLeft = bt1.querySelectorAll('.circle.top-left');
+		var $circlesBottomRight = bt1.querySelectorAll('.circle.bottom-right');
+
+		var tl = new TimelineLite();
+		var tl2 = new TimelineLite();
+		var btTl = new TimelineLite({ paused : true });
+
+		tl.to($circlesTopLeft, 1.2, { x: -25, y: -25, scaleY: 2, ease: SlowMo.ease.config(0.1, 0.7, false) });
+		tl.to($circlesTopLeft[0], 0.1, { scale: 0.2, x: '+=6', y: '-=2' });
+		tl.to($circlesTopLeft[1], 0.1, { scaleX: 1, scaleY: 0.8, x: '-=10', y: '-=7' }, '-=0.1');
+		tl.to($circlesTopLeft[2], 0.1, { scale: 0.2, x: '-=15', y: '+=6' }, '-=0.1');
+		tl.to($circlesTopLeft[0], 1, { scale: 0, x: '-=5', y: '-=15', opacity: 0 });
+		tl.to($circlesTopLeft[1], 1, { scaleX: 0.4, scaleY: 0.4, x: '-=10', y: '-=10', opacity: 0 }, '-=1');
+		tl.to($circlesTopLeft[2], 1, { scale: 0, x: '-=15', y: '+=5', opacity: 0 }, '-=1');
+
+		var tlBt1 = new TimelineLite();
+		var tlBt2 = new TimelineLite();
+
+		tlBt1.set($circlesTopLeft, { x: 0, y: 0, rotation: -45 });
+		tlBt1.add(tl);
+
+		tl2.to($circlesBottomRight, 1.2, { x: 25, y: 25, scaleY: 2, ease: SlowMo.ease.config(0.1, 0.7, false) });
+		tl2.to($circlesBottomRight[0], 0.1, { scale: 0.2, x: '-=6', y: '+=3' });
+		tl2.to($circlesBottomRight[1], 0.1, { scale: 0.8, x: '+=7', y: '+=3' }, '-=0.1');
+		tl2.to($circlesBottomRight[2], 0.1, { scale: 0.2, x: '+=15', y: '-=6' }, '-=0.1');
+		tl2.to($circlesBottomRight[0], 1, { scale: 0, x: '+=5', y: '+=15', opacity: 0 });
+		tl2.to($circlesBottomRight[1], 1, { scale: 0.4, x: '+=7', y: '+=7', opacity: 0 }, '-=1');
+		tl2.to($circlesBottomRight[2], 1, { scale: 0, x: '+=15', y: '-=5', opacity: 0 }, '-=1');
+
+		tlBt2.set($circlesBottomRight, { x: 0, y: 0, rotation: -45 });
+		tlBt2.add(tl2);
+
+		btTl.add(tlBt1);
+		btTl.to(bt1.parentNode.querySelectorAll('.button__bg'), 0.8, { scaleY: 1.1 }, 0.1);
+		btTl.add(tlBt2, 0.2);
+		btTl.to(bt1.parentNode.querySelectorAll('.button__bg'), 1.8, { scale: 1, ease: Elastic.easeOut.config(1.2, 0.4) }, 1.2);
+
+		btTl.timeScale(2.6);
+
+		bt1.addEventListener('click', function() {
+			btTl.restart();
+		});
+	}
+
+	/**
+	 * @초기화
+	 */
+	(function init() {
+		smokyBG();
+		initBt('#component-1');
+		initBt('#component-2');
+	})();
+
+	//버튼 클릭 이벤트 핸들러
+	$('#btnArea').on('click', 'a.btn', function(e) {
+		e.preventDefault();
+
+		var $this = $(this);
+		var href = $this.attr('href');
+
+		window.setTimeout(function() {
+			this.location.href = href;
+		}, 800);
+	});
+
+})(jQuery);
+</script>
+</body>
+</html>

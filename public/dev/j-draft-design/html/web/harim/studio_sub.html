@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>Studio : 하림</title>
+<link rel="stylesheet" href="css/jquery.fullpage.css">
+<style>
+*{margin:0;padding:0}
+ol,ul{list-style:none}
+img{height:auto;vertical-align:top}
+
+.rsps{transition:.65s;-moz-transition:.65s;-webkit-transition:.65s;-o-transition:.65s}
+
+h1{position:absolute;top:28px;left:50%;z-index:5;margin-left:-97px}
+a.smenu{position:absolute;top:30px;left:30px;z-index:5}
+a.amenu{position:absolute;top:30px;right:30px;z-index:5}
+.aside{overflow-x:hidden;overflow-y:auto;position:fixed;top:0;bottom:0;left:0;z-index:5;width:427px;margin-left:-427px;background-color:#fff}
+.aside.on{margin-left:0}
+
+.qmunu{position:absolute;top:50%;right:0;z-index:10;margin-top:-80px;box-shadow:0 0 1px rgba(0,0,0,.35)}
+.qmunu:after{content:'';position:absolute;left:-37px;bottom:-20px;width:40px;height:53px;background:url(img/bg_quick_menu.png) no-repeat}
+.qmunu a{display:block;width:53px;height:53px;background:url(img/sp_qmenu.png) no-repeat}
+.qmunu .m1 a{background-position:0 0}
+.qmunu .m2 a{background-position:0 -53px}
+.qmunu .m3 a{background-position:0 -107px}
+.qmunu .m1.on a{background-position:-60px 0}
+.qmunu .m2.on a{background-position:-60px -53px}
+.qmunu .m3.on a{background-position:-60px -107px}
+.qmunu:hover a{width:118px}
+.qmunu:hover .m1 a{background-position:-120px 0}
+.qmunu:hover .m2 a{background-position:-120px -53px}
+.qmunu:hover .m3 a{background-position:-120px -107px}
+.qmunu:hover .m1.on a{background-position:-245px 0}
+.qmunu:hover .m2.on a{background-position:-245px -53px}
+.qmunu:hover .m3.on a{background-position:-245px -107px}
+
+.section{position:relative;text-align:center;background-repeat:no-repeat;background-position:50% 50%;background-size:cover}
+
+/*#section2{background-image:url(img/studio/bg_section2.jpg)}*/
+
+.arr{position:absolute;left:50%;bottom:27px;width:44px;margin-left:-22px}
+.scroll_spy.on .lnb{position:absolute;top:0;right:0;left:0;z-index:1000}
+
+
+/* #Mobile */
+@media all and (max-width:768px) {
+
+.web{overflow:hidden;position:absolute;width:0!important;height:0!important;opacity:0}
+.mobile{overflow:visible;position:static;width:auto;height:auto;opacity:1}
+
+#section0{background-image:url(img/studio/m_studio_sub1.jpg)}
+
+}
+
+/* #Desktop */
+@media all and (min-width:769px) {
+
+.web{overflow:visible;position:static;width:auto;height:auto;opacity:1}
+.mobile{overflow:hidden;position:absolute;width:0!important;height:0!important;opacity:0}
+
+#section0{background-image:url(img/studio/studio_sub1.jpg)}
+
+}
+</style>
+</head>
+<body>
+<div id="aside" class="aside rsps">
+	<img src="img/studio/aside.jpg" alt="">
+</div>
+
+<div id="wrap">
+	<div id="section0" class="section">
+		<h1><img src="img/studio/logo.png" alt=""></h1>
+		<h2>
+			<img src="img/studio/txt_tit_section1_sub.png" alt="" class="web">
+			<img src="img/studio/m_txt_tit_section1_sub.png" alt="" class="mobile">
+		</h2>
+		<a href="#aside" id="smenu" class="smenu"><img src="img/studio/smenu.png" alt=""></a>
+		<a class="amenu"><img src="img/studio/amenu.png" alt=""></a>
+		<div class="qmunu">
+			<ul>
+			<li class="m1"><a href="brand.html"></a></li>
+			<li class="m2 on"><a href="studio.html"></a></li>
+			<li class="m3"><a href="moments.html"></a></li>
+			</ul>
+		</div>
+		<span class="arr"><img src="img/studio/bg_arr_btm.png" alt=""></span>
+	</div>
+	<div id="section1" class="section">
+		<img src="img/studio/studio_sub2.jpg" alt="" class="web">
+		<img src="img/studio/m_studio_sub2.jpg" alt="" class="mobile">
+	</div>
+	<div id="section2" class="section">
+		<div id="scrollSpy" class="scroll_spy">
+			<div class="lnb">
+				<img src="img/studio/studio_sub_scrollspy.jpg" alt="" class="web">
+				<img src="img/studio/m_studio_sub_scrollspy.jpg" alt="" class="mobile">
+			</div>
+		</div>
+		<div>
+			<img src="img/studio/studio_sub3.jpg" alt="" class="web">
+			<img src="img/studio/m_studio_sub3.jpg" alt="" class="mobile">
+		</div>
+	</div>
+</div>
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="lib/jquery.fullpage.min.js"></script>
+<script src="lib/jquery.slimscroll.min.js"></script>
+<script>
+$('#wrap').fullpage({
+	verticalCentered: true,
+	//scrollOverflow: false,
+	//autoScrolling: true,
+	onLeave: function(index, nextIndex, direction){
+        if ( nextIndex === 3 ){
+            //return false;
+			$('#section2').css({
+				display : 'block',
+				overflowY : 'auto',
+				position : 'relative',
+				height : 'auto'
+			})
+			.children('.fp-tableCell').css({
+				display: 'block'
+			});
+        }
+    }
+});
+
+$('#section2').on('scroll', function() {
+	var $scrollSpy = $('#scrollSpy'),
+		offTop = $scrollSpy.offset().top;
+
+	if( $(this).scrollTop() > offTop ) {
+		$scrollSpy.addClass('on');
+		$scrollSpy.children('.lnb').css('top', $(this).scrollTop());
+	} else {
+		$scrollSpy.removeClass('on');
+	}
+});
+
+/*$(window).on('scroll', function() {
+	var $scrollSpy = $('#scrollSpy'),
+		offTop = $scrollSpy.offset().top;
+
+		console.log($scrollSpy);
+
+	if( $(this).scrollTop() >= offTop ) {
+		$scrollSpy.addClass('on');
+	} else {
+		$scrollSpy.removeClass('on');
+	}
+});*/
+
+$('#smenu').on('click', function(e) {
+	e.preventDefault();
+
+	var targer = $(this).attr('href');
+
+	$(targer).addClass('on');
+});
+
+$('#aside').on('click', function() {
+	$(this).removeClass('on');
+});
+</script>
+</body>
+</html>

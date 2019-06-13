@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>Sehwa</title>
+<link rel="stylesheet" href="css/jquery.bxslider.css">
+<link rel="stylesheet" href="css/sehwa.css">
+</head>
+<body>
+<div id="wrap">
+	<header>
+		<div class="inr">
+			<h1><a href="main.html"><img src="img/logo.jpg" alt=""></a></h1>
+			<img src="img/gnb.jpg" width="1068" height="98" alt="">
+			<div id="srchArea" class="srch_area">
+				<div class="srch">
+					<input type="text" placeholder="Type here to search...">
+					<button type="submit"><img src="img/srch.jpg" width="19" height="20" alt=""></button>
+				</div>
+			</div>
+			<a href="#lyAllmenu" id="allmenu" class="allmenu"><img src="img/allmenu.jpg" width="20" height="18" alt=""></a>
+		</div>
+	</header>
+	<div id="container">
+		<div id="content">
+			<div class="inr">
+				<img src="img/sub_content.jpg" width="1068" height="2904" alt="">
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="inr">
+			<a href="public.html" class="public"></a>
+			<img src="img/footer.jpg" width="1068" height="116" alt="">
+			<a href="#" id="btnTop" class="btn_top"><img src="img/btn_top.png" width="56" height="48" alt=""></a>
+		</div>
+	</footer>
+	<aside class="fixed">
+		<a href="history.html"><img src="img/fix_img.png" width="95" height="168" alt=""></a>
+	</aside>
+</div>
+
+<div id="dimmed" class="dimmed" style="display:none"></div>
+
+<div id="lyAllmenu" class="ly_allmenu">
+	<div id="lyAllmenuDefault" style="display:block">
+		<img src="img/ly_allmenu.jpg" width="320" height="864" alt="">
+		<a href="#lyAllmenuActive" class="nav"></a>
+	</div>
+	<div id="lyAllmenuActive" style="display:none">
+		<img src="img/ly_allmenu_active.jpg" width="320" height="864" alt="">
+		<a href="#lyAllmenuDefault" class="nav nav_v1"></a>
+	</div>
+
+	<a href="#lyAllmenu" class="clse">close</a>
+</div>
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="lib/jquery.bxslider.min.js"></script>
+<script>
+$('#srchArea').on('click', ':submit', function(e) {
+	e.preventDefault();
+
+	var $srch = $(this).prev(':input[type=text]');
+
+	if ( !$srch.hasClass('focusin') ) {
+		$('#allmenu').fadeOut();
+		$srch.addClass('focusin');
+	} else {
+		$('#allmenu').fadeIn();
+		$srch.removeClass('focusin');
+	}
+});
+
+$('#allmenu').on('click', function(e) {
+	e.preventDefault();
+
+	var target = $(this).attr('href');
+
+	$('#dimmed').show();
+	$(target).addClass('on');
+});
+
+$('#lyAllmenu')
+	.on('click', 'a.nav', function(e) {
+		e.preventDefault();
+
+		var $this = $(this);
+		var $parent = $this.parent('div');
+		var target = $this.attr('href');
+
+		$parent.hide();
+		$(target).show();
+	})
+	.on('click', '>a.clse', function(e) {
+		e.preventDefault();
+
+		var target = $(this).attr('href');
+
+		$(target).removeClass('on');
+		$('#dimmed').hide();
+	});
+
+$('#btnTop').on('click', function(e) {
+	e.preventDefault();
+
+	$('html,body').animate({
+		scrollTop : 0
+	});
+});
+
+function widCheck(target) {
+	var $this = $(target);
+	var $aside = $('aside');
+
+	if ( $this.width() < 1280 ) {
+		$aside.removeClass('fixed');
+		console.log(1);
+	} else {
+		$aside.addClass('fixed');
+		console.log(2);
+	}
+}
+
+$(window).on('resize', function() {
+	widCheck(this);
+});
+
+widCheck(window);
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+[
+	{
+		"year" : 2016,
+		"query" : "harim",
+		"imgSrc" : "harim.jpg",
+		"title" : "하림펫푸드",
+		"html" : "html/web/harim/brand.html",
+		"resolution": [1280, 1024]
+	},
+	{
+		"year" : 2016,
+		"query" : "jungwoneshop",
+		"imgSrc" : "jungwoneshop.jpg",
+		"title" : "정원e샵",
+		"html" : "html/web/jungwoneshop/main.html",
+		"resolution": [1280, 1024]
+	},
+	{
+		"year" : 2016,
+		"query" : "samsung_a",
+		"imgSrc" : "samsung_a.jpg",
+		"title" : "삼성 무선 A",
+		"html" : "html/web/samsung/login.html",
+		"resolution": [1280, 1024]
+	},
+	{
+		"year" : 2016,
+		"query" : "samsung_b",
+		"imgSrc" : "samsung_b.jpg",
+		"title" : "삼성 무선 B"
+	},
+	{
+		"year" : 2016,
+		"query" : "sehwa_a",
+		"imgSrc" : "sehwa_a.jpg",
+		"title" : "세화 미술관 A",
+		"html" : "html/web/sehwa/atype/main.html",
+		"resolution": [1280, 1024]
+	},
+	{
+		"year" : 2016,
+		"query" : "sehwa_b",
+		"imgSrc" : "sehwa_b.jpg",
+		"title" : "세화 미술관 B",
+		"html" : "html/web/sehwa/btype/main.html",
+		"resolution": [1280, 1024]
+	}
+]

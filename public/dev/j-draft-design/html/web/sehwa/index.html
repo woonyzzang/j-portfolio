@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>sehwa</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+img{border:0;vertical-align:top}
+body{background:url(img/bg_pattern.jpg);text-align:center}
+header{height:120px;background-color:#fff}
+#content{position:fixed;top:120px;right:0;bottom:0;left:0}
+.section{display:table;width:100%;height:100%}
+.section>.cell{display:table-cell;width:100%;height:100%;;vertical-align:middle}
+.arc{position:relative;margin:270px}
+.arc:after{content:'';position:absolute;top:50%;left:50%;width:1px;height:290px;margin-top:-145px;background-color:#fff}
+.arc>img{position:relative;z-index:5}
+</style>
+</head>
+<body>
+<div id="wrap">
+	<header>
+		<img src="img/header.jpg" alt="">
+	</header>
+	<div id="content">
+		<div class="section">
+			<div class="cell">
+				<a href="atype/main.html" title="A타입 코딩 시안"><img src="img/txt_a.png" alt="A"></a>
+				<a href="teaser.html" class="arc"><img src="img/arc.png" alt=""></a>
+				<a href="btype/main.html" title="B타입 코딩 시안"><img src="img/txt_b.png" alt="B"></a>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

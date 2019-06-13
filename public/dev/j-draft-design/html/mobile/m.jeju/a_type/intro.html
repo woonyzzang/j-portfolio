@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>제주항공</title>
+<link rel="stylesheet" href="css/m.jeju.css">
+</head>
+<body>
+<div id="wrap">
+	<section id="intro">
+		<div class="menu">
+			<img src="im/intro_menu.png" alt="">
+			<a href="airline/index.html"><span class="blind">항공</span></a>
+			<a href="travel/login.html"><span class="blind">여행</span></a>
+		</div>
+	</section>
+</div>
+
+<!-- div id="dimmed" class="dimmed" style="display:block"></div -->
+
+<!-- pop_evt -->
+<!-- div id="popEvt" class="pop_evt">
+	<a href="#"><img src="im/pop_event.jpg" width="272" alt=""></a>
+</div -->
+<!-- //pop_evt -->
+
+<!-- conextbox -->
+<div id="conextbox" class="conextbox">
+	<ul class="lst">
+	<li><a href="../a_type/index.html">A Prototype</a></li>
+	<li><a href="../b_type/index.html">B Prototype</a></li>
+	<li><a href="../c_type/index.html">C Prototype</a></li>
+	<li><a href="../d_type/index.html">D Prototype</a></li>
+	</ul>
+</div>
+<!-- //conextbox -->
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="lib/jquery.rwdImageMaps.min.js"></script>
+<script src="lib/hammer.min.js"></script>
+<script src="lib/jquery.hammer.js"></script>
+<script src="js/m.jeju.js"></script>
+<script>
+/*$('#popEvt').on('click', 'a', function(e) {
+	e.preventDefault();
+
+	$(this).closest('#popEvt').hide();
+	$('#dimmed').hide();
+});*/
+
+if (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase())) {
+} else {
+	if ( $(window).width() >= 640 ) {
+
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>Sehwa</title>
+<link rel="stylesheet" href="css/jquery.bxslider.css">
+<link rel="stylesheet" href="css/sehwa.css">
+</head>
+<body>
+<div id="wrap">
+	<header>
+		<div class="inr">
+			<h1><a href="main.html"><img src="img/logo.jpg" alt=""></a></h1>
+			<img src="img/gnb.jpg" width="1068" height="98" alt="">
+			<div id="srchArea" class="srch_area">
+				<div class="srch">
+					<input type="text" placeholder="Type here to search...">
+					<button type="submit"><img src="img/srch.jpg" width="19" height="20" alt=""></button>
+				</div>
+			</div>
+			<a href="#lyAllmenu" id="allmenu" class="allmenu"><img src="img/allmenu.jpg" width="20" height="18" alt=""></a>
+		</div>
+	</header>
+	<div id="container">
+		<div class="visual">
+			<ul id="bxslider" class="bxslider">
+			<li><a href="sub.html"><img src="img/visual1.jpg" width="690" height="660" alt=""></a></li>
+			<li><a href="sub.html"><img src="img/visual2.jpg" width="690" height="660" alt=""></a></li>
+			<li><a href="sub.html"><img src="img/visual3.jpg" width="690" height="660" alt=""></a></li>
+			<li><a href="sub.html"><img src="img/visual4.jpg" width="690" height="660" alt=""></a></li>
+			</ul>
+			<div class="paging_area">
+				<div class="paging">
+					<div class="progress">
+						<div id="progressBar" class="progress_bar">
+							<span class="pit" style="left:0"></span>
+						</div>
+					</div>
+					<div class="num"><span id="count" class="count">1</span> &#47; <span id="total" class="total">0</span></div>
+				</div>
+			</div>
+			<a href="#" id="visualBtnPrev" class="btn btn_prev">prev</a>
+			<a href="#" id="visualBtnNext" class="btn btn_next">next</a>
+		</div>
+		<div id="content">
+			<div class="inr">
+				<img src="img/main_content.jpg" width="1068" height="1306" alt="">
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="inr">
+			<a href="public.html" class="public"></a>
+			<img src="img/footer.jpg" width="1068" height="116" alt="">
+			<a href="#" id="btnTop" class="btn_top"><img src="img/btn_top.png" width="56" height="48" alt=""></a>
+		</div>
+	</footer>
+</div>
+
+<div id="dimmed" class="dimmed" style="display:none"></div>
+
+<div id="lyAllmenu" class="ly_allmenu">
+	<div id="lyAllmenuDefault" style="display:block">
+		<img src="img/ly_allmenu.jpg" width="320" height="864" alt="">
+		<a href="#lyAllmenuActive" class="nav"></a>
+	</div>
+	<div id="lyAllmenuActive" style="display:none">
+		<img src="img/ly_allmenu_active.jpg" width="320" height="864" alt="">
+		<a href="#lyAllmenuDefault" class="nav nav_v1"></a>
+	</div>
+
+	<a href="#lyAllmenu" class="clse">close</a>
+</div>
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="lib/jquery.bxslider.min.js"></script>
+<script>
+var imgMaxLen = 0;
+var pitMove = 0;
+var count = 1;
+
+var slider = $('#bxslider').bxSlider({
+	auto: true,
+	autoControls: false,
+	slideWidth: 690,
+    minSlides: 3,
+    maxSlides: 3,
+    moveSlides: 1,
+	//startSlide: 2,
+    slideMargin: 140,
+	onSliderLoad : function() {
+		imgMaxLen = $('#bxslider').find('img').length - 6;
+		pitMove = Math.floor(100 / (imgMaxLen - 1) );
+
+		$('#total').text(imgMaxLen);
+
+		$('.bx-wrapper').css({
+			position: 'absolute',
+			left: '50%',
+			marginLeft : -parseInt($('.bx-wrapper').css('maxWidth'))/2 + 'px'
+		});
+	},
+	onSlidePrev : function($slideElement, oldIndex, newIndex) {
+		var posX = parseInt($('#progressBar>.pit').position().left - pitMove);
+
+		if ( posX < 0 ) {
+			posX = 100;
+		}
+
+		$('#progressBar>.pit').animate({
+			left : posX + '%'
+		});
+
+		//$('#count').text(newIndex + 1);
+		if ( count <= 1 ) {
+			count = 4;
+		}
+
+		$('#count').text(--count);
+	},
+	onSlideNext : function($slideElement, oldIndex, newIndex) {
+		var posX = Math.floor($('#progressBar>.pit').position().left) + pitMove;
+
+		if ( posX > 101 ) {
+			posX = 0;
+		}
+
+		$('#progressBar>.pit').animate({
+			left : posX + '%'
+		});
+
+		//$('#count').text(newIndex + 1);
+		if ( count >= imgMaxLen ) {
+			count = 0;
+		}
+
+		$('#count').text(++count);
+	}
+});
+
+$('#visualBtnPrev').on('click', function(e) {
+	e.preventDefault();
+
+	slider.goToPrevSlide();
+});
+
+$('#visualBtnNext').on('click', function(e) {
+	e.preventDefault();
+
+	slider.goToNextSlide();
+});
+
+$('#srchArea').on('click', ':submit', function(e) {
+	e.preventDefault();
+
+	var $srch = $(this).prev(':input[type=text]');
+
+	if ( !$srch.hasClass('focusin') ) {
+		$('#allmenu').fadeOut();
+		$srch.addClass('focusin');
+	} else {
+		$('#allmenu').fadeIn();
+		$srch.removeClass('focusin');
+	}
+});
+
+$('#allmenu').on('click', function(e) {
+	e.preventDefault();
+
+	var target = $(this).attr('href');
+
+	$('#dimmed').show();
+	$(target).addClass('on');
+});
+
+$('#lyAllmenu')
+	.on('click', 'a.nav', function(e) {
+		e.preventDefault();
+
+		var $this = $(this);
+		var $parent = $this.parent('div');
+		var target = $this.attr('href');
+
+		$parent.hide();
+		$(target).show();
+	})
+	.on('click', '>a.clse', function(e) {
+		e.preventDefault();
+
+		var target = $(this).attr('href');
+
+		$(target).removeClass('on');
+		$('#dimmed').hide();
+	});
+
+$('#btnTop').on('click', function(e) {
+	e.preventDefault();
+
+	$('html,body').animate({
+		scrollTop : 0
+	});
+});
+</script>
+</body>
+</html>

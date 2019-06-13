@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+*{margin:0;padding:0;box-sizing:border-box}
+img{border:0;vertical-align:top}
+ol,ul{list-style:none}
+area{outline:none}
+.rsps{transition:.65s;-moz-transition:.65s;-webkit-transition:.65s;-o-transition:.65s}
+
+#web{display:block}
+#mobile{display:none}
+
+.web{overflow:hidden;position:relative;width:1280px;margin:0 auto}
+.wpage{overflow:hidden;width:200%;-webkit-transition:margin-left .45s;transition:margin-left .45s}
+/*.wpage.on{margin-left:-1280px}
+.wpage.on .w_qmenu,
+.wpage.on .w_qmagazine{display:none}
+.wpage.on .w_e{display:block}*/
+
+.wmain,
+.wmagazine{/*float:left;*/position:relative}
+
+.w_category{position:absolute;top:100%;left:120px;z-index:5;margin-top:-8px}
+
+.w_header{position:fixed;top:0;left:0;right:0;z-index:5;text-align:center}
+.w_header>.inr{position:relative;width:1280px;margin:0 auto}
+
+.w_visual{position:absolute;top:192px;left:150px;width:981px}
+.w_visual .bx-viewport:after{content:'';position:absolute;top:0;right:0;bottom:0;left:0;border:1px solid #e5e5e5}
+.w_visual .bx-controls-direction{display:none}
+.w_visual .bx-pager{margin-top:56px;text-align:center}
+.w_visual .bx-pager .bx-pager-item{display:inline-block;margin-left:20px}
+.w_visual .bx-pager .bx-pager-item:first-child{margin-left:0}
+.w_visual .bx-pager .bx-pager-link{display:block;overflow:hidden;width:30px;height:2px;background-color:#b2b2b2;text-indent:-9999px}
+.w_visual .bx-pager .bx-pager-link.active{height:7px;background-color:#000}
+
+.w_qmenu{position:fixed;top:138px;left:-1px;z-index:5}
+.w_qmenu li{margin-top:1px}
+.w_qmenu li:first-child{margin-top:0}
+.w_qmenu li>div{display:none}
+.w_qmenu li.on>a{display:none}
+.w_qmenu li.on>div{display:block}
+.w_qmagazine{position:fixed;top:110px;right:10px/*-10px*/;z-index:5}
+.w_e{/*display:none;*/position:fixed;top:171px;right:0;z-index:5}
+
+/* =Mobile */
+@media all and (max-width:769px) {
+	#web{display:none}
+	#mobile{display:block}
+}
+
+.mobile{overflow:hidden;position:relative;width:640px;margin:0 auto}
+.mpage{overflow:hidden;width:200%;-webkit-transition:margin-left .45s;transition:margin-left .45s}
+.mpage.on{margin-left:-640px}
+.mpage.on .m_qmagazine{display:none}
+.mpage.on .m_e{display:block}
+
+.mmain,
+.mmagazine{float:left;position:relative}
+
+.m_nav_area{overflow:hidden;position:absolute;top:233px;left:40px;width:560px}
+.m_nav{overflow:hidden;position:relative;border:1px solid #000;border-width:2px 0;background-color:#fff}
+.m_nav ul{float:left;position:relative;font-size:0;white-space:nowrap}
+.m_nav li{display:inline-block;vertical-align:top;text-align:center}
+.m_nav li:first-child{margin-left:0}
+.m_nav li.on a{display:none}
+.m_nav li.on span{display:block}
+.m_nav a,
+.m_nav span{display:block;padding:34px 50px;background-color:#fff}
+.m_nav span{display:none}
+
+.m_visual{position:absolute;top:355px;left:40px;width:560px}
+.m_visual .bx-controls-direction{display:none}
+.m_visual .bx-pager{margin-top:32px;text-align:center}
+.m_visual .bx-pager .bx-pager-item{display:inline-block;margin-left:36px}
+.m_visual .bx-pager .bx-pager-item:first-child{margin-left:0}
+.m_visual .bx-pager .bx-pager-link{display:block;overflow:hidden;width:55px;height:4px;background-color:#b2b2b2;text-indent:-9999px}
+.m_visual .bx-pager .bx-pager-link.active{height:13px;background-color:#000}
+
+.m_qmagazine{position:absolute;top:36px;right:40px;width:58px;height:58px}
+.m_e{/*display:none;*/position:absolute;top:36px;right:40px}

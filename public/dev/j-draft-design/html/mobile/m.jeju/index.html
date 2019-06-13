@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>제주에어 프레젠테이션</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+img{max-width:100%;height:auto}
+
+::-webkit-scrollbar{overflow:visible;width:10px;height:10px}
+::-webkit-scrollbar-thumb{min-height:28px;padding:100px 0 0;border:solid transparent;border-width:1px;border-radius:10px;background-color:rgba(0,0,0,.5);background-clip:padding-box;box-shadow:inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07)}
+::-webkit-scrollbar-thumb:horizontal{padding:0 0 0 100px;border-width:1px;box-shadow:inset 1px 1px 0 rgba(0,0,0,.1),inset -1px 0 0 rgba(0,0,0,.8)}
+::-webkit-scrollbar-thumb:hover{background-color:rgba(0,0,0,.6);box-shadow:inset 1px 1px 1px rgba(0,0,0,.25)}
+::-webkit-scrollbar-track{box-shadow:inset 0 0 4px rgba(0,0,0,1)}
+::-webkit-scrollbar-track-piece{background-clip:padding-box;background-color:#f5f5f5;box-shadow:inset 1px 0 0 rgba(0,0,0,.14),inset -1px 0 0 rgba(0,0,0,.07)}
+::-webkit-scrollbar-track-piece:horizontal{border-width:3px 0 0;box-shadow:inset 0 1px 0 rgba(0,0,0,.14),inset 0 -1px 0 rgba(0,0,0,.07)}
+
+body{-webkit-text-size-adjust:none}
+
+.tbl{display:table;width:100%;height:100%}
+.cell{display:table-cell;background-color:#ddd;text-align:center;vertical-align:middle}
+
+.phone{position:absolute;top:75px;left:50%;background:#111;border-radius:55px;box-shadow:0 3px 0 #e3e3e3,0 4px 0 #000,0 5px 0 #666,0 7px 0 #fff,0 10px 20px #000;width:372px;height:692px;margin-left:-130px;padding:105px 25px;-webkit-transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);-webkit-transition:all .5s ease}
+.phone:after{content:'';position:absolute;left:50%;width:60px;height:60px;margin-left:-30px;bottom:20px;border-radius:100%;border:5px solid #333}
+.phone:before{content:'';position:absolute;top:50px;left:50%;width:60px;height:10px;margin-left:-30px;border-radius:10px;background:#333}
+.phone iframe{display:block;width:100%;height:100%}
+
+.phone_v1{background:#fff}
+.phone_v1:after{border-color:#333;background-color:#f7f7f7}
+.phone_v1 iframe{border:1px solid #888}
+
+/* -30 */
+.steric_view .phone{top:30px;-webkit-transform:rotateX(50deg) rotateY(0deg) rotateZ(-30deg);box-shadow:-3px 3px 0 #000,-6px 6px 0 #f7f7f7,-9px 9px 0 #f7f7f7,-12px 12px 0 #eee,-14px 14px 30px #000}
+.steric_view_v1 .phone{top:80px;-webkit-transform:rotateX(30deg) rotateY(-15deg) rotateZ(25deg);box-shadow:3px 2px 0 #000,6px 4px 0 #f7f7f7,8px 8px 0 #f7f7f7,12px 12px 0 #eee,14px 14px 30px #000}
+
+.func{position:absolute;top:10px;bottom:0;left:10px}
+.func>*{display:block}
+.func>strong{width:180px}
+.func button[type=button]{cursor:pointer}
+
+.btn_group{width:80px;height:80px;margin-top:15px;margin-left:45px;}
+.btn_group>button[type=button]{display:block;width:100%;height:50%;margin-top:-1px;border:1px solid #ccc;background-color:#fff;font-size:26px;color:#555}
+.btn_group>button[type=button]:first-child{margin-top:0}
+.btn_group>button[type=button].pr{background-color:#eee;font-weight:bold}
+.btn_group>button[type=button]:hover,
+.btn_group>button[type=button].on{border-color:#f15C22;background-color:#f15C22;color:#fff}
+
+.func>.vw_logo{display:block;margin-top:135px;text-align:center}
+.func>.vw_logo>img{display:inline;width:100px;margin-left:-10px}
+
+.brand{padding:10px 0;background-color:#fff;text-align:center}
+.brand>strong{display:inline-block;width:200px}
+
+.lst{}
+.lst li{margin-top:-1px;border:1px solid #ddd;border-width:1px 0}
+.lst li:first-child{margin-top:0}
+.lst a{display:block;position:relative;padding:20px 15px;background-color:#f3f3f3;font-size:18px;color:#333;text-decoration:none}
+.lst a:after{content:'';position:absolute;top:50%;right:8px;margin-top:-10px;border:10px solid transparent;border-left-color:#444}
+
+.other{display:inline-block;margin-top:25px;margin-left:45px;border-top:1px dotted #ccc}
+.other .btn{display:block;margin-top:25px;border:1px solid;color:#333;text-align:center;text-decoration:none}
+.other .btn_flow{padding:8px 9px 10px;border-color:#ccc;background-color:#f3f3f3;font-size:18px}
+.other .btn_flow>b{font-size:22px}
+.other>span{display:block;overflow:hidden;margin-top:15px}
+.other .btn_view{float:left;position:relative;margin:0 0 0 -1px;padding:12px 9px 10px;border-color:#ccc;background-color:#fff;font-size:16px}
+.other .btn_view:first-child{margin-left:0}
+.other .btn_view:hover,
+.other .btn_view:focus,
+.other .btn_view.on{z-index:5;background-color:#eee}
+</style>
+</head>
+<body>
+<div id="mobileWrap" style="display:none">
+	<div class="brand">
+		<strong><img src="jejuair.jpg" alt=""></strong>
+	</div>
+	<ul class="lst">
+	<li><a href="a_type/index.html">A Prototype</a></li>
+	<li><a href="b_type/index.html">B Prototype</a></li>
+	<li><a href="c_type/index.html">C Prototype</a></li>
+	<li><a href="d_type/index.html">D Prototype</a></li>
+	</ul>
+</div>
+
+<div id="desktopWrap" style="display:none;perspective:1800px">
+	<div class="func">
+		<strong><img src="jejuair.jpg" alt=""></strong>
+		<div class="btn_group">
+			<button type="button" data-dir="a_type">A</button>
+			<button type="button" data-dir="a_type" class="pr">PR</button>
+		</div>
+		<div class="btn_group">
+			<button type="button" data-dir="b_type">B</button>
+			<button type="button" data-dir="b_type" class="pr">PR</button>
+		</div>
+		<div class="btn_group">
+			<button type="button" data-dir="c_type">C</button>
+			<button type="button" data-dir="c_type" class="pr">PR</button>
+		</div>
+		<div class="btn_group">
+			<button type="button" data-dir="d_type">D</button>
+			<button type="button" data-dir="d_type" class="pr">PR</button>
+		</div>
+		<div class="other">
+			<a href="flow_chart.html" target="_blank" class="btn btn_flow"><b>A</b> Flow</a>
+			<span>
+				<button type="button" title="2D View" id="btn2dView" class="btn btn_view on">2D</button>
+				<button type="button" title="3D View" id="btn3dView" class="btn btn_view">3D</button>
+			</span>
+		</div>
+		<span class="vw_logo"><img src="VW_b.png" alt=""></span>
+	</div>
+
+	<div class="phone phone_v1">
+		<!-- [D] 버튼 클릭시 디렉토리 변경
+			A타입 : a_type
+			B타입 : b_type
+			C타입 : c_type
+			D타입 : d_type
+		-->
+		<iframe src="a_type/index.html" frameborder="0" scrolling="yes" id="view"></iframe>
+	</div>
+</div>
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script>
+//var currentOS;
+var mobile = (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase()));
+
+if (mobile) {
+	var userAgent = navigator.userAgent.toLowerCase();
+
+	$('#desktopWrap').hide();
+	$('#mobileWrap').show();
+} else {
+	$('#mobileWrap').hide();
+	$('#desktopWrap').show();
+}
+
+$('button[type=button]').on('click', function() {
+	var $this = $(this),
+		data = $this.data('dir');
+	var $view = $('#view');
+
+	if ( data ) {
+
+		if ( $this.hasClass('pr') ) {
+			window.open(data + '/index.html','Presentation', 'width=640,height=960');
+		} else {
+			$this.addClass('on').parent('.btn_group').siblings().children('button:first-child').removeClass('on');
+			$view.attr('src', data + '/index.html');
+			$view.show();
+		}
+
+	}
+});
+
+$('#btn2dView').on('click', function() {
+	$(this).addClass('on').siblings().removeClass('on');
+	//$('#desktopWrap').removeClass('steric_view');
+	$('#desktopWrap').removeClass('steric_view_v1');
+});
+
+$('#btn3dView').on('click', function() {
+	$(this).addClass('on').siblings().removeClass('on');
+	//$('#desktopWrap').addClass('steric_view');
+	$('#desktopWrap').addClass('steric_view_v1');
+});
+</script>
+</body>
+</html>

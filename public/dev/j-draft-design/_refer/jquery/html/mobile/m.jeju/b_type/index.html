@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>제주항공 B타입</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+img{max-width:100%;height:auto;vertical-align:top}
+:root,body,#wrap,.page{height:100%}
+.page:not(:first-child){display:none}
+.conextbox{position:fixed;top:0;right:0;left:0;z-index:100}
+.conextbox ul{margin-top:-100%;opacity:0;-webkit-transition:all .5s}
+.conextbox li{margin-top:-1px;border:1px solid #ddd;border-width:1px 0}
+.conextbox li:first-child{margin-top:0}
+.conextbox a{display:block;position:relative;padding:20px 15px;background-color:#f3f3f3;font-size:18px;color:#333;text-decoration:none}
+.conextbox a:after{content:'';position:absolute;top:50%;right:8px;margin-top:-10px;border:10px solid transparent;border-left-color:#444}
+.conextbox.on{bottom:0}
+.conextbox.on ul{opacity:1;margin-top:0}
+</style>
+</head>
+<body>
+<div id="wrap">
+	<section id="page1" class="page">
+		<a href="#page2" style="display:block;height:100%;background:url(im/00_INTRO.jpg) no-repeat 50% 50%;background-size:cover"><!-- img src="im/00_INTRO.jpg" alt="" --></a>
+	</section>
+	<section id="page2" class="page">
+		<a href="#page3"><img src="im/01_BOOK_01_MAIN.jpg" alt=""></a>
+	</section>
+	<section id="page3" class="page">
+		<a href="#page4"><img src="im/02_TRAVEL_01_MAIN.jpg" alt=""></a>
+	</section>
+	<section id="page4" class="page">
+		<a href="#page5"><img src="im/02_TRAVEL_01_MAIN_01_MENU_01.jpg" alt=""></a>
+	</section>
+	<section id="page5" class="page">
+		<a href="#page6"><img src="im/02_TRAVEL_01_MAIN_01_MENU_02.jpg" alt=""></a>
+	</section>
+	<section id="page6" class="page">
+		<a href="#page7"><img src="im/02_TRAVEL_02_MAIN_2_SEARCH.jpg" alt=""></a>
+	</section>
+	<section id="page7" class="page">
+		<a href="#page8"><img src="im/02_TRAVEL_02_VIEW_01.jpg" alt=""></a>
+	</section>
+	<section id="page8" class="page">
+		<a href="#page9"><img src="im/02_TRAVEL_02_VIEW_02.jpg" alt=""></a>
+	</section>
+	<section id="page9" class="page">
+		<a href="#page1"><img src="im/02_TRAVEL_03_CHAT.gif" alt=""></a>
+	</section>
+</div>
+
+<!-- conextbox -->
+<div id="conextbox" class="conextbox">
+	<ul class="lst">
+	<li><a href="../a_type/index.html">A Prototype</a></li>
+	<li><a href="../b_type/index.html">B Prototype</a></li>
+	<li><a href="../c_type/index.html">C Prototype</a></li>
+	<li><a href="../d_type/index.html">D Prototype</a></li>
+	</ul>
+</div>
+<!-- //conextbox -->
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="lib/hammer.min.js"></script>
+<script src="lib/jquery.hammer.js"></script>
+<script>
+function conextboxShow() {
+	$('#conextbox').addClass('on');
+
+	conextboxFlag = true;
+};
+
+if (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase())) {
+	// conextbox
+	var conextboxFlag = false;
+
+	$('body').hammer().on('press', conextboxShow);
+
+	$('#conextbox').on('click', function() {
+		if (conextboxFlag) {
+			conextboxFlag = false;
+		} else {
+			$('#conextbox').removeClass('on');
+		}
+	});
+}
+
+$('.page').on('click', 'a', function(e) {
+	e.preventDefault();
+
+	var target = $(this).attr('href');
+
+	$('.page').hide();
+
+	$(target).show();
+
+	if ( target === '#page9') {
+		$(target).find('img').attr('src', '').attr('src', 'im/02_TRAVEL_03_CHAT.gif');
+	}
+});
+</script>
+</body>
+</html>

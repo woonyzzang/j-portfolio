@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>Sehwa</title>
+<link rel="stylesheet" href="css/jquery.bxslider.css">
+<link rel="stylesheet" href="css/sehwa.css">
+</head>
+<body>
+<div id="wrap">
+	<div class="inr">
+		<header>
+			<div>
+				<a href="main.html" class="logo"></a>
+				<img src="img/header.jpg" width="870" height="120" alt="">
+				<ul class="gnb">
+				<li><a href="#">VISIT</a></li>
+				<li><a href="#">MUSEUM</a></li>
+				<li><a href="#">EDUCATION</a></li>
+				<li><a href="#">EXHIBITION</a></li>
+				<li><a href="#">ESSAY</a></li>
+				</ul>
+				<a href="#" class="allmenu"><img src="img/allmenu.png" width="54" height="44" alt=""></a>
+			</div>
+		</header>
+		<div id="container">
+			<div id="content">
+				<img src="img/sub_content.jpg" width="870" height="2153" alt="">
+			</div>
+		</div>
+		<footer>
+			<img src="img/footer.jpg" width="958" height="100" alt="">
+		</footer>
+	</div>
+	<aside class="fixed">
+		<img src="img/fix_img2.png" width="290" height="1117" alt="">
+	</aside>
+</div>
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="lib/jquery.bxslider.min.js"></script>
+<script>
+var imgMaxLen = 0;
+var pitMove = 0;
+
+$('#bxslider').bxSlider({
+	//auto: true,
+	autoControls: false,
+	onSliderLoad : function() {
+		imgMaxLen = $('#bxslider').find('img').length - 2;
+		pitMove = Math.floor(100 / (imgMaxLen - 1) );
+
+		$('#total').text(imgMaxLen);
+	},
+	onSlidePrev : function($slideElement, oldIndex, newIndex) {
+		var posX = parseInt($('#progressBar>.pit').position().left - pitMove);
+
+		if ( posX < 0 ) {
+			posX = 100;
+		}
+
+		$('#progressBar>.pit').animate({
+			left : posX + '%'
+		});
+
+		$('#count').text(newIndex + 1);
+	},
+	onSlideNext : function($slideElement, oldIndex, newIndex) {
+		var posX = Math.floor($('#progressBar>.pit').position().left) + pitMove;
+
+		if ( posX > 101 ) {
+			posX = 0;
+		}
+
+		$('#progressBar>.pit').animate({
+			left : posX + '%'
+		});
+
+		$('#count').text(newIndex + 1);
+	}
+});
+
+function widCheck(target) {
+	var $this = $(target);
+	var $aside = $('aside');
+
+	if ( $this.width() < 1300 ) {
+		$aside.removeClass('fixed');
+	} else {
+		$aside.addClass('fixed');
+	}
+}
+
+$(window).on('resize', function() {
+	/*var $this = $(this);
+	var $aside = $('aside');
+
+	if ( $this.width() < 1300 ) {
+		$aside.removeClass('fixed');
+	} else {
+		$aside.addClass('fixed');
+	}*/
+	widCheck(this);
+});
+
+widCheck(window);
+</script>
+</body>
+</html>

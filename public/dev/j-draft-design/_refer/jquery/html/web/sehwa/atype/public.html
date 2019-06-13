@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>Sehwa</title>
+<link rel="stylesheet" href="css/jquery.fullpage.css">
+<style>
+*{margin:0;padding:0}
+ol,ul{list-style:none}
+h1{position:fixed;top:24px;left:35px;z-index:5}
+a.pclse{position:fixed;top:20px;right:20px;z-index:5;padding:10px}
+.section{position:relative;text-align:center;background-repeat:no-repeat;background-position:50% 50%;background-size:cover}
+.section .txt{position:relative;width:1280px;margin:0 auto}
+.section .txt>p{position:absolute}
+.section .timeline{position:absolute;top:0;right:0;bottom:0;left:0}
+.section .timeline>p{position:absolute;right:0;bottom:42px;left:0;text-align:center}
+#section0{background-image:url(img/bg_public_section0.jpg)}
+#section1{background-image:url(img/bg_public_section1.jpg)}
+#section2{background-image:url(img/bg_public_section2.jpg);background-size:inherit}
+#section3{background-image:url(img/bg_public_section3.jpg)}
+#section4{background-image:url(img/bg_public_section4.jpg)}
+#section5{background-image:url(img/bg_public_section5.jpg)}
+#section6{background-image:url(img/bg_public_section6.jpg);background-size:inherit}
+</style>
+</head>
+<body>
+<h1><img src="img/plogo.png" alt=""></h1>
+<a href="main.html" id="pclse" class="pclse"><img src="img/pclse.png" alt=""></a>
+
+<div id="wrap">
+	<div id="section0" class="section">
+		<div class="txt">
+			<p style="top:80px;left:60px"><img src="img/txt_public_section0.png" alt=""></p>
+		</div>
+	</div>
+	<div id="section1" class="section">
+		<div class="txt">
+			<p style="top:-250px;right:150px"><img src="img/txt_public_section1.png" alt=""></p>
+		</div>
+		<div class="timeline">
+			<p><img src="img/timeline_public_section1.png" alt=""></p>
+		</div>
+	</div>
+	<div id="section2" class="section">
+		<div class="txt">
+			<p style="top:-180px;left:120px"><img src="img/txt_public_section2.png" alt=""></p>
+		</div>
+		<div class="timeline">
+			<p><img src="img/timeline_public_section2.png" alt=""></p>
+		</div>
+	</div>
+	<div id="section3" class="section">
+		<div class="txt">
+			<p style="top:-160px;right:100px"><img src="img/txt_public_section3.png" alt=""></p>
+		</div>
+		<div class="timeline">
+			<p><img src="img/timeline_public_section3.png" alt=""></p>
+		</div>
+	</div>
+	<div id="section4" class="section">
+		<div class="txt">
+			<p style="top:-198px;left:100px"><img src="img/txt_public_section4.png" alt=""></p>
+		</div>
+		<div class="timeline">
+			<p><img src="img/timeline_public_section4.png" alt=""></p>
+		</div>
+	</div>
+	<div id="section5" class="section">
+		<div class="txt">
+			<p style="top:-132px;left:700px"><img src="img/txt_public_section5.png" alt=""></p>
+		</div>
+		<div class="timeline">
+			<p><img src="img/timeline_public_section5.png" alt=""></p>
+		</div>
+	</div>
+	<div id="section6" class="section">
+		<div class="timeline">
+			<p><img src="img/timeline_public_section5.png" alt=""></p>
+		</div>
+	</div>
+</div>
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="lib/jquery.fullpage.min.js"></script>
+<script>
+$('#wrap').fullpage({
+	verticalCentered: true,
+//	verticalCentered: false
+	menu: '#paginate',
+	anchors: ['page0', 'page1', 'page2', 'page3', 'page4', 'page5', 'page6'],
+	afterLoad: function(anchorLink, index){
+		if (index > 1 ) {
+			$('h1>img').attr('src','img/plogo2.png');
+			$('#pclse>img').attr('src','img/pclse2.png');
+		} else {
+			$('h1>img').attr('src','img/plogo.png');
+			$('#pclse>img').attr('src','img/pclse.png');
+		}
+	}
+	//sectionsColor: ['#36b6e3', '#fd496e', '#cbd22a', '#7b7c7e'],
+//	scrollOverflow: true,
+//	autoScrolling: true,
+//	responsive: 640,
+//	responsiveWidth: 640,
+	//responsiveHeight: 600
+});
+</script>
+</body>
+</html>

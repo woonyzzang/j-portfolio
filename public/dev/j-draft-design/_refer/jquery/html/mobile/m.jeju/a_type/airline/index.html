@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>제주항공</title>
+<link rel="stylesheet" href="../css/m.jeju.css">
+</head>
+<body>
+<div id="wrap">
+	<div id="allMenu">
+		<img src="../im/all_menu.jpg" width="640" height="841" usemap="#allMenuMap" alt="">
+		<map name="allMenuMap">
+		<area shape="rect" coords="390,0,452,91" id="btnSearch" href="../search.html">
+		<area shape="rect" coords="462,1,528,91" id="btnMyPage" href="../mypage.html">
+		<area shape="rect" coords="11,136,315,228" href="#all_menu" data-href="../im/all_menu.jpg">
+		<area shape="rect" coords="325,135,634,227" href="#all_menu2" data-href="../im/all_menu2.jpg">
+		<area shape="rect" coords="13,234,632,724" href="index.html">
+        </map>
+	</div>
+	<div id="airPage" class="page fixed">
+		<header>
+			<img src="../im/airline_header.png" width="640" height="82" alt="" usemap="#headerMap">
+            <map name="headerMap">
+			<area shape="rect" coords="1,2,230,74" href="#allMenu" id="btnAllMenu">
+            </map>
+		</header>
+		<article class="container">
+			<section class="content">
+				<a href="#lyPop" id="btnPop"><img src="../im/air_cont.jpg" alt=""></a>
+			</section>
+			<!-- <div id="lyPop" class="ly_pop">
+				<img src="../im/pop_air.jpg" alt="">
+			</div> -->
+		</article>
+		<footer class="fmenu">
+			<img src="../im/footer_menu.png" alt="">
+		</footer>
+	</div>
+</div>
+
+<!-- conextbox -->
+<div id="conextbox" class="conextbox">
+	<ul class="lst">
+	<li><a href="../../a_type/index.html">A Prototype</a></li>
+	<li><a href="../../b_type/index.html">B Prototype</a></li>
+	<li><a href="../../c_type/index.html">C Prototype</a></li>
+	<li><a href="../../d_type/index.html">D Prototype</a></li>
+	</ul>
+</div>
+<!-- //conextbox -->
+
+<script src="../lib/jquery-1.12.1.min.js"></script>
+<script src="../lib/jquery.rwdImageMaps.min.js"></script>
+<script src="../lib/hammer.min.js"></script>
+<script src="../lib/jquery.hammer.js"></script>
+<script src="../lib/swiper.jquery.min.js"></script>
+<script src="../js/m.jeju.js"></script>
+<script>
+/*$('#btnPop').on('click', function(e) {
+	e.preventDefault();
+
+	var target = $(this).attr('href');
+
+	$(target).addClass('on');
+});
+
+$('#lyPop').on('click', function() {
+	$(this).removeClass('on');
+});*/
+
+if (/iphone|ipad|ipod|android/i.test(navigator.userAgent.toLowerCase())) {
+	$('.fmenu').on('click', function() {
+		if ( !$(this).hasClass('on') ) {
+			$(this).addClass('on');
+		} else {
+			$(this).removeClass('on');
+		}
+
+	});
+} else {
+	var fMenuHgt = -($('.fmenu').children('img').height() -18);
+
+	$('.fmenu')
+		.css('bottom',  fMenuHgt + 'px')
+		.on('click', function() {
+			if ( parseInt($(this).css('bottom')) < 0 ) {
+				$(this).stop().animate({
+					bottom : 0
+				});
+			} else {
+				$(this).stop().animate({
+					bottom : fMenuHgt
+				});
+			}
+
+		});
+}
+
+if ( localStorage.getItem('history') ) {
+	localStorage.removeItem('history');
+	$('#btnAllMenu').click();
+}
+</script>
+</body>
+</html>

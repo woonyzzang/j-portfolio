@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>시안코딩 : Jungwoneshop</title>
+<link rel="stylesheet" href="css/jungwoneshop.css">
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="lib/jquery.bxslider.min.js"></script>
+<script src="lib/jquery.event.drag-1.5.1.min.js"></script>
+<script src="lib/jquery.touchFlow.js"></script>
+</head>
+<body>
+<div id="web" class="web">
+	<div id="wPage" class="wpage">
+		<!-- wmagazine -->
+		<div id="wMagazine" class="wmagazine">
+			<a href="detail.html"><img src="img/w_magazine.jpg" width="1280" height="2909" alt=""></a>
+			<a href="main.html" id="wE" class="w_e"><img src="img/w_e.jpg" width="72" height="55" alt=""></a>
+		</div>
+		<!-- //wmagazine -->
+	</div>
+</div>
+
+<div id="mobile" class="mobile">
+	<div id="mPage" class="mpage">
+		<!-- mmagazine -->
+		<div id="mMagazine" class="mmagazine">
+			<a href="detail.html"><img src="img/m_magazine.jpg" width="640" height="2003" alt=""></a>
+			<a href="main.html" id="mE" class="m_e"><img src="img/m_e.jpg" width="58" height="58" alt=""></a>
+		</div>
+		<!-- //mmagazine -->
+	</div>
+</div>
+
+<script>
+$('#wE').on('click', function(e) {
+	e.preventDefault();
+
+	history.go(-1);
+});
+
+$('#mE').on('click', function(e) {
+	e.preventDefault();
+
+	history.go(-1);
+});
+</script>
+</body>
+</html>

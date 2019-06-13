@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>제주항공</title>
+<link rel="stylesheet" href="../css/m.jeju.css">
+<link rel="stylesheet" href="../css/swiper.css">
+</head>
+<body>
+<div id="wrap">
+	<div id="login" class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="list_item" style="background-image:url(../im/bg_travel_intro1.jpg)"></div>
+			</div>
+			<div class="swiper-slide">
+				<div class="list_item" style="background-image:url(../im/bg_travel_intro2.jpg)"></div>
+			</div>
+			<div class="swiper-slide">
+				<div class="list_item" style="background-image:url(../im/bg_travel_intro3.jpg)"></div>
+			</div>
+		</div>
+		<!-- <div class="swiper-pagination"></div> -->
+		<a href="look.html" class="btns"><img src="../im/travel_intro_btns.png" width="290" alt=""></a>
+	</div>
+</div>
+
+<!-- conextbox -->
+<div id="conextbox" class="conextbox">
+	<ul class="lst">
+	<li><a href="../a_type/index.html">A Prototype</a></li>
+	<li><a href="../b_type/index.html">B Prototype</a></li>
+	<li><a href="../c_type/index.html">C Prototype</a></li>
+	<li><a href="../d_type/index.html">D Prototype</a></li>
+	</ul>
+</div>
+<!-- //conextbox -->
+
+<script src="../lib/jquery-1.12.1.min.js"></script>
+<script src="../lib/jquery.rwdImageMaps.min.js"></script>
+<script src="../lib/hammer.min.js"></script>
+<script src="../lib/jquery.hammer.js"></script>
+<script src="../lib/swiper.jquery.min.js"></script>
+<script src="../js/m.jeju.js"></script>
+<script>
+var $login = new Swiper('#login', {
+    //pagination: '.swiper-pagination',
+    //paginationClickable: false,
+	//paginationBulletRender: function (index, className) {
+	//	return '<span class="' + className + '"><span class="blind">' + (index + 1) + '</span></span>';
+	//}
+});
+
+$login.on('onTouchMove', function(swiper) {
+	$('body').hammer().off('press');
+});
+
+$login.on('onTouchEnd', function(swiper) {
+	$('body').hammer().on('press', conextboxShow);
+});
+</script>
+</body>
+</html>

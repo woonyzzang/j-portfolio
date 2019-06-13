@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ko" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="제안 시안 디자인 갤러리">
+<meta name="author" content="Joe Seung Woon">
+<link rel="shortcut icon" href="favicon.ico">
+<title>J Draft Design Gallery</title>
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/demo.css">
+<link rel="stylesheet" href="css/component.css">
+<style>
+.hgroup h1{font-family:Helvetica/*letter-spacing:2px*/}
+.hgroup p:before{content:'- '}
+.hgroup p:after{content:' -'}
+/*.codrops-demos a{position:relative}
+.codrops-demos a:before{content:'';-webkit-transform:translateY(-50%) rotate3d(0,0,1,22.5deg);transform:translateY(-50%) rotate3d(0,0,1,22.5deg);position:absolute;top:50%;left:0;width:1px;height:110%;margin-left:-9%;background-color:#323f5c;opacity:.45}
+.codrops-demos a:first-child:before{display:none}*/
+.codrops-links::after{height:60%;opacity:.45}
+.codrops-icon span{display:inline-block;width:16px;height:20px;border:1px solid #323f5c}
+.codrops-icon--3d span{transform:skew(-25deg,0)}
+
+.srch{display:-webkit-flex;display:flex;position:absolute;top:3em;right:3em;font-size:14px;pointer-events:auto}
+.srch input[type=text]{display:block;-webkit-transition:border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s, width .25s ease-out;-o-transition:border-color ease-in-out .15s, box-shadow ease-in-out .15s, width .25s ease-out;transition:border-color ease-in-out .15s, box-shadow ease-in-out .15s, width .25s ease-out;position:relative;width:200px;height:34px;padding:6px 12px;background-color:#fff;border:1px solid #313a4c;border-radius:4px 0 0 4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}
+.srch input[type=text]::-webkit-calendar-picker-indicator{display:none}
+.srch input[type=text]:focus{z-index:5;width:350px;outline:0;border-color:#66afe9;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)}
+.srch button[type=submit]{display:block;-webkit-flex:1;-ms-flex:1;flex:1;position:relative;min-width:54px;margin-left:-1px;padding:4px 12px;border:1px solid #313a4c;border-radius:0 4px 4px 0;background-color:#323f5c;color:#fff;white-space:nowrap}
+.srch button[type=submit]:hover,
+.srch button[type=submit]:focus{z-index:5;border-color:#1f283c;background-color:#1f283c}
+
+.combbox{display:inline-block;position:absolute;top:6em;right:3em;margin:-10px -6px 0 0;pointer-events:auto}
+.combbox select{/*-webkit-appearance:none;*/-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;padding:6px 12px;border-radius:4px;border:1px solid #b8b6c7;background-color:#fff;font-size:12px;line-height:1.42857143;color:#555}
+.combbox select::-ms-expand{/*display:none*/width:12px;border:0;background-color:#fff}
+.combbox select:focus{box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);outline:0;border-color:#66afe9}
+
+/* http://svgicons.sparkk.fr/ */
+.svg-icon{width:1.12em;height:1.15em;vertical-align:top}
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect{fill:#323f5c}
+/*.svg-icon circle{stroke:#4691f6;stroke-width:1}*/
+
+[data-grid-role=gridStatic]{}
+[data-grid-role=gridStatic] .codrops-header{position:static}
+[data-grid-role=gridStatic]	.isolayer{margin:30px auto 0}
+[data-grid-role=gridStatic]	.isolayer--scroll1{/*width:auto;max-width:100%;*/height:auto}
+[data-grid-role=gridStatic] .grid__title{right:0;z-index:5;width:auto;padding:2px 14px;background-color:#222;font-weight:normal;color:#fff;text-shadow:none}
+.js [data-grid-role=gridStatic] .grid,
+.js [data-grid-role=gridStatic] .grid__item,
+.js [data-grid-role=gridStatic] .grid__link{-webkit-transform-style:flat;transform-style:flat}
+datalist{-webkit-appearance:none}
+datalist>option{background:red}
+</style>
+</head>
+<body data-grid-role="grid3d" class="demo-1">
+<main>
+	<header class="codrops-header">
+		<div id="hgroup" class="hgroup">
+			<h1>J Draft <span class="txt_en">Design</span></h1>
+			<p>제안 시안 <span class="txt_ko"></span> 갤러리</p>
+		</div>
+		<nav id="gnb" class="codrops-demos">
+			<a href="#web" data-design-type="web" class="current-demo">
+				<svg class="svg-icon" viewBox="0 0 20 20">
+					<path fill="none" d="M17.125,1.375H2.875c-0.828,0-1.5,0.672-1.5,1.5v11.25c0,0.828,0.672,1.5,1.5,1.5H7.75v2.25H6.625c-0.207,0-0.375,0.168-0.375,0.375s0.168,0.375,0.375,0.375h6.75c0.207,0,0.375-0.168,0.375-0.375s-0.168-0.375-0.375-0.375H12.25v-2.25h4.875c0.828,0,1.5-0.672,1.5-1.5V2.875C18.625,2.047,17.953,1.375,17.125,1.375z M11.5,17.875h-3v-2.25h3V17.875zM17.875,14.125c0,0.414-0.336,0.75-0.75,0.75H2.875c-0.414,0-0.75-0.336-0.75-0.75v-1.5h15.75V14.125z M17.875,11.875H2.125v-9c0-0.414,0.336-0.75,0.75-0.75h14.25c0.414,0,0.75,0.336,0.75,0.75V11.875z M10,14.125c0.207,0,0.375-0.168,0.375-0.375S10.207,13.375,10,13.375s-0.375,0.168-0.375,0.375S9.793,14.125,10,14.125z"></path>
+				</svg>
+				Web 시안
+			</a>
+			<a href="#mobile" data-design-type="mobile">
+				<svg class="svg-icon" viewBox="0 0 20 20">
+					<path fill="none" d="M10,15.654c-0.417,0-0.754,0.338-0.754,0.754S9.583,17.162,10,17.162s0.754-0.338,0.754-0.754S10.417,15.654,10,15.654z M14.523,1.33H5.477c-0.833,0-1.508,0.675-1.508,1.508v14.324c0,0.833,0.675,1.508,1.508,1.508h9.047c0.833,0,1.508-0.675,1.508-1.508V2.838C16.031,2.005,15.356,1.33,14.523,1.33z M15.277,17.162c0,0.416-0.338,0.754-0.754,0.754H5.477c-0.417,0-0.754-0.338-0.754-0.754V2.838c0-0.417,0.337-0.754,0.754-0.754h9.047c0.416,0,0.754,0.337,0.754,0.754V17.162zM13.77,2.838H6.23c-0.417,0-0.754,0.337-0.754,0.754v10.555c0,0.416,0.337,0.754,0.754,0.754h7.539c0.416,0,0.754-0.338,0.754-0.754V3.592C14.523,3.175,14.186,2.838,13.77,2.838z M13.77,13.77c0,0.208-0.169,0.377-0.377,0.377H6.607c-0.208,0-0.377-0.169-0.377-0.377V3.969c0-0.208,0.169-0.377,0.377-0.377h6.785c0.208,0,0.377,0.169,0.377,0.377V13.77z"></path>
+				</svg>
+				Mobile 시안
+			</a>
+			<!-- a href="#responsive" data-design-type="responsive">Responsive 시안</a -->
+		</nav>
+		<div id="menu" class="codrops-links">
+			<a href="#grid3d" class="codrops-icon codrops-icon--3d" title="Grid 3d"><span></span></a>
+			<a href="#gridStatic" class="codrops-icon codrops-icon--static" title="Grid Static"><span></span></a>
+		</div>
+		<form id="srchFrom">
+		<div class="srch">
+			<!-- list="autoComplete" autocomplete="on" autofocus -->
+			<input type="text" placeholder="Search for..."><button type="submit">검색</button>
+			<!-- datalist id="autoComplete">
+			<option value="하림">
+			<option value="정원">
+			<option value="삼성">
+			<option value="세화">
+			</datalist -->
+		</div>
+		</form>
+		<form id="yearFrom">
+		<div class="combbox">
+			<select title="년도별 선택">
+			<option value="all">ALL</option>
+			<option value="2016">2016</option>
+			<option value="2017">2017</option>
+			<option value="2018">2018</option>
+			<option value="2019">2019</option>
+			<option value="2020">2020</option>
+			</select>
+		</div>
+		</form>
+	</header>
+	<div id="isoLayer" class="isolayer isolayer--scroll1 isolayer--shadow">
+		<ul id="grid" class="grid grid--effect-flip"></ul>
+	</div>
+</main>
+<a href="intro.html" class="pater">
+	<h2 class="pater__title"></h2>
+	<p class="pater__desc">제안 시안 디자인 갤러리</p>
+</a>
+
+<!-- [D] 디자인 템플릿 -->
+<script id="design-templ" type="text/x-handlebars-template">
+{{#each thumb}}
+<li class="grid__item" data-year="{{year}}">
+	<a href="gallery.html?designType={{designType}}&query={{query}}" class="grid__link">
+		<img class="grid__img layer" src="{{imgCanvas}}" alt="">
+		<img class="grid__img layer" src="{{imgWireframe}}" alt="">
+		<img class="grid__img layer" src="{{imgSrc}}" alt="">
+		<span class="grid__title">{{title}}</span>
+	</a>
+</li>
+{{/each}}
+</script>
+<!-- //[D] 디자인 템플릿 -->
+<!-- [D] 마크업 템플릿 -->
+<script id="markup-templ" type="text/x-handlebars-template">
+{{#each thumb}}
+<li class="grid__item" data-year="{{year}}">
+	<a href="{{html}}" data-resolution-wid="{{resolutionWid}}" data-resolution-hgt="{{resolutionHgt}}" class="grid__link">
+		<img class="grid__img layer" src="{{imgCanvas}}" alt="">
+		<img class="grid__img layer" src="{{imgWireframe}}" alt="">
+		<img class="grid__img layer" src="{{imgSrc}}" alt="">
+		<span class="grid__title">{{title}}</span>
+	</a>
+</li>
+{{/each}}
+</script>
+<!-- //[D] 마크업 템플릿 -->
+
+<script src="lib/jquery-1.12.4.min.js"></script>
+<script src="lib/handlebars-v4.0.5.js"></script>
+<script src="js/modernizr.custom.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/dynamics.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/animOnScroll.js"></script>
+<script src="js/main.js"></script>
+<script>
+(function($) {
+
+	location.queryString = {};
+	location.search.substr(1).split('&').forEach(function(pair) {
+		if (pair === '') { return; }
+
+		var parts = pair.split('=');
+
+		location.queryString[parts[0]] = parts[1] && decodeURIComponent(parts[1].replace(/\+/g, ' '));
+	});
+
+	var locSrch = location.queryString;
+	var draftType = locSrch.draftType;
+
+	var $grid = $('#grid');
+	var designType = $('.current-demo').data('design-type');
+	var imgPath = 'img/' + designType + '/';
+	var imgCanvas = imgPath + '_canvas.jpg';
+	var imgWireframe = imgPath + '_wireframe.jpg';
+	var thumbData = [];
+	var win = null;
+
+	// 세션 스토리지 디자인타입 속성 존재 유무 판단
+	if ( sessionStorage.getItem('designType') ) {
+		var $gnb = $('#gnb');
+
+		designType = sessionStorage.getItem('designType');
+		imgPath = 'img/' + designType + '/';
+		imgCanvas = imgPath + '_canvas.jpg';
+		imgWireframe = imgPath + '_wireframe.jpg';
+
+		$('a.current-demo').removeClass('current-demo');
+
+		switch ( sessionStorage.getItem('designType') ) {
+			case 'web':
+			$gnb.children('a').eq(0).addClass('current-demo');
+			break;
+			case 'mobile':
+			$gnb.children('a').eq(1).addClass('current-demo');
+			break;
+		}
+
+		sessionStorage.removeItem('designType');
+	}
+
+	// 세션 스토리지 윈도우스크롤값 존재 유무 판단
+	if ( sessionStorage.getItem('winScrollTop') ) {
+		$('html, body').animate({
+			scrollTop : sessionStorage.getItem('winScrollTop')
+		});
+
+		sessionStorage.removeItem('winScrollTop');
+	}
+
+	/**
+	 * @시안 타입 체크
+	 */
+	function draftTypeChk() {
+		var $body = $('body');
+		var $hgroup = $('#hgroup');
+		var $hgroupTxtEn = $hgroup.find('.txt_en');
+		var $hgroupTxtKo = $hgroup.find('.txt_ko');
+
+		switch (draftType) {
+			case 'markup' :
+				$body.attr('data-draft-type', 'markup');
+				$hgroupTxtEn.text('Markup');
+				$hgroupTxtKo.text('마크업');
+			break;
+			case 'design' :
+			default :
+				$body.attr('data-draft-type', 'design');
+				$hgroupTxtEn.text('Design');
+				$hgroupTxtKo.text('디자인');
+			break;
+		}
+	}
+
+	/**
+	 * @ajax 비동기
+	 */
+	function ajaxStart(designType) {
+		$.ajaxSetup({cache:false});
+
+		var jqxhr = $.ajax({
+			dataType : 'json',
+			url : './data/' + designType + '/thumb.json'
+		});
+
+		jqxhr
+			.done(function(data) {
+				thumbData = data;
+
+				gridItemRender(thumbData);
+			})
+			.fail(function() {
+				console.error('fail');
+			})
+			.always(function(data) {
+				//console.log(data);
+			});
+	}
+
+	/**
+	 * @그리드뷰 그리기
+	 */
+	function isoGridView() {
+		var $body = $('body');
+
+		function getRandomInt(min, max) {
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+
+		if ( $body.hasClass('grid-loaded') ) {
+			$body.removeClass('grid-loaded');
+			$('.pseudo-scroller').remove();
+		}
+
+		new IsoGrid($('#isoLayer')[0], {
+			type : 'scrollable',
+			transform : 'translateX(-15vw) translateY(275px) rotateX(45deg) rotateZ(45deg)',
+			stackItemsAnimation : {
+				properties : function(pos) {
+					return {
+						translateZ: (pos+1) * 50,
+						rotateZ: getRandomInt(-3, 3)
+					};
+				},
+				options : function(pos, itemstotal) {
+					return {
+						type: dynamics.bezier,
+						duration: 500,
+						points: [{x:0,y:0,cp:[{x:0.2,y:1}]},{x:1,y:1,cp:[{x:0.3,y:1}]}]
+					};
+				}
+			},
+			onGridLoaded : function() {
+				// 세션 스토리지 그리드 타입 존재 유무 판단
+				if ( sessionStorage.getItem('gridRole') ) {
+					switch ( sessionStorage.getItem('gridRole') ) {
+						case 'grid3d' :
+							grid3d();
+						break;
+						case 'gridStatic' :
+							gridStatic();
+						break;
+					}
+
+					$body.attr('data-grid-role', sessionStorage.getItem('gridRole'));
+				}
+
+				var pseudoScrollerHgt = $('.pseudo-scroller').height() + $('.grid__item').eq(0).outerHeight(true);
+
+				$body.addClass('grid-loaded');
+				$('.pseudo-scroller').height( pseudoScrollerHgt );
+			}
+		});
+	}
+
+	/**
+	 * @그리드 리스트 동적 생성
+	 */
+	function gridItemRender(data) {
+		var $body = $('body');
+		//var gridItem = '';
+		var source = null;
+		var dataObj = {
+			thumb : []
+		};
+
+		$grid.empty();
+
+		switch ( draftType ) {
+			case 'markup' :
+				/*for (var i= 0, len = data.length; i < len; i++) {
+					if ( typeof  data[i].html === 'undefined' ) { continue; }
+
+					gridItem += '<li class="grid__item"><a href="' + data[i].html + '" data-resolution-wid="' + data[i].resolution[0] + '" data-resolution-hgt="' + data[i].resolution[1] + '" class="grid__link"><img class="grid__img layer" src="' + imgCanvas + '" alt=""><img class="grid__img layer" src="' + imgWireframe + '" alt=""><img class="grid__img layer" src="' + (imgPath + data[i].imgSrc)  + '" alt=""><span class="grid__title">' + data[i].title + '</span></a></li>';
+				}*/
+
+				source   = $('#markup-templ').html();
+
+				for (var i= 0, len = data.length; i < len; i++) {
+					if ( typeof data[i].html === 'undefined' ) { continue; }
+
+					dataObj.thumb.push({
+						year : data[i].year,
+						html : data[i].html,
+						resolutionWid : data[i].resolution[0],
+						resolutionHgt : data[i].resolution[1],
+						imgCanvas : imgCanvas,
+						imgWireframe : imgWireframe,
+						imgSrc : imgPath + data[i].imgSrc,
+						title : data[i].title
+					});
+				}
+			break;
+			case 'design' :
+			default :
+				/*for (var i= 0, len = data.length; i < len; i++) {
+					gridItem += '<li class="grid__item"><a href="gallery.html?designType=' + designType + '&query=' + data[i].query + '" class="grid__link"><img class="grid__img layer" src="' + imgCanvas + '" alt=""><img class="grid__img layer" src="' + imgWireframe + '" alt=""><img class="grid__img layer" src="' + (imgPath + data[i].imgSrc)  + '" alt=""><span class="grid__title">' + data[i].title + '</span></a></li>';
+
+				}*/
+
+				source = $('#design-templ').html();
+
+				for (var i= 0, len = data.length; i < len; i++) {
+					dataObj.thumb.push({
+						year : data[i].year,
+						designType : designType,
+						query : data[i].query,
+						imgCanvas : imgCanvas,
+						imgWireframe : imgWireframe,
+						imgSrc : imgPath + data[i].imgSrc,
+						title : data[i].title
+					});
+				}
+			break;
+		}
+
+		var template = Handlebars.compile(source);
+		var html = template(dataObj);
+		$grid.append(html);
+		//$grid.append($(gridItem));
+		isoGridView();
+	}
+
+	/**
+	 * @검색 유효성 체크
+	 */
+	function srchValid(value) {
+		var gridItemArr = [];
+
+		if ( value.length > 0 ) {
+			//데이터 타이틀값 체크 후 존재하는 값은 gridItemArr 배열로 푸시
+			for (var i = 0, len = thumbData.length; i < len; i ++) {
+				if ( thumbData[i].title.indexOf(value) > -1 ) {
+					gridItemArr.push(thumbData[i]);
+				}
+			}
+
+			//데이터 타이틀값과 동일한 검색어면 동작
+			if ( gridItemArr.length > 0 ) {
+				$grid.empty();
+				gridItemRender(gridItemArr);
+			}
+		}
+	}
+
+	/**
+	 * @년도별 필터링
+	 */
+	function yearFilter(value) {
+		var gridItemArr = [];
+
+		for (var i = 0, len = thumbData.length; i < len; i ++) {
+			if ( thumbData[i].year ===  Number(value) ) {
+				gridItemArr.push(thumbData[i]);
+			}
+		}
+
+		$grid.empty();
+		gridItemRender(gridItemArr);
+	}
+
+	/**
+	 * @3D 그리드 레이아웃
+	 */
+	function grid3d() {
+		$('.pseudo-scroller').show();
+		$('#isoLayer').css({
+			position: 'fixed',
+			transformStyle: 'preserve-3d',
+			transform: 'translateX(-15vw) translateY(275px) rotateX(45deg) rotateZ(45deg)'
+		});
+	}
+
+	/**
+	 * @정적 그리드 레이아웃
+	 */
+	function gridStatic() {
+		$('.pseudo-scroller').hide();
+		$('#isoLayer').css({
+			position: 'static',
+			transformStyle: 'flat',
+			transform: 'translateX(0) translateY(0) rotateX(0) rotateZ(0)'
+		});
+	}
+
+	/**
+	 * @초기화
+	 */
+	(function init() {
+		draftTypeChk();
+		ajaxStart(designType);
+	})();
+
+	//GNB 클릭 이벤트 핸들러
+	$('#gnb').on('click', 'a', function(e) {
+		e.preventDefault();
+
+		var $this = $(this);
+
+		//if ( $this.hasClass('current-demo') ) { return; }
+
+		designType = $this.data('design-type');
+		imgPath = 'img/' + designType + '/';
+		imgCanvas = imgPath + '_canvas.jpg';
+		imgWireframe = imgPath + '_wireframe.jpg';
+
+		ajaxStart(designType);
+
+		$this.addClass('current-demo').siblings('a').removeClass('current-demo');
+	});
+
+	//그리드 메뉴 클릭 이벤트 핸들러
+	$('#menu').on('click', 'a', function(e) {
+		e.preventDefault();
+
+		if ( sessionStorage.getItem('gridRole') ) {
+			sessionStorage.removeItem('gridRole');
+		}
+
+		var $this = $(this);
+		var href = $this.attr('href').replace('#', '');
+		var $body = $('body');
+
+		switch (href) {
+			case 'grid3d' :
+				grid3d();
+			break;
+			case 'gridStatic' :
+				gridStatic();
+			break;
+		}
+
+		$body.attr('data-grid-role', href);
+		sessionStorage.setItem('gridRole', href);
+	});
+
+	//썸네일 클릭시 세션스토리지에 윈도우스크롤값 할당
+	$('#grid').on('click', 'a.grid__link', function(e) {
+		e.preventDefault();
+
+		var $body = $('body');
+		var $this = $(this);
+		var href = $this.attr('href');
+
+		sessionStorage.setItem('designType', designType);
+		sessionStorage.setItem('winScrollTop', $(window).scrollTop());
+
+		switch (draftType) {
+			case 'markup' :
+				if ( win !== null ) { win.close(); }
+
+				win = window.open(href, '_draft', 'width=' + $this.data('resolution-wid') + ', height=' + $this.data('resolution-hgt'));
+			break;
+			case 'design' :
+			default :
+				$(location).attr('href', href);
+			break;
+		}
+	});
+
+	//검색버튼 이벤트 핸들러
+	$('#srchFrom').on('submit', function(e) {
+		e.preventDefault();
+
+		var $this = $(this);
+		var $inptSrch = $this.find(':input[type=text]');
+		var value = $.trim($inptSrch.val());
+
+		srchValid(value);
+	});
+
+	/*
+	//검색입력창 포커스 아웃 이벤트 핸들러
+	$('#srchFrom').on('focusout', ':input[type=text]' , function() {
+		$(this).val('');
+	});
+	*/
+
+	//년도별 콤보박스 선택 이벤트 핸들러
+	$('#yearFrom').on('change', 'select', function() {
+		var comboBoxOptVal = $(this).children('option:selected').val();
+
+		( comboBoxOptVal === 'all' )? gridItemRender(thumbData) : yearFilter(comboBoxOptVal);
+	});
+
+})(jQuery);
+</script>
+</body>
+</html>

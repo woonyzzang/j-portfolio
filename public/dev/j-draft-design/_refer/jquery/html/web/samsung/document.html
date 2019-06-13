@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>Documents : Samsung</title>
+<link rel="stylesheet" href="css/samsung.css">
+</head>
+<body>
+<!-- [D] 확장 클래스 정의
+	GNB고정 : fixed
+	GNB세로 : vertical -->
+<div id="wrap">
+	<header>
+		<div class="inr">
+			<nav id="gnb" class="gnb">
+				<!-- [D] 메뉴 활성화시 .on 클래스 추가/제거 -->
+				<ul>
+				<li class="home"><a href="main.html">home</a></li>
+				<li class="m1">
+					<a href="project.html">Project</a>
+					<div class="dir">
+						<ul>
+						<li class="sm1"><a href="#"><span>My Project</span></a></li>
+						<li class="sm2"><a href="#"><span>ALL</span></a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="m2 on">
+					<a href="document.html">Document</a>
+					<div class="dir">
+						<ul>
+						<li class="sm1"><a href="#"><span>CMF</span></a></li>
+						<li class="sm2"><a href="#"><span>Research</span></a></li>
+						<li class="sm3"><a href="#"><span>Guide</span></a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="m3"><a href="admin.html">admin</a></li>
+				<li class="m4">
+					<a href="setting.html">setting</a>
+					<!-- <div class="dir">
+						<ul>
+						<li class="sm1"><a href="#"><span>레이아웃</span></a></li>
+						<li class="sm2"><a href="#"><span>컬러셋팅</span></a></li>
+						<li class="sm3"><a href="#"><span>메인설정</span></a></li>
+						</ul>
+					</div> -->
+				</li>
+				<li class="m5">
+					<a href="#">search</a>
+					<div class="dir dir_v1">
+						<div id="srch" class="srch">
+							<input type="text" placeholder="검색어 입력"><input type="image" src="img/btn_srch.jpg" width="45" height="41" alt="검색">
+						</div>
+					</div>
+				</li>
+				</ul>
+			</nav>
+			<nav class="util">
+				<ul>
+				<li class="date"><span>date</span></li>
+				<li class="m1">
+					<a href="#">bookmark</a>
+					<div class="dir">
+						<img src="img/bookmark.png" width="246" height="623" alt="">
+					</div>
+				</li>
+				<li class="m2">
+					<a href="#">alarm</a>
+					<div class="dir">
+						<img src="img/alarm.png" width="298" height="201" alt="">
+					</div>
+				</li>
+				<li class="m3">
+					<a href="#">log</a>
+					<div class="dir">
+						<img src="img/log.png" width="344" height="200" alt="">
+						<a href="mypage.html" class="mypage">View Mypage</a>
+						<a href="login.html" class="logout">LOGOUT</a>
+					</div>
+				</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div id="container">
+		<section id="content">
+			<div id="selectArea" class="select_area">
+				<div class="selectbox">
+					<button type="button" style="width:76px"></button>
+					<div class="item" style="display:none">
+						<img src="img/select_view.jpg" width="76" height="90" alt="">
+						<ul id="selectboxView">
+						<li class="m1"><a href="#typeViewModule">view1</a></li>
+						<li class="m2"><a href="#typeViewList">view2</a></li>
+						<li class="m3"><a href="#typeViewTable">view3</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="selectbox">
+					<button type="button" style="width:135px"></button>
+					<div class="item" style="display:none"><img src="img/select_all.jpg" width="135" height="90" alt=""></div>
+				</div>
+				<div class="selectbox">
+					<button type="button" style="width:135px"></button>
+					<div class="item" style="display:none"><img src="img/select_num.jpg" width="135" height="90" alt=""></div>
+				</div>
+			</div>
+			<div id="typeViewModule" class="type_view type_view_module" style="display:block">
+				<div class="normal" style="display:block">
+					<img src="img/document_content.jpg" width="1240" height="1456" alt="">
+					<div class="list list_v1" style="width:885px">
+						<ul>
+						<li class="m1"><a href="document_detail.html">1</a></li>
+						<li class="m2"><a href="document_detail.html">2</a></li>
+						<li class="m3"><a href="document_detail.html">3</a></li>
+						<li class="m4"><a href="document_detail.html">4</a></li>
+						<li class="m5"><a href="document_detail.html">5</a></li>
+						<li class="m6"><a href="document_detail.html">6</a></li>
+						<li class="m7"><a href="document_detail.html">7</a></li>
+						<li class="m8"><a href="document_detail.html">8</a></li>
+						<li class="m9"><a href="document_detail.html">9</a></li>
+						</ul>
+					</div>
+					<a href="#" class="btn_hide">hide</a>
+				</div>
+				<div class="wide" style="display:none">
+					<img src="img/document_content_wide.jpg" width="1240" height="1456" alt="">
+					<div class="list list_v1" style="width:1180px">
+						<ul>
+						<li class="m1"><a href="document_detail.html">1</a></li>
+						<li class="m2"><a href="document_detail.html">2</a></li>
+						<li class="m3"><a href="document_detail.html">3</a></li>
+						<li class="m4"><a href="document_detail.html">4</a></li>
+						<li class="m5"><a href="document_detail.html">5</a></li>
+						<li class="m6"><a href="document_detail.html">6</a></li>
+						<li class="m7"><a href="document_detail.html">7</a></li>
+						<li class="m8"><a href="document_detail.html">8</a></li>
+						<li class="m9"><a href="document_detail.html">9</a></li>
+						<li class="m10"><a href="document_detail.html">10</a></li>
+						<li class="m11"><a href="document_detail.html">11</a></li>
+						<li class="m12"><a href="document_detail.html">12</a></li>
+						</ul>
+					</div>
+					<a href="#" class="btn_show">show</a>
+				</div>
+			</div>
+			<div id="typeViewList" class="type_view type_view_list" style="display:none">
+				<div class="normal" style="display:block">
+					<img src="img/document_content2.jpg" width="1240" height="1286" alt="">
+					<div class="list" style="width:870px">
+						<ul>
+						<li class="m1"><a href="document_detail.html">1</a></li>
+						<li class="m2"><a href="document_detail.html">2</a></li>
+						<li class="m3"><a href="document_detail.html">3</a></li>
+						<li class="m4"><a href="document_detail.html">4</a></li>
+						<li class="m5"><a href="document_detail.html">5</a></li>
+						<li class="m6"><a href="document_detail.html">6</a></li>
+						</ul>
+					</div>
+					<a href="#" class="btn_hide">hide</a>
+				</div>
+				<div class="wide" style="display:none">
+					<img src="img/document_content2_wide.jpg" width="1240" height="1286" alt="">
+					<div class="list" style="width:1165px">
+						<ul>
+						<li class="m1"><a href="document_detail.html">1</a></li>
+						<li class="m2"><a href="document_detail.html">2</a></li>
+						<li class="m3"><a href="document_detail.html">3</a></li>
+						<li class="m4"><a href="document_detail.html">4</a></li>
+						<li class="m5"><a href="document_detail.html">5</a></li>
+						<li class="m6"><a href="document_detail.html">6</a></li>
+						</ul>
+					</div>
+					<a href="#" class="btn_show">show</a>
+				</div>
+			</div>
+			<div id="typeViewTable" class="type_view type_view_table" style="display:none">
+				<div class="normal" style="display:block">
+					<img src="img/document_content3.jpg" width="1240" height="1229" alt="">
+					<div class="list" style="width:870px">
+						<ul>
+						<li class="m1"><a href="document_detail.html">1</a></li>
+						<li class="m2"><a href="document_detail.html">2</a></li>
+						<li class="m3"><a href="document_detail.html">3</a></li>
+						<li class="m4"><a href="document_detail.html">4</a></li>
+						<li class="m5"><a href="document_detail.html">5</a></li>
+						<li class="m6"><a href="document_detail.html">6</a></li>
+						<li class="m7"><a href="document_detail.html">7</a></li>
+						<li class="m8"><a href="document_detail.html">8</a></li>
+						<li class="m9"><a href="document_detail.html">9</a></li>
+						<li class="m10"><a href="document_detail.html">10</a></li>
+						</ul>
+					</div>
+					<a href="#" class="btn_hide">hide</a>
+				</div>
+				<div class="wide" style="display:none">
+					<img src="img/document_content3_wide.jpg" width="1240" height="1229" alt="">
+					<div class="list" style="width:1165px">
+						<ul>
+						<li class="m1"><a href="document_detail.html">1</a></li>
+						<li class="m2"><a href="document_detail.html">2</a></li>
+						<li class="m3"><a href="document_detail.html">3</a></li>
+						<li class="m4"><a href="document_detail.html">4</a></li>
+						<li class="m5"><a href="document_detail.html">5</a></li>
+						<li class="m6"><a href="document_detail.html">6</a></li>
+						<li class="m8"><a href="document_detail.html">8</a></li>
+						<li class="m9"><a href="document_detail.html">9</a></li>
+						<li class="m10"><a href="document_detail.html">10</a></li>
+						<li class="m11"><a href="document_detail.html">11</a></li>
+						</ul>
+					</div>
+					<a href="#" class="btn_show">show</a>
+				</div>
+			</div>
+		</section>
+		<div id="func" class="func">
+			<a href="#lyPop" title="글쓰기" class="write">
+				<img src="img/btn_write.gif" width="79" height="79" alt="">
+				<span class="ico"><img src="img/btn_write_plus.gif" width="51" height="51" alt=""></span>
+			</a>
+		</div>
+	</div>
+	<footer>
+		<img src="img/footer.jpg" width="412" height="17" alt="">
+	</footer>
+</div>
+
+<div id="dimmed" class="dimmed" style="display:none"></div>
+
+<div id="lyPop" class="ly_pop" style="display:none">
+	<img src="img/ly_pop.jpg" width="1240" height="710" alt="">
+	<a href="#lyPop" class="clse">close</a>
+</div>
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="js/samsung.js"></script>
+<script>
+$('#selectArea').on('click', ':button', function() {
+	var $this = $(this);
+	var $item = $this.next('.item');
+	var $selectbox = $this.parent('.selectbox');
+
+	$selectbox.siblings('.selectbox').children('.item').hide();
+	( $item.is(':hidden') )? $item.show() : $item.hide();
+});
+
+$('#selectboxView').on('click', 'a', function(e) {
+	e.preventDefault();
+
+	var $this = $(this);
+	var target = $this.attr('href');
+
+	$this.closest('.item').hide();
+	$('.type_view').hide();
+	$(target).show();
+});
+
+$('a.btn_hide').on('click', function(e) {
+	e.preventDefault();
+
+	//var $this = $(this);
+	//var $normal = $this.parent('.normal');
+	//var $wide = $normal.next('.wide');
+	var $typeView = $('.type_view');
+	var $normal = $typeView.find('.normal');
+	var $wide = $typeView.find('.wide');
+
+	$normal.hide();
+	$wide.show();
+	$('#selectArea').addClass('select_area_v1');
+});
+
+$('a.btn_show').on('click', function(e) {
+	e.preventDefault();
+
+	//var $this = $(this);
+	//var $wide = $this.parent('.wide');
+	//var $normal = $wide.prev('.normal');
+	var $typeView = $('.type_view');
+	var $normal = $typeView.find('.normal');
+	var $wide = $typeView.find('.wide');
+
+	$wide.hide();
+	$normal.show();
+	$('#selectArea').removeClass('select_area_v1');
+});
+</script>
+</body>
+</html>

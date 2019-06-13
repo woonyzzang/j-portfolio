@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>제주항공</title>
+<link rel="stylesheet" href="css/m.jeju.css">
+</head>
+<body>
+<div id="wrap">
+	<!-- <div id="allMenu">
+		<a href="setting.html"><img src="im/all_menu.jpg" alt=""></a>
+	</div> -->
+	<div id="travelPage" class="page">
+		<!-- <header>
+			<img src="im/header_detaile.png" alt="">
+		</header> -->
+		<article class="container">
+			<section class="content">
+				<div class="mypage">
+					<div class="mypage_info"><a href="intro.html" onclick="history.go(-1);return false;"><img src="im/mypage_info.jpg" alt=""></a></div>
+					<div id="mypageMenu" class="mypage_menu">
+						<ul>
+						<li class="on"><a href="#tab1"><span>MY 북마크</span></a></li>
+						<li><a href="#tab2"><span>쿠폰내역</span></a></li>
+						<li><a href="#tab3"><span>MY 스탬프</span></a></li>
+						<li><a href="#tab4"><span>포인트 내역</span></a></li>
+						</ul>
+					</div>
+					<div id="tab1" class="tab_con" style="display:block"><img src="im/mypage_item1.jpg" alt=""></div>
+					<div id="tab2" class="tab_con" style="display:none"><img src="im/mypage_item2.jpg" alt=""></div>
+					<div id="tab3" class="tab_con" style="display:none"><img src="im/mypage_item1.jpg" alt=""></div>
+					<div id="tab4" class="tab_con" style="display:none"><img src="im/mypage_item2.jpg" alt=""></div>
+				</div>
+			</section>
+		</article>
+	</div>
+</div>
+
+<!-- conextbox -->
+<div id="conextbox" class="conextbox">
+	<ul class="lst">
+	<li><a href="../a_type/index.html">A Prototype</a></li>
+	<li><a href="../b_type/index.html">B Prototype</a></li>
+	<li><a href="../c_type/index.html">C Prototype</a></li>
+	<li><a href="../d_type/index.html">D Prototype</a></li>
+	</ul>
+</div>
+<!-- //conextbox -->
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="lib/jquery.rwdImageMaps.min.js"></script>
+<script src="lib/hammer.min.js"></script>
+<script src="lib/jquery.hammer.js"></script>
+<script src="js/m.jeju.js"></script>
+<script>
+$('#mypageMenu').on('click', 'a', function(e) {
+	e.preventDefault();
+
+	var target = $(this).attr('href');
+
+	$(this).parent('li').addClass('on').siblings('li').removeClass('on');
+	$('.tab_con').hide();
+	$(target).show();
+});
+</script>
+</body>
+</html>

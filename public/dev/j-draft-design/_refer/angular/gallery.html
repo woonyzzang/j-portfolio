@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="브이더블유 제안 시안 디자인 갤러리">
+<meta name="author" content="Joe Seung Woon">
+<!-- <link rel="shortcut icon" href="favicon.ico"> -->
+<title>VW Draft Design</title>
+<link rel="stylesheet" href="unitegallery/css/unite-gallery.css">
+<style>
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}
+:root,body{height:100%}
+a.ug-lightbox-button-close{overflow:hidden;-webkit-transition:-webkit-transform .35s!important;transition:transform .35s!important;position:absolute;width:36px;height:36px;margin:4px 0 0 -6px;background:url('unitegallery/images/lightbox-icon-close.png') no-repeat;text-indent:-9999px}
+a.ug-lightbox-button-close:hover,
+a.ug-lightbox-button-close:focus{-ms-transform:rotate(180deg);-webkit-transform:rotate(180deg);transform:rotate(180deg)}
+</style>
+</head>
+<body>
+<div id="gallery" style="display:none">
+	<img src="img/web/gallery/harim/harim_01.jpg" data-image="img/web/gallery/harim/harim_01.jpg" data-description="step.01" alt="하림푸드 시안">
+	<img src="img/web/gallery/harim/harim_02.jpg" data-image="img/web/gallery/harim/harim_02.jpg" data-description="step.02" alt="하림푸드 시안">
+	<img src="img/web/gallery/harim/harim_03.jpg" data-image="img/web/gallery/harim/harim_03.jpg" data-description="step.03" alt="하림푸드 시안">
+	<img src="img/web/gallery/harim/harim_04.jpg" data-image="img/web/gallery/harim/harim_04.jpg" data-description="step.04" alt="하림푸드 시안">
+	<img src="img/web/gallery/harim/harim_05.jpg" data-image="img/web/gallery/harim/harim_05.jpg" data-description="step.05" alt="하림푸드 시안">
+	<img src="img/web/gallery/harim/harim_06.jpg" data-image="img/web/gallery/harim/harim_06.jpg" data-description="step.06" alt="하림푸드 시안">
+	<img src="img/web/gallery/harim/harim_07.jpg" data-image="img/web/gallery/harim/harim_07.jpg" data-description="step.07" alt="하림푸드 시안">
+	<img src="img/web/gallery/harim/harim_08.jpg" data-image="img/web/gallery/harim/harim_08.jpg" data-description="step.08" alt="하림푸드 시안">
+	<img src="img/web/gallery/harim/harim_09.jpg" data-image="img/web/gallery/harim/harim_09.jpg" data-description="step.09" alt="하림푸드 시안">
+	<img src="img/web/gallery/harim/harim_10.jpg" data-image="img/web/gallery/harim/harim_10.jpg" data-description="step.10" alt="하림푸드 시안">
+	<img src="img/web/gallery/harim/harim_11.jpg" data-image="img/web/gallery/harim/harim_11.jpg" data-description="step.11" alt="하림푸드 시안">
+</div>
+
+<script src="lib/jquery-1.12.4.min.js"></script>
+<script src="unitegallery/js/unitegallery.min.js"></script>
+<script src="unitegallery/themes/compact/ug-theme-compact.js"></script>
+<script>
+(function($) {
+	var $btnClse = $('<a href="index.html" title="close" class="ug-lightbox-button-close">close</a>');
+
+	$('#gallery').unitegallery({
+		//gallery_skin : 'alexis',
+		//slider_bullets_skin : 'alexis',
+		gallery_width : '100%',
+		gallery_height : '100%',
+		gallery_min_width : '100%',
+		gallery_min_height : '100%',
+		theme_panel_position : 'right',
+		slider_scale_mode : 'fit',
+		slider_control_swipe : false
+	});
+
+	$('.ug-zoompanel').append($btnClse);
+})(jQuery);
+</script>
+</body>
+</html>

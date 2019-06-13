@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>Studio : 하림</title>
+<link rel="stylesheet" href="css/jquery.fullpage.css">
+<style>
+*{margin:0;padding:0}
+ol,ul{list-style:none}
+
+.rsps{transition:.65s;-moz-transition:.65s;-webkit-transition:.65s;-o-transition:.65s}
+
+h1{position:fixed;top:28px;left:50%;z-index:5;margin-left:-97px}
+a.smenu{position:fixed;top:30px;left:30px;z-index:5}
+a.amenu{position:fixed;top:30px;right:30px;z-index:5}
+.aside{overflow-x:hidden;overflow-y:auto;position:fixed;top:0;bottom:0;left:0;z-index:5;width:427px;margin-left:-427px;background-color:#fff}
+.aside.on{margin-left:0}
+
+.qmunu{position:fixed;top:50%;right:0;z-index:10;margin-top:-80px;box-shadow:0 0 1px rgba(0,0,0,.35)}
+.qmunu:after{content:'';position:absolute;left:-37px;bottom:-20px;width:40px;height:53px;background:url(img/bg_quick_menu.png) no-repeat}
+.qmunu a{display:block;width:53px;height:53px;background:url(img/sp_qmenu.png) no-repeat}
+.qmunu .m1 a{background-position:0 0}
+.qmunu .m2 a{background-position:0 -53px}
+.qmunu .m3 a{background-position:0 -107px}
+.qmunu .m1.on a{background-position:-60px 0}
+.qmunu .m2.on a{background-position:-60px -53px}
+.qmunu .m3.on a{background-position:-60px -107px}
+.qmunu:hover a{width:118px}
+.qmunu:hover .m1 a{background-position:-120px 0}
+.qmunu:hover .m2 a{background-position:-120px -53px}
+.qmunu:hover .m3 a{background-position:-120px -107px}
+.qmunu:hover .m1.on a{background-position:-245px 0}
+.qmunu:hover .m2.on a{background-position:-245px -53px}
+.qmunu:hover .m3.on a{background-position:-245px -107px}
+
+.section{text-align:center;background-repeat:no-repeat;background-position:50% 50%;background-size:cover}
+#section0{background-image:url(img/studio/bg_section0.jpg)}
+#section1{background-image:url(img/studio/bg_section1.jpg)}
+#section2{background-image:url(img/studio/bg_section2.jpg)}
+
+#paginate{position:fixed;bottom:38px;left:50%;/*height: 40px;*/z-index:100;width:20px}
+#paginate li{margin-top:14px;height:2px}
+#paginate li:first-child{margin-top:0}
+#paginate li.active{background:#fff}
+#paginate li a{display:block;overflow:hidden;height:100%;background:rgba(255,255,255,.6);text-indent:-9999px}
+#paginate li.active a{height:6px;background-color:#fff}
+
+.copy{position:fixed;right:30px;bottom:30px;z-index:5}
+
+/* #Mobile */
+@media all and (max-width:768px) {
+
+.web{overflow:hidden;position:absolute;width:0!important;height:0!important;opacity:0}
+.mobile{overflow:visible;position:static;width:auto;height:auto;opacity:1}
+
+#paginate{bottom:70px}
+
+}
+
+/* #Desktop */
+@media all and (min-width:769px) {
+
+.web{overflow:visible;position:static;width:auto;height:auto;opacity:1}
+.mobile{overflow:hidden;position:absolute;width:0!important;height:0!important;opacity:0}
+
+}
+</style>
+</head>
+<body>
+<h1><img src="img/studio/logo.png" alt=""></h1>
+<a href="#aside" id="smenu" class="smenu"><img src="img/studio/smenu.png" alt=""></a>
+<a class="amenu"><img src="img/studio/amenu.png" alt=""></a>
+<div id="aside" class="aside rsps">
+	<img src="img/studio/aside.jpg" alt="">
+</div>
+
+<div class="qmunu">
+	<ul>
+	<li class="m1"><a href="brand.html"></a></li>
+	<li class="m2 on"><a href="studio.html"></a></li>
+	<li class="m3"><a href="moments.html"></a></li>
+	</ul>
+</div>
+
+<div id="wrap">
+	<div id="section0" class="section">
+		<h2>
+			<a href="studio_sub.html">
+				<img src="img/studio/txt_tit_section0.png" alt="" class="web">
+				<img src="img/studio/m_txt_tit_section0.png" alt="" class="mobile">
+			</a>
+		</h2>
+	</div>
+	<div id="section1" class="section">
+		<h2>
+			<a href="studio_sub.html">
+				<img src="img/studio/txt_tit_section1.png" alt="" class="web">
+				<img src="img/studio/m_txt_tit_section1.png" alt="" class="mobile">
+			</a>
+		</h2>
+	</div>
+	<div id="section2" class="section">
+		<h2>
+			<a href="studio_sub.html">
+				<img src="img/studio/txt_tit_section2.png" alt="" class="web">
+				<img src="img/studio/m_txt_tit_section2.png" alt="" class="mobile">
+			</a>
+		</h2>
+	</div>
+</div>
+
+<ul id="paginate">
+<li data-menuanchor="page0"><a href="#page0">1</a></li>
+<li data-menuanchor="page1"><a href="#page1">2</a></li>
+<li data-menuanchor="page2"><a href="#page2">3</a></li>
+</ul>
+
+<p class="copy"><img src="img/studio/txt_copy.png" alt=""></p>
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="lib/jquery.fullpage.min.js"></script>
+<script>
+$('#wrap').fullpage({
+	verticalCentered: true,
+//	verticalCentered: false
+	menu: '#paginate',
+	anchors: ['page0', 'page1', 'page2']
+	//sectionsColor: ['#36b6e3', '#fd496e', '#cbd22a', '#7b7c7e'],
+//	scrollOverflow: true,
+//	autoScrolling: true,
+//	responsive: 640,
+//	responsiveWidth: 640,
+	//responsiveHeight: 600
+});
+
+$('#smenu').on('click', function(e) {
+	e.preventDefault();
+
+	var targer = $(this).attr('href');
+
+	$(targer).addClass('on');
+});
+
+$('#aside').on('click', function() {
+	$(this).removeClass('on');
+});
+</script>
+</body>
+</html>

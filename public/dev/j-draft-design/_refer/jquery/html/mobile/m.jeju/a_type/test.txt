@@ -1,0 +1,30 @@
+.on('panstart', function(ev) {
+		console.log( ev.gesture.deltaY );
+
+	/*if ( ev.gesture.deltaX > 0 || ev.gesture.additionalEvent === 'panright' ) {
+	} else {
+		$(this).addClass('active');
+	}*/
+
+	})
+	.on('panmove', function(ev) {
+
+		/*if ( ev.gesture.deltaX > 0 ) {
+			return false;
+		}
+
+		this.style.transform = 'translate3d(' + ev.gesture.deltaX + 'px' + ',0,0)';*/
+	})
+	.on('panend', function(ev) {
+
+		/*if ( ev.gesture.deltaX < -200 ) {
+			this.style.transform = 'translate3d(-100%,0,0)';
+			$('#aside').removeClass('on');
+			this.style.transform = '';
+		} else {
+			this.style.transform = '';
+		}
+
+		$(this).removeClass('active');*/
+
+	});

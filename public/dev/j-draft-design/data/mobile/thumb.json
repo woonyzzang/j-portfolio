@@ -1,0 +1,50 @@
+[
+	{
+		"year" : 2016,
+		"query" : "jejuair_a",
+		"imgSrc" : "jejuair_a.jpg",
+		"title" : "제주여행 A",
+		"html" : "html/mobile/m.jeju/a_type/index.html",
+		"resolution": [640, 960]
+	},
+	{
+		"year" : 2016,
+		"query" : "jejuair_b",
+		"imgSrc" : "jejuair_b.jpg",
+		"title" : "제주여행 B",
+		"html" : "html/mobile/m.jeju/b_type/index.html",
+		"resolution": [640, 960]
+	},
+	{
+		"year" : 2016,
+		"query" : "jejuair_c",
+		"imgSrc" : "jejuair_c.jpg",
+		"title" : "제주여행 C",
+		"html" : "html/mobile/m.jeju/c_type/index.html",
+		"resolution": [640, 960]
+	},
+	{
+		"year" : 2016,
+		"query" : "jejuair_d",
+		"imgSrc" : "jejuair_d.jpg",
+		"title" : "제주여행 D",
+		"html" : "html/mobile/m.jeju/d_type/index.html",
+		"resolution": [640, 960]
+	},
+	{
+		"year" : 2016,
+		"query" : "harim",
+		"imgSrc" : "harim.jpg",
+		"title" : "하림펫푸드",
+		"html" : "html/web/harim/brand.html",
+		"resolution": [640, 960]
+	},
+	{
+		"year" : 2016,
+		"query" : "jungwoneshop",
+		"imgSrc" : "jungwoneshop.jpg",
+		"title" : "정원e샵",
+		"html" : "html/web/jungwoneshop/main.html",
+		"resolution": [640, 960]
+	}
+]

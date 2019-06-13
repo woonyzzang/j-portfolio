@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>Moments : 하림</title>
+<link rel="stylesheet" href="css/jquery.fullpage.css">
+<style>
+*{margin:0;padding:0}
+ol,ul{list-style:none}
+img{width:100%;height:auto;vertical-align:top}
+
+.qmunu{position:fixed;top:50%;right:0;z-index:10;margin-top:-193px;box-shadow:0 0 1px rgba(0,0,0,.35)}
+.qmunu:after{content:'';position:absolute;left:-37px;bottom:-20px;width:40px;height:53px;background:url(img/bg_quick_menu.png) no-repeat}
+.qmunu a{display:block;width:53px;height:53px;background:url(img/sp_qmenu.png) no-repeat}
+.qmunu .m1 a{background-position:0 0}
+.qmunu .m2 a{background-position:0 -53px}
+.qmunu .m3 a{background-position:0 -107px}
+.qmunu .m1.on a{background-position:-60px 0}
+.qmunu .m2.on a{background-position:-60px -53px}
+.qmunu .m3.on a{background-position:-60px -107px}
+.qmunu:hover a{width:118px}
+.qmunu:hover .m1 a{background-position:-120px 0}
+.qmunu:hover .m2 a{background-position:-120px -53px}
+.qmunu:hover .m3 a{background-position:-120px -107px}
+.qmunu:hover .m1.on a{background-position:-245px 0}
+.qmunu:hover .m2.on a{background-position:-245px -53px}
+.qmunu:hover .m3.on a{background-position:-245px -107px}
+
+.dimmed{position:fixed;top:0;right:0;bottom:0;left:0;z-index:100;background-color:#000;opacity:.5}
+.popup{position:fixed;top:50%;left:50%;z-index:200;width:1280px;height:876px;margin:-438px 0 0 -640px}
+.mpopup{position:absolute;top:0;left:0;right:0;z-index:200;padding-top:48px}
+
+/* #Mobile */
+@media all and (max-width:768px) {
+
+.web{overflow:hidden;position:absolute;width:0!important;height:0!important;opacity:0}
+.mobile{overflow:visible;position:static;width:auto;height:auto;opacity:1}
+
+}
+
+/* #Desktop */
+@media all and (min-width:769px) {
+
+.web{overflow:visible;position:static;width:auto;height:auto;opacity:1}
+.mobile{overflow:hidden;position:absolute;width:0!important;height:0!important;opacity:0}
+
+}
+</style>
+</head>
+<body>
+<div class="qmunu">
+	<ul>
+	<li class="m1"><a href="brand.html"></a></li>
+	<li class="m2"><a href="studio.html"></a></li>
+	<li class="m3 on"><a href="#"></a></li>
+	</ul>
+</div>
+
+<div id="wrap">
+	<a href="#popup" id="popOepn" class="web"><img src="img/moments/moments_main.jpg" alt=""></a>
+	<a href="#mpopup" id="mpopOepn" class="mobile"><img src="img/moments/m_moments_main.jpg" alt=""></a>
+</div>
+
+<div id="dimmed" class="dimmed" style="display:none"></div>
+<div id="popup" class="popup" style="display:none">
+	<a href="#popup" id="popClose"><img src="img/moments/popup.png" alt=""></a>
+</div>
+<div id="mpopup" class="mpopup" style="display:none">
+	<a href="#mpopup" id="mpopClose"><img src="img/moments/m_popup.png" alt=""></a>
+</div>
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script>
+$('#popOepn, #mpopOepn').on('click', function(e) {
+	e.preventDefault();
+
+	var targer = $(this).attr('href');
+
+	$('#dimmed').show();
+	$(targer).show();
+});
+
+$('#popClose, #mpopClose').on('click', function(e) {
+	e.preventDefault();
+
+	var targer = $(this).attr('href');
+
+	$('#dimmed').hide();
+	$(targer).hide();
+});
+</script>
+</body>
+</html>

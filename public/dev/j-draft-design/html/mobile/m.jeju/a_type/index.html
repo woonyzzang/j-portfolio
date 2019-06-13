@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<title>제주항공</title>
+<link rel="stylesheet" href="css/m.jeju.css">
+</head>
+<body>
+<div id="wrap">
+	<div id="deviceAlarm" class="device_alarm">
+		<img src="im/device_alarm.jpg" alt="" style="width:100%;height:100%">
+		<span class="bar"><img src="im/device_alarm_bar.jpg" alt=""></span>
+	</div>
+	<section id="device" class="page fixed">
+		<img src="im/device.jpg" width="640" height="960" alt="" usemap="#deviceMap">
+		<map name="deviceMap">
+		<area shape="rect" coords="6,4,637,115" href="#deviceAlarm">
+		<area shape="rect" coords="30,295,174,447" href="intro.html">
+		</map>
+	</section>
+	<footer>
+		<img src="im/footer_device.jpg" alt="">
+	</footer>
+</div>
+
+<!-- conextbox -->
+<div id="conextbox" class="conextbox">
+	<ul class="lst">
+	<li><a href="../a_type/index.html">A Prototype</a></li>
+	<li><a href="../b_type/index.html">B Prototype</a></li>
+	<li><a href="../c_type/index.html">C Prototype</a></li>
+	<li><a href="../d_type/index.html">D Prototype</a></li>
+	</ul>
+</div>
+<!-- //conextbox -->
+
+<script src="lib/jquery-1.12.1.min.js"></script>
+<script src="lib/jquery.rwdImageMaps.min.js"></script>
+<script src="lib/hammer.min.js"></script>
+<script src="lib/jquery.hammer.js"></script>
+<script src="js/m.jeju.js"></script>
+<script>
+$('#device').on('click', 'area', function(e) {
+	var target = $(this).attr('href');
+
+	if ( target.substr(0,1) === '#' ) {
+		e.preventDefault();
+
+		$(target).addClass('on');
+	}
+});
+
+$('#deviceAlarm').on('click', function() {
+	$(this).removeClass('on');
+});
+</script>
+</body>
+</html>

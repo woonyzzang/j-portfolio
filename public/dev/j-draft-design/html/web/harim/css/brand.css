@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+*{margin:0;padding:0;box-sizing:border-box}
+img{max-width:100%;height:auto;vertical-align:top}
+ol,ul{list-style:none}
+.rsps{transition:.65s;-moz-transition:.65s;-webkit-transition:.65s;-o-transition:.65s}
+
+#wrap{}
+#wrap .inr{position:relative}
+#header{position:relative}
+#content{}
+#footer{position:relative;text-align:center}
+#footer a.btn_top{position:absolute;top:-33px;left:50%;width:66px;height:66px;margin-left:-33px}
+
+.qmunu{right:0;z-index:10;box-shadow:0 0 1px rgba(0,0,0,.35)}
+.qmunu:after{content:'';position:absolute;left:-37px;bottom:-20px;width:40px;height:53px;background:url(../img/bg_quick_menu.png) no-repeat}
+.qmunu a{display:block;width:53px;height:53px;background:url(../img/sp_qmenu.png) no-repeat}
+.qmunu .m1 a{background-position:0 0}
+.qmunu .m2 a{background-position:0 -53px}
+.qmunu .m3 a{background-position:0 -107px}
+.qmunu .m1.on a{background-position:-60px 0}
+.qmunu .m2.on a{background-position:-60px -53px}
+.qmunu .m3.on a{background-position:-60px -107px}
+.qmunu:hover a{width:118px}
+.qmunu:hover .m1 a{background-position:-120px 0}
+.qmunu:hover .m2 a{background-position:-120px -53px}
+.qmunu:hover .m3 a{background-position:-120px -107px}
+.qmunu:hover .m1.on a{background-position:-245px 0}
+.qmunu:hover .m2.on a{background-position:-245px -53px}
+.qmunu:hover .m3.on a{background-position:-245px -107px}
+
+.visual button{position:absolute;top:0;bottom:0;width:60px;border:0;background-color:transparent;cursor:pointer}
+.visual button.prev{left:0}
+.visual button.next{right:0}
+.visual button:focus{outline:0}
+
+
+.section{text-align:center}
+
+/* #Mobile */
+@media all and (max-width:768px) {
+
+.web{overflow:hidden;position:absolute;width:0!important;height:0!important;opacity:0}
+.mobile{overflow:visible;position:static;width:auto;height:auto;opacity:1}
+
+body{min-width:320px}
+#wrap{}
+#wrap .inr{margin:0 40px}
+#header{height:128px}
+#header h1{position:absolute;top:48px;left:0}
+#header .gnb{position:absolute;top:40px;right:0}
+#container{padding-bottom:105px}
+#header .util{opacity:0}
+#content{}
+#footer{background-color:#242529}
+
+.qmunu{position:fixed;top:328px}
+
+.visual{position:relative;margin-top:200px}
+.visual h2{position:absolute;top:-200px;left:0;z-index:5}
+.visual .view{}
+.visual .view li img{width:100%/*height:410px*/}
+
+.section{margin-top:50px}
+.product .desc{margin-top:0}
+
+.product .lst{overflow:hidden;position:relative;margin-top:40px}
+.product .lst li{position:static;top:0;left:0;width:48.5%}
+.product .lst li.item1{float:left}
+.product .lst li.item2{float:right}
+.product .lst li.item3{float:left;margin-top:20px}
+.product .lst li.item4{float:right;margin-top:20px}
+
+.brands{}
+.brands .lst{position:relative;margin-top:40px}
+.brands .lst li{position:static;top:0;left:0}
+.brands .lst li.item1{}
+.brands .lst li.item2{margin-top:30px}
+
+.petfood{}
+.petfood .lst{position:relative;margin-top:40px}
+.petfood .lst li{position:static;top:0;left:0}
+.petfood .lst li.item1{}
+.petfood .lst li.item2{}
+.petfood .lst li.item3{margin-top:40px}
+
+.counselling{}
+.counselling .lst{position:relative;margin:60px auto 0}
+.counselling .lst li{position:static;top:0;left:0;margin-top:20px}
+.counselling .lst li.item1{}
+.counselling .lst li.item2{}
+.counselling .lst li.item3{}
+
+}
+
+/* #Desktop */
+@media all and (min-width:769px) {
+
+.web{overflow:visible;position:static;width:auto;height:auto;opacity:1}
+.mobile{overflow:hidden;position:absolute;width:0!important;height:0!important;opacity:0}
+
+#wrap .inr{width:1260px;margin:0 auto;padding:0 20px}
+#header{height:70px}
+#header h1{position:absolute;top:13px;left:20px}
+#header .gnb{position:absolute;top:30px;left:50%;margin-left:-278px}
+#header .util{position:absolute;top:30px;right:20px;opacity:1}
+#container{padding-bottom:130px}
+#footer{margin-bottom:30px;/* background-color:#111 */}
+
+.qmunu{position:absolute;top:70px}
+
+.visual{position:relative;margin-top:0}
+.visual h2{position:absolute;top:50%;left:200px;margin-top:-175px;z-index:5}
+.visual .view{}
+.visual .view li img{width:100%}
+
+.section{margin-top:80px}
+.product .desc{margin-top:55px}
+.product .lst{position:relative;width:960px;height:278px;margin:60px auto 0}
+.product .lst li{position:absolute;top:0;width:211px}
+.product .lst li.item1{left:0}
+.product .lst li.item2{left:246px}
+.product .lst li.item3{left:492px}
+.product .lst li.item4{left:738px}
+
+.brands{}
+.brands .lst{position:relative;width:960px;height:400px;margin:60px auto 0}
+.brands .lst li{position:absolute;top:0}
+.brands .lst li.item1{left:0;width:300px}
+.brands .lst li.item2{left:330px;width:630px}
+
+.petfood{}
+.petfood .lst{position:relative;width:960px;height:421px;margin:60px auto 0}
+.petfood .lst li{position:absolute;top:0}
+.petfood .lst li.item1{left:0;width:227px}
+.petfood .lst li.item2{left:260px;width:194px}
+.petfood .lst li.item3{left:495px;width:464px}
+
+.counselling{}
+.counselling .lst{position:relative;width:960px;height:205px;margin:60px auto 0}
+.counselling .lst li{position:absolute;top:0}
+.counselling .lst li.item1{left:0;width:300px}
+.counselling .lst li.item2{left:330px;width:300px}
+.counselling .lst li.item3{left:660px;width:299px}
+
+}
