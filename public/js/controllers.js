@@ -127,15 +127,16 @@ jPortfolio.controller('MainCtrl', ['$scope', '$filter', '$http', '$window', func
         [ // Frontend Dev
             {url:'dev/cms/', name:'#CMS Theme | <HTML5, CSS3>'},
             {url:'dev/listmap/listmap.xml', name:'#Markup Listmap | <HTML5, XML, XSL, CSS2.1, jQuery>'},
-            {url:'dev/generatorCSS3/', name:'#GeneratorCSS3 | <HTML5, CSS3, jQuery>'},
+            {url:'https://github.com/woonyzzang/j-generator-css3', name:'#J Generator CSS3 | <HTML5, CSS3, jQuery>'},
             {url:'https://github.com/woonyzzang/j-html5-reference', name:'#J HTML5 Open Reference | <HTML5, CSS2.1, Ext.js, jQuery>'},
             {url:'https://github.com/woonyzzang/j-prototype', name:'#J Prototype | <HTML5, CSS3, jQuery>'},
-            // {url:'https://github.com/woonyzzang/j-draft-design', name:'#J Draft Design Gallery | <HTML5, CSS3, jQuery>'},
-            {url:'https://github.com/woonyzzang/j-responsive-design-view', name:'#J Responsive Design View | <HTML5, Sass, ECMAScript6, React.js>'},
-            {url:'https://github.com/woonyzzang/j-memo', name:'#J Memo | <HTML5, Webpack, Sass, ECMAScript6, React.js, Electron>'},
+            {url:'https://github.com/woonyzzang/j-draft-design', name:'#J Draft Design Gallery | <HTML5, CSS3, jQuery>'},
+            {url:'https://github.com/woonyzzang/j-responsive-design-view', name:'#J Responsive Design View | <HTML5, SCSS, ECMAScript6, React.js>'},
+            {url:'https://github.com/woonyzzang/j-memo', name:'#J Memo | <HTML5, Webpack, SCSS, ECMAScript6, React.js, Electron>'},
             {url:'https://github.com/woonyzzang/j-hiworks-mail-notifier', name:'#J Hiworks Notifier | <HTML5, Webpack, Sass, ECMAScript6, Electron>'},
             {url:'https://github.com/woonyzzang/j-core-module', name:'#J Core Module | <Webpack, Babel, ECMAScript6>'},
-            {url:'https://github.com/woonyzzang/j-core-editor', name:'#j Core Editor | <HTML5, Webpack, Sass, ECMAScript6, React.js>'}
+            {url:'https://github.com/woonyzzang/j-core-editor', name:'#J Core Editor | <HTML5, Webpack, SCSS, ECMAScript6, React.js>'},
+            {url:'https://github.com/woonyzzang/j-cheat-sheet-api', name:'#J Cheat Sheet API | <HTML5, Webpack, SCSS, ECMAScript6, Vue.js, Vue-Router, Ant Design Vue>'}
         ],
         [ // UI Dev
             {url:'http://jsfiddle.net/woonyzzang/2B6hM/', name:'css3 Graph'},

@@ -663,6 +663,20 @@
         "backdev": true
       },
       "skills": ["HTML5", "SCSS", "jQuery", "Lodash", "Gulp", "CodeIgniter", "MySQL"]
+    },
+    {
+      "project": "모노 커뮤니케이션즈 솔루션",
+      "start": "19.06.17",
+      "end": "19.07.23",
+      "role": "PM",
+      "works": {
+        "guide": true,
+        "markup": true,
+        "uidev": true,
+        "frontdev": false,
+        "backdev": false
+      },
+      "skills": ["HTML5", "CSS3", "Bootstrap", "jQuery", "jQueryUI"]
     }
   ]
 ]

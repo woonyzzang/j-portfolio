@@ -910,5 +910,24 @@
       "css3": true,
       "jquery": true
     }
+  },
+  {
+    "category": "new accessibility responsive web",
+    "link": "#",
+    "imageUrl": "mono/mono_communications.jpg",
+    "name": "MONO",
+    "title": "MONO 커뮤니케이션즈 솔루션",
+    "company": "MONO",
+    "year": "June 2019",
+    "start": "2019-06-17",
+    "end": "2019-07-23",
+    "techSpec": {
+      "access": true,
+      "respon": true,
+      "mobile": false,
+      "html5": true,
+      "css3": true,
+      "jquery": true
+    }
   }
 ]
