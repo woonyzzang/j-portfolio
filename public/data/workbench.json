@@ -634,7 +634,7 @@
         "frontdev": true,
         "backdev": true
       },
-      "skills": ["jQuery", "CodeIgniter", "MySQL"]
+      "skills": ["jQuery", "CodeIgniter", "PHP", "MySQL"]
     },
     {
       "project": "XPLEAT 홈페이지 / Admin",
@@ -648,7 +648,7 @@
         "frontdev": true,
         "backdev": true
       },
-      "skills": ["jQuery", "CodeIgniter", "MySQL"]
+      "skills": ["jQuery", "CodeIgniter", "PHP", "MySQL"]
     },
     {
       "project": "UPLEAT 홈페이지",
@@ -662,7 +662,7 @@
         "frontdev": true,
         "backdev": true
       },
-      "skills": ["HTML5", "SCSS", "jQuery", "Lodash", "Gulp", "CodeIgniter", "MySQL"]
+      "skills": ["HTML5", "SCSS", "jQuery", "Lodash", "Gulp", "Spring Framework", "Java", "JSP", "MySQL"]
     },
     {
       "project": "모노 커뮤니케이션즈 솔루션",
