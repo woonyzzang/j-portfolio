@@ -11,8 +11,9 @@
 </div>
 <!-- //skip -->
 <div id="wrap" data-ng-controller="MainCtrl">
+	<!-- [D] DOM 로드 후 가로스크롤바 제거 v1 확장 클래스 추가 -->
 	<div class="home">
-		<!-- [D] swipe 기능 활성화시 v1 클래스 추가/제거 -->
+		<!-- [D] swipe 기능 활성화시 v1 확장 클래스 추가/제거 -->
 		<div class="swipe">
 			<header id="header">
 				<div class="intro">
@@ -54,7 +55,7 @@
 							<div class="lid second">
 								<div class="in">
 									<h2 class="stit"><i class="fa fa-bar-chart"></i> 성능 최적화</h2>
-									<p>site optimization Knowhow<p>
+									<p>site optimization Knowhow</p>
 									<p>웹 서비스 규모가 커지면 커질수록 성능 최적화가 중요시 되고 있습니다.<br>모바일 서비스 또한 이제 반드시 필요한 고객채널이 되었습니다.<br>반응형웹, HTML5, jQuery 등 최적화된 모바일 서비스 제공을 위한<br>최적화 기술은 물론, 프론트엔드 개발을 위한 선도적인 기술을 통해<br>보다 안정화된 높은 품질 코드 향상의 프로젝트를 약속드립니다.</p>
 								</div>
 							</div>
@@ -78,7 +79,7 @@
 						</div>
 					</article>
 					<!-- //features -->
-					<!-- history -->
+					<!-- licences -->
                     <article id="{{menu.licences.name}}" class="{{menu.licences.name}}">
 						<div class="chapter-tit">
 							<h2><i class="fa fa-credit-card"></i> {{menu.licences.name}}</h2>
@@ -109,7 +110,7 @@
                             </div>
 						</div>
 					</article>
-					<!-- //history -->
+					<!-- //licences -->
 					<!-- technique -->
 					<article id="{{menu.technique.name}}" class="{{menu.technique.name}}">
 						<h2><i class="fa fa-file-code-o"></i> {{menu.technique.name}}</h2>

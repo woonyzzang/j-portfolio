@@ -55,7 +55,7 @@ $.fn.coveringBad = function(options) {
 			setY = min_top;
 		}
 
-		$handle.append('<span class="left fa-chevron-up"></span><span class="right fa-chevron-down"/></span>')
+		$handle.append('<span class="left fa-chevron-up"></span><span class="right fa-chevron-down"></span>')
 		$handle.css('left', setX);
 		$handle.css('top', setY);
 
