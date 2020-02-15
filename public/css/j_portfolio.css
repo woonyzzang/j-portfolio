@@ -800,14 +800,14 @@ a.btn_home:hover span {
   transition: 0.1s ease-out;
 }
 
-/* =Licences */
-.licences {
+/* =Licenses */
+.licenses {
   position: relative;
   padding: 6rem 3rem 14rem 9rem;
   background-color: #e57d04;
 }
 
-.licences h2 {
+.licenses h2 {
   margin-bottom: 6.4rem;
   font-weight: normal;
   font-size: 2.2rem;
@@ -815,7 +815,7 @@ a.btn_home:hover span {
   color: #fff;
 }
 
-.licences .inr {
+.licenses .inr {
   position: relative;
   padding: 10rem 4rem 2rem;
   background-color: #f6f6f6;
@@ -823,7 +823,7 @@ a.btn_home:hover span {
   border-radius: 1rem;
 }
 
-.licences select {
+.licenses select {
   position: absolute;
   top: -4rem;
   right: 0;

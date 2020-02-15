@@ -25,7 +25,7 @@ var jPortfolio = angular.module('jPortfolio', ['ngRoute']);
 }]); */
 
 jPortfolio.controller('MainCtrl', ['$scope', '$filter', '$http', '$window', function ($scope, $filter, $http, $window) {
-    var GNBITEM = ['features', 'licences', 'technique', 'workbench', 'portfolio', 'development', 'wiki', 'blog'],
+    var GNBITEM = ['features', 'licenses', 'technique', 'workbench', 'portfolio', 'development', 'wiki', 'blog'],
         UTILITEM = ['introduction', 'personality', 'github', 'blog'];
 
     $scope.menu = {
@@ -213,7 +213,7 @@ angular.element(document).ready(function() {
         this.$container = $('#container');
         this.sectionOffsetTop = [
             $('#features').offset().top,
-            $('#licences').offset().top,
+            $('#licenses').offset().top,
             $('#technique').offset().top,
             $('#workbench').offset().top,
             $('#portfolio').offset().top,
