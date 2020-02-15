@@ -34,7 +34,7 @@ jPortfolio.controller('MainCtrl', ['$scope', '$filter', '$http', '$window', func
         github: {url:'https://github.com/woonyzzang?tab=repositories', title:'깃허브 레파지토리', name:'github'},
         resume: {url:'resume/resume.html', title:'이력서', name:'resume'},
         features: {title:'기능소개', name:'features'},
-        licences: {title:'자격증', name:'licences'},
+        licenses: {title:'자격증', name:'licenses'},
         technique: {title:'스킬', name:'technique'},
         workbench: {title:'작업내역', name:'workbench'},
         portfolio: {title:'포트폴리오', name:'portfolio'},
@@ -58,10 +58,10 @@ jPortfolio.controller('MainCtrl', ['$scope', '$filter', '$http', '$window', func
         }
     });
 
-    $scope.licences = {};
-    $http.get('data/licence.json')
+    $scope.licenses = {};
+    $http.get('data/licenses.json')
         .success(function(data, status, headers, config) {
-            $scope.licences = data;
+            $scope.licenses = data;
         })
         .error(function (data, status, headers, config) {
             alert(data);
@@ -165,8 +165,8 @@ jPortfolio.controller('MainCtrl', ['$scope', '$filter', '$http', '$window', func
 		// 이력서 클릭 이벤트 핸들러
 		resume: function(e) {
 			e.preventDefault();
-			
-			$window.open($('#resume').attr('href'), 'jresume', 'width=900, height=950');			
+
+			$window.open($('#resume').attr('href'), 'jresume', 'width=900, height=950');
 		},
 		// 포트폴리오 필터 메뉴 클릭 이벤트 핸들러
 		mfilter: function(e) {
@@ -190,7 +190,7 @@ jPortfolio.controller('MainCtrl', ['$scope', '$filter', '$http', '$window', func
 		gallery: function(e) {
 			if ($(e.target).parent().attr('href') === '#') {
 				e.preventDefault();
-				
+
 				alert('외부에서 접근할 수 없는 프로젝트 입니다.');
 			}
 		} /*,
