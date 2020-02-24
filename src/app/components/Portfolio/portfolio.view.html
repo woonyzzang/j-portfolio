@@ -1,0 +1,56 @@
+<!-- [D] swipe 기능 활성화시 v1 클래스 추가/제거 -->
+<article id="portfolio" class="portfolio">
+    <h2>portfolio</h2>
+    <div class="inr">
+        <nav>
+            <h3>Filter Menu</h3>
+            <!-- [D] 활성화 확장 클래스 .active 추가/제거 -->
+            <ul id="mfilter" class="mfilter">
+                <li><a data-filter="all" title="전체" class="filter" (click)="filterClick($event)">all</a></li>
+                <li><a data-filter=".new" title="신규" class="filter" (click)="filterClick($event)">new</a></li>
+                <li><a data-filter=".sustaining" title="유지보수" class="filter" (click)="filterClick($event)">sustaining</a></li>
+                <li><a data-filter=".accessibility" title="웹 접근성" class="filter" (click)="filterClick($event)">accessibility</a></li>
+                <li><a data-filter=".responsive" title="반응형웹" class="filter" (click)="filterClick($event)">responsive</a></li>
+                <li><a data-filter=".web" title="웹" class="filter" (click)="filterClick($event)">web</a></li>
+                <li><a data-filter=".mobile" title="모바일웹" class="filter" (click)="filterClick($event)">mobile</a></li>
+                <li><a data-filter=".app" title="앱" class="filter" (click)="filterClick($event)">App</a></li>
+            </ul>
+
+            <h3>Sort Menu</h3>
+            <ul class="msort">
+                <li><a data-sort="default" title="새로고침" class="sort"><fa-icon [icon]="faSyncAlt"><span>default</span></fa-icon></a></li>
+                <li><a data-sort="order:asc" title="오름차순 정렬" class="sort"><fa-icon [icon]="faSortNumericDownAlt"><span>asc</span></fa-icon></a></li>
+                <li><a data-sort="order:desc" title="내림차순 정렬" class="sort"><fa-icon [icon]="faSortNumericUp"><span>desc</span></fa-icon></a></li>
+                <li><a data-sort="random" title="랜덤 정렬" class="sort"><fa-icon [icon]="faRandom"><span>random</span></fa-icon></a></li>
+                <li><a title="썸네일형 보기" (click)="sortClick('thumb')"><fa-icon [icon]="faThLarge"><span>thumbnail layout</span></fa-icon></a></li>
+                <li><a title="리스트형 보기" (click)="sortClick('list')"><fa-icon [icon]="faAlignJustify"><span>list layout</span></fa-icon></a></li>
+            </ul>
+        </nav>
+        <!-- [D] 리스트형 레이아웃 사용시 .gallery에 .list 확장 클래스 추가/제거 -->
+        <div id="gallery" class="gallery">
+            <div *ngFor="let portfolioModel of portfolioModel$; index as i" [attr.data-order]="i + 1" class="mix {{portfolioModel['category']}}" style="display:inline-block">
+                <figure>
+                    <span class="fluid_thumb"><img [src]="'/assets/img/gallery/' + portfolioModel['imageUrl']" width="265" height="164" alt="{{portfolioModel['name']}}"></span>
+                    <figcaption>
+                        <strong>
+                            <fa-icon [icon]="faQuoteLeft"></fa-icon> {{portfolioModel['title']}} <fa-icon [icon]="faQuoteRight"></fa-icon>
+                            <span>{{portfolioModel['company']}}</span>
+                        </strong>
+                        <a href="{{portfolioModel['link']}}" rel="noopener" aria-hidden="true" target="_blank" (click)="gallery($event)"><fa-icon [icon]="faArrowRight" class="fa"><span>바로가기</span></fa-icon></a>
+                        <time [attr.datetime]="portfolioModel['start']"><fa-icon [icon]="faClock" class="fa"></fa-icon> {{portfolioModel['year']}}</time>
+                        <div class="tech-spec">
+                            <span class="access" *ngIf="portfolioModel['techSpec']['access']">accessibility</span>
+                            <span class="respon" *ngIf="portfolioModel['techSpec']['respon']">responsive</span>
+                            <span class="mobile" *ngIf="portfolioModel['techSpec']['mobile']">mobile</span>
+                            <span class="html5" *ngIf="portfolioModel['techSpec']['html5']">html5</span>
+                            <span class="css3" *ngIf="portfolioModel['techSpec']['css3']">css3</span>
+                            <span class="jquery" *ngIf="portfolioModel['techSpec']['jquery']">jquery</span>
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="gap"></div>
+            <div class="gap"></div>
+        </div>
+    </div>
+</article>

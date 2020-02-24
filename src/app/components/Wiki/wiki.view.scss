@@ -1,0 +1,54 @@
+@import '_dependency/variable';
+@import '_dependency/mixin';
+@import '_dependency/placeholder';
+
+.wiki {
+    padding: unitsConverter(6) unitsConverter(18) unitsConverter(14) unitsConverter(9);
+    background-color: #7c378a;
+    color: #fff;
+
+    .inr {
+        -webkit-column-count: 2;
+        -webkit-column-gap: unitsConverter(3);
+        -moz-column-count: 2;
+        -moz-column-gap: unitsConverter(3);
+        -webkit-column-width: unitsConverter(24);
+        column-count: 2;
+        column-gap: unitsConverter(3);
+        column-width: unitsConverter(24);
+    }
+
+    h2 {
+        font-weight: normal;
+        font-size: unitsConverter(2.2);
+
+        a {
+            margin-left: unitsConverter(1);
+            font-size: inherit;
+            color: #fff;
+        }
+    }
+
+    p,
+    dl {
+        margin-top: unitsConverter(1.6);
+        line-height: 1.8;
+        @include text-shadow(0 0 2px rgba(255, 255, 255, .2));
+
+        dt,
+        strong {
+            font-weight: bold;
+            font-size: unitsConverter(2);
+
+            .fa {
+                font-size: unitsConverter(1.6);
+            }
+        }
+    }
+
+    ul {
+        list-style: disc;
+        padding-left: unitsConverter(2);
+        line-height: 2;
+    }
+}

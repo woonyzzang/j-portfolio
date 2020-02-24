@@ -1,39 +1,56 @@
 {
   "name": "j-portfolio",
-  "version": "1.0.0",
-  "description": "J Portfolio Web Site",
-  "main": "index.js",
+  "version": "2.0.0",
   "scripts": {
-    "start": "node index.js"
+    "ng": "ng",
+    "start": "ng serve",
+    "server": "node server",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
+  "private": true,
   "dependencies": {
-    "ejs": "2.3.3",
-    "express": "4.13.3",
-    "npm": "^6.9.0"
+    "@angular/animations": "~9.0.0",
+    "@angular/common": "~9.0.0",
+    "@angular/compiler": "~9.0.0",
+    "@angular/core": "~9.0.0",
+    "@angular/forms": "~9.0.0",
+    "@angular/platform-browser": "~9.0.0",
+    "@angular/platform-browser-dynamic": "~9.0.0",
+    "@angular/router": "~9.0.0",
+    "@fortawesome/angular-fontawesome": "^0.6.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "express": "^4.17.1",
+    "jquery": "^3.4.1",
+    "ng2-search-filter": "^0.5.1",
+    "rxjs": "~6.5.4",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "node-sass": "^4.13.1"
-  },
-  "engines": {
-    "node": "0.12.7"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/woonyzzang/j-portfolio.git"
-  },
-  "keywords": [
-    "node",
-    "heroku",
-    "express"
-  ],
-  "author": {
-    "name": "Joe Seung Woon",
-    "email": "seungwoonjjang@gmail.com",
-    "url": "http://j-portfolio.herokuapp.com"
-  },
-  "bugs": {
-    "url": "https://github.com/woonyzzang/j-portfolio/issues",
-    "email": "seungwoonjjang@gmail.com"
-  },
-  "license": "ISC"
+    "@angular-devkit/build-angular": "~0.900.1",
+    "@angular/cli": "~9.0.1",
+    "@angular/compiler-cli": "~9.0.0",
+    "@angular/language-service": "~9.0.0",
+    "@types/jasmine": "~3.5.0",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/jquery": "^3.3.32",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^5.1.2",
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~2.1.0",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.2",
+    "node-sass": "^4.13.1",
+    "protractor": "~5.4.3",
+    "ts-node": "~8.3.0",
+    "tslint": "~5.18.0",
+    "typescript": "~3.7.5"
+  }
 }

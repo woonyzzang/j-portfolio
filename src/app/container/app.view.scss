@@ -1,0 +1,71 @@
+@import '_dependency/variable';
+@import '_dependency/mixin';
+@import '_dependency/placeholder';
+
+#wrap {
+    height: inherit;
+
+    .home {
+        overflow-y: hidden;
+        width: 100%;
+        height: 85%;
+
+        &.v1 {
+            overflow: hidden;
+        }
+    }
+
+    .swipe {
+        width: 200%;
+        height: 100%;
+        //-webkit-transition: all .5s;
+        //transition: all .5s;
+        //-webkit-transition-duration: 5s;
+        //transition-duration: 5s;
+
+        &.v1 {
+            margin-left: -100%;
+        }
+
+        //&.v2 {
+        //  margin-left: 0;
+        //}
+    }
+
+    a.btn_home {
+        position: fixed;
+        top: unitsConverter(1);
+        right: unitsConverter(1.7);
+        padding: unitsConverter(1.5) unitsConverter(2);
+        background-color: #333;
+        color: #fff;
+
+        span {
+            display: none;
+        }
+
+        &:hover {
+            //background-color: #ffd500;
+            //color: #333;
+            @include text-shadow(1px 1px #000);
+
+            span {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+#container {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+#content {
+    > h2 {
+        @extend %blind;
+    }
+}

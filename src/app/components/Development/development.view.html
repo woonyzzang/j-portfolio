@@ -1,0 +1,23 @@
+<article id="development" class="development">
+    <h2><fa-icon [icon]="faInbox"></fa-icon> Development</h2>
+    <h3>j Labs</h3>
+    <div class="inr">
+        <hr>
+        <ul>
+            <li *ngFor="let dev of devs">
+                <a href="{{dev.url}}" rel="noopener" target="_blank">
+                    {{dev.name}} <fa-icon [icon]="faExternalLinkAlt"></fa-icon>
+                </a>
+            </li>
+        </ul>
+        <hr>
+        <ul>
+            <li *ngFor="let ui of uis">
+                <a href="{{ui.url}}" rel="noopener" target="_blank">
+                    {{ui.name}} <fa-icon [icon]="faExternalLinkAlt"></fa-icon>
+                </a>
+            </li>
+        </ul>
+        <hr>
+    </div>
+</article>

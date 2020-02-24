@@ -1,0 +1,26 @@
+<article id="licenses" class="licenses">
+    <div class="chapter-tit">
+        <h2><fa-icon [icon]="faCreditCard"></fa-icon> Licenses</h2>
+        <!--audio class="velo-sound"><source src="sound/bicycle.mp3" type="audio/mp3"></audio-->
+    </div>
+    <!-- [D] 스크롤 사용시 slim-scroll 클래스 추가 -->
+    <div class="inr">
+        <strong class="velo-bubble"><span>time tree<br>history</span></strong>
+        <select title="년도별 자격증 선택" [(ngModel)]="dateFilter">
+            <option value="">전체기간</option>
+            <option value="{{licenseModel['year']}}" *ngFor="let licenseModel of licensesModel$">{{licenseModel['year']}}년</option>
+        </select>
+        <div class="timeline" *ngFor="let licenseModel of licensesModel$ | filter:dateFilter">
+            <h3 class="year">{{licenseModel['year']}}</h3>
+            <ul>
+                <li *ngFor="let license of licenseModel['license']">
+                    <div class="note">
+                        <strong class="pjt_tit">{{license['title']}}</strong>
+                        <p class="desc"><fa-icon [icon]="faBuilding"></fa-icon> {{license['issued']}}</p>
+                        <span class="date"><fa-icon [icon]="faCalendar"></fa-icon> {{license['date']}}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</article>
