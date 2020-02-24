@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* <J Portfolio> FrontEnd Developer JSW 160104 */
+
+// Webfont
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+// Dependency
+@import '_dependency/variable';
+@import '_dependency/mixin';
+@import '_dependency/placeholder';
+
+// Polyfill
+//@import 'polyfill/dialog-polyfill';
+
+// Common
+//@import 'common/webfont';
+@import 'common/reset';
+@import 'common/set_class';
+@import 'common/skip';
+@import 'common/layout';

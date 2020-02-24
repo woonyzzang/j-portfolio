@@ -1,0 +1,29 @@
+<header id="header">
+    <div class="intro">
+        <div class="inr">
+            <h1 class="logo"><a href="/"><span><b>J</b></span> Portfolio</a></h1>
+            <p>Web Accessibility &amp; Web Standard<br>Responsive And Mobile Web<br>Web UI, UX Development</p>
+        </div>
+    </div>
+    <!-- [D] swipe 기능 활성화시 v1 클래스 추가/제거 -->
+    <nav id="gnb" class="gnb">
+        <h2>Main Menu</h2>
+        <ul>
+            <li *ngFor="let gnbMenu of gnbMenus">
+                <a href="{{gnbMenu.url}}" title="{{gnbMenu.title}}" (click)="navClick()"><span>{{gnbMenu.name}}</span></a>
+            </li>
+        </ul>
+    </nav>
+    <div role="complementary" class="util">
+        <h3>Util Menu</h3>
+        <p>GET STARTED</p>
+        <ul>
+            <li *ngFor="let utilMenu of utilMenus">
+                <a href="{{utilMenu.url}}" rel="noopener" title="{{utilMenu.title}}" target="_blank">{{utilMenu.name}}</a>
+            </li>
+        </ul>
+        <a href="{{resume.url}}" rel="noopener" title="{{resume.title}}" target="_blank" id="resume" class="contact" (click)="resumeClick($event)">
+            <fa-icon [icon]="faUser"><span>{{resume.name}}</span></fa-icon>
+        </a>
+    </div>
+</header>

@@ -1,0 +1,50 @@
+<article id="workbench" class="workbench">
+    <h2><fa-icon [icon]="faCalendarAlt"></fa-icon> Workbench</h2>
+    <div class="inr">
+        <div class="func_area">
+            <span class="combo">
+                <label for="srch"><span>검색</span></label> <input type="search" [(ngModel)]="searchText" title="검색어를 입력하시면 필터링 처리 됩니다." placeholder="필터링 검색어 입력" id="srch">
+            </span>
+            <span class="label_area">
+                <i title="가이드" class="guide">G</i> <span>가이드</span>
+                <i title="마크업" class="markup">M</i> <span>마크업</span>
+                <i title="UI개발" class="uidev">UI</i> <span>UI개발</span>
+                <i title="프론트엔드개발" class="frontdev">FE</i> <span>프론트엔드개발</span>
+                <i title="백엔드개발" class="backdev">BE</i> <span>백엔드개발</span>
+            </span>
+        </div>
+        <table>
+            <caption>프로젝트 작업 요약 목록</caption>
+            <thead>
+                <tr>
+                    <th scope="col">프로젝트</th>
+                    <th scope="col">시작일</th>
+                    <th scope="col">완료일</th>
+                    <th scope="col">역할</th>
+                    <th scope="col">담당업무</th>
+                    <th scope="col">사용기술</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let workbenchModel of workbenchModel$; index as i" [attr.data-idx]="i">
+                <tr *ngFor="let project of workbenchModel['project'] | filter:searchText">
+                    <td class="pjt">{{project['title']}}</td>
+                    <td class="start">{{project['start']}}</td>
+                    <td class="end">{{project['end']}}</td>
+                    <td class="role">{{project['role']}}</td>
+                    <td class="work">
+                        <span class="label_area">
+                            <i title="가이드" class="guide" *ngIf="project['works']['guide']">G</i>
+                            <i title="마크업" class="markup" *ngIf="project['works']['markup']">M</i>
+                            <i title="UI개발" class="uidev" *ngIf="project['works']['uidev']">UI</i>
+                            <i title="프론트엔드개발" class="frontdev" *ngIf="project['works']['frontdev']">FE</i>
+                            <i title="백엔드개발" class="backdev" *ngIf="project['works']['backdev']">BE</i>
+                        </span>
+                    </td>
+                    <td class="work">
+                        <span *ngFor="let skill of project['skill']; first as isFirst">{{(isFirst) ? '' : ', '}}{{skill}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</article>

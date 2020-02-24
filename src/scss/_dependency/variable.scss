@@ -1,0 +1,16 @@
+// @Variables
+
+// 파일경로
+$FONT-PATH: '/assets';
+$FILE-PATH: '/assets';
+
+// 폰트
+$fontUnit: 'rem'; // 'rem' || ''
+$defaultFontSize: 10px;
+
+// 미디어쿼리 브레이크 포인트
+$phone: '(max-width: 576px)';
+$mobile: '(max-width: 768px)';
+$tablet: '(max-width: 1200px)';
+
+//@debug 10em + 12em;

@@ -1,0 +1,41 @@
+@import '_dependency/variable';
+@import '_dependency/mixin';
+@import '_dependency/placeholder';
+
+#footer {
+    overflow: hidden;
+    height: 15%;
+    background-color: #ffd500;
+
+    .inr {
+        height: 100%;
+    }
+
+    .column {
+        float: left;
+        width: 33.3%;
+        height:100%;
+        padding: 25px 0;
+    }
+
+    .col-inr {
+        padding: 0 25px;
+
+        .phone,
+        address {
+            margin-top: 10px;
+        }
+
+        .law {
+            font-weight: normal;
+        }
+
+        .fa {
+            margin-right: unitsConverter(.4);
+        }
+    }
+
+    a {
+        color: #000;
+    }
+}

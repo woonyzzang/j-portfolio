@@ -1,0 +1,19 @@
+<article id="technique" class="technique">
+    <h2><fa-icon [icon]="faFileCode"></fa-icon> Technique</h2>
+    <div class="inr">
+        <h3>Frontend</h3>
+        <ul>
+            <li *ngFor="let value of techniqueList.get('frontend')">{{value}}</li>
+        </ul>
+        <hr>
+        <h3>Backend</h3>
+        <ul>
+            <li *ngFor="let value of techniqueList.get('backend')">{{value}}</li>
+        </ul>
+        <hr>
+        <h3>Database</h3>
+        <ul>
+            <li *ngFor="let value of techniqueList.get('database')">{{value}}</li>
+        </ul>
+    </div>
+</article>
