@@ -17,16 +17,16 @@ describe('AppController', () => {
         expect(app).toBeTruthy();
     });
 
-    it(`should have as title 'j-portfolio-client'`, () => {
+    it(`should have as title 'j-portfolio'`, () => {
       const fixture = TestBed.createComponent(AppController);
       const app = fixture.componentInstance;
-      // expect(app.title).toEqual('j-portfolio-client');
+      // expect(app.title).toEqual('j-portfolio');1
     });
 
     it('should render title', () => {
         const fixture = TestBed.createComponent(AppController);
         fixture.detectChanges();
         const compiled = fixture.nativeElement;
-        expect(compiled.querySelector('.content span').textContent).toContain('j-portfolio-client app is running!');
+        expect(compiled.querySelector('.content span').textContent).toContain('j-portfolio app is running!');
     });
 });

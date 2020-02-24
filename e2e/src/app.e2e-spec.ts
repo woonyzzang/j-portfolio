@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('j-portfolio-client app is running!');
+    expect(page.getTitleText()).toEqual('j-portfolio app is running!');
   });
 
   afterEach(async () => {
