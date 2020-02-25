@@ -1,0 +1,730 @@
+[
+    {
+        "year": 2010,
+        "project": [
+            {
+                "title": "AIM 그룹웨어",
+                "start": "10.12.08",
+                "end": "12.06.30",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "Less", "jQuery"]
+            }
+        ]
+    },
+    {
+        "year": 2011,
+        "project": [
+            {
+                "title": "에임에셋 리뉴얼",
+                "start": "11.07.24",
+                "end": "11.09.11",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML4.01", "Less", "jQuery"]
+            }
+        ]
+    },
+    {
+        "year": 2012,
+        "project": [
+            {
+                "title": "사법연감 통계시스템",
+                "start": "12.05.01",
+                "end": "12.06.30",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": false,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["XHTML1.0", "CSS2.1"]
+            },
+            {
+                "title": "폼나는 인테리어폼",
+                "start": "12.07.23",
+                "end": "12.12.06",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["XHTML1.0", "CSS2.1", "jQuery"]
+            },
+            {
+                "title": "네이버 문화&오락 유지 / 보수",
+                "start": "12.08.16",
+                "end": "13.01.04",
+                "role": "PA",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": false,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML4.01", "CSS2.1"]
+            },
+            {
+                "title": "네이버 키워드 검색",
+                "start": "12.08.16",
+                "end": "12.11.14",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": false,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS2.1"]
+            },
+            {
+                "title": "네이버 일본어사전",
+                "start": "12.11.16",
+                "end": "12.12.06",
+                "role": "PA",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": false,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "SCSS"]
+            },
+            {
+                "title": "네이버 웹소설",
+                "start": "12.12.12",
+                "end": "13.01.04",
+                "role": "PA",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": false,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS2.1", "jQuery"]
+            }
+        ]
+    },
+    {
+        "year": 2013,
+        "project": [
+            {
+                "title": "NHN 사전,한게임 유지 / 보수",
+                "start": "13.01.05",
+                "end": "13.08.17",
+                "role": "PA",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": false,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS3"]
+            },
+            {
+                "title": "NHN 미디어스크린",
+                "start": "13.03.19",
+                "end": "13.04.19",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": false,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS3", "Grunt"]
+            },
+            {
+                "title": "NHN 한게임 웹접근성 개선",
+                "start": "13.04.23",
+                "end": "13.08.17",
+                "role": "PA",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": false,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML4.01", "CSS2.1"]
+            },
+            {
+                "title": "한게임 크리티카",
+                "start": "13.05.01",
+                "end": "13.05.20",
+                "role": "PA",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": false,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS2.1"]
+            },
+            {
+                "title": "한게임 테라",
+                "start": "13.05.23",
+                "end": "13.05.31",
+                "role": "PA",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": false,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML4.01", "CSS2.1"]
+            },
+            {
+                "title": "NHN 야구9단",
+                "start": "13.06.07",
+                "end": "13.06.14",
+                "role": "PA",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": false,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML4.01", "CSS2.1"]
+            },
+            {
+                "title": "한게임 에오스",
+                "start": "13.07.06",
+                "end": "13.08.17",
+                "role": "PL",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": false,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["XHTML1.0", "CSS2.1"]
+            },
+            {
+                "title": "현대 경제연구원",
+                "start": "13.09.09",
+                "end": "13.10.20",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["XHTML1.0", "CSS2.1", "jQuery"]
+            },
+            {
+                "title": "엠키스",
+                "start": "13.09.11",
+                "end": "13.10.18",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS3", "jQuery"]
+            },
+            {
+                "title": "제주 BNF",
+                "start": "13.10.25",
+                "end": "13.10.29",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS3", "jQuery", "Gulp", "Bower"]
+            },
+            {
+                "title": "삼성생명 나눔스테이션",
+                "start": "13.10.30",
+                "end": "13.11.20",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS2.1", "jQuery"]
+            },
+            {
+                "title": "네이버 개발자센터",
+                "start": "13.12.02",
+                "end": "13.12.31",
+                "role": "PA",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": false,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS2.1"]
+            }
+        ]
+    },
+    {
+        "year": 2014,
+        "project": [
+            {
+                "title": "교통안전공단",
+                "start": "14.01.01",
+                "end": "14.02.10",
+                "role": "PA",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS2.1", "jQuery"]
+            },
+            {
+                "title": "SKT 클라우드",
+                "start": "14.02.12",
+                "end": "14.04.11",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS3", "Bootstarp", "Grunt"]
+            },
+            {
+                "title": "삼성생명 KM(보험연구소)",
+                "start": "14.05.07",
+                "end": "14.06.30",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS2.1", "Bootstrap", "jQuery"]
+            },
+            {
+                "title": "삼성생명 KM(E-spin) for 다음소프트",
+                "start": "14.07.01",
+                "end": "14.10.17",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5, CSS2.1, jQuery"]
+            },
+            {
+                "title": "네이버 체크아웃, N마일리지 유지 / 보수",
+                "start": "14.11.05",
+                "end": "14.12.31",
+                "role": "PA",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": false,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS3", "Grunt", "PHP"]
+            }
+        ]
+    },
+    {
+        "year": 2015,
+        "project": [
+            {
+                "title": "네이버 쇼핑 유지 / 보수",
+                "start": "15.01.01",
+                "end": "15.01.30",
+                "role": "PA",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": false,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS3", "Grunt", "PHP"]
+            },
+            {
+                "title": "현대 오일뱅크 유지 / 보수",
+                "start": "15.01.30",
+                "end": "15.04.30",
+                "role": "PL",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS2.1", "jQueryUI"]
+            },
+            {
+                "title": "국민대통합 유지 / 보수",
+                "start": "15.01.30",
+                "end": "15.04.30",
+                "role": "PL",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": false,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS2.1", "jQuery"]
+            },
+            {
+                "title": "네이버 1:1톡 멀티 플랫폼",
+                "start": "15.05.01",
+                "end": "15.07.31",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["Jade", "SCSS", "jQuery", "CoffeeScript", "Grunt", "Bower", "PHP"]
+            },
+            {
+                "title": "신라호텔 유지 / 보수",
+                "start": "15.10.12",
+                "end": "15.12.10",
+                "role": "PL",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["XHTML1.0", "CSS2.1", "jQuery"]
+            }
+        ]
+
+    },
+    {
+        "year": 2016,
+        "project": [
+            {
+                "title": "VW 홈페이지 리뉴얼",
+                "start": "16.02.15",
+                "end": "16.09.02",
+                "role": "PL",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["XHTML1.0", "CSS2.1", "jQuery"]
+            },
+            {
+                "title": "미미월드 유지 / 보수",
+                "start": "16.02.15",
+                "end": "16.09.02",
+                "role": "PL",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS2.1", "jQuery", "PHP"]
+            },
+            {
+                "title": "스트라디움 유지 / 보수",
+                "start": "16.02.15",
+                "end": "16.09.02",
+                "role": "PL",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML4.01", "CSS2.1", "PHP"]
+            },
+            {
+                "title": "CJONE 원더풀 이벤트 프로모션",
+                "start": "16.03.04",
+                "end": "16.04.20",
+                "role": "PL",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["XHTML1.0", "CSS2.1", "jQueryUI"]
+            },
+            {
+                "title": "윤선생 웰스터디",
+                "start": "16.03.11",
+                "end": "16.03.29",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS3", "jQuery"]
+            },
+            {
+                "title": "키드키즈 직무연수",
+                "start": "16.07.01",
+                "end": "16.07.30",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS3", "jQuery"]
+            },
+            {
+                "title": "세화미술관",
+                "start": "16.08.01",
+                "end": "16.09.02",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS3", "jQuery"]
+            }
+        ]
+    },
+    {
+        "year": 2017,
+        "project": [
+            {
+                "title": "찬스볼",
+                "start": "17.02.06",
+                "end": "17.04.30",
+                "role": "PL",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS3", "jQuery", "D3", "AngularJS", "ionic", "Node"]
+            },
+            {
+                "title": "KB국민은행 스타뱅킹 4.0 개편 고도화",
+                "start": "17.05.24",
+                "end": "17.07.14",
+                "role": "PA",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS3", "jQuery"]
+            },
+            {
+                "title": "KB국민은행 인터넷뱅킹 3차 개편 고도화",
+                "start": "17.07.07",
+                "end": "17.11.06",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["XHTML1.0", "CSS2.1", "jQuery"]
+            },
+            {
+                "title": "삼성닷컴 Why High Resolution",
+                "start": "17.12.04",
+                "end": "18.01.19",
+                "role": "PL",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "SCSS", "jQuery", "CoffeeScript", "Webpack"]
+            }
+        ]
+    },
+    {
+        "year": 2018,
+        "project": [
+            {
+                "title": "삼성카드 카드신청 프로세스",
+                "start": "18.02.19",
+                "end": "18.06.29",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS2.1", "jQuery", "jQueryUI"]
+            },
+            {
+                "title": "웹케시",
+                "start": "18.11.19",
+                "end": "18.12.21",
+                "role": "PL",
+                "works": {
+                    "guide": false,
+                    "markup": false,
+                    "uidev": true,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS3", "jQuery", "Lodash"]
+            }
+        ]
+    },
+    {
+        "year": 2019,
+        "project": [
+            {
+                "title": "교보스토리 읽거느 이벤트 / Admin",
+                "start": "19.01.09",
+                "end": "19.03.12",
+                "role": "PL",
+                "works": {
+                    "guide": false,
+                    "markup": false,
+                    "uidev": false,
+                    "frontdev": true,
+                    "backdev": true
+                },
+                "skill": ["jQuery", "CodeIgniter", "PHP", "MySQL"]
+            },
+            {
+                "title": "XPLEAT 홈페이지 / Admin",
+                "start": "19.01.15",
+                "end": "19.02.15",
+                "role": "PL",
+                "works": {
+                    "guide": false,
+                    "markup": false,
+                    "uidev": false,
+                    "frontdev": true,
+                    "backdev": true
+                },
+                "skill": ["jQuery", "CodeIgniter", "PHP", "MySQL"]
+            },
+            {
+                "title": "UPLEAT 홈페이지",
+                "start": "19.02.18",
+                "end": "19.04.03",
+                "role": "PL",
+                "works": {
+                    "guide": false,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": true,
+                    "backdev": true
+                },
+                "skill": ["HTML5", "SCSS", "jQuery", "Lodash", "Gulp", "Spring Framework", "Java", "JSP", "MySQL"]
+            },
+            {
+                "title": "모노 커뮤니케이션즈 솔루션",
+                "start": "19.06.17",
+                "end": "19.07.23",
+                "role": "PM",
+                "works": {
+                    "guide": true,
+                    "markup": true,
+                    "uidev": true,
+                    "frontdev": false,
+                    "backdev": false
+                },
+                "skill": ["HTML5", "CSS3", "Bootstrap", "jQuery", "jQueryUI"]
+            }
+        ]
+    },
+    {
+        "year": 2020,
+        "project": [
+            {
+                "title": "AIR PREMIA 포탈 그룹웨어",
+                "start": "19.11.04",
+                "end": "~",
+                "role": "PL",
+                "works": {
+                    "guide": false,
+                    "markup": false,
+                    "uidev": false,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["ReactBootstrap", "React.js", "MobX"]
+            }
+        ]
+    }
+]
