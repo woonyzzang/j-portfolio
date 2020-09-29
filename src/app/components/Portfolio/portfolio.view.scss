@@ -272,29 +272,15 @@
         color: #fff;
         text-transform: uppercase;
         @include border-radius(unitsConverter(.2));
-    }
 
-    .access {
-        background-color: #8dc63f;
-    }
+        $bgColors: (#8dc63f, #f2b600, #b84ddb, #ec6334, #ec346f, #288aad);
 
-    .respon {
-        background-color: #f2b600;
-    }
+        @each $bgColor in $bgColors {
+            $i: index($bgColors, $bgColor);
 
-    .mobile {
-        background-color: #b84ddb;
-    }
-
-    .html5 {
-        background-color: #ec6334;
-    }
-
-    .css3 {
-        background-color: #ec346f;
-    }
-
-    .jquery {
-        background-color: #288aad;
+            &:nth-child(#{$i}) {
+                background-color: $bgColor;
+            }
+        }
     }
 }

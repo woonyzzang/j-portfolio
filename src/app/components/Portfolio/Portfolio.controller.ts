@@ -35,7 +35,6 @@ export class PortfolioController implements OnInit {
      */
     filterClick(e: MouseEvent): void {
         // $(e.target).parent('li').addClass('active').siblings('li').removeClass('active');
-
         ((e.target as HTMLElement).parentNode as HTMLElement).classList.add('active');
         siblings((e.target as HTMLElement).parentNode as HTMLElement).map((elem) => elem.classList.remove('active'));
     }
@@ -53,10 +52,12 @@ export class PortfolioController implements OnInit {
             case 'list' :
                 // $gallery.addClass('list');
                 $gallery.classList.add('list');
+
                 break;
             case 'thumb' :
                 // $gallery.removeClass('list');
                 $gallery.classList.remove('list');
+
                 break;
         }
     }
@@ -68,7 +69,7 @@ export class PortfolioController implements OnInit {
      */
     gallery(e: MouseEvent): void {
         // if ($(e.target).parent().attr('href') === '#') {}
-        if (((e.target as HTMLElement).parentNode as HTMLElement).getAttribute('href') === '#') {
+        if ((e.currentTarget as HTMLElement).getAttribute('href') === '#') {
             e.preventDefault();
 
             alert('외부에서 접근할 수 없는 프로젝트 입니다.');

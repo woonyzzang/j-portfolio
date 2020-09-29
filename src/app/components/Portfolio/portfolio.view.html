@@ -22,13 +22,13 @@
                 <li><a data-sort="order:asc" title="오름차순 정렬" class="sort"><fa-icon [icon]="faSortNumericDownAlt"><span>asc</span></fa-icon></a></li>
                 <li><a data-sort="order:desc" title="내림차순 정렬" class="sort"><fa-icon [icon]="faSortNumericUp"><span>desc</span></fa-icon></a></li>
                 <li><a data-sort="random" title="랜덤 정렬" class="sort"><fa-icon [icon]="faRandom"><span>random</span></fa-icon></a></li>
-                <li><a title="썸네일형 보기" (click)="sortClick('thumb')"><fa-icon [icon]="faThLarge"><span>thumbnail layout</span></fa-icon></a></li>
-                <li><a title="리스트형 보기" (click)="sortClick('list')"><fa-icon [icon]="faAlignJustify"><span>list layout</span></fa-icon></a></li>
+                <li><a title="썸네일 타입" (click)="sortClick('thumb')"><fa-icon [icon]="faThLarge"><span>thumbnail layout</span></fa-icon></a></li>
+                <li><a title="리스트 타입" (click)="sortClick('list')"><fa-icon [icon]="faAlignJustify"><span>list layout</span></fa-icon></a></li>
             </ul>
         </nav>
         <!-- [D] 리스트형 레이아웃 사용시 .gallery에 .list 확장 클래스 추가/제거 -->
         <div id="gallery" class="gallery">
-            <div *ngFor="let portfolioModel of portfolioModel$; index as i" [attr.data-order]="i + 1" class="mix {{portfolioModel['category']}}" style="display:inline-block">
+            <div *ngFor="let portfolioModel of portfolioModel$; index as i" [attr.data-order]="i + 1" class="mix {{portfolioModel['category'].join(' ')}}" style="display:inline-block">
                 <figure>
                     <span class="fluid_thumb"><img [src]="'/assets/img/gallery/' + portfolioModel['imageUrl']" width="265" height="164" alt="{{portfolioModel['name']}}"></span>
                     <figcaption>
@@ -39,12 +39,7 @@
                         <a href="{{portfolioModel['link']}}" rel="noopener" aria-hidden="true" target="_blank" (click)="gallery($event)"><fa-icon [icon]="faArrowRight" class="fa"><span>바로가기</span></fa-icon></a>
                         <time [attr.datetime]="portfolioModel['start']"><fa-icon [icon]="faClock" class="fa"></fa-icon> {{portfolioModel['year']}}</time>
                         <div class="tech-spec">
-                            <span class="access" *ngIf="portfolioModel['techSpec']['access']">accessibility</span>
-                            <span class="respon" *ngIf="portfolioModel['techSpec']['respon']">responsive</span>
-                            <span class="mobile" *ngIf="portfolioModel['techSpec']['mobile']">mobile</span>
-                            <span class="html5" *ngIf="portfolioModel['techSpec']['html5']">html5</span>
-                            <span class="css3" *ngIf="portfolioModel['techSpec']['css3']">css3</span>
-                            <span class="jquery" *ngIf="portfolioModel['techSpec']['jquery']">jquery</span>
+                            <span *ngFor="let category of portfolioModel['category']">{{category}}</span>
                         </div>
                     </figcaption>
                 </figure>
