@@ -1,6 +1,6 @@
 [
     {
-        "category": "new web",
+        "category": ["new", "web"],
         "link": "http://searchad.naver.com/",
         "imageUrl": "naver/keyword.jpg",
         "name": "키워드광고",
@@ -8,18 +8,10 @@
         "company": "NHN",
         "year": "August 2012",
         "start": "2012-08-16",
-        "end": "2012-11-14",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": false
-        }
+        "end": "2012-11-14"
     },
     {
-        "category": "web sustaining",
+        "category": ["web", "sustaining"],
         "link": "http://jpdic.naver.com/",
         "imageUrl": "naver/jpdic.jpg",
         "name": "일본어사전",
@@ -27,18 +19,10 @@
         "company": "NHN",
         "year": "November 2012",
         "start": "2012-11-16",
-        "end": "2013-12-06",
-        "techSpec": {
-            "access": false,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": false
-        }
+        "end": "2013-12-06"
     },
     {
-        "category": "mobile sustaining",
+        "category": ["mobile", "sustaining"],
         "link": "http://m.jpdic.naver.com/",
         "imageUrl": "naver/m.jpdic.jpg",
         "name": "일본어사전",
@@ -46,18 +30,10 @@
         "company": "NHN",
         "year": "November 2012",
         "start": "2012-11-16",
-        "end": "2013-12-06",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": true,
-            "html5": true,
-            "css3": true,
-            "jquery": false
-        }
+        "end": "2013-12-06"
     },
     {
-        "category": "new web accessibility",
+        "category": ["new", "web", "accessibility"],
         "link": "http://novel.naver.com/webnovel/weekday.nhn",
         "imageUrl": "naver/novel.jpg",
         "name": "웹소설",
@@ -65,18 +41,10 @@
         "company": "NHN",
         "year": "December 2012",
         "start": "2012-12-12",
-        "end": "2013-01-04",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": true,
-            "html5": true,
-            "css3": false,
-            "jquery": false
-        }
+        "end": "2013-01-04"
     },
     {
-        "category": "new web accessibility",
+        "category": ["new", "web", "accessibility"],
         "link": "#",
         "imageUrl": "naver/mediascreen.jpg",
         "name": "미디어스크린",
@@ -84,18 +52,10 @@
         "company": "NHN",
         "year": "March 2013",
         "start": "2013-03-19",
-        "end": "2013-04-09",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": false
-        }
+        "end": "2013-04-09"
     },
     {
-        "category": "web sustaining accessibility",
+        "category": ["web", "sustaining", "accessibility"],
         "link": "http://www.hangame.com/",
         "imageUrl": "naver/hangame.jpg",
         "name": "한게임",
@@ -103,18 +63,10 @@
         "company": "Hangame",
         "year": "April 2013",
         "start": "2013-04-23",
-        "end": "2013-08-17",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": false
-        }
+        "end": "2013-08-17"
     },
     {
-        "category": "web sustaining accessibility",
+        "category": ["web", "sustaining", "accessibility"],
         "link": "http://kt.hangame.com/main.nhn",
         "imageUrl": "naver/critika.jpg",
         "name": "크리티카",
@@ -122,18 +74,10 @@
         "company": "Hangame",
         "year": "May 2013",
         "start": "2013-05-01",
-        "end": "2013-05-20",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": false
-        }
+        "end": "2013-05-20"
     },
     {
-        "category": "web sustaining accessibility",
+        "category": ["web", "sustaining", "accessibility"],
         "link": "http://tera.hangame.com/",
         "imageUrl": "naver/tera.jpg",
         "name": "테라",
@@ -141,18 +85,10 @@
         "company": "NHN",
         "year": "May 2013",
         "start": "2013-05-23",
-        "end": "2013-05-31",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": false
-        }
+        "end": "2013-05-31"
     },
     {
-        "category": "web sustaining accessibility",
+        "category": ["web", "sustaining", "accessibility"],
         "link": "http://ya9.sports.news.naver.com/index.nhn",
         "imageUrl": "naver/baseball9.jpg",
         "name": "야구9단",
@@ -160,18 +96,10 @@
         "company": "NHN",
         "year": "June 2013",
         "start": "2013-06-07",
-        "end": "2013-06-14",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": false
-        }
+        "end": "2013-06-14"
     },
     {
-        "category": "new web accessibility",
+        "category": ["new", "web", "accessibility"],
         "link": "http://eos.game.naver.com/",
         "imageUrl": "naver/eos.jpg",
         "name": "에오스",
@@ -179,18 +107,10 @@
         "company": "NHN",
         "year": "July 2013",
         "start": "2013-07-06",
-        "end": "2013-08-17",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": false
-        }
+        "end": "2013-08-17"
     },
     {
-        "category": "new web accessibility",
+        "category": ["new", "web", "accessibility"],
         "link": "http://www.hyundai-tms.com/",
         "imageUrl": "hyundai/ngv.jpg",
         "name": "현대경제연구원",
@@ -198,18 +118,10 @@
         "company": "NHN",
         "year": "July 2013",
         "start": "2013-09-09",
-        "end": "2013-10-20",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": false
-        }
+        "end": "2013-10-20"
     },
     {
-        "category": "new web accessibility",
+        "category": ["new", "web", "accessibility"],
         "link": "http://www.mkiss.or.kr/",
         "imageUrl": "mkiss/mkiss.jpg",
         "name": "엠키스",
@@ -217,37 +129,21 @@
         "company": "HRI",
         "year": "September 2013",
         "start": "2013-09-11",
-        "end": "2013-10-18",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": false
-        }
+        "end": "2013-10-18"
     },
     {
-        "category" : "new mobile accessibility",
-        "link" : "http://m.mkiss.or.kr/",
-        "imageUrl" : "mkiss/m.mkiss.jpg",
-        "name" : "엠키스",
-        "title" : "mkiss",
-        "company" : "HRI",
-        "year" : "September 2013",
-        "start" : "2013-09-11",
-        "end": "2013-10-18",
-        "techSpec" : {
-            "access" : true,
-            "respon" : false,
-            "mobile" : false,
-            "html5" : true,
-            "css3" : true,
-            "jquery": true
-        }
+        "category": ["new", "mobile", "accessibility"],
+        "link": "http://m.mkiss.or.kr/",
+        "imageUrl": "mkiss/m.mkiss.jpg",
+        "name": "엠키스",
+        "title": "mkiss",
+        "company": "HRI",
+        "year": "September 2013",
+        "start": "2013-09-11",
+        "end": "2013-10-18"
     },
     {
-        "category": "new web accessibility",
+        "category": ["new", "web", "accessibility"],
         "link": "http://jejubnf.com/ko/",
         "imageUrl": "jejubnf/jejubnf.jpg",
         "name": "JEJU BNF",
@@ -255,18 +151,10 @@
         "company": "Bluewave",
         "year": "October 2013",
         "start": "2013-10-25",
-        "end": "2013-10-29",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": true
-        }
+        "end": "2013-10-29"
     },
     {
-        "category": "new web accessibility",
+        "category": ["new", "web", "accessibility"],
         "link": "#",
         "imageUrl": "samsung/nanum.jpg",
         "name": "나눔스테이션",
@@ -274,18 +162,10 @@
         "company": "삼성생명",
         "year": "October 2013",
         "start": "2013-10-30",
-        "end": "2013-11-20",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": true
-        }
+        "end": "2013-11-20"
     },
     {
-        "category": "web sustaining accessibility",
+        "category": ["web", "sustaining", "accessibility"],
         "link": "http://developer.naver.com/",
         "imageUrl": "naver/developer.jpg",
         "name": "개발자센터",
@@ -293,18 +173,10 @@
         "company": "NHN",
         "year": "December 2013",
         "start": "2013-12-02",
-        "end": "2013-12-31",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": false
-        }
+        "end": "2013-12-31"
     },
     {
-        "category": "new web accessibility",
+        "category": ["new", "web", "accessibility"],
         "link": "http://www.ts2020.kr/",
         "imageUrl": "ts/ts2020.jpg",
         "name": "교통안전공단",
@@ -312,18 +184,10 @@
         "company": "TS",
         "year": "January 2014",
         "start": "2014-01-01",
-        "end": "2014-02-10",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": true
-        }
+        "end": "2014-02-10"
     },
     {
-        "category": "new responsive accessibility",
+        "category": ["new", "responsive", "accessibility"],
         "link": "#",
         "imageUrl": "skt/tcloud.jpg",
         "name": "T 클라우드 서버",
@@ -331,18 +195,10 @@
         "company": "SKT",
         "year": "February 2014",
         "start": "2014-02-12",
-        "end": "2014-04-11",
-        "techSpec": {
-            "access": true,
-            "respon": true,
-            "mobile": false,
-            "html5": true,
-            "css3": true,
-            "jquery": true
-        }
+        "end": "2014-04-11"
     },
     {
-        "category": "web sustaining",
+        "category": ["web", "sustaining"],
         "link": "http://order.checkout.naver.com/home",
         "imageUrl": "naver/checkout.jpg",
         "name": "체크아웃",
@@ -350,18 +206,10 @@
         "company": "NHN",
         "year": "November 2014",
         "start": "2014-11-05",
-        "end": "2014-12-31",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": false
-        }
+        "end": "2014-12-31"
     },
     {
-        "category": "web sustaining",
+        "category": ["web", "sustaining"],
         "link": "#",
         "imageUrl": "naver/admin.checkout.jpg",
         "name": "체크아웃",
@@ -369,18 +217,10 @@
         "company": "NHN",
         "year": "November 2014",
         "start": "2014-11-05",
-        "end": "2014-12-31",
-        "techSpec": {
-            "access": false,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": false
-        }
+        "end": "2014-12-31"
     },
     {
-        "category": "web sustaining accessibility",
+        "category": ["web", "sustaining", "accessibility"],
         "link": "http://mileage.naver.com/customer/home",
         "imageUrl": "naver/mileage.jpg",
         "name": "마일리지",
@@ -388,18 +228,10 @@
         "company": "NHN",
         "year": "November 2014",
         "start": "2014-11-05",
-        "end": "2014-12-31",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": false
-        }
+        "end": "2014-12-31"
     },
     {
-        "category": "sustaining accessibility mobile",
+        "category": ["sustaining", "accessibility", "mobile"],
         "link": "http://m.shopping.naver.com/",
         "imageUrl": "naver/m.shopping.jpg",
         "name": "지식쇼핑",
@@ -407,18 +239,10 @@
         "company": "NHN",
         "year": "January 2015",
         "start": "2015-01-01",
-        "end": "2015-01-30",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": true,
-            "html5": true,
-            "css3": true,
-            "jquery": false
-        }
+        "end": "2015-01-30"
     },
     {
-        "category": "sustaining accessibility mobile",
+        "category": ["sustaining", "accessibility", "mobile"],
         "link": "http://m.land.naver.com/",
         "imageUrl": "naver/m.land.jpg",
         "name": " 지식쇼핑",
@@ -426,18 +250,10 @@
         "company": "NHN",
         "year": "January 2015",
         "start": "2015-01-01",
-        "end": "2015-01-30",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": true,
-            "html5": true,
-            "css3": true,
-            "jquery": false
-        }
+        "end": "2015-01-30"
     },
     {
-        "category": "ustaining accessibility mobile",
+        "category": ["sustaining", "accessibility", "mobile"],
         "link": "http://www.band.us/",
         "imageUrl": "naver/m.band.jpg",
         "name": "밴드 기프트샵",
@@ -445,18 +261,10 @@
         "company": "NHN",
         "year": "January 2015",
         "start": "2015-01-01",
-        "end": "2015-01-30",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": true,
-            "html5": true,
-            "css3": true,
-            "jquery": false
-        }
+        "end": "2015-01-30"
     },
     {
-        "category": "sustaining accessibility mobile",
+        "category": ["sustaining", "accessibility", "mobile"],
         "link": "#",
         "imageUrl": "naver/m.stylewindow.jpg",
         "name": "네이버윈도우 샵매니저",
@@ -464,18 +272,10 @@
         "company": "NHN",
         "year": "January 2015",
         "start": "2015-01-01",
-        "end": "2015-01-30",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": true,
-            "html5": true,
-            "css3": true,
-            "jquery": false
-        }
+        "end": "2015-01-30"
     },
     {
-        "category": "sustaining accessibility mobile",
+        "category": ["sustaining", "accessibility", "mobile"],
         "link": "#",
         "imageUrl": "naver/m.fresh.jpg",
         "name": "프레시윈도우",
@@ -483,18 +283,10 @@
         "company": "NHN",
         "year": "January 2015",
         "start": "2015-01-01",
-        "end": "2015-01-30",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": true,
-            "html5": true,
-            "css3": true,
-            "jquery": false
-        }
+        "end": "2015-01-30"
     },
     {
-        "category": "sustaining accessibility mobile",
+        "category": ["sustaining", "accessibility", "mobile"],
         "link": "http://checkout.naver.com/plan/m/index.nhn",
         "imageUrl": "naver/m.plan.jpg",
         "name": " 기획전",
@@ -502,18 +294,10 @@
         "company": "NHN",
         "year": "January 2015",
         "start": "2015-01-01",
-        "end": "2015-01-30",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": true,
-            "html5": true,
-            "css3": true,
-            "jquery": false
-        }
+        "end": "2015-01-30"
     },
     {
-        "category": "sustaining accessibility mobile",
+        "category": ["sustaining", "accessibility", "mobile"],
         "link": "http://checkout.naver.com/spp/m/index.nhn",
         "imageUrl": "naver/m.spp.jpg",
         "name": " 생필품",
@@ -521,18 +305,10 @@
         "company": "NHN",
         "year": "January 2015",
         "start": "2015-01-01",
-        "end": "2015-01-30",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": true,
-            "html5": true,
-            "css3": true,
-            "jquery": false
-        }
+        "end": "2015-01-30"
     },
     {
-        "category": "new web accessibility",
+        "category": ["new", "web", "accessibility"],
         "link": "http://hello.oilbank.co.kr:8090/oil2013/front/helloWebZine.do",
         "imageUrl": "hyundai/oilbank_webzin.jpg",
         "name": "웹진",
@@ -540,18 +316,10 @@
         "company": "현대오일뱅크",
         "year": "January 2015",
         "start": "2015-01-30",
-        "end": "2015-04-30",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": true
-        }
+        "end": "2015-04-30"
     },
     {
-        "category": "web sustaining accessibility",
+        "category": ["web", "sustaining", "accessibility"],
         "link": "http://www.oilbankcard.com/",
         "imageUrl": "hyundai/oilbank_card.jpg",
         "name": "보너스카드",
@@ -559,18 +327,10 @@
         "company": "현대오일뱅크",
         "year": "January 2015",
         "start": "2015-01-30",
-        "end": "2015-04-30",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": true
-        }
+        "end": "2015-04-30"
     },
     {
-        "category": "web sustaining accessibility",
+        "category": ["web", "sustaining", "accessibility"],
         "link": "http://www.pcnc.go.kr/",
         "imageUrl": "pcnc/pcnc.jpg",
         "name": "대통합",
@@ -578,18 +338,10 @@
         "company": "대통합",
         "year": "January 2015",
         "start": "2015-01-30",
-        "end": "2015-04-30",
-        "techSpec": {
-            "access": true,
-            "respon": true,
-            "mobile": false,
-            "html5": true,
-            "css3": true,
-            "jquery": true
-        }
+        "end": "2015-04-30"
     },
     {
-        "category": "new web accessibility",
+        "category": ["new", "web", "accessibility"],
         "link": "https://talk.naver.com/?nidref=https%3A%2F%2Ftalk.naver.com%2Fintro",
         "imageUrl": "naver/talk.jpg",
         "name": "1:1톡",
@@ -597,18 +349,10 @@
         "company": "NHN",
         "year": "May 2015",
         "start": "2015-05-01",
-        "end": "2015-07-31",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": true,
-            "html5": true,
-            "css3": true,
-            "jquery": true
-        }
+        "end": "2015-07-31"
     },
     {
-        "category": "web sustaining",
+        "category": ["web", "sustaining"],
         "link": "http://www.shillastay.com/stayhub/index.do",
         "imageUrl": "samsung/shillastay.jpg",
         "name": "신라스테이",
@@ -616,18 +360,10 @@
         "company": "신라호텔",
         "year": "October 2015",
         "start": "2015-10-12",
-        "end": "2015-12-10",
-        "techSpec": {
-            "access": false,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": true
-        }
+        "end": "2015-12-10"
     },
     {
-        "category": "new web",
+        "category": ["new", "web"],
         "link": "http://www.cjone.com/cjmportal/event/oneTheFull.jsp",
         "imageUrl": "cj/cjone_onethefull.jpg",
         "name": "CJONE 원더풀",
@@ -635,18 +371,10 @@
         "company": "CJONE",
         "year": "March 2016",
         "start": "2016-03-04",
-        "end": "2016-04-20",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": false,
-            "css3": false,
-            "jquery": true
-        }
+        "end": "2016-04-20"
     },
     {
-        "category": "new mobile",
+        "category": ["new", "mobile"],
         "link": "http://m.cjone.com/cjmmobile/benefit/eventdetail.do?evt_seq=746",
         "imageUrl": "cj/m.cjone_onethefull.jpg",
         "name": "CJONE 원더풀",
@@ -654,18 +382,10 @@
         "company": "CJONE",
         "year": "March 2016",
         "start": "2016-04-05",
-        "end": "2016-04-20",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": true,
-            "html5": true,
-            "css3": true,
-            "jquery": true
-        }
+        "end": "2016-04-20"
     },
     {
-        "category": "new responsive accessibility",
+        "category": ["new", "responsive", "accessibility"],
         "link": "http://wellstudy.yoons.com",
         "imageUrl": "yoons/wellstudy.jpg",
         "name": "윤선생",
@@ -673,18 +393,10 @@
         "company": "YOONS",
         "year": "March 2016",
         "start": "2016-03-11",
-        "end": "2016-03-29",
-        "techSpec": {
-            "access": true,
-            "respon": true,
-            "mobile": false,
-            "html5": true,
-            "css3": true,
-            "jquery": true
-        }
+        "end": "2016-03-29"
     },
     {
-        "category": "new responsive accessibility",
+        "category": ["new", "responsive", "accessibility"],
         "link": "http://academy.kidkids.net/",
         "imageUrl": "kidkids/kidkids.jpg",
         "name": "키드키즈",
@@ -692,18 +404,10 @@
         "company": "KIDKIDS",
         "year": "March 2016",
         "start": "2016-07-01",
-        "end": "2016-07-30",
-        "techSpec": {
-            "access": true,
-            "respon": true,
-            "mobile": false,
-            "html5": true,
-            "css3": true,
-            "jquery": true
-        }
+        "end": "2016-07-30"
     },
     {
-        "category": "new responsive accessibility",
+        "category": ["new", "responsive", "accessibility"],
         "link": "https://www.sehwamuseum.org",
         "imageUrl": "sewha/sewha.jpg",
         "name": "세화미술관",
@@ -711,18 +415,10 @@
         "company": "SEWHA",
         "year": "September 2016",
         "start": "2016-08-01",
-        "end": "2016-09-02",
-        "techSpec": {
-            "access": true,
-            "respon": true,
-            "mobile": false,
-            "html5": true,
-            "css3": true,
-            "jquery": true
-        }
+        "end": "2016-09-02"
     },
     {
-        "category": "new web",
+        "category": ["new", "web"],
         "link": "http://www.chanceball.com/",
         "imageUrl": "knakeun/chanceball.jpg",
         "name": "찬스볼",
@@ -730,18 +426,10 @@
         "company": "KNAKEUN",
         "year": "February 2017",
         "start": "2017-02-06",
-        "end": "2017-04-30",
-        "techSpec": {
-            "access": false,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": true,
-            "jquery": true
-        }
+        "end": "2017-04-30"
     },
     {
-        "category": "new app",
+        "category": ["new", "app"],
         "link": "https://play.google.com/store/apps/details?id=com.chanceball.app",
         "imageUrl": "knakeun/app.chanceball.jpg",
         "name": "찬스볼",
@@ -749,18 +437,10 @@
         "company": "KNAKEUN",
         "year": "February 2017",
         "start": "2017-02-06",
-        "end": "2017-04-30",
-        "techSpec": {
-            "access": false,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": true,
-            "jquery": true
-        }
+        "end": "2017-04-30"
     },
     {
-        "category": "sustaining accessibility web",
+        "category": ["sustaining", "accessibility", "web"],
         "link": "https://www.kbstar.com/",
         "imageUrl": "kb/app.kb_starbaking.jpg",
         "name": "스타뱅킹",
@@ -768,18 +448,10 @@
         "company": "KB국민은행",
         "year": "May 2017",
         "start": "2017-05-24",
-        "end": "2017-07-24",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": true,
-            "jquery": true
-        }
+        "end": "2017-07-24"
     },
     {
-        "category": "sustaining accessibility app",
+        "category": ["sustaining", "accessibility", "app"],
         "link": "https://play.google.com/store/apps/details?id=com.kbstar.kbbank",
         "imageUrl": "kb/kb_internet_banking.jpg",
         "name": "인터넷뱅킹",
@@ -787,18 +459,10 @@
         "company": "KB국민은행",
         "year": "July 2017",
         "start": "2017-07-18",
-        "end": "2017-11-06",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": false,
-            "html5": false,
-            "css3": false,
-            "jquery": true
-        }
+        "end": "2017-11-06"
     },
     {
-        "category": "new accessibility responsive",
+        "category": ["new", "accessibility", "responsive"],
         "link": "https://displaysolutions.samsung.com/business-monitor/curved-gaming-monitor",
         "imageUrl": "samsung/monitor.jpg",
         "name": "Why High Resolution",
@@ -806,18 +470,10 @@
         "company": "삼성닷컴",
         "year": "December 2017",
         "start": "2017-12-04",
-        "end": "2018-02-02",
-        "techSpec": {
-            "access": true,
-            "respon": true,
-            "mobile": false,
-            "html5": true,
-            "css3": true,
-            "jquery": true
-        }
+        "end": "2018-02-02"
     },
     {
-        "category": "new accessibility responsive",
+        "category": ["new", "accessibility", "responsive"],
         "link": "https://www.samsungcard.com/personal/card/digital/UHPPCA0510M0.jsp?bgdAlncPdC=AAP1483#apply_step01",
         "imageUrl": "samsung/scard.jpg",
         "name": "카드신청",
@@ -825,18 +481,10 @@
         "company": "삼성카드",
         "year": "February 2018",
         "start": "2018-02-19",
-        "end": "2018-06-29",
-        "techSpec": {
-            "access": true,
-            "respon": true,
-            "mobile": false,
-            "html5": true,
-            "css3": false,
-            "jquery": true
-        }
+        "end": "2018-06-29"
     },
     {
-        "category": "new accessibility responsive",
+        "category": ["new", "accessibility", "responsive"],
         "link": "https://www.webcash.co.kr/webcash/",
         "imageUrl": "webcash/webcash.jpg",
         "name": "웹케시",
@@ -844,18 +492,10 @@
         "company": "웹케시",
         "year": "February 2018",
         "start": "2018-11-19",
-        "end": "2018-12-21",
-        "techSpec": {
-            "access": true,
-            "respon": true,
-            "mobile": false,
-            "html5": true,
-            "css3": true,
-            "jquery": true
-        }
+        "end": "2018-12-21"
     },
     {
-        "category": "new web mobile",
+        "category": ["new", "web", "mobile"],
         "link": "https://www.kyobostory.co.kr/with/main.do?menuId=KSMEU00082",
         "imageUrl": "kyobo/kyobo_events.jpg",
         "name": "교보스토리",
@@ -863,18 +503,10 @@
         "company": "KYOBO",
         "year": "January 2019",
         "start": "2019-01-09",
-        "end": "2019-03-12",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": true,
-            "html5": true,
-            "css3": true,
-            "jquery": true
-        }
+        "end": "2019-03-12"
     },
     {
-        "category": "new accessibility web mobile",
+        "category": ["new", "accessibility", "web", "mobile"],
         "link": "http://xpleat.kr/",
         "imageUrl": "xpleat/xpleat.jpg",
         "name": "XPLEAT",
@@ -882,18 +514,10 @@
         "company": "XPLEAT",
         "year": "January 2019",
         "start": "2019-01-15",
-        "end": "2019-02-15",
-        "techSpec": {
-            "access": true,
-            "respon": false,
-            "mobile": true,
-            "html5": true,
-            "css3": true,
-            "jquery": true
-        }
+        "end": "2019-02-15"
     },
     {
-        "category": "new accessibility responsive",
+        "category": ["new", "accessibility", "responsive"],
         "link": "http://www.upleat.com/",
         "imageUrl": "upleat/upleat.jpg",
         "name": "UPLEAT",
@@ -901,18 +525,10 @@
         "company": "UPLEAT",
         "year": "January 2019",
         "start": "2019-02-18",
-        "end": "2019-04-03",
-        "techSpec": {
-            "access": true,
-            "respon": true,
-            "mobile": false,
-            "html5": true,
-            "css3": true,
-            "jquery": true
-        }
+        "end": "2019-04-03"
     },
     {
-        "category": "new accessibility responsive web",
+        "category": ["new", "accessibility", "responsive", "web"],
         "link": "#",
         "imageUrl": "mono/mono_communications.jpg",
         "name": "MONO",
@@ -920,18 +536,10 @@
         "company": "MONO",
         "year": "June 2019",
         "start": "2019-06-17",
-        "end": "2019-07-23",
-        "techSpec": {
-            "access": true,
-            "respon": true,
-            "mobile": false,
-            "html5": true,
-            "css3": true,
-            "jquery": true
-        }
+        "end": "2019-07-23"
     },
     {
-        "category": "new web",
+        "category": ["new", "web"],
         "link": "#",
         "imageUrl": "airpremia/apportal.jpg",
         "name": "APPortal",
@@ -939,14 +547,6 @@
         "company": "AIR PREMIA",
         "year": "November 2019",
         "start": "2019-11-04",
-        "end": "2020-09-29",
-        "techSpec": {
-            "access": false,
-            "respon": false,
-            "mobile": false,
-            "html5": true,
-            "css3": true,
-            "jquery": false
-        }
+        "end": "2020-09-29"
     }
 ]
