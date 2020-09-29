@@ -929,5 +929,24 @@
             "css3": true,
             "jquery": true
         }
+    },
+    {
+        "category": "new web",
+        "link": "#",
+        "imageUrl": "airpremia/apportal.jpg",
+        "name": "APPortal",
+        "title": "AIR PREMIA 포탈 그룹웨어",
+        "company": "AIR PREMIA",
+        "year": "November 2019",
+        "start": "2019-11-04",
+        "end": "2020-09-29",
+        "techSpec": {
+            "access": false,
+            "respon": false,
+            "mobile": false,
+            "html5": true,
+            "css3": true,
+            "jquery": false
+        }
     }
 ]
