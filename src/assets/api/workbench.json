@@ -714,16 +714,16 @@
             {
                 "title": "AIR PREMIA 포탈 그룹웨어",
                 "start": "19.11.04",
-                "end": "~",
+                "end": "20.09.29",
                 "role": "PL",
                 "works": {
-                    "guide": false,
+                    "guide": true,
                     "markup": false,
                     "uidev": false,
                     "frontdev": true,
                     "backdev": false
                 },
-                "skill": ["ReactBootstrap", "React.js", "MobX"]
+                "skill": ["React.js", "MobX", "ReactBootstrap", "Strorybook", "Jest", "Enzyme", "JSDoc"]
             }
         ]
     }
