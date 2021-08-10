@@ -5,7 +5,7 @@
         <hr>
         <ul>
             <li *ngFor="let dev of devs">
-                <a href="{{dev.url}}" rel="noopener" target="_blank">
+                <a href="{{dev.url}}" rel="noopener noreferrer" target="_blank">
                     {{dev.name}} <fa-icon [icon]="faExternalLinkAlt"></fa-icon>
                 </a>
             </li>
@@ -13,7 +13,7 @@
         <hr>
         <ul>
             <li *ngFor="let ui of uis">
-                <a href="{{ui.url}}" rel="noopener" target="_blank">
+                <a href="{{ui.url}}" rel="noopener noreferrer" target="_blank">
                     {{ui.name}} <fa-icon [icon]="faExternalLinkAlt"></fa-icon>
                 </a>
             </li>

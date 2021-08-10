@@ -19,10 +19,10 @@
         <p>GET STARTED</p>
         <ul>
             <li *ngFor="let utilMenu of utilMenus">
-                <a href="{{utilMenu.url}}" rel="noopener" title="{{utilMenu.title}}" target="_blank">{{utilMenu.name}}</a>
+                <a href="{{utilMenu.url}}" rel="noopener noreferrer" title="{{utilMenu.title}}" target="_blank">{{utilMenu.name}}</a>
             </li>
         </ul>
-        <a href="{{resume.url}}" rel="noopener" title="{{resume.title}}" target="_blank" id="resume" class="contact" (click)="resumeClick($event)">
+        <a href="{{resume.url}}" rel="noopener noreferrer" title="{{resume.title}}" target="_blank" id="resume" class="contact" (click)="resumeClick($event)">
             <fa-icon [icon]="faUser"><span>{{resume.name}}</span></fa-icon>
         </a>
     </div>
