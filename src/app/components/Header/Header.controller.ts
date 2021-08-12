@@ -31,6 +31,8 @@ export class HeaderController implements OnInit {
         const $sections = document.querySelectorAll('#wrap .swipe, #gnb, #portfolio');
 
         $sections.forEach((section) => section.classList.add('v1'));
+
+        setTimeout(() => window.scrollTo(0, 0), 0);
     }
 
     /**
