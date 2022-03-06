@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { WikiController } from './Wiki.controller';
 
-describe('BlogController', () => {
+describe('WikiController', () => {
     let component: WikiController;
     let fixture: ComponentFixture<WikiController>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [ WikiController ]
-        })
-            .compileComponents();
+            declarations: [WikiController]
+        }).compileComponents();
     }));
 
     beforeEach(() => {
@@ -20,6 +19,6 @@ describe('BlogController', () => {
     });
 
     it('should create', () => {
-        expect(component).toBeTruthy();
+        expect(component).toBeDefined();
     });
 });

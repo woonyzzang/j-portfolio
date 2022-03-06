@@ -1,4 +1,5 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { WorkbenchController } from './Workbench.controller';
 
@@ -6,11 +7,13 @@ describe('WorkbenchController', () => {
     let component: WorkbenchController;
     let fixture: ComponentFixture<WorkbenchController>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [ WorkbenchController ]
-        })
-            .compileComponents();
+            imports: [
+                HttpClientTestingModule
+            ],
+            declarations: [WorkbenchController]
+        }).compileComponents();
     }));
 
     beforeEach(() => {
@@ -20,6 +23,6 @@ describe('WorkbenchController', () => {
     });
 
     it('should create', () => {
-        expect(component).toBeTruthy();
+        expect(component).toBeDefined();
     });
 });

@@ -17,5 +17,10 @@ export class TechniqueController implements OnInit {
         this.techniqueList = this.techniqueService.getTechniqueList;
     }
 
+    getKeys(map: any) {
+        console.log(map);
+        return Array.from(map.keys());
+    }
+
     ngOnInit(): void {}
 }

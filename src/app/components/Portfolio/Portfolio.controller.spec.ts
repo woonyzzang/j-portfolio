@@ -1,4 +1,5 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { PortfolioController } from './Portfolio.controller';
 
@@ -6,11 +7,13 @@ describe('PortfolioController', () => {
     let component: PortfolioController;
     let fixture: ComponentFixture<PortfolioController>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [ PortfolioController ]
-        })
-            .compileComponents();
+            imports: [
+                HttpClientTestingModule
+            ],
+            declarations: [PortfolioController]
+        }).compileComponents();
     }));
 
     beforeEach(() => {
@@ -20,6 +23,6 @@ describe('PortfolioController', () => {
     });
 
     it('should create', () => {
-        expect(component).toBeTruthy();
+        expect(component).toBeDefined();
     });
 });

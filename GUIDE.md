@@ -1,7 +1,7 @@
 # J Portfolio
 > J 포트폴리오 <http://j-portfolio.herokuapp.com/>
 
-## Angular SASS 설치
+## Angular SASS 설치 (DEPRECATED)
 `node-sass` 패키지 모듈을 설치한다.
 - <https://github.com/sass/node-sass>
 ``` bash
@@ -9,27 +9,45 @@ $ npm i -D node-sass
 ```
 
 ## Angular SASS 설정
-`angular.json` 파일의 `.css` 부분을 `.scss`로 수정한다.
-``` json
-...
-"styles": [
-    "src/styles.scss"
-],
-...
-```
-
+`angular.json` 파일의 `options` > `styles` 의 파일 확장자 `.css` -> `.scss`로 수정한다.
 scss 의 `@import` 구문을 사용을 할려면 `angular.json` 파일에 `stylePreprocessorOptions` 과 `includePaths` 를 추가한다. (원하는 경로 설정)
 ``` json
-...
-"styles": [
-    "src/styles.scss"
-],
-"stylePreprocessorOptions": {
-    "includePaths": [
-        "src/scss"
-    ]
-},
-...
+{
+  ...
+  "projects": {
+    "your-project-name": {
+      "architect": {
+        "build": {
+          "options": {
+            "styles": [
+              "src/styles.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/styles"
+              ]
+            },
+            ...
+          },
+          ...
+        },
+        "test": {
+          "options": {
+            "styles": [
+              "src/styles.scss"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/styles"
+              ]
+            },
+            ...
+          }
+        }
+      }
+    }
+  }
+}
 ```
 
 ## Angular Fontawesome 설치
@@ -60,7 +78,7 @@ $ npm i -S @fortawesome/angular-fontawesome
 $ ng g component {이름}
 ```
 
-### Angular JSDoc 주석 사용
+### Angular JSDoc 주석 사용 (DEPRECATED)
 기본적으로 angular는 JSDoc 주석 패턴을 사용하면 에러가 발생한다.
 
 `tslint.json` 파일의 `rules` 안에 `no-redundant-jsdoc` 를 수정한다.
@@ -93,7 +111,10 @@ $ ng g component {이름}
         "@container/*": ["src/app/container/*"],
         "@components/*": ["src/app/components/*"],
         "@services/*": ["src/app/services/*"],
+        "@models/*": ["src/app/models/*"],
+        "@repositorys/*": ["src/app/repositorys/*"],
         "@libs/*": ["src/app/libs/*"],
+        "@utils/*": ["src/app/utils/*"],
         "@env/*": ["src/environments/*"],
         "@assets/*": ["src/assets/*"]
     },

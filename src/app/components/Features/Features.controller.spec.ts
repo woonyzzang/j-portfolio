@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { FeaturesController } from './Features.controller';
 
@@ -6,11 +6,10 @@ describe('FeaturesController', () => {
     let component: FeaturesController;
     let fixture: ComponentFixture<FeaturesController>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [ FeaturesController ]
-        })
-            .compileComponents();
+            declarations: [FeaturesController]
+        }).compileComponents();
     }));
 
     beforeEach(() => {
@@ -20,6 +19,6 @@ describe('FeaturesController', () => {
     });
 
     it('should create', () => {
-        expect(component).toBeTruthy();
+        expect(component).toBeDefined();
     });
 });
