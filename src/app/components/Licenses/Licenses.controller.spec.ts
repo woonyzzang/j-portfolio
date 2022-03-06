@@ -1,16 +1,21 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { LicensesController } from './Licenses.controller';
 
 describe('LicensesController', () => {
     let component: LicensesController;
     let fixture: ComponentFixture<LicensesController>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [ LicensesController ]
-        })
-            .compileComponents();
+            imports: [
+                HttpClientTestingModule,
+                Ng2SearchPipeModule
+            ],
+            declarations: [LicensesController]
+        }).compileComponents();
     }));
 
     beforeEach(() => {
@@ -20,6 +25,6 @@ describe('LicensesController', () => {
     });
 
     it('should create', () => {
-        expect(component).toBeTruthy();
+        expect(component).toBeDefined();
     });
 });

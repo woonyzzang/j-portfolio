@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { FooterController } from './Footer.controller';
 
@@ -6,11 +6,10 @@ describe('FooterController', () => {
     let component: FooterController;
     let fixture: ComponentFixture<FooterController>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [ FooterController ]
-        })
-            .compileComponents();
+            declarations: [FooterController]
+        }).compileComponents();
     }));
 
     beforeEach(() => {
@@ -20,6 +19,6 @@ describe('FooterController', () => {
     });
 
     it('should create', () => {
-        expect(component).toBeTruthy();
+        expect(component).toBeDefined();
     });
 });

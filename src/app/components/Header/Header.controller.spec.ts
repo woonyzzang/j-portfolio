@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { HeaderController } from './Header.controller';
 
@@ -6,11 +6,10 @@ describe('HeaderController', () => {
     let component: HeaderController;
     let fixture: ComponentFixture<HeaderController>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [ HeaderController ]
-        })
-            .compileComponents();
+            declarations: [HeaderController]
+        }).compileComponents();
     }));
 
     beforeEach(() => {
@@ -20,6 +19,6 @@ describe('HeaderController', () => {
     });
 
     it('should create', () => {
-        expect(component).toBeTruthy();
+        expect(component).toBeDefined();
     });
 });

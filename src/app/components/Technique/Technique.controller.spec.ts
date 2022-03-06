@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { TechniqueController } from './Technique.controller';
 
@@ -6,11 +6,10 @@ describe('TechniqueController', () => {
     let component: TechniqueController;
     let fixture: ComponentFixture<TechniqueController>;
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            declarations: [ TechniqueController ]
-        })
-            .compileComponents();
+            declarations: [TechniqueController]
+        }).compileComponents();
     }));
 
     beforeEach(() => {
@@ -20,6 +19,6 @@ describe('TechniqueController', () => {
     });
 
     it('should create', () => {
-        expect(component).toBeTruthy();
+        expect(component).toBeDefined();
     });
 });

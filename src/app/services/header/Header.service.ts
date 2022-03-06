@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export default class HeaderService {
     private setGnb = new Set<{[key: string]: string}>();
     private setUtil = new Set<{[key: string]: string}>();
-    private setResume: {[key: string]: string};
+    private setResume: {[key: string]: string;};
 
     get getGnbMenus(): Set<{[key: string]: string}> {
         return this.setGnb
