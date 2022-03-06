@@ -18,7 +18,6 @@ export class TechniqueController implements OnInit {
     }
 
     getKeys(map: any) {
-        console.log(map);
         return Array.from(map.keys());
     }
 
