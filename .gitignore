@@ -20,7 +20,7 @@ package-lock.json
 *.launch
 .settings/
 *.sublime-workspace
-.iml
+*.iml
 
 # Visual Studio Code
 .vscode
