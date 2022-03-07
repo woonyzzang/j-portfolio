@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /bazel-out
+/.angular
 
 # Node
 /node_modules
@@ -20,7 +21,7 @@ package-lock.json
 *.launch
 .settings/
 *.sublime-workspace
-.iml
+*.iml
 
 # Visual Studio Code
 .vscode
