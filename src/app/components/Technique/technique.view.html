@@ -3,17 +3,17 @@
     <div class="inr">
         <h3>Frontend</h3>
         <ul>
-            <li *ngFor="let frontend of getKeys(techniqueList.get('frontend'))">{{frontend}}</li>
+            <li *ngFor="let frontend of getTechKeys(techniqueList.get('frontend'))">{{frontend}}</li>
         </ul>
         <hr>
         <h3>Backend</h3>
         <ul>
-            <li *ngFor="let backend of getKeys(techniqueList.get('backend'))">{{backend}}</li>
+            <li *ngFor="let backend of getTechKeys(techniqueList.get('backend'))">{{backend}}</li>
         </ul>
         <hr>
         <h3>Database</h3>
         <ul>
-            <li *ngFor="let database of getKeys(techniqueList.get('database'))">{{database}}</li>
+            <li *ngFor="let database of getTechKeys(techniqueList.get('database'))">{{database}}</li>
         </ul>
     </div>
 </article>

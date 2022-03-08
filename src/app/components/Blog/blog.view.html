@@ -1,5 +1,6 @@
 <article id="blog" class="blog">
-    <h2><fa-icon [icon]="faNewspaper"></fa-icon> <a href="{{blogMenu.url}}" rel="noopener noreferrer" target="_blank">Blog</a></h2>
+    <!--<h2><fa-icon [icon]="faNewspaper"></fa-icon> <a href="{{blogMenu.url}}" rel="noopener noreferrer" target="_blank">Blog</a></h2>-->
+    <h2><fa-icon [icon]="faNewspaper"></fa-icon> <a href="{{ (blogMenu$ | async).url }}" rel="noopener noreferrer" target="_blank">Blog</a></h2>
     <h3>j dev</h3>
     <div class="inr">
         <p><q>github 및 hexo 기반으로 정적 템플릿을 활용해서 제작한 개인 블로그 입니다.</q></p>

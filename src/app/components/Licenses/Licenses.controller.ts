@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { faCreditCard, faBuilding, faCalendar } from '@fortawesome/free-solid-svg-icons';
 
-import LicensesModel from '@models/Licenses.model';
 import LicensesService from '@services/licenses/Licenses.service';
+import LicensesModel from '@models/Licenses.model';
 
 @Component({
     selector: 'app-licenses',
@@ -14,20 +15,25 @@ export class LicensesController implements OnInit {
     faBuilding = faBuilding;
     faCalendar = faCalendar;
 
-    public licensesModel$: LicensesModel[]; // 라이센스 모델
+    // public licensesModel: LicensesModel[]; // 라이센스 모델
+    public licensesModel$: Observable<LicensesModel[]>; // 라이센스 모델
     public dateFilter: string; // 라이센스 날짜 필터
 
-    constructor(private licensesService: LicensesService) {
+    constructor(
+        private licensesService: LicensesService
+    ) {
         this.dateFilter = '';
     }
 
     ngOnInit(): void {
         // this.licensesService.getLicensesData.then((res) => {
-        //     this.licensesModel$ = res;
+        //     this.licensesModel = res;
         // });
 
-        this.licensesService.getLicensesData.subscribe((data) => {
-            this.licensesModel$ = data;
-        });
+        // this.licensesService.getLicensesData.subscribe((licenses: LicensesModel[]) => {
+        //     this.licensesModel = licenses;
+        // });
+
+        this.licensesModel$ = this.licensesService.getLicensesData;
     }
 }

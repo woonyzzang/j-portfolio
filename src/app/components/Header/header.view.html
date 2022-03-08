@@ -9,7 +9,8 @@
     <nav id="gnb" class="gnb">
         <h2>Main Menu</h2>
         <ul>
-            <li *ngFor="let gnbMenu of gnbMenus">
+            <!--<li *ngFor="let gnbMenu of gnbMenus">-->
+            <li *ngFor="let gnbMenu of (gnbMenus$ | async)">
                 <a href="{{gnbMenu.url}}" title="{{gnbMenu.title}}" (click)="navClick()"><span>{{gnbMenu.name}}</span></a>
             </li>
         </ul>
@@ -18,12 +19,30 @@
         <h3>Util Menu</h3>
         <p>GET STARTED</p>
         <ul>
-            <li *ngFor="let utilMenu of utilMenus">
+            <!--<li *ngFor="let utilMenu of utilMenus">-->
+            <li *ngFor="let utilMenu of (utilMenus$ | async)">
                 <a href="{{utilMenu.url}}" rel="noopener noreferrer" title="{{utilMenu.title}}" target="_blank">{{utilMenu.name}}</a>
             </li>
         </ul>
-        <a href="{{resume.url}}" rel="noopener noreferrer" title="{{resume.title}}" target="_blank" id="resume" class="contact" (click)="resumeClick($event)">
-            <fa-icon [icon]="faUser"><span>{{resume.name}}</span></fa-icon>
+        <!--<a
+            href="{{resume.url}}"
+            rel="noopener noreferrer"
+            title="{{resume.title}}"
+            target="_blank"
+            id="resume"
+            class="contact"
+            (click)="resumeClick($event)"
+        >-->
+        <a
+            href="{{(resume$ | async).url}}"
+            rel="noopener noreferrer"
+            title="{{(resume$ | async).title}}"
+            target="_blank"
+            id="resume"
+            class="contact"
+            (click)="resumeClick($event)"
+        >
+            <fa-icon [icon]="faUser"><span>{{(resume$ | async).name}}</span></fa-icon>
         </a>
     </div>
 </header>
