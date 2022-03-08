@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faFileCode } from '@fortawesome/free-solid-svg-icons';
 
+import { mapKeys } from '@utils/helper';
 import TechniqueService from '@services/technique/Technique.service';
 
 @Component({
@@ -11,14 +12,16 @@ import TechniqueService from '@services/technique/Technique.service';
 export class TechniqueController implements OnInit {
     faFileCode = faFileCode;
 
-    public techniqueList: Map<string, object>; // 테크닉 목록
+    public techniqueList: Map<string, Set<string>>; // 테크닉 목록
 
-    constructor(private techniqueService: TechniqueService) {
+    constructor(
+        private techniqueService: TechniqueService
+    ) {
         this.techniqueList = this.techniqueService.getTechniqueList;
     }
 
-    getKeys(map: any) {
-        return Array.from(map.keys());
+    getTechKeys(set: Set<string>) {
+        return mapKeys(set);
     }
 
     ngOnInit(): void {}

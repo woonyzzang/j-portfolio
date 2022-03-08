@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
 import WorkbenchModel from '@models/Workbench.model';
@@ -13,16 +14,21 @@ export class WorkbenchController implements OnInit {
     faCalendarAlt = faCalendarAlt;
 
     // public workbenchData: Array<{project: string; start: string; end: string; role: string; works: {[key: string]: string}; skills: []}>[]; // 워크벤치 json 데이터
-    public workbenchModel$: WorkbenchModel[]; // 워크벤치 모델
+    // public workbenchModel: WorkbenchModel[]; // 워크벤치 모델
+    public workbenchModel$: Observable<WorkbenchModel[]>; // 워크벤치 모델
     public searchText: string; // 워크벤치 검색 필터
 
-    constructor(private workbenchService: WorkbenchService) {
+    constructor(
+        private workbenchService: WorkbenchService
+    ) {
         this.searchText = '';
     }
 
     ngOnInit(): void {
-        this.workbenchService.getWorkbenchData.subscribe((data) => {
-            this.workbenchModel$ = data;
-        });
+        // this.workbenchService.getWorkbenchData.subscribe((workbench: WorkbenchModel[]) => {
+        //     this.workbenchModel = workbench;
+        // });
+
+        this.workbenchModel$ = this.workbenchService.getWorkbenchData;
     }
 }

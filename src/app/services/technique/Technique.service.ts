@@ -7,7 +7,7 @@ export default class TechniqueService {
     private setFrontend = new Set<string>();
     private setBackend = new Set<string>();
     private setDatebase = new Set<string>();
-    private mapTechniqueList = new Map<string, object>();
+    private mapTechniqueList = new Map<string, Set<string>>();
 
     constructor() {}
 
@@ -34,13 +34,16 @@ export default class TechniqueService {
             .add('Backbone.js')
             .add('AngularJS')
             .add('Angular')
+            .add('Rx.js')
             .add('React.js')
             .add('Vue.js')
             .add('Electron')
             .add('Grunt')
             .add('Gulp')
             .add('Webpack')
-            .add('Ionic');
+            .add('Vite')
+            .add('Ionic')
+            .add('ReactNative');
     }
 
     get getBackendSkils(): Set<string> {
@@ -49,7 +52,11 @@ export default class TechniqueService {
             .add('Express')
             .add('jade')
             .add('ejs')
+            .add('Next.js')
+            .add('Nuxt.js')
             .add('PHP')
+            .add('.Net')
+            .add('Blazor')
             .add('Java');
     }
 
@@ -57,10 +64,11 @@ export default class TechniqueService {
         return this.setDatebase
             .add('MongoDB')
             .add('MySQL')
-            .add('Oracle');
+            .add('Oracle')
+            .add('H2');
     }
 
-    get getTechniqueList(): Map<string, object> {
+    get getTechniqueList(): Map<string, Set<string>> {
         return this.mapTechniqueList
             .set('frontend', this.getFrontendSkils)
             .set('backend', this.getBackendSkils)

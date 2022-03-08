@@ -4,7 +4,8 @@
     <div class="inr">
         <hr>
         <ul>
-            <li *ngFor="let dev of devs">
+            <!--<li *ngFor="let dev of devs">-->
+            <li *ngFor="let dev of (devs$ | async)">
                 <a href="{{dev.url}}" rel="noopener noreferrer" target="_blank">
                     {{dev.name}} <fa-icon [icon]="faExternalLinkAlt"></fa-icon>
                 </a>
@@ -12,7 +13,8 @@
         </ul>
         <hr>
         <ul>
-            <li *ngFor="let ui of uis">
+            <!--<li *ngFor="let ui of uis">-->
+            <li *ngFor="let ui of (uis$ | async)">
                 <a href="{{ui.url}}" rel="noopener noreferrer" target="_blank">
                     {{ui.name}} <fa-icon [icon]="faExternalLinkAlt"></fa-icon>
                 </a>

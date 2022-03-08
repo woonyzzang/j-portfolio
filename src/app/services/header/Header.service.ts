@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
 
+export interface IGnbMenus {
+    name: string;
+    url: string;
+    title: string
+}
+
 @Injectable({
     providedIn: 'root'
 })
 export default class HeaderService {
-    private setGnb = new Set<{[key: string]: string}>();
-    private setUtil = new Set<{[key: string]: string}>();
-    private setResume: {[key: string]: string;};
+    private setGnb = new Set<IGnbMenus>();
+    private setUtil = new Set<IGnbMenus>();
+    private setResume: IGnbMenus;
 
-    get getGnbMenus(): Set<{[key: string]: string}> {
+    get getGnbMenus(): Set<IGnbMenus> {
         return this.setGnb
             .add({name: 'features', url: '#features', title: '기능소개'})
             .add({name: 'licenses', url: '#licenses', title: '자격증'})
@@ -20,7 +26,7 @@ export default class HeaderService {
             .add({name: 'blog', url: '#blog', title: '블로그소개'});
     }
 
-    get getUtilMenus(): Set<{[key: string]: string}> {
+    get getUtilMenus(): Set<IGnbMenus> {
         return this.setUtil
             .add({name: 'introduction', url: 'assets/resume/introduction.html', title: '자기소개'})
             .add({name: 'personality', url: 'assets/resume/personality_type.html', title: '성격유형'})
@@ -28,7 +34,7 @@ export default class HeaderService {
             .add({name: 'blog', url: 'https://woonyzzang.github.io/', title: '블로그소개'});
     }
 
-    get getResume(): {[key: string]: string} {
+    get getResume(): IGnbMenus {
         return this.setResume = {name: 'resume', url: 'assets/resume/resume.html', title: '이력서'};
     }
 }

@@ -6,14 +6,22 @@
             <h3>Filter Menu</h3>
             <!-- [D] 활성화 확장 클래스 .active 추가/제거 -->
             <ul id="mfilter" class="mfilter">
-                <li><a data-filter="all" title="전체" class="filter" (click)="filterClick($event)">all</a></li>
-                <li><a data-filter=".new" title="신규" class="filter" (click)="filterClick($event)">new</a></li>
-                <li><a data-filter=".sustaining" title="유지보수" class="filter" (click)="filterClick($event)">sustaining</a></li>
-                <li><a data-filter=".accessibility" title="웹 접근성" class="filter" (click)="filterClick($event)">accessibility</a></li>
-                <li><a data-filter=".responsive" title="반응형웹" class="filter" (click)="filterClick($event)">responsive</a></li>
-                <li><a data-filter=".web" title="웹" class="filter" (click)="filterClick($event)">web</a></li>
-                <li><a data-filter=".mobile" title="모바일웹" class="filter" (click)="filterClick($event)">mobile</a></li>
-                <li><a data-filter=".app" title="앱" class="filter" (click)="filterClick($event)">App</a></li>
+                <!--<li><a data-filter="all" title="전체" class="filter" (click)="filterMenuClick($event)">all</a></li>
+                <li><a data-filter=".new" title="신규" class="filter" (click)="filterMenuClick($event)">new</a></li>
+                <li><a data-filter=".sustaining" title="유지보수" class="filter" (click)="filterMenuClick($event)">sustaining</a></li>
+                <li><a data-filter=".accessibility" title="웹 접근성" class="filter" (click)="filterMenuClick($event)">accessibility</a></li>
+                <li><a data-filter=".responsive" title="반응형웹" class="filter" (click)="filterMenuClick($event)">responsive</a></li>
+                <li><a data-filter=".web" title="웹" class="filter" (click)="filterMenuClick($event)">web</a></li>
+                <li><a data-filter=".mobile" title="모바일웹" class="filter" (click)="filterMenuClick($event)">mobile</a></li>
+                <li><a data-filter=".app" title="앱" class="filter" (click)="filterMenuClick($event)">App</a></li>-->
+                <li><a data-filter="all" title="전체" class="filter" (click)="filterMenuAction$.next($event)">all</a></li>
+                <li><a data-filter=".new" title="신규" class="filter" (click)="filterMenuAction$.next($event)">new</a></li>
+                <li><a data-filter=".sustaining" title="유지보수" class="filter" (click)="filterMenuAction$.next($event)">sustaining</a></li>
+                <li><a data-filter=".accessibility" title="웹 접근성" class="filter" (click)="filterMenuAction$.next($event)">accessibility</a></li>
+                <li><a data-filter=".responsive" title="반응형웹" class="filter" (click)="filterMenuAction$.next($event)">responsive</a></li>
+                <li><a data-filter=".web" title="웹" class="filter" (click)="filterMenuAction$.next($event)">web</a></li>
+                <li><a data-filter=".mobile" title="모바일웹" class="filter" (click)="filterMenuAction$.next($event)">mobile</a></li>
+                <li><a data-filter=".app" title="앱" class="filter" (click)="filterMenuAction$.next($event)">App</a></li>
             </ul>
 
             <h3>Sort Menu</h3>
@@ -22,21 +30,38 @@
                 <li><a data-sort="order:asc" title="오름차순 정렬" class="sort"><fa-icon [icon]="faSortNumericDownAlt"><span>asc</span></fa-icon></a></li>
                 <li><a data-sort="order:desc" title="내림차순 정렬" class="sort"><fa-icon [icon]="faSortNumericUp"><span>desc</span></fa-icon></a></li>
                 <li><a data-sort="random" title="랜덤 정렬" class="sort"><fa-icon [icon]="faRandom"><span>random</span></fa-icon></a></li>
-                <li><a title="썸네일 타입" (click)="sortClick('thumb')"><fa-icon [icon]="faThLarge"><span>thumbnail layout</span></fa-icon></a></li>
-                <li><a title="리스트 타입" (click)="sortClick('list')"><fa-icon [icon]="faAlignJustify"><span>list layout</span></fa-icon></a></li>
+                <!--<li><a title="썸네일 타입" (click)="sortMenuClick('thumb')"><fa-icon [icon]="faThLarge"><span>thumbnail layout</span></fa-icon></a></li>-->
+                <!--<li><a title="리스트 타입" (click)="sortMenuClick('list')"><fa-icon [icon]="faAlignJustify"><span>list layout</span></fa-icon></a></li>-->
+                <li><a title="썸네일 타입" (click)="sortMenuAction$.next('thumb')"><fa-icon [icon]="faThLarge"><span>thumbnail layout</span></fa-icon></a></li>
+                <li><a title="리스트 타입" (click)="sortMenuAction$.next('list')"><fa-icon [icon]="faAlignJustify"><span>list layout</span></fa-icon></a></li>
             </ul>
         </nav>
         <!-- [D] 리스트형 레이아웃 사용시 .gallery에 .list 확장 클래스 추가/제거 -->
         <div id="gallery" class="gallery">
-            <div *ngFor="let portfolioModel of portfolioModel$; index as i" [attr.data-order]="i + 1" class="mix {{portfolioModel['category'].join(' ')}}" style="display:inline-block">
+            <!--<div
+                *ngFor="let portfolioModel of portfolioModel; index as i"
+                [attr.data-order]="i + 1"
+                class="mix {{portfolioModel['category'].join(' ')}}"
+                style="display: inline-block"
+            >-->
+            <div
+                *ngFor="let portfolioModel of (portfolioModel$ | async); index as i"
+                [attr.data-order]="i + 1"
+                class="mix {{portfolioModel['category'].join(' ')}}"
+                style="display: inline-block"
+            >
                 <figure>
-                    <span class="fluid_thumb"><img [src]="'/assets/img/gallery/' + portfolioModel['imageUrl']" width="265" height="164" alt="{{portfolioModel['name']}}"></span>
+                    <span class="fluid_thumb">
+                        <img [src]="'/assets/img/gallery/' + portfolioModel['imageUrl']" width="265" height="164" alt="{{portfolioModel['name']}}">
+                    </span>
                     <figcaption>
                         <strong>
                             <fa-icon [icon]="faQuoteLeft"></fa-icon> {{portfolioModel['title']}} <fa-icon [icon]="faQuoteRight"></fa-icon>
                             <span>{{portfolioModel['company']}}</span>
                         </strong>
-                        <a href="{{portfolioModel['link']}}" rel="noopener noreferrer" aria-hidden="true" target="_blank" (click)="gallery($event)"><fa-icon [icon]="faArrowRight" class="fa"><span>바로가기</span></fa-icon></a>
+                        <a href="{{portfolioModel['link']}}" rel="noopener noreferrer" aria-hidden="true" target="_blank" (click)="siteGoClick($event)">
+                            <fa-icon [icon]="faArrowRight" class="fa"><span>바로가기</span></fa-icon>
+                        </a>
                         <time [attr.datetime]="portfolioModel['start']"><fa-icon [icon]="faClock" class="fa"></fa-icon> {{portfolioModel['year']}}</time>
                         <div class="tech-spec">
                             <span *ngFor="let category of portfolioModel['category']">{{category}}</span>

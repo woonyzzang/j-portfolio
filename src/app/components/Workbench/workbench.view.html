@@ -3,7 +3,14 @@
     <div class="inr">
         <div class="func_area">
             <span class="combo">
-                <label for="srch"><span>검색</span></label> <input type="search" [(ngModel)]="searchText" title="검색어를 입력하시면 필터링 처리 됩니다." placeholder="필터링 검색어 입력" id="srch">
+                <label for="srch"><span>검색</span></label>
+                <input
+                    type="search"
+                    title="검색어를 입력하시면 필터링 처리 됩니다."
+                    placeholder="필터링 검색어 입력"
+                    id="srch"
+                    [(ngModel)]="searchText"
+                >
             </span>
             <span class="label_area">
                 <i title="가이드" class="guide">G</i> <span>가이드</span>
@@ -25,7 +32,8 @@
                     <th scope="col">사용기술</th>
                 </tr>
             </thead>
-            <tbody *ngFor="let workbenchModel of workbenchModel$; index as i" [attr.data-idx]="i">
+            <!--<tbody *ngFor="let workbenchModel of workbenchModel; index as i" [attr.data-idx]="i">-->
+            <tbody *ngFor="let workbenchModel of (workbenchModel$ | async); index as i" [attr.data-idx]="i">
                 <tr *ngFor="let project of workbenchModel['project'] | filter:searchText">
                     <td class="pjt">{{project['title']}}</td>
                     <td class="start">{{project['start']}}</td>
