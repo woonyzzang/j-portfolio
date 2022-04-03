@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of, switchMap } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 // import * as $ from 'jquery';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -10,7 +11,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
     styleUrls: ['./app.view.scss']
 })
 export class AppController implements OnInit {
-    faHome = faHome;
+    faHome = faHome as IconProp;
 
     ngOnInit(): void {
         // // 가로 스크롤 제거

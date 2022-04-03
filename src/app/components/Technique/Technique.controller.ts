@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faFileCode } from '@fortawesome/free-solid-svg-icons';
 
 import { mapKeys } from '@utils/helper';
@@ -10,7 +11,7 @@ import TechniqueService from '@services/technique/Technique.service';
     styleUrls: ['./technique.view.scss']
 })
 export class TechniqueController implements OnInit {
-    faFileCode = faFileCode;
+    faFileCode = faFileCode as IconProp;
 
     public techniqueList: Map<string, Set<string>>; // 테크닉 목록
 

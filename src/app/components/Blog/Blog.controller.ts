@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 
 import HeaderService, { IGnbMenus } from '@services/header/Header.service';
@@ -11,7 +12,7 @@ import HeaderService, { IGnbMenus } from '@services/header/Header.service';
     styleUrls: ['./blog.view.scss']
 })
 export class BlogController implements OnInit {
-    faNewspaper = faNewspaper;
+    faNewspaper = faNewspaper as IconProp;
 
     // public blogMenu: IMenus;
     public blogMenu$: Observable<IGnbMenus>; // 유틸메뉴

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { iif, Observable, of, Subject } from 'rxjs';
 import { filter, map, mergeMap, switchMap } from 'rxjs/operators';
 import * as $ from 'jquery';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faSyncAlt, faSortNumericDownAlt, faSortNumericUp, faRandom, faThLarge, faAlignJustify, faQuoteLeft, faQuoteRight, faArrowRight, faClock } from '@fortawesome/free-solid-svg-icons';
 import '@libs/jquery.mixitup';
 
@@ -27,16 +28,16 @@ interface JQuery {
     styleUrls: ['./portfolio.view.scss']
 })
 export class PortfolioController implements OnInit {
-    faSyncAlt = faSyncAlt;
-    faSortNumericDownAlt = faSortNumericDownAlt;
-    faSortNumericUp = faSortNumericUp;
-    faRandom = faRandom;
-    faThLarge = faThLarge;
-    faAlignJustify = faAlignJustify;
-    faQuoteLeft = faQuoteLeft;
-    faQuoteRight = faQuoteRight;
-    faArrowRight = faArrowRight;
-    faClock = faClock;
+    faSyncAlt = faSyncAlt as IconProp;
+    faSortNumericDownAlt = faSortNumericDownAlt as IconProp;
+    faSortNumericUp = faSortNumericUp as IconProp;
+    faRandom = faRandom as IconProp;
+    faThLarge = faThLarge as IconProp;
+    faAlignJustify = faAlignJustify as IconProp;
+    faQuoteLeft = faQuoteLeft as IconProp;
+    faQuoteRight = faQuoteRight as IconProp;
+    faArrowRight = faArrowRight as IconProp;
+    faClock = faClock as IconProp;
 
     // public portfolioModel: PortfolioModel[]; // 포트폴리오 모델
     public portfolioModel$: Observable<PortfolioModel[]>; // 포트폴리오 모델

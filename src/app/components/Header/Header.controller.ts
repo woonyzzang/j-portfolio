@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { from, Observable, of } from 'rxjs';
 import { map, toArray, pluck } from 'rxjs/operators';
 // import * as $ from 'jquery';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 import HeaderService, {IGnbMenus} from '@services/header/Header.service';
@@ -12,7 +13,7 @@ import HeaderService, {IGnbMenus} from '@services/header/Header.service';
     styleUrls: ['./header.view.scss']
 })
 export class HeaderController implements OnInit {
-    faUser = faUser;
+    faUser = faUser as IconProp;
 
     // public gnbMenus: Set<IMenus>; // 메인메뉴
     // public utilMenus: Set<IMenus>; // 유틸메뉴
