@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as $ from 'jquery';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faCheckCircle, faCogs, faChartBar, faMobileAlt, faTabletAlt, faLaptop, faArrowsAltH, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import '@libs/jquery.coveringBad';
 
@@ -21,15 +22,15 @@ interface JQuery {
     styleUrls: ['./features.view.scss']
 })
 export class FeaturesController implements OnInit {
-    faCheckCircle = faCheckCircle;
-    faCogs = faCogs;
-    faChartBar = faChartBar;
-    faMobileAlt = faMobileAlt;
-    faTabletAlt = faTabletAlt;
-    faLaptop = faLaptop;
-    faArrowsAltH = faArrowsAltH;
-    faChevronLeft = faChevronLeft;
-    faChevronRight = faChevronRight;
+    faCheckCircle = faCheckCircle as IconProp;
+    faCogs = faCogs as IconProp;
+    faChartBar = faChartBar as IconProp;
+    faMobileAlt = faMobileAlt as IconProp;
+    faTabletAlt = faTabletAlt as IconProp;
+    faLaptop = faLaptop as IconProp;
+    faArrowsAltH = faArrowsAltH as IconProp;
+    faChevronLeft = faChevronLeft as IconProp;
+    faChevronRight = faChevronRight as IconProp;
 
     constructor() {
         // console.log($);

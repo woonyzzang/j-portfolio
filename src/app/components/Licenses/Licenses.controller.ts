@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faCreditCard, faBuilding, faCalendar } from '@fortawesome/free-solid-svg-icons';
 
 import LicensesService from '@services/licenses/Licenses.service';
@@ -11,9 +12,9 @@ import LicensesModel from '@models/Licenses.model';
     styleUrls: ['./licenses.view.scss']
 })
 export class LicensesController implements OnInit {
-    faCreditCard = faCreditCard;
-    faBuilding = faBuilding;
-    faCalendar = faCalendar;
+    faCreditCard = faCreditCard as IconProp;
+    faBuilding = faBuilding as IconProp;
+    faCalendar = faCalendar as IconProp;
 
     // public licensesModel: LicensesModel[]; // 라이센스 모델
     public licensesModel$: Observable<LicensesModel[]>; // 라이센스 모델

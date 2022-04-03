@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faFileArchive, faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -7,8 +8,8 @@ import { faFileArchive, faCheckSquare } from '@fortawesome/free-solid-svg-icons'
     styleUrls: ['./wiki.view.scss']
 })
 export class WikiController implements OnInit {
-    faFileArchive = faFileArchive;
-    faCheckSquare = faCheckSquare;
+    faFileArchive = faFileArchive as IconProp;
+    faCheckSquare = faCheckSquare as IconProp;
 
     constructor() {}
 

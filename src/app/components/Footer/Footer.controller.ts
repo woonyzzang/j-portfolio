@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope, faPhoneSquareAlt, faLeaf, faInfoCircle, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -7,11 +8,11 @@ import { faEnvelope, faPhoneSquareAlt, faLeaf, faInfoCircle, faMapMarkerAlt } fr
     styleUrls: ['./footer.view.scss']
 })
 export class FooterController implements OnInit {
-    faEnvelope = faEnvelope;
-    faPhoneSquareAlt = faPhoneSquareAlt;
-    faLeaf = faLeaf;
-    faInfoCircle = faInfoCircle;
-    faMapMarkerAlt = faMapMarkerAlt;
+    faEnvelope = faEnvelope as IconProp;
+    faPhoneSquareAlt = faPhoneSquareAlt as IconProp;
+    faLeaf = faLeaf as IconProp;
+    faInfoCircle = faInfoCircle as IconProp;
+    faMapMarkerAlt = faMapMarkerAlt as IconProp;
 
     constructor() {}
 

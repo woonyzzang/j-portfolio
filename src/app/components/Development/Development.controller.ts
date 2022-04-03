@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { toArray } from 'rxjs/operators';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faInbox, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 
 import DevelopmentService, { IDevelopmentList } from '@services/development/Development.service';
@@ -11,8 +12,8 @@ import DevelopmentService, { IDevelopmentList } from '@services/development/Deve
     styleUrls: ['./development.view.scss']
 })
 export class DevelopmentController implements OnInit {
-    faInbox = faInbox;
-    faExternalLinkAlt = faExternalLinkAlt;
+    faInbox = faInbox as IconProp;
+    faExternalLinkAlt = faExternalLinkAlt as IconProp;
 
     // public devs;
     // public uis;
