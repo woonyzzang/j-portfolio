@@ -733,7 +733,7 @@
             {
                 "title": "오늘의 스코어",
                 "start": "20.01.04",
-                "end": "21.08.31",
+                "end": "21.11.30",
                 "role": "PL",
                 "works": {
                     "guide": true,
@@ -742,7 +742,7 @@
                     "frontdev": true,
                     "backdev": false
                 },
-                "skill": ["HTML5", "CSS3", "jQuery", "Vue.js", "Vuex", "Karma", "Gulp", "TypeScript", "JSDoc"]
+                "skill": ["HTML5", "CSS3", "jQuery", "Vue.js", "Vuex", "Karma", "Gulp", "Babelify", "TypeScript", "JSDoc", "DevOps"]
             }
         ]
     }
