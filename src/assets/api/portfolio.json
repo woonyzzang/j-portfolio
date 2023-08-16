@@ -559,5 +559,38 @@
         "year": "January 2021",
         "start": "2021-01-04",
         "end": "2021-08-31"
+    },
+    {
+        "category": ["new", "web", "mobile"],
+        "link": "https://www.winjoygames.com/",
+        "imageUrl": "zempot/winjoy_casino.jpg",
+        "name": "Winjoy Games",
+        "title": "글로벌 윈조이 카지노",
+        "company": "ZEMPOT",
+        "year": "July 2022",
+        "start": "2022-07-01",
+        "end": "2023-12-31"
+    },
+    {
+        "category": ["new", "web", "mobile"],
+        "link": "https://itu.aquuuacasino.com/",
+        "imageUrl": "zempot/inetrium_aquuua_casino.jpg",
+        "name": "ITU",
+        "title": "이네트리움 아쿠아 베가스 카지노",
+        "company": "ZEMPOT",
+        "year": "December 2022",
+        "start": "2022-12-01",
+        "end": "2023-04-07"
+    },
+    {
+        "category": ["new", "mobile", "app"],
+        "link": "https://app.ksop.net/",
+        "imageUrl": "ksop/ksop_app.jpg",
+        "name": "Korea Series of Poker 앱",
+        "title": "KSOP App",
+        "company": "KSOP",
+        "year": "May 2023",
+        "start": "2023-05-15",
+        "end": "2023-12-31"
     }
 ]
