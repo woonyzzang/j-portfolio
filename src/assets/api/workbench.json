@@ -745,5 +745,71 @@
                 "skill": ["HTML5", "CSS3", "jQuery", "Vue.js", "Vuex", "Karma", "Gulp", "Babelify", "TypeScript", "JSDoc", "DevOps"]
             }
         ]
+    },
+    {
+        "year": 2022,
+        "project": [
+            {
+                "title": "Epoch SDK",
+                "start": "22.05.01",
+                "end": "23.12.31",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": false,
+                    "uidev": false,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["TypeScript", "Jest", "Webpack", "JSDoc", "DevOps"]
+            },
+            {
+                "title": "글로벌 윈조이 카지노",
+                "start": "22.07.01",
+                "end": "23.12.31",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": false,
+                    "uidev": false,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["Nuxt", "TypeScript", "i18n", "DevOps"]
+            },
+            {
+                "title": "아쿠아 베가스 카지노",
+                "start": "22.12.01",
+                "end": "23.04.07",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": false,
+                    "uidev": false,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["Nuxt", "DevOps"]
+            }
+        ]
+    },
+    {
+        "year": 2023,
+        "project": [
+            {
+                "title": "KSOP App",
+                "start": "23.05.15",
+                "end": "23.12.31",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": false,
+                    "uidev": false,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["Nuxt", "Ajv", "Jest", "DevOps"]
+            }
+        ]
     }
 ]
