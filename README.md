@@ -24,4 +24,4 @@
 
 ### URL
 - <del>[http://j-portfolio.herokuapp.com](http://j-portfolio.herokuapp.com)</del>
-- [https://altima-j-project-19b8286c.koyeb.app](https://altima-j-project-19b8286c.koyeb.app)
+- [https://j-project.koyeb.app](https://altima-j-project-19b8286c.koyeb.app)
