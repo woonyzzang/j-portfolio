@@ -592,5 +592,16 @@
         "year": "May 2023",
         "start": "2023-05-15",
         "end": "2023-12-31"
+    },
+    {
+        "category": ["new", "mobile", "app"],
+        "link": "https://m.winjoygame.com/login/",
+        "imageUrl": "zempot/m.winjoygame.png",
+        "name": "Winjoy Game 앱",
+        "title": "윈조이 모바일 Epoch",
+        "company": "ZEMPOT",
+        "year": "July 2024",
+        "start": "2024-07-01",
+        "end": "2024-09-04"
     }
 ]

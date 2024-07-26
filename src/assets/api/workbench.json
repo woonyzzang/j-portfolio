@@ -818,7 +818,7 @@
             {
                 "title": "글로벌 윈조이 온라인 (Nuxt -> Next 마이그레이션)",
                 "start": "24.04.01",
-                "end": "24.05.31",
+                "end": "24.06.31",
                 "role": "PL",
                 "works": {
                     "guide": true,
@@ -828,6 +828,20 @@
                     "backdev": false
                 },
                 "skill": ["Next", "Typescript", "i18n", "Zod", "Zustand", "React Query", "Jest", "Storybook", "Playwright", "TurboRepo", "DevOps"]
+            },
+            {
+                "title": "윈조이 Epoch 모바일 마이그레이션",
+                "start": "24.07.01",
+                "end": "24.09.04",
+                "role": "PL",
+                "works": {
+                    "guide": true,
+                    "markup": false,
+                    "uidev": false,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["React", "Typescript", "Zustand", "Jest", "Storybook", "Playwright", "TurboRepo", "DevOps"]
             }
         ]
     }
