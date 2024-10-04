@@ -48,6 +48,7 @@
                 border-left: 4px solid #1b809e;
                 @include border-radius(unitsConverter(.4));
                 background-color: #fff;
+                font-size: unitsConverter(1.4);
             }
         }
 
