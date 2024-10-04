@@ -405,10 +405,11 @@
             text-transform: uppercase;
 
             @include media-breakpoint('mobile') {
+                padding-left: unitsConverter(1);
                 font-size: unitsConverter(2);
             }
 
-            @include media-breakpoint('mobile', 'min') {
+            @include media-breakpoint('mobile', 'min-device') {
                 &:focus-visible,
                 &:hover {
                     color: #f60;
@@ -431,6 +432,10 @@
                 &:focus-visible:after,
                 &:hover:after {
                     display: block;
+
+                    @include media-breakpoint('mobile', 'min-device') {
+                        display: none;
+                    }
                 }
             }
         }
@@ -453,18 +458,24 @@
             display: block;
             position: static;
             width: 100%;
+            height: auto;
             margin-top: unitsConverter(1);
+            padding-left: unitsConverter(1);
             border-radius: 0;
             background-color: transparent;
             font-size: unitsConverter(2);
             color: inherit;
             text-align: left;
             text-transform: uppercase;
+            box-sizing: border-box;
         }
 
-        &:focus-visible,
-        &:hover {
-            background-color: #000;
+        @include media-breakpoint('mobile', 'min-device') {
+            &:focus-visible,
+            &:hover {
+                background-color: #000;
+                color: #fff;
+            }
         }
 
         > fa-icon {
