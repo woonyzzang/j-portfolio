@@ -750,7 +750,7 @@
         "year": 2022,
         "project": [
             {
-                "title": "Epoch SDK",
+                "title": "Epoch SDK (인증, 로깅, 애널리틱스, 결제, 코인)",
                 "start": "22.05.01",
                 "end": "23.12.31",
                 "role": "PL",
