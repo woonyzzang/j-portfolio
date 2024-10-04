@@ -30,10 +30,6 @@ button, input, textarea {
     @include border-radius(0);
 }
 
-input {
-    touch-action: manipulation; /* 확대/축소 방지 */
-}
-
 button {
     background-color: transparent;
     cursor: pointer;
