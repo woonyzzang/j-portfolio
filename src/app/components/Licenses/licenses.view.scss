@@ -1,4 +1,5 @@
 @import '_dependency/variable';
+@import '_dependency/function';
 @import '_dependency/mixin';
 @import '_dependency/placeholder';
 
@@ -7,12 +8,20 @@
     padding: unitsConverter(6) unitsConverter(3) unitsConverter(14) unitsConverter(9);
     background-color: #e57d04;
 
+    @include media-breakpoint('tablet') {
+        padding: unitsConverter(6) unitsConverter(2) unitsConverter(2) unitsConverter(9);
+    }
+
     h2 {
         margin-bottom: unitsConverter(6.4);
         font-weight: normal;
         font-size: unitsConverter(2.2);
         text-transform: capitalize;
         color: #fff;
+
+        @include media-breakpoint('tablet') {
+            margin-bottom: unitsConverter(8.4);
+        }
     }
 
     .inr {
@@ -20,6 +29,10 @@
         padding: unitsConverter(10) unitsConverter(4) unitsConverter(2);
         background-color: #f6f6f6;
         @include border-radius(unitsConverter(1));
+
+        @include media-breakpoint('tablet') {
+            padding: unitsConverter(7) unitsConverter(1.4) unitsConverter(1.4);
+        }
     }
 
     select {
@@ -31,6 +44,10 @@
         border-left: 6px solid #b50D19;
         @include border-radius(unitsConverter(.4));
         background-color: #fff;
+
+        @include media-breakpoint('tablet') {
+            top: unitsConverter(-12);
+        }
     }
 
     //.slim-scroll {
@@ -141,8 +158,20 @@
         position: relative;
         width: 50%;
 
+        &:after {
+            @extend %clearfix;
+        }
+
+        @include media-breakpoint('tablet') {
+            width: auto;
+        }
+
         &:first-child {
             margin-top: unitsConverter(-2);
+
+            @include media-breakpoint('tablet') {
+                margin-top: 0;
+            }
         }
 
         &:before {
@@ -155,11 +184,24 @@
             border: 3px solid #999;
             background-color: #fff;
             @include border-radius(50%);
+
+            @include media-breakpoint('tablet') {
+                display: none;
+            }
         }
 
         &:nth-of-type(odd) {
             float: left;
             clear: left;
+
+            @include media-breakpoint('tablet') {
+                float: none;
+            }
+
+            &:before {
+                right: 0;
+                margin-right: unitsConverter(-.8);
+            }
 
             .note {
                 float: left;
@@ -167,22 +209,34 @@
                 &:before {
                     right: unitsConverter(-1.6);
                     border-left-color: rgba(0, 0, 0, .2);
+
+                    @include media-breakpoint('tablet') {
+                        display: none;
+                    }
                 }
 
                 &:after {
                     right: unitsConverter(-1.5);
                     border-left-color:#fff;
-                }
-            }
 
-            &:before {
-                right: 0;
-                margin-right: unitsConverter(-.8);
+                    @include media-breakpoint('tablet') {
+                        display: none;
+                    }
+                }
             }
         }
 
         &:nth-of-type(even) {
             float: right;
+
+            @include media-breakpoint('tablet') {
+                float: none;
+            }
+
+            &:before {
+                left: 0;
+                margin-left: unitsConverter(-.8);
+            }
 
             .note {
                 float: right;
@@ -190,17 +244,20 @@
                 &:before {
                     left: unitsConverter(-1.6);
                     border-right-color: rgba(0, 0, 0, .2);
+
+                    @include media-breakpoint('tablet') {
+                        display: none;
+                    }
                 }
 
                 &:after {
                     left: unitsConverter(-1.5);
                     border-right-color:#fff;
-                }
-            }
 
-            &:before {
-                left: 0;
-                margin-left: unitsConverter(-.8);
+                    @include media-breakpoint('tablet') {
+                        display: none;
+                    }
+                }
             }
         }
     }
@@ -219,12 +276,23 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
     //cursor: pointer;
 
+    @include media-breakpoint('tablet') {
+        width: 100%;
+        padding: unitsConverter(1) unitsConverter(1.4);
+        box-sizing: border-box;
+    }
+
     .pjt_tit {
         font-weight: bold;
         font-size: unitsConverter(1.6);
+
+        @include media-breakpoint('tablet') {
+            font-size: unitsConverter(1.4);
+        }
     }
 
     .desc {
+        margin-top: unitsConverter(.4);
         color: #666;
     }
 

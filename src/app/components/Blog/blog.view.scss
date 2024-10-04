@@ -1,11 +1,16 @@
 @import '_dependency/variable';
+@import '_dependency/function';
 @import '_dependency/mixin';
 @import '_dependency/placeholder';
 
 .blog {
-    padding: unitsConverter(6) unitsConverter(18) unitsConverter(14) unitsConverter(9);
+    padding: unitsConverter(6) unitsConverter(9) unitsConverter(14) unitsConverter(9);
     background-color: #b10058;
     color: #fff;
+
+    @include media-breakpoint('tablet') {
+        padding: unitsConverter(6) unitsConverter(2) unitsConverter(2) unitsConverter(9);
+    }
 
     h2 {
         margin-bottom: unitsConverter(4);

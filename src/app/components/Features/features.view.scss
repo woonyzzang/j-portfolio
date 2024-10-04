@@ -1,4 +1,5 @@
 @import '_dependency/variable';
+@import '_dependency/function';
 @import '_dependency/mixin';
 @import '_dependency/placeholder';
 
@@ -7,6 +8,14 @@
     position: relative;
     height: unitsConverter(80);
     @include text-shadow(0 0 2px rgba(0, 0, 0, .2));
+
+    @include media-breakpoint('tablet') {
+        height: auto;
+    }
+
+    > h2 {
+        @extend %blind;
+    }
 
     .lid-area {
         position: absolute;
@@ -17,6 +26,15 @@
         margin: unitsConverter(-300) 0 0 unitsConverter(-300);
         background-color: #dc0030;
         @include transform(rotate(-20deg));
+
+        @include media-breakpoint('tablet') {
+            position: static;
+            width: auto;
+            height: auto;
+            margin: 0;
+            padding-left: unitsConverter(6.6);
+            @include transform(none);
+        }
     }
 
     .lid {
@@ -25,8 +43,18 @@
         width: 50%;
         height: 50%;
 
+        @include media-breakpoint('tablet') {
+            float: none;
+            width: auto;
+            height: auto;
+        }
+
         .in {
             position: absolute;
+
+            @include media-breakpoint('tablet') {
+                position: static;
+            }
         }
 
         .stit {
@@ -47,14 +75,29 @@
             right: 0;
             bottom: 0;
             margin: 0 unitsConverter(1.5) unitsConverter(1.5) 0;
+
+            @include media-breakpoint('tablet') {
+                margin: 0;
+                padding: unitsConverter(6.4) unitsConverter(2) unitsConverter(2);
+            }
         }
 
         .stit {
             font-size: unitsConverter(2.8);
+
+            @include media-breakpoint('tablet') {
+                font-size: unitsConverter(1.8);
+            }
         }
 
         p {
             font-size: unitsConverter(1.8);
+
+            @include media-breakpoint('tablet') {
+                margin-top: unitsConverter(1);
+                font-size: unitsConverter(1.4);
+                line-height: 1.6;
+            }
         }
 
         a.qusetion {
@@ -66,7 +109,12 @@
             font-size: unitsConverter(2);
             color: #dc0030;
             vertical-align: top;
-            @include border-radius(50%);
+            @include border-radius(100%);
+
+            @include media-breakpoint('tablet') {
+                margin-top: unitsConverter(-.5);
+                @include transform(scale(.7));
+            }
         }
     }
 
@@ -78,16 +126,31 @@
             bottom: 0;
             left: 0;
             margin: 0 0 unitsConverter(1.5) unitsConverter(1.5);
+
+            @include media-breakpoint('tablet') {
+                margin: 0;
+                padding: unitsConverter(2);
+            }
         }
 
         .stit {
             font-weight: normal;
             font-size: unitsConverter(3);
+
+            @include media-breakpoint('tablet') {
+                font-size: unitsConverter(1.8);
+            }
         }
 
         p {
             font-size: unitsConverter(1.6);
             color: #fff;
+
+            @include media-breakpoint('tablet') {
+                margin-top: unitsConverter(1);
+                font-size: unitsConverter(1.4);
+                line-height: 1.6;
+            }
         }
     }
 
@@ -96,24 +159,46 @@
         background-color: #ff184a;
         color: #fff;
 
+        @include media-breakpoint('tablet') {
+            background-color: #dc0030;
+        }
+
         .in {
             right: 0;
             top: 0;
             margin: unitsConverter(1.5) unitsConverter(1.5) 0 0;
+
+            @include media-breakpoint('tablet') {
+                margin: 0;
+                padding: unitsConverter(2);
+            }
         }
 
         .stit {
             font-size: unitsConverter(2);
+
+            @include media-breakpoint('tablet') {
+                font-size: unitsConverter(1.8);
+            }
         }
 
         p {
             font-size: unitsConverter(1.4);
             color: #fff;
+
+            @include media-breakpoint('tablet') {
+                margin-top: unitsConverter(1);
+                line-height: 1.6;
+            }
         }
     }
 
     .fourth {
         background-color: #dc0030;
+
+        @include media-breakpoint('tablet') {
+            display: none;
+        }
 
         .in {
             top: 0;
@@ -145,13 +230,13 @@
         margin-left: unitsConverter(-2.3);
         @include border-radius(50%);
         background-color: #fff;
-        text-align : center;
+        text-align: center;
         box-shadow: 1px 0 2px #333;
 
         > .fa {
-            display : inline-block;
-            margin : unitsConverter(1.4) unitsConverter(.1) 0;
-            color : #000;
+            display: inline-block;
+            margin: unitsConverter(1.4) unitsConverter(.1) 0;
+            color: #000;
             @include transition(.1s ease-out);
         }
 
@@ -163,7 +248,7 @@
             background-color: #555;
 
             > .fa {
-                color : #fff;
+                color: #fff;
             }
         }
     }
@@ -174,11 +259,11 @@
 
     .draggable {
         background-color: #555;
-        cursor : move;
+        cursor: move;
 
         > .fa {
-            margin : unitsConverter(1.4) unitsConverter(.4) 0;
-            color : #fff;
+            margin: unitsConverter(1.4) unitsConverter(.4) 0;
+            color: #fff;
             @include transition(.1s ease-out);
         }
     }

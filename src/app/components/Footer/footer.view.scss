@@ -1,25 +1,28 @@
 @import '_dependency/variable';
+@import '_dependency/function';
 @import '_dependency/mixin';
 @import '_dependency/placeholder';
 
 #footer {
     overflow: hidden;
+    display: flex;
     height: 15%;
     background-color: #ffd500;
 
-    .inr {
-        height: 100%;
+    @include media-breakpoint('mobile') {
+        display: none;
     }
 
+    //.inr {
+    //    height: 100%;
+    //}
+
     .column {
-        float: left;
-        width: 33.3%;
-        height:100%;
-        padding: 25px 0;
+        flex: 1;
     }
 
     .col-inr {
-        padding: 0 25px;
+        padding: unitsConverter(2.4) unitsConverter(2);
 
         .phone,
         address {
@@ -30,7 +33,7 @@
             font-weight: normal;
         }
 
-        .fa {
+        fa-icon {
             margin-right: unitsConverter(.4);
         }
     }

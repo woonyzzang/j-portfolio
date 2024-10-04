@@ -9,7 +9,7 @@ import WorkbenchService from '@services/workbench/Workbench.service';
 @Component({
     selector: 'app-workbench',
     templateUrl: './workbench.view.html',
-    styleUrls: ['./Workbench.view.scss']
+    styleUrls: ['./workbench.view.scss']
 })
 export class WorkbenchController implements OnInit {
     faCalendarAlt = faCalendarAlt as IconProp;

@@ -85,7 +85,7 @@ export class AppController implements OnInit {
         // }
 
         // 가로 스크롤 제거
-        of('#wrap', '.home').pipe(
+        of('.home').pipe(
             map((selector: string) => document.querySelector(selector))
         ).subscribe((el: HTMLElement) => {
             el.classList.add('v1');
@@ -98,7 +98,7 @@ export class AppController implements OnInit {
         hasLocationHash$.pipe(
             filter((hasHash: boolean) => hasHash),
             switchMap(_ => (
-                of('#wrap', '.swipe', '#gnb', '#portfolio').pipe(
+                of('.swipe', '#gnb', '.util', '#portfolio').pipe(
                     map((selector: string) => (document.querySelector(selector)))
                 )
             ))
@@ -124,6 +124,22 @@ export class AppController implements OnInit {
         ).subscribe(({offsetTop}) => {
             document.querySelector('#container').scrollTop = offsetTop;
         });
+    }
 
+    /**
+     * btnHomeClick
+     * @description 홈 바로가기 클릭 이벤트 핸들러
+     * @param e
+     */
+    btnHomeClick(e: MouseEvent) {
+        e.preventDefault();
+
+        of('.swipe', '#gnb', '.util', '#portfolio').pipe(
+            map((selector: string) => document.querySelector(selector))
+        ).subscribe((el: HTMLElement) => {
+            el.classList.remove('v1');
+            history.pushState(null, document.title, window.location.pathname + window.location.search); // hash 초기화
+            setTimeout(() => window.scrollTo(0, 0), 0);
+        });
     }
 }
