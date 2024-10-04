@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { from, Observable, of } from 'rxjs';
-import { map, toArray, pluck } from 'rxjs/operators';
+import { map, switchMap, toArray, pluck } from 'rxjs/operators';
 // import * as $ from 'jquery';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -46,11 +46,33 @@ export class HeaderController implements OnInit {
         //
         // setTimeout(() => window.scrollTo(0, 0), 0);
 
-        of('#wrap', '.swipe', '#gnb', '#portfolio').pipe(
+        of('.swipe', '#gnb', '.util', '#portfolio').pipe(
             map((selector: string) => document.querySelector(selector))
         ).subscribe((el: HTMLElement) => {
             el.classList.add('v1');
             setTimeout(() => window.scrollTo(0, 0), 0);
+        });
+    }
+
+    /**
+     * btnUmenuClick
+     * @description 햄버거 메뉴 클릭 이벤트 핸들러
+     * @param {Event} e - 이벤트 객체
+     */
+    btnUmenuClick(e: MouseEvent): void {
+        e.preventDefault();
+
+        const _this = e.currentTarget as HTMLSpanElement;
+
+        _this.classList.toggle('active');
+
+        const selector: string | null = _this.closest('.ulinks')?.getAttribute('href');
+
+        of(selector).pipe(
+            map((selector: string | null) => selector ? document.querySelector(selector) : null)
+            // switchMap((element: HTMLElement | null) => of(element))
+        ).subscribe((el: HTMLElement | null) => {
+            el?.classList.toggle('active');
         });
     }
 

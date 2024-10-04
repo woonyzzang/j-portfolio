@@ -1,4 +1,5 @@
 @import '_dependency/variable';
+@import '_dependency/function';
 @import '_dependency/mixin';
 @import '_dependency/placeholder';
 
@@ -80,8 +81,9 @@
             width: 32%;
         }
 
-        @include media-breakpoint('phone') {
-            width: 46.5%;
+        @include media-breakpoint('mobile') {
+            //width: 46.5%;
+            width: 100%;
         }
     }
 

@@ -1,0 +1,20 @@
+// @Function
+// use: name()
+
+@function unitsConverter($num) {
+    @if ($fontUnit != 'rem') { // rem이 아닐 때
+        @return #{$num * $defaultFontSize}#{$fontUnit}; // px, pt 등 절대 수치 사용
+    } @else { // rem
+        @return #{$num}#{$fontUnit};
+    }
+}
+
+@function str-replace($string, $search, $replace: '') {  // String Replace
+    $index: str-index($string, $search);
+
+    @if ($index) {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}

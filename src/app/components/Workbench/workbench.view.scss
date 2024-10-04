@@ -1,10 +1,15 @@
 @import '_dependency/variable';
+@import '_dependency/function';
 @import '_dependency/mixin';
 @import '_dependency/placeholder';
 
 .workbench {
     padding: unitsConverter(6) unitsConverter(3.4) unitsConverter(14) unitsConverter(9);
     background-color: #7cb854;
+
+    @include media-breakpoint('tablet') {
+        padding: unitsConverter(6) unitsConverter(2) unitsConverter(2) unitsConverter(9);
+    }
 
     h2 {
         font-weight: normal;
@@ -26,6 +31,10 @@
         .combo {
             float: left;
 
+            @include media-breakpoint('tablet') {
+                float: none;
+            }
+
             label {
                 > span {
                     @extend %blind;
@@ -44,6 +53,12 @@
 
         .label_area {
             float: right;
+
+            @include media-breakpoint('tablet') {
+                display: block;
+                float: none;
+                margin-top: unitsConverter(1.6);
+            }
         }
 
         &:after {
@@ -54,7 +69,7 @@
     .label_area {
         i {
             display: inline-block;
-            margin-left: unitsConverter(.4);
+            margin: unitsConverter(.2);
             padding: unitsConverter(.2) unitsConverter(.6);
             @include border-radius(unitsConverter(.4));
             background-color: #fff;
@@ -96,6 +111,11 @@
         }
     }
 
+    .tbl_responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
     table {
         table-layout: fixed;
         width: 100%;
@@ -103,6 +123,10 @@
         border-collapse: collapse;
         border-spacing: 0;
         box-shadow: 0 0 4px rgba(0, 0, 0, .5);
+
+        @include media-breakpoint('tablet') {
+            width: unitsConverter(76.8);
+        }
     }
 
     caption {
@@ -194,6 +218,10 @@
     td {
         padding: unitsConverter(1.5);
         word-break: break-word;
+
+        @include media-breakpoint('tablet') {
+            padding: unitsConverter(1);
+        }
 
         &.pjt,
         &.work {

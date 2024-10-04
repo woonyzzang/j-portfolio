@@ -1,28 +1,31 @@
-// @ Mixins
+// @Mixins
 // use: @include {{mixin name}}
 
-@function unitsConverter($num) {
-    @if ($fontUnit != 'rem') { // rem이 아닐 때
-        @return #{$num * $defaultFontSize}#{$fontUnit}; // px, pt 등 절대 수치 사용
-    } @else { // rem
-        @return #{$num}#{$fontUnit};
-    }
-}
+@use 'function' as func;
 
-@function str-replace($string, $search, $replace: '') {  // String Replace
-    $index: str-index($string, $search);
-
-    @if ($index) {
-        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
-    }
-
-    @return $string;
-}
+//@function unitsConverter($num) {
+//    @if ($fontUnit != 'rem') { // rem이 아닐 때
+//        @return #{$num * $defaultFontSize}#{$fontUnit}; // px, pt 등 절대 수치 사용
+//    } @else { // rem
+//        @return #{$num}#{$fontUnit};
+//    }
+//}
+//
+//@function str-replace($string, $search, $replace: '') {  // String Replace
+//    $index: str-index($string, $search);
+//
+//    @if ($index) {
+//        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+//    }
+//
+//    @return $string;
+//}
 
 // web-font
 @mixin web-font($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
     $src: null;
-    $extmods: (eot: '?', svg: '#' + str-replace($name, ' ', '_'));
+    //$extmods: (eot: '?', svg: '#' + str-replace($name, ' ', '_'));
+    $extmods: (eot: '?', svg: '#' + func.str-replace($name, ' ', '_'));
     $formats: (otf: 'opentype', ttf: 'truetype');
 
     @each $ext in $exts {
@@ -41,18 +44,47 @@
 }
 
 // media-breakpoint
-@mixin media-breakpoint($point) {
-    @if ($point == 'phone') { //mobile
-        $point: $phone;
-    } @else if ($point == 'mobile') { //tablet
-        $point: $mobile;
-    } @else if ($point == 'tablet') { //descktop
-        $point: $tablet;
+@mixin media-breakpoint($breakpoint, $type: 'max') {
+    // 유효성 검사: $type이 지정된 값인지 확인
+    // $type: 'min', 'max', 'min-device', 'max-device'
+    @if not($type == 'min' or $type == 'max' or $type == 'min-device' or $type == 'max-device') {
+        @error "Invalid type: #{$type}. Use 'min', 'min-device', 'max', or 'max-device'.";
     }
 
-    @media only screen and #{$point} {
+    @if ($breakpoint == 'mobile') { // mobile
+        $breakpoint: $mobile-breakpoint;
+    } @else if ($breakpoint == 'tablet') { // tablet
+        $breakpoint: $tablet-breakpoint;
+    } @else if ($breakpoint == 'laptop') { // laptop
+        $breakpoint: $laptop-breakpoint;
+    } @else if ($breakpoint == 'desktop') { // descktop
+        $breakpoint: $desktop-breakpoint;
+    } @else {
+        @warn "Invalid breakpoint: #{$breakpoint}. Use 'mobile', 'tablet', 'laptop', or 'desktop'.";
+    }
+
+    // @media 안에서는 외부의 selector를 @extend 사용 불가
+    @media only screen and (#{$type}-width:#{$breakpoint}) {
         @content;
     }
+}
+
+// @media 안에서는 외부의 selector를 @extend 사용 불가로 인한 대체 기능
+@mixin media-blind {
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+@mixin media-unblind {
+    overflow: visible;
+    clip: auto;
+    position: static;
+    width: auto;
+    height: auto;
 }
 
 // adjust-location
@@ -69,6 +101,15 @@
 //
 //    position:relative;left:$x;top: $y;
 //}
+
+// vendorPrefix
+// @example
+// @include vendorPrefix(transition, 0.5s);
+@mixin vendorPrefix($property, $value) {
+    @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+        #{$prefix}#{$property}: $value;
+    }
+}
 
 // display
 @mixin display($val) {
