@@ -25,7 +25,6 @@ export class DevelopmentController implements OnInit {
     ) {
         // this.devs = this.developmentService.getDevs;
         // this.uis = this.developmentService.getUIs;
-
         this.devs$ = from(this.developmentService.getDevs).pipe(toArray());
         this.uis$ = from(this.developmentService.getUIs).pipe(toArray());
     }
