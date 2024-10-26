@@ -15,8 +15,8 @@ export default class DevelopmentService {
 
     get getDevs(): Set<IDevelopmentList> {
         return this.setDev
-            .add({url: 'dev/cms/', name: '#CMS Theme | <HTML5, CSS3>'})
-            .add({url: 'dev/listmap/listmap.xml', name: '#Markup Listmap | <HTML5, XML, XSL, CSS2.1, jQuery>'})
+            // .add({url: 'dev/cms/', name: '#CMS Theme | <HTML5, CSS3>'})
+            // .add({url: 'dev/listmap/listmap.xml', name: '#Markup Listmap | <HTML5, XML, XSL, CSS2.1, jQuery>'})
             .add({url: 'https://github.com/woonyzzang/j-generator-css3', name: '#J Generator CSS3 | <HTML5, CSS3, jQuery>'})
             .add({url: 'https://github.com/woonyzzang/j-html5-reference', name: '#J HTML5 Open Reference | <HTML5, CSS2.1, Ext.js, jQuery>'})
             .add({url: 'https://github.com/woonyzzang/j-prototype', name: '#J Prototype | <HTML5, CSS3, jQuery>'})
