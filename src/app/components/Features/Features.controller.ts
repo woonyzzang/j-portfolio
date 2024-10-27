@@ -3,7 +3,7 @@ import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import * as $ from 'jquery';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { faCheckCircle, faCogs, faChartBar, faMobileAlt, faTabletAlt, faLaptop, faArrowsAltH, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle, faCogs, faChartBar, faSearch, faMobileAlt, faTabletAlt, faLaptop, faWindowRestore, faArrowsAltH, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import '@libs/jquery.coveringBad';
 
 interface JQuery {
@@ -25,12 +25,14 @@ export class FeaturesController implements OnInit {
     faCheckCircle = faCheckCircle as IconProp;
     faCogs = faCogs as IconProp;
     faChartBar = faChartBar as IconProp;
+    faSearch = faSearch as IconProp;
     faMobileAlt = faMobileAlt as IconProp;
     faTabletAlt = faTabletAlt as IconProp;
     faLaptop = faLaptop as IconProp;
     faArrowsAltH = faArrowsAltH as IconProp;
     faChevronLeft = faChevronLeft as IconProp;
     faChevronRight = faChevronRight as IconProp;
+    faWindowRestore = faWindowRestore as IconProp;
 
     constructor() {
         // console.log($);
