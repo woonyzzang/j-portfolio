@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { iif, Observable, of, Subject } from 'rxjs';
 import { filter, map, mergeMap, switchMap } from 'rxjs/operators';
-import * as $ from 'jquery';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faSyncAlt, faSortNumericDownAlt, faSortNumericUp, faRandom, faThLarge, faAlignJustify, faQuoteLeft, faQuoteRight, faArrowRight, faClock } from '@fortawesome/free-solid-svg-icons';
-import '@libs/jquery.mixitup';
+import * as $ from 'jquery';
 
+import '@libs/jquery.mixitup';
 import { siblings } from '@utils/dom';
 import PortfolioModel from '@models/Portfolio.model';
 import PortfolioService from '@services/portfolio/Portfolio.service';
@@ -113,7 +113,6 @@ export class PortfolioController implements OnInit {
         // 필터 초기 메뉴 활성화
         // $('#mfilter').children('li').eq(0).addClass('active');
         // (document.querySelector('#mfilter').childNodes[0] as HTMLElement).classList.add('active');
-
         of('#mfilter').pipe(
             map((selector: string) => (document.querySelector(selector).childNodes[0] as HTMLElement))
         ).subscribe((elem: HTMLElement) => {
@@ -122,31 +121,32 @@ export class PortfolioController implements OnInit {
 
         // 믹스업 플러그인 초기화
         // (<any>$('#gallery')).mixItUp();
-
         of('#gallery').pipe(
-            map((selector: string) => (<any>$(selector)))
+            map((selector: string): JQuery => (<any>$(selector)))
         ).subscribe((elem: JQuery) => {
             elem.mixItUp();
+            // (elem as any).on('mixFail', function(e, state) {
+            //     console.log(state);
+            // });
         });
 
-        // filterMenuClick
+        // filterMenu Click
         this.filterMenuAction$.pipe(
             map((event: Event) => (event.target as HTMLElement).parentNode as HTMLElement)
         ).subscribe((elem: HTMLElement) => {
             elem.classList.add('active');
         });
-
         this.filterMenuAction$.pipe(
             switchMap((event: Event) => siblings((event.target as HTMLElement).parentNode as HTMLElement))
         ).subscribe((elem: HTMLElement) => {
             elem.classList.remove('active');
         });
 
-        // sortMenuClick
+        // sortMenu Click
         this.sortMenuAction$.pipe(
             mergeMap((btnType: string) => iif(() => btnType === 'list', of('add'), of('remove')))
-        ).subscribe((DOMToken: string) => {
-            document.querySelector('#gallery').classList[DOMToken]('list');
+        ).subscribe((action: 'add' | 'remove') => {
+            document.querySelector('#gallery').classList[action]('list');
         });
     }
 }
