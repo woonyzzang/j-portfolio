@@ -135,7 +135,7 @@
 
         .stit {
             font-weight: normal;
-            font-size: unitsConverter(3);
+            font-size: unitsConverter(2.6);
 
             @include media-breakpoint('tablet') {
                 font-size: unitsConverter(1.8);

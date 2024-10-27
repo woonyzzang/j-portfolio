@@ -584,7 +584,8 @@
     },
     {
         "category": ["new", "mobile", "app"],
-        "link": "https://app.ksop.net/",
+        "_link_": "https://app.ksop.net/",
+        "link": "https://play.google.com/store/apps/details?id=com.ksop.application",
         "imageUrl": "ksop/ksop_app.jpg",
         "name": "Korea Series of Poker 앱",
         "title": "KSOP App",

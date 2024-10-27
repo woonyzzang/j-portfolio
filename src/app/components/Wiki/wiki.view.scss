@@ -31,6 +31,7 @@
             margin-left: unitsConverter(1);
             font-size: inherit;
             color: #fff;
+            pointer-events: none; // 클릭 이벤트 무시
         }
     }
 
