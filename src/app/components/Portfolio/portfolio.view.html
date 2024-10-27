@@ -59,7 +59,7 @@
                             <fa-icon [icon]="faQuoteLeft"></fa-icon> {{portfolioModel['title']}} <fa-icon [icon]="faQuoteRight"></fa-icon>
                             <span>{{portfolioModel['company']}}</span>
                         </strong>
-                        <a href="{{portfolioModel['link']}}" rel="noopener noreferrer" aria-hidden="true" target="_blank" (click)="siteGoClick($event)">
+                        <a href="{{portfolioModel['link']}}" rel="noopener noreferrer" target="_blank" (click)="siteGoClick($event)">
                             <fa-icon [icon]="faArrowRight" class="fa"><span>바로가기</span></fa-icon>
                         </a>
                         <time [attr.datetime]="portfolioModel['start']"><fa-icon [icon]="faClock" class="fa"></fa-icon> {{portfolioModel['year']}}</time>
