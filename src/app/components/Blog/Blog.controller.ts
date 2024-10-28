@@ -27,5 +27,6 @@ export class BlogController implements OnInit {
         );
     }
 
+    /** Life Cycle */
     ngOnInit(): void {}
 }

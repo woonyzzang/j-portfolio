@@ -13,5 +13,6 @@ export class WikiController implements OnInit {
 
     constructor() {}
 
+    /** Life Cycle */
     ngOnInit(): void {}
 }

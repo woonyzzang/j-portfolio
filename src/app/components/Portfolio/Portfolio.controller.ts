@@ -103,6 +103,7 @@ export class PortfolioController implements OnInit {
         })
     }
 
+    /** Life Cycle */
     ngOnInit(): void {
         // this.portfolioService.gePortfolioData.subscribe((portfolio: PortfolioModel[]) => {
         //     this.portfolioModel = portfolio;

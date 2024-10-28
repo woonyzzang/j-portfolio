@@ -95,5 +95,6 @@ export class HeaderController implements OnInit {
         });
     }
 
+    /** Life Cycle */
     ngOnInit(): void {}
 }
