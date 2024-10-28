@@ -28,11 +28,11 @@ export class AppController implements OnInit {
         // this.metaService.removeTag("name='google-site-verification'");
 
         // 메타 태그 추가
-        this.metaService.addTag({property: 'og:type', content: 'website'});
-        this.metaService.addTag({property: 'og:title', content: environment.TITLE});
-        this.metaService.addTag({property: 'og:description', content: environment.OG_DESCRIPTION});
-        this.metaService.addTag({property: 'og:image', content: `${environment.DOMAIN}/assets/img/og-thumb.png`});
-        this.metaService.addTag({property: 'og:url', content: environment.DOMAIN});
+        // this.metaService.addTag({property: 'og:type', content: 'website'});
+        // this.metaService.addTag({property: 'og:title', content: environment.TITLE});
+        // this.metaService.addTag({property: 'og:description', content: environment.OG_DESCRIPTION});
+        // this.metaService.addTag({property: 'og:image', content: `${environment.DOMAIN}/assets/img/og-thumb.png`});
+        // this.metaService.addTag({property: 'og:url', content: environment.DOMAIN});
         this.metaService.addTag({name: 'google-site-verification', content: environment.GOOGLE_SITE_VERIFICATION_KEY});
 
         // 타이틀 태그 설정

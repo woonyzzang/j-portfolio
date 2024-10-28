@@ -40,7 +40,7 @@ import {
         HttpClientModule,
         FormsModule,
         Ng2SearchPipeModule,
-        FontAwesomeModule,
+        FontAwesomeModule
         // AppRouterModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
