@@ -21,7 +21,7 @@ const AppRoutes: Routes = [
     {path: 'development', component: DevelopmentComponent},
     {path: 'wiki', component: WikiComponent},
     {path: 'blog', component: BlogComponent},
-    {path: '**', redirectTo: '/features', pathMatch: 'full'}, // 잘못된 URL을 사용했을때
+    {path: '**', redirectTo: '/features', pathMatch: 'full'} // 잘못된 URL을 사용했을때
 ];
 
 export const AppRouterModule = RouterModule.forRoot(AppRoutes, {useHash: true});
