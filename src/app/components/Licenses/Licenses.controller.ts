@@ -16,8 +16,8 @@ export class LicensesController implements OnInit {
     faBuilding = faBuilding as IconProp;
     faCalendar = faCalendar as IconProp;
 
-    // public licensesModel: LicensesModel[]; // 라이센스 모델
-    public licensesModel$: Observable<LicensesModel[]>; // 라이센스 모델
+    public licensesModel$: LicensesModel[]; // 라이센스 모델
+    // public licensesModel$: Observable<LicensesModel[]>; // 라이센스 모델
     public dateFilter: string; // 라이센스 날짜 필터
 
     constructor(
@@ -28,13 +28,11 @@ export class LicensesController implements OnInit {
 
     ngOnInit(): void {
         // this.licensesService.getLicensesData.then((res) => {
-        //     this.licensesModel = res;
+        //     this.licensesModel$ = res;
         // });
-
-        // this.licensesService.getLicensesData.subscribe((licenses: LicensesModel[]) => {
-        //     this.licensesModel = licenses;
-        // });
-
-        this.licensesModel$ = this.licensesService.getLicensesData;
+        this.licensesService.getLicensesData.subscribe((data) => {
+            this.licensesModel$ = data;
+        });
+        // this.licensesModel$ = this.licensesService.getLicensesData; // xhr 네트워크 중복 요청 발생
     }
 }
