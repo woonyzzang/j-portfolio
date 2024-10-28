@@ -1,5 +1,6 @@
 User-agent: *
-Disallow: /
-Allow: /$
+Disallow: /assets/resume/
+Disallow: /assets/sound/
+Allow: /
 
 Sitemap: https://j-portfolio.koyeb.app/sitemap.xml
