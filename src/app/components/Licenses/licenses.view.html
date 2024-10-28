@@ -8,11 +8,11 @@
         <strong class="velo-bubble"><span>time tree<br>history</span></strong>
         <select title="년도별 자격증 선택" [(ngModel)]="dateFilter">
             <option value="">전체기간</option>
-            <!--<option value="{{licenseModel['year']}}" *ngFor="let licenseModel of licensesModel">{{licenseModel['year']}}년</option>-->
-            <option value="{{licenseModel['year']}}" *ngFor="let licenseModel of (licensesModel$ | async)">{{licenseModel['year']}}년</option>
+            <option value="{{licenseModel['year']}}" *ngFor="let licenseModel of licensesModel$">{{licenseModel['year']}}년</option>
+            <!--<option value="{{licenseModel['year']}}" *ngFor="let licenseModel of (licensesModel$ | async)">{{licenseModel['year']}}년</option>-->
         </select>
-        <!--<div class="timeline" *ngFor="let licenseModel of licensesModel | filter:dateFilter">-->
-        <div class="timeline" *ngFor="let licenseModel of (licensesModel$ | async) | filter:dateFilter">
+        <div class="timeline" *ngFor="let licenseModel of licensesModel$ | filter:dateFilter">
+        <!--<div class="timeline" *ngFor="let licenseModel of (licensesModel$ | async) | filter:dateFilter">-->
             <h3 class="year">{{licenseModel['year']}}</h3>
             <ul>
                 <li *ngFor="let license of licenseModel['license']">
