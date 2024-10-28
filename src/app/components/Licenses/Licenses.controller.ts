@@ -26,6 +26,7 @@ export class LicensesController implements OnInit {
         this.dateFilter = '';
     }
 
+    /** Life Cycle */
     ngOnInit(): void {
         // this.licensesService.getLicensesData.then((res) => {
         //     this.licensesModel$ = res;

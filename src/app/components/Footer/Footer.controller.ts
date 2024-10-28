@@ -16,5 +16,6 @@ export class FooterController implements OnInit {
 
     constructor() {}
 
+    /** Life Cycle */
     ngOnInit(): void {}
 }

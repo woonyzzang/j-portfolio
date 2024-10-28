@@ -25,5 +25,6 @@ export class TechniqueController implements OnInit {
         return mapKeys(set);
     }
 
+    /** Life Cycle */
     ngOnInit(): void {}
 }

@@ -1,7 +1,7 @@
 import { commonEnvironment } from './environment.common';
 
 export const environment = {
-  production: true,
+  production: false,
   ...commonEnvironment,
-  DOMAIN: 'https://j-portfolio.koyeb.app',
+  DOMAIN: 'http://localhost:4200'
 };

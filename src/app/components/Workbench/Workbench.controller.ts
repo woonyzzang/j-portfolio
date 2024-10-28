@@ -25,11 +25,11 @@ export class WorkbenchController implements OnInit {
         this.searchText = '';
     }
 
+    /** Life Cycle */
     ngOnInit(): void {
         // this.workbenchService.getWorkbenchData.subscribe((workbench: WorkbenchModel[]) => {
         //     this.workbenchModel = workbench;
         // });
-
         this.workbenchModel$ = this.workbenchService.getWorkbenchData;
     }
 }

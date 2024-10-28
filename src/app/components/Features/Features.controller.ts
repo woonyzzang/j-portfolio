@@ -38,6 +38,7 @@ export class FeaturesController implements OnInit {
         // console.log($);
     }
 
+    /** Life Cycle */
     ngOnInit(): void {
         // if (!Object.is($, 'undefined')) {
         //     // jQuery is loaded => print the version

@@ -29,5 +29,6 @@ export class DevelopmentController implements OnInit {
         this.uis$ = from(this.developmentService.getUIs).pipe(toArray());
     }
 
+    /** Life Cycle */
     ngOnInit(): void {}
 }
