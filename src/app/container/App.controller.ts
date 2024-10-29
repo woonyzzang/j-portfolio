@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, AfterViewInit, OnInit, Renderer2 } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Observable, of, switchMap } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
@@ -13,7 +13,7 @@ import { environment } from '@env/environment';
     templateUrl: './app.view.html',
     styleUrls: ['./app.view.scss']
 })
-export class AppController implements OnInit {
+export class AppController implements AfterViewInit, OnInit {
     faHome = faHome as IconProp;
 
     constructor(
@@ -23,17 +23,27 @@ export class AppController implements OnInit {
     ) {}
 
     /** Life Cycle */
-    ngOnInit(): void {
+    ngAfterViewInit(): void {
         // 메타 태그 삭제
         // this.metaService.removeTag("name='google-site-verification'");
 
         // 메타 태그 추가
-        // this.metaService.addTag({property: 'og:type', content: 'website'});
-        // this.metaService.addTag({property: 'og:title', content: environment.TITLE});
-        // this.metaService.addTag({property: 'og:description', content: environment.OG_DESCRIPTION});
-        // this.metaService.addTag({property: 'og:image', content: `${environment.DOMAIN}/assets/img/og-thumb.png`});
-        // this.metaService.addTag({property: 'og:url', content: environment.DOMAIN});
-        this.metaService.addTag({name: 'google-site-verification', content: environment.GOOGLE_SITE_VERIFICATION_KEY});
+        // this.metaService.addTags([
+        //     {property: 'og:type', content: 'website'},
+        //     {property: 'og:title', content: environment.TITLE},
+        //     {property: 'og:description', content: environment.OG_DESCRIPTION},
+        //     {property: 'og:image', content: `${environment.DOMAIN}/assets/img/og-thumb.png`},
+        //     {property: 'og:url', content: environment.DOMAIN}
+        // ]);
+        // this.metaService.addTag({name: 'google-site-verification', content: environment.GOOGLE_SITE_VERIFICATION_KEY});
+
+        // 메타 태그 업데이트
+        // this.metaService.updateTag({property: 'og:title', content: environment.TITLE});
+        // this.metaService.updateTag({property: 'og:description', content: environment.OG_DESCRIPTION});
+        // this.metaService.updateTag({property: 'og:image', content: `${environment.DOMAIN}/assets/img/og-thumb.png`});
+        // this.metaService.updateTag({property: 'og:url', content: environment.DOMAIN});
+        // this.metaService.updateTag({name: 'google-site-verification', content: environment.GOOGLE_SITE_VERIFICATION_KEY});
+
 
         // 타이틀 태그 설정
         // this.titleService.setTitle('새로운 제목');
@@ -41,7 +51,7 @@ export class AppController implements OnInit {
         // GTM 초기화 코드
         const script = this.renderer.createElement('script');
 
-        script.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${environment.GOOGLE_TAG_MANAGER_KEY}');`;
+        script.text = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${environment.GOOGLE_TAG_MANAGER_KEY}');`;
         // script.async = true;
 
         this.renderer.appendChild(document.head, script);
@@ -56,7 +66,9 @@ export class AppController implements OnInit {
         this.renderer.setAttribute(iframe, 'style', 'display:none;visibility:hidden');
         this.renderer.appendChild(noscript, iframe);
         this.renderer.appendChild(document.body, noscript);
+    }
 
+    ngOnInit(): void {
         // // 가로 스크롤 제거
         // // // $('#wrap .home').addClass('v1');
         // // document.querySelector('#wrap .home').classList.add('v1');
