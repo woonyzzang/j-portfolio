@@ -38,7 +38,7 @@ export class HeaderController implements OnInit {
      * resumeClick
      * @description 네비게이션메뉴 클릭 이벤트 핸들러
      */
-    navClick(e: MouseEvent): void {
+    navClick(): void {
         // // $('#gnb, #wrap .swipe, #portfolio').addClass('v1');
         // const $sections = document.querySelectorAll('#wrap .swipe, #gnb, #portfolio');
         //
