@@ -23,33 +23,37 @@ export class AppController implements AfterViewInit, OnInit {
         private titleService: Title,
         private renderer: Renderer2
     ) {
-        // this.setVh();
+        this.setVh();
     }
 
-    private async initializeVConsole() {
-        if (environment.enableVConsole) {
-            const {default: VConsole} = await import('vconsole');
+    /**
+     * initVConsole
+     * @description vconsole 초기화
+     * @private
+     */
+    private async initVConsole() {
+        const {default: VConsole} = await import('vconsole');
+        const vConsole = new VConsole();
 
-            const vConsole = new VConsole();
-        }
+        return vConsole;
     }
 
-    // /**
-    //  * setVh
-    //  * @description 브라우저 높이를 기준으로 뷰포트 높이(vh)를 픽셀 단위로 계산
-    //  * @private
-    //  */
-    // private setVh() {
-    //     const vh = window.innerHeight * 0.01;
-    //
-    //     document.documentElement.style.setProperty('--vh', `${vh}px`);
-    // }
+    /**
+     * setVh
+     * @description 브라우저 높이를 기준으로 뷰포트 높이(vh)를 픽셀 단위로 계산
+     * @private
+     */
+    private setVh() {
+        const vh = window.innerHeight * 0.01;
 
-    // /** 리사이즈 이벤트 핸들러 */
-    // @HostListener('window:resize', ['$event'])
-    // onResize(event) {
-    //     this.setVh();
-    // }
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    /** 리사이즈 이벤트 핸들러 */
+    @HostListener('window:resize', ['$event'])
+    onResize(event) {
+        this.setVh();
+    }
 
     /** Life Cycle */
     ngAfterViewInit(): void {
@@ -102,7 +106,9 @@ export class AppController implements AfterViewInit, OnInit {
 
     async ngOnInit(): Promise<void> {
         // 모바일 디버깅
-        await this.initializeVConsole();
+        if (environment.enableVConsole) {
+            await this.initVConsole();
+        }
 
         // // 가로 스크롤 제거
         // // // $('#wrap .home').addClass('v1');
