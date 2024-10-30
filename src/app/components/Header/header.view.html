@@ -11,7 +11,7 @@
         <ul>
             <!--<li *ngFor="let gnbMenu of gnbMenus">-->
             <li *ngFor="let gnbMenu of (gnbMenus$ | async)">
-                <a href="{{gnbMenu.url}}" [attr.data-first-letter]="gnbMenu.name.charAt(0)" title="{{gnbMenu.title}}" (click)="navClick($event)">
+                <a href="{{gnbMenu.url}}" [attr.data-first-letter]="gnbMenu.name.charAt(0)" title="{{gnbMenu.title}}" (click)="navClick()">
                     <span>{{gnbMenu.name}}</span>
                 </a>
             </li>
