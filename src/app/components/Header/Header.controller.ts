@@ -72,7 +72,7 @@ export class HeaderController implements OnInit {
             setTimeout(() => {
                 const $container = document.querySelector('#container');
 
-                $container.scrollTo(0, $container.scrollTop + 1);
+                $container.scrollTo(0, $container.scrollTop);
             }, 0);
         }, 0);
         // setTimeout(() => window.scrollTo({top: 0, behavior: 'smooth'}), 0);
