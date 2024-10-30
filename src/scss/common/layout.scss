@@ -11,6 +11,7 @@
 body {
     -webkit-font-smoothing: antialiased;
     overflow: hidden;
+    overscroll-behavior: contain; // 모바일 브라우저 새로고침 방지
     min-width: 320px;
     height: calc(var(--vh, 1vh) * 100);
     //min-height: -webkit-fill-available;
