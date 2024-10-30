@@ -26,7 +26,7 @@ export class AppController implements AfterViewInit, OnInit {
         if (environment.enableVConsole) {
             this.initVConsole();
         }
-        
+
         // 스크롤 시 주소창 높이 여백 이슈
         this.setVh();
     }
@@ -47,7 +47,7 @@ export class AppController implements AfterViewInit, OnInit {
                     // const $parentElement = $vcScrollerItems.parentNode;
                     //
                     // $parentElement?.insertBefore($vcScrollerFooter, $vcScrollerItems);
-                    
+
                     // 폰트 사이즈 고정
                     // iOS/Safari 에서 input, select, textarea의 font-size가 16px 보다 작은경우 focus시 자동 확대 이슈 (커맨드 입력창 확대 방지)
                     for (const elem of Array.from(document.querySelectorAll('.vc-cmd-input')) as HTMLInputElement[]) {
@@ -82,10 +82,6 @@ export class AppController implements AfterViewInit, OnInit {
     // 리사이즈 호스트 이벤트 핸들러
     @HostListener('window:resize', ['$event'])
     onResize(event) {
-        console.log('[r] window.innerHeight :: ', window.innerHeight);
-        console.log('[r] window.outerHeight :: ', window.outerHeight);
-        console.log('[r] document.body.scrollHeight :: ', document.body.scrollHeight);
-        console.log('[r] document.body.clientHeight :: ', document.body.clientHeight);
         this.setVh();
     }
 
@@ -139,11 +135,6 @@ export class AppController implements AfterViewInit, OnInit {
     }
 
     ngOnInit(): void {
-        console.log('window.innerHeight :: ', window.innerHeight);
-        console.log('window.outerHeight :: ', window.outerHeight);
-        console.log('document.body.scrollHeight :: ', document.body.scrollHeight);
-        console.log('document.body.clientHeight :: ', document.body.clientHeight);
-
         // // 가로 스크롤 제거
         // // // $('#wrap .home').addClass('v1');
         // // document.querySelector('#wrap .home').classList.add('v1');
