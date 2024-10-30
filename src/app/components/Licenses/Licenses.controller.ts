@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+// import { Observable } from 'rxjs';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faCreditCard, faBuilding, faCalendar } from '@fortawesome/free-solid-svg-icons';
 
