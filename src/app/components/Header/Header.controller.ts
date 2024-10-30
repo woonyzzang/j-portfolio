@@ -66,15 +66,30 @@ export class HeaderController implements OnInit {
             el.classList.add('v1');
         });
 
-        setTimeout(() => {
-            window.scrollTo(0, 0);
-
-            // safari 스크롤 중 클릭 시 화면 제대로 노출 되지 않는 이슈 대체 방안
-            const $container = document.querySelector('#container');
-
-            $container.scrollTo(0, $container.scrollTop + 1);
-        }, 0);
+        // setTimeout(() => {
+        //     window.scrollTo(0, 0);
+        //
+        //     // IOS > safari 에서 스크롤 도중 클릭 시 화면 제대로 노출 되지 않는 이슈 대체 방안
+        //     const $container = document.querySelector('#container');
+        //
+        //     $container.scrollTo(0, $container.scrollTop + 1);
+        // }, 0);
         // setTimeout(() => window.scrollTo({top: 0, behavior: 'smooth'}), 0);
+        const promise = new Promise<void>((resolve) => {
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+                resolve();
+            }, 0);
+        });
+
+        // IOS > safari 에서 스크롤 도중 클릭 시 화면 제대로 노출 되지 않는 이슈 대체 방안
+        promise.then(() => {
+            setTimeout(() => {
+                const $container = document.querySelector('#container');
+
+                $container.scrollTo(0, $container.scrollTop + 1);
+            }, 0);
+        });
     }
 
     /**
