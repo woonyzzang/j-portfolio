@@ -64,12 +64,15 @@ export class AppController implements AfterViewInit, OnInit {
      * @private
      */
     private setVh() {
+        const ua = window.navigator.userAgent;
         // const vh = window.innerHeight * 0.01;
         let vh = window.innerHeight * 0.01;
 
-        if (window.innerHeight < document.body.clientHeight) {
-            vh = document.body.clientHeight * 0.01;
-        }
+        // if (ua.includes('KAKAOTALK')) {
+        //     if (window.innerHeight < document.body.clientHeight) {
+        //         vh = document.body.clientHeight * 0.01;
+        //     }
+        // }
 
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
