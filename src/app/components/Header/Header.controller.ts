@@ -67,7 +67,7 @@ export class HeaderController implements OnInit {
         });
 
         // setTimeout(() => window.scrollTo(0, 0), 0);
-        // setTimeout(() => window.scrollTo({top: 0, behavior: 'smooth'}), 100);
+        setTimeout(() => window.scrollTo({top: 0, behavior: 'smooth'}), 100);
     }
 
     /**
