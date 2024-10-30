@@ -1,4 +1,5 @@
 export const commonEnvironment = {
+  enableVConsole: true,
   TITLE: 'J Portfolio',
   OG_DESCRIPTION: 'Website Portfolio of a FrontEnd Developer',
   GOOGLE_TAG_MANAGER_KEY: 'GTM-TRZH9PH4',

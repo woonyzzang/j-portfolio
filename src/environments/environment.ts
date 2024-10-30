@@ -27,6 +27,7 @@ type TReadonlyEnvironment = {
 
 /** 환경 변수 타입 정의 */
 interface IEnvironment extends TReadonlyEnvironment {
+  enableVConsole: boolean;
   production: boolean;
 }
 

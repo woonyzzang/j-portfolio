@@ -5,10 +5,10 @@ import { filter, map } from 'rxjs/operators';
 // import * as $ from 'jquery';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
+import VConsole from 'vconsole';
 
 import { environment } from '@env/environment';
 import FastClick from '@libs/fastclick';
-// import VhFixService from '@services/common/VhFix.service';
 
 @Component({
     selector: 'app-root',
@@ -19,24 +19,37 @@ export class AppController implements AfterViewInit, OnInit {
     faHome = faHome as IconProp;
 
     constructor(
-        // private vhFixService: VhFixService,
         private metaService: Meta,
         private titleService: Title,
         private renderer: Renderer2
     ) {
-        this.setVh();
+        // this.setVh();
     }
 
-    private setVh() {
-        const vh = window.innerHeight * 0.01;
+    private async initializeVConsole() {
+        if (environment.enableVConsole) {
+            const {default: VConsole} = await import('vconsole');
 
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
+            const vConsole = new VConsole();
+        }
     }
 
-    @HostListener('window:resize', ['$event'])
-    onResize(event) {
-        this.setVh();
-    }
+    // /**
+    //  * setVh
+    //  * @description 브라우저 높이를 기준으로 뷰포트 높이(vh)를 픽셀 단위로 계산
+    //  * @private
+    //  */
+    // private setVh() {
+    //     const vh = window.innerHeight * 0.01;
+    //
+    //     document.documentElement.style.setProperty('--vh', `${vh}px`);
+    // }
+
+    // /** 리사이즈 이벤트 핸들러 */
+    // @HostListener('window:resize', ['$event'])
+    // onResize(event) {
+    //     this.setVh();
+    // }
 
     /** Life Cycle */
     ngAfterViewInit(): void {
@@ -87,7 +100,10 @@ export class AppController implements AfterViewInit, OnInit {
         FastClick.attach(document.body);
     }
 
-    ngOnInit(): void {
+    async ngOnInit(): Promise<void> {
+        // 모바일 디버깅
+        await this.initializeVConsole();
+
         // // 가로 스크롤 제거
         // // // $('#wrap .home').addClass('v1');
         // // document.querySelector('#wrap .home').classList.add('v1');
