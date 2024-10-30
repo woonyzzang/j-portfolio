@@ -50,7 +50,8 @@ export class HeaderController implements OnInit {
             map((selector: string) => document.querySelector(selector))
         ).subscribe((el: HTMLElement) => {
             el.classList.add('v1');
-            setTimeout(() => window.scrollTo(0, 0), 0);
+            // setTimeout(() => window.scrollTo(0, 0), 0);
+            setTimeout(() => window.scrollTo({top: 0, behavior: 'smooth'}), 100);
         });
     }
 
