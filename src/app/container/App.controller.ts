@@ -69,7 +69,8 @@ export class AppController implements AfterViewInit, OnInit {
     //     document.documentElement.style.setProperty('--vh', `${vh}px`);
     // }
 
-    // /** 리사이즈 이벤트 핸들러 */
+    // /** Host Event */
+    // // 리사이즈 호스트 이벤트 핸들러
     // @HostListener('window:resize', ['$event'])
     // onResize(event) {
     //     this.setVh();
