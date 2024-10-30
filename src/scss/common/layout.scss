@@ -1,7 +1,8 @@
 /* =Layout */
 :root,
 body {
-    height: 100dvh;
+    height: 100vh; // 폴백
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 :root {

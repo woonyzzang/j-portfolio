@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnInit, Renderer2 } from '@angular/core';
+import {Component, AfterViewInit, OnInit, Renderer2, HostListener} from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Observable, of, switchMap } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
@@ -8,6 +8,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 import { environment } from '@env/environment';
 import FastClick from '@libs/fastclick';
+// import VhFixService from '@services/common/VhFix.service';
 
 @Component({
     selector: 'app-root',
@@ -18,10 +19,24 @@ export class AppController implements AfterViewInit, OnInit {
     faHome = faHome as IconProp;
 
     constructor(
+        // private vhFixService: VhFixService,
         private metaService: Meta,
         private titleService: Title,
         private renderer: Renderer2
-    ) {}
+    ) {
+        this.setVh();
+    }
+
+    private setVh() {
+        const vh = window.innerHeight * 0.01;
+
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize(event) {
+        this.setVh();
+    }
 
     /** Life Cycle */
     ngAfterViewInit(): void {
