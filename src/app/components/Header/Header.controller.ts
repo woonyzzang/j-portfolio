@@ -69,11 +69,10 @@ export class HeaderController implements OnInit {
         setTimeout(() => {
             window.scrollTo(0, 0);
 
-            setTimeout(() => {
-                const $container = document.querySelector('#container');
+            // safari 스크롤 중 클릭 시 화면 제대로 노출 되지 않는 이슈 대체 방안
+            const $container = document.querySelector('#container');
 
-                $container.scrollTo(0, $container.scrollTop);
-            }, 0);
+            $container.scrollTo(0, $container.scrollTop + 1);
         }, 0);
         // setTimeout(() => window.scrollTo({top: 0, behavior: 'smooth'}), 0);
     }
