@@ -131,7 +131,7 @@ export class AppController implements AfterViewInit, OnInit {
         this.renderer.appendChild(document.body, noscript);
 
         // IOS 더블 탭 확대 이슈 방지
-        // FastClick.attach(document.body);
+        FastClick.attach(document.body);
     }
 
     ngOnInit(): void {
