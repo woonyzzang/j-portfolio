@@ -26,8 +26,9 @@ export class AppController implements AfterViewInit, OnInit {
         if (environment.enableVConsole) {
             this.initVConsole();
         }
-
-        this.setVh();
+        
+        // 스크롤 시 주소창 높이 여백 이슈
+        // this.setVh();
     }
 
     /**
@@ -57,22 +58,22 @@ export class AppController implements AfterViewInit, OnInit {
         });
     }
 
-    /**
-     * setVh
-     * @description 브라우저 높이를 기준으로 뷰포트 높이(vh)를 픽셀 단위로 계산
-     * @private
-     */
-    private setVh() {
-        const vh = window.innerHeight * 0.01;
+    // /**
+    //  * setVh
+    //  * @description 브라우저 높이를 기준으로 뷰포트 높이(vh)를 픽셀 단위로 계산
+    //  * @private
+    //  */
+    // private setVh() {
+    //     const vh = window.innerHeight * 0.01;
+    //
+    //     document.documentElement.style.setProperty('--vh', `${vh}px`);
+    // }
 
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-
-    /** 리사이즈 이벤트 핸들러 */
-    @HostListener('window:resize', ['$event'])
-    onResize(event) {
-        this.setVh();
-    }
+    // /** 리사이즈 이벤트 핸들러 */
+    // @HostListener('window:resize', ['$event'])
+    // onResize(event) {
+    //     this.setVh();
+    // }
 
     /** Life Cycle */
     ngAfterViewInit(): void {
