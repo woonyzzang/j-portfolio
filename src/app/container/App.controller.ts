@@ -2,9 +2,9 @@ import {Component, AfterViewInit, OnInit, Renderer2, HostListener} from '@angula
 import { Meta, Title } from '@angular/platform-browser';
 import { Observable, of, switchMap } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-// import * as $ from 'jquery';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
+// import * as $ from 'jquery';
 
 import { environment } from '@env/environment';
 import FastClick from '@libs/fastclick';
@@ -69,12 +69,15 @@ export class AppController implements AfterViewInit, OnInit {
     //     document.documentElement.style.setProperty('--vh', `${vh}px`);
     // }
 
-    // /** Host Event */
-    // // 리사이즈 호스트 이벤트 핸들러
-    // @HostListener('window:resize', ['$event'])
-    // onResize(event) {
-    //     this.setVh();
-    // }
+    /** Host Event */
+    // 리사이즈 호스트 이벤트 핸들러
+    @HostListener('window:resize', ['$event'])
+    onResize(event) {
+        console.log('[r] window.innerHeight :: ', window.innerHeight);
+        console.log('[r] document.body.scrollHeight :: ', document.body.scrollHeight);
+        console.log('[r] document.body.clientHeight :: ', document.body.clientHeight);
+        // this.setVh();
+    }
 
     /** Life Cycle */
     ngAfterViewInit(): void {
@@ -126,6 +129,10 @@ export class AppController implements AfterViewInit, OnInit {
     }
 
     ngOnInit(): void {
+        console.log('window.innerHeight :: ', window.innerHeight);
+        console.log('document.body.scrollHeight :: ', document.body.scrollHeight);
+        console.log('document.body.clientHeight :: ', document.body.clientHeight);
+
         // // 가로 스크롤 제거
         // // // $('#wrap .home').addClass('v1');
         // // document.querySelector('#wrap .home').classList.add('v1');

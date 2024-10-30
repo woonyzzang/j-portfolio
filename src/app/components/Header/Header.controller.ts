@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { from, Observable, of } from 'rxjs';
 import { map, switchMap, toArray, pluck } from 'rxjs/operators';
-// import * as $ from 'jquery';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+// import * as $ from 'jquery';
 
 import HeaderService, {IGnbMenus} from '@services/header/Header.service';
 
