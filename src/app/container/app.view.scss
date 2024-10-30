@@ -69,12 +69,12 @@
 
 #container {
     overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
+    //-webkit-overflow-scrolling: touch;
     float: left;
     width: 50%;
     height: 100%;
     box-sizing: border-box;
-    will-change: scroll-position;
+    //will-change: scroll-position;
 }
 
 #content {
