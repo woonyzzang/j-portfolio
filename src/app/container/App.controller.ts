@@ -68,11 +68,12 @@ export class AppController implements AfterViewInit, OnInit {
         // const vh = window.innerHeight * 0.01;
         let vh = window.innerHeight * 0.01;
 
-        // if (ua.includes('KAKAOTALK')) {
-        //     if (window.innerHeight < document.body.clientHeight) {
-        //         vh = document.body.clientHeight * 0.01;
-        //     }
-        // }
+        // KAKAOTALK 인앱 브라우저 경우 예외 처리
+        if (ua.includes('KAKAOTALK')) {
+            if (window.innerHeight < document.body.clientHeight) {
+                vh = document.body.clientHeight * 0.01;
+            }
+        }
 
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
