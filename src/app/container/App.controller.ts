@@ -5,7 +5,6 @@ import { filter, map } from 'rxjs/operators';
 // import * as $ from 'jquery';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
-import VConsole from 'vconsole';
 
 import { environment } from '@env/environment';
 import FastClick from '@libs/fastclick';
