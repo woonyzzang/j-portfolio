@@ -7,6 +7,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 import { environment } from '@env/environment';
+import FastClick from '@libs/fastclick';
 
 @Component({
     selector: 'app-root',
@@ -66,6 +67,9 @@ export class AppController implements AfterViewInit, OnInit {
         this.renderer.setAttribute(iframe, 'style', 'display:none;visibility:hidden');
         this.renderer.appendChild(noscript, iframe);
         this.renderer.appendChild(document.body, noscript);
+
+        // IOS 더블 탭 확대 이슈 방지
+        FastClick.attach(document.body);
     }
 
     ngOnInit(): void {

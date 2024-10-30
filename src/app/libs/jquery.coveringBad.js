@@ -1,9 +1,9 @@
-/*
- *  Project     : Covering Bad
- *  Description : A simple jQuery Plugin for cover an item by another item with dragging ability.
- *  Author      : Mojtaba Seyedi
- *  License     : MIT  http://seyedi.mit-license.org
-*/
+/**!
+ * Project     : Covering Bad
+ * Description : A simple jQuery Plugin for cover an item by another item with dragging ability.
+ * Author      : Mojtaba Seyedi
+ * License     : MIT  http://seyedi.mit-license.org
+ */
 
 /* global window, document, define, jQuery, setInterval, clearInterval */
 ;(function(factory) {

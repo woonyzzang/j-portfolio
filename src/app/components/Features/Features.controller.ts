@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import * as $ from 'jquery';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faCheckCircle, faCogs, faChartBar, faSearch, faMobileAlt, faTabletAlt, faLaptop, faWindowRestore, faArrowsAltH, faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 import '@libs/jquery.coveringBad';
 
 interface JQuery {

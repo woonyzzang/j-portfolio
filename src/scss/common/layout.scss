@@ -3,7 +3,6 @@
 body {
     //min-width: 320px;
     height: 100%;
-    touch-action: manipulation; // ios 터치 확대 방지
 }
 
 :root {
@@ -14,6 +13,7 @@ body {
     -webkit-font-smoothing: antialiased;
     overflow: hidden;
     font-size: unitsConverter(1.3);
+    //touch-action: manipulation; // ios 터치 확대 방지
 }
 
 app-root {
