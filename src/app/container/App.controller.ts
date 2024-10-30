@@ -22,6 +22,11 @@ export class AppController implements AfterViewInit, OnInit {
         private titleService: Title,
         private renderer: Renderer2
     ) {
+        // 모바일 디버깅
+        if (environment.enableVConsole) {
+            this.initVConsole();
+        }
+
         this.setVh();
     }
 
@@ -30,10 +35,8 @@ export class AppController implements AfterViewInit, OnInit {
      * @description vconsole 초기화
      * @private
      */
-    private async initVConsole() {
+    private initVConsole() {
         import('vconsole').then(({default: VConsole}) => {
-            // new VConsole();
-
             // 모바일 디바이스에서 키패드에 커맨드 가려지는 이슈로 위치 변경 설정
             new VConsole({
                 onReady() {
@@ -43,7 +46,7 @@ export class AppController implements AfterViewInit, OnInit {
 
                     if ($parentElement) {
                         // iOS/Safari 에서 input, select, textarea의 font-size가 16px 보다 작은경우 focus시 자동 확대 이슈 (커맨드 입력창 확대 방지)
-                        for (const elem of document.querySelectorAll('.vc-cmd-input') as any) {
+                        for (const elem of Array.from(document.querySelectorAll('.vc-cmd-input')) as HTMLInputElement[]) {
                             elem['style'].cssText = `font-size: 16px`;
                         }
 
@@ -120,12 +123,7 @@ export class AppController implements AfterViewInit, OnInit {
         FastClick.attach(document.body);
     }
 
-    async ngOnInit(): Promise<void> {
-        // 모바일 디버깅
-        if (environment.enableVConsole) {
-            await this.initVConsole();
-        }
-
+    ngOnInit(): void {
         // // 가로 스크롤 제거
         // // // $('#wrap .home').addClass('v1');
         // // document.querySelector('#wrap .home').classList.add('v1');
