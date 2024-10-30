@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { from, Observable, of } from 'rxjs';
-import { map, switchMap, toArray, pluck } from 'rxjs/operators';
+import {map, switchMap, toArray, pluck, filter} from 'rxjs/operators';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 // import * as $ from 'jquery';
@@ -38,7 +38,7 @@ export class HeaderController implements OnInit {
      * resumeClick
      * @description 네비게이션메뉴 클릭 이벤트 핸들러
      */
-    navClick(): void {
+    navClick(e: MouseEvent): void {
         // // $('#gnb, #wrap .swipe, #portfolio').addClass('v1');
         // const $sections = document.querySelectorAll('#wrap .swipe, #gnb, #portfolio');
         //
@@ -46,8 +46,23 @@ export class HeaderController implements OnInit {
         //
         // setTimeout(() => window.scrollTo(0, 0), 0);
 
-        of('.swipe', '#gnb', '.util', '#portfolio').pipe(
-            map((selector: string) => document.querySelector(selector))
+        // of('.swipe', '#gnb', '.util', '#portfolio').pipe(
+        //     map((selector: string) => document.querySelector(selector))
+        // ).subscribe((el: HTMLElement) => {
+        //     el.classList.add('v1');
+        // });
+
+        const hasLocationHash$: Observable<boolean> = of(location.hash).pipe(
+            map((hash: string) => hash.trim().length > 0)
+        );
+
+        hasLocationHash$.pipe(
+            filter((hasHash: boolean) => !hasHash),
+            switchMap(_ => (
+                of('.swipe', '#gnb', '.util', '#portfolio').pipe(
+                    map((selector: string) => (document.querySelector(selector)))
+                )
+            ))
         ).subscribe((el: HTMLElement) => {
             el.classList.add('v1');
         });
