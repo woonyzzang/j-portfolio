@@ -41,17 +41,17 @@ export class AppController implements AfterViewInit, OnInit {
             // 모바일 디바이스에서 키패드에 커맨드 가려지는 이슈로 위치 변경 설정
             new VConsole({
                 onReady() {
-                    const $vcScrollerItems = document.querySelectorAll('.vc-scroller-items')[0];
-                    const $vcScrollerFooter = document.querySelectorAll('.vc-scroller-footer')[0];
-                    const $parentElement = $vcScrollerItems.parentNode;
-
-                    if ($parentElement) {
-                        // iOS/Safari 에서 input, select, textarea의 font-size가 16px 보다 작은경우 focus시 자동 확대 이슈 (커맨드 입력창 확대 방지)
-                        for (const elem of Array.from(document.querySelectorAll('.vc-cmd-input')) as HTMLInputElement[]) {
-                            elem['style'].cssText = `font-size: 16px`;
-                        }
-
-                        $parentElement.insertBefore($vcScrollerFooter, $vcScrollerItems);
+                    // 커맨드, 필터 입력 필드 위치 상단 이동
+                    // const $vcScrollerItems = document.querySelectorAll('.vc-scroller-items')[0];
+                    // const $vcScrollerFooter = document.querySelectorAll('.vc-scroller-footer')[0];
+                    // const $parentElement = $vcScrollerItems.parentNode;
+                    //
+                    // $parentElement?.insertBefore($vcScrollerFooter, $vcScrollerItems);
+                    
+                    // 폰트 사이즈 고정
+                    // iOS/Safari 에서 input, select, textarea의 font-size가 16px 보다 작은경우 focus시 자동 확대 이슈 (커맨드 입력창 확대 방지)
+                    for (const elem of Array.from(document.querySelectorAll('.vc-cmd-input')) as HTMLInputElement[]) {
+                        elem['style'].cssText = `font-size: 16px`;
                     }
                 }
             });
