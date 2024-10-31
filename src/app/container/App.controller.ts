@@ -104,11 +104,11 @@ export class AppController implements AfterViewInit, OnInit {
     }
 
     /**
-     * googleAnalyticsInit
-     * @description 구글 애널리틱스 (G4) 초기화
+     * googleTagInit
+     * @description 구글 태그 (애널리틱스) 초기화
      * @private
      */
-    private googleAnalyticsInit() {
+    private googleTagInit() {
         // 구글 애널리틱스 스크립트 head 추가
         let script = this.renderer.createElement('script');
 
@@ -160,8 +160,8 @@ export class AppController implements AfterViewInit, OnInit {
 
         // GTM 초기화
         this.googleTagManagerInit();
-        // G4 초기화
-        this.googleAnalyticsInit();
+        // GT 초기화
+        this.googleTagInit();
 
         // IOS 더블 탭 확대 이슈 방지
         FastClick.attach(document.body);
