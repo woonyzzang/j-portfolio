@@ -85,15 +85,15 @@ export class HeaderController implements OnInit {
             //     }, 0);
             // })
             .then(() => {
-                setTimeout(() => {
-                    if (location?.hash) {
+                if (location?.hash) {
+                    setTimeout(() => {
                         const $container = document.querySelector('#container');
 
                         // console.log(document.querySelector(location?.hash).getBoundingClientRect().top); // offset().top
                         // console.log((<HTMLAnchorElement>document.querySelector(location?.hash)).offsetTop); // position().top
                         $container.scrollTo(0, (<HTMLAnchorElement>document.querySelector(location?.hash)).offsetTop);
-                    }
-                }, 100);
+                    }, 100);
+                }
             });
     }
 
