@@ -105,7 +105,7 @@ export class AppController implements AfterViewInit, OnInit {
 
     /**
      * googleTagInit
-     * @description 구글 태그 (애널리틱스) 초기화
+     * @description 구글 태그 (GA4) 초기화
      * @private
      */
     private googleTagInit() {
@@ -120,7 +120,7 @@ export class AppController implements AfterViewInit, OnInit {
         // 구글 애널리틱스 초기화 스크립트 head 추가
         const initScript = this.renderer.createElement('script');
 
-        initScript.text = `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', ${environment.GOOGLE_ANALYTICS_KEY});`;
+        initScript.text = `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', '${environment.GOOGLE_ANALYTICS_KEY}');`;
 
         this.renderer.appendChild(document.head, initScript);
     }
@@ -160,7 +160,7 @@ export class AppController implements AfterViewInit, OnInit {
 
         // GTM 초기화
         this.googleTagManagerInit();
-        // GT 초기화
+        // GA4 초기화
         this.googleTagInit();
 
         // IOS 더블 탭 확대 이슈 방지
