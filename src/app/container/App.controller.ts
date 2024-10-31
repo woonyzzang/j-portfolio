@@ -160,7 +160,7 @@ export class AppController implements AfterViewInit, OnInit {
 
         // GTM 초기화
         this.googleTagManagerInit();
-        // 구글 애널리틱스 초기화
+        // G4 초기화
         this.googleAnalyticsInit();
 
         // IOS 더블 탭 확대 이슈 방지
