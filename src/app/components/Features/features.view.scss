@@ -99,23 +99,6 @@
                 line-height: 1.6;
             }
         }
-
-        a.qusetion {
-            display: inline-block;
-            margin-top: unitsConverter(.4);
-            padding: unitsConverter(.5) unitsConverter(1.4);
-            background-color: #fff;
-            font-weight: bold;
-            font-size: unitsConverter(2);
-            color: #dc0030;
-            vertical-align: top;
-            @include border-radius(100%);
-
-            @include media-breakpoint('tablet') {
-                margin-top: unitsConverter(-.5);
-                @include transform(scale(.7));
-            }
-        }
     }
 
     .second {

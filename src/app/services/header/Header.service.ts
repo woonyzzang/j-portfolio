@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 export interface IGnbMenus {
     name: string;
     url: string;
-    title: string
+    title: string;
+    selected?: boolean;
 }
 
 @Injectable({
@@ -16,14 +17,14 @@ export default class HeaderService {
 
     get getGnbMenus(): Set<IGnbMenus> {
         return this.setGnb
-            .add({name: 'features', url: '#features', title: '기능소개'})
-            .add({name: 'licenses', url: '#licenses', title: '자격증'})
-            .add({name: 'technique', url: '#technique', title: '스킬'})
-            .add({name: 'workbench', url: '#workbench', title: '작업내역'})
-            .add({name: 'portfolio', url: '#portfolio', title: '포트폴리오'})
-            .add({name: 'development', url: '#development', title: 'UI개발'})
-            .add({name: 'wiki', url: '#wiki', title: '위키소개'})
-            .add({name: 'blog', url: '#blog', title: '블로그소개'});
+            .add({name: 'features', url: '#features', title: '기능소개', selected: false})
+            .add({name: 'licenses', url: '#licenses', title: '자격증', selected: false})
+            .add({name: 'technique', url: '#technique', title: '스킬', selected: false})
+            .add({name: 'workbench', url: '#workbench', title: '작업내역', selected: false})
+            .add({name: 'portfolio', url: '#portfolio', title: '포트폴리오', selected: false})
+            .add({name: 'development', url: '#development', title: 'UI개발', selected: false})
+            .add({name: 'wiki', url: '#wiki', title: '위키소개', selected: false})
+            .add({name: 'blog', url: '#blog', title: '블로그소개', selected: false});
     }
 
     get getUtilMenus(): Set<IGnbMenus> {
