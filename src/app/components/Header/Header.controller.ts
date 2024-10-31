@@ -84,20 +84,20 @@ export class HeaderController implements OnInit {
 
         // IOS > safari 에서 스크롤 도중 클릭 시 화면 제대로 노출 되지 않는 이슈 대체 방안
         promise
-            .then(() => {
-                setTimeout(() => {
-                    const $container = document.querySelector('#container');
-
-                    $container.scrollTo(0, $container.scrollTop + 1);
-                }, 0);
-            })
+            // .then(() => {
+            //     setTimeout(() => {
+            //         const $container = document.querySelector('#container');
+            //
+            //         $container.scrollTo(0, $container.scrollTop + 1);
+            //     }, 0);
+            // })
             .then(() => {
                 setTimeout(() => {
                     if (location?.hash) {
                         const $container = document.querySelector('#container');
 
-                        // console.log(document.querySelector(location?.hash).getBoundingClientRect().top);
-                        // console.log((<HTMLAnchorElement>document.querySelector(location?.hash)).offsetTop);
+                        // console.log(document.querySelector(location?.hash).getBoundingClientRect().top); // offset().top
+                        // console.log((<HTMLAnchorElement>document.querySelector(location?.hash)).offsetTop); // position().top
                         $container.scrollTo(0, (<HTMLAnchorElement>document.querySelector(location?.hash)).offsetTop);
                     }
                 }, 100);
