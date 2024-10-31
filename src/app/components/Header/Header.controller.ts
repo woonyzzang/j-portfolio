@@ -100,7 +100,7 @@ export class HeaderController implements OnInit {
                         // console.log((<HTMLAnchorElement>document.querySelector(location?.hash)).offsetTop); // position().top
                         $container.scrollTo(0, (<HTMLAnchorElement>document.querySelector(location?.hash)).offsetTop);
                     }
-                }, 100);
+                }, 0);
             });
     }
 
