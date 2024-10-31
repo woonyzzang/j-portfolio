@@ -3,5 +3,6 @@ export const commonEnvironment = {
   TITLE: 'J Portfolio',
   OG_DESCRIPTION: 'Website Portfolio of a FrontEnd Developer',
   GOOGLE_TAG_MANAGER_KEY: 'GTM-TRZH9PH4',
+  GOOGLE_ANALYTICS_KEY: 'G-XNR6WGZQ6E',
   GOOGLE_SITE_VERIFICATION_KEY: 'Vmm5-CK7dEIWxfToPDTUvTkVlaq8PYWrLK-HXl9SG8cv'
 };

@@ -78,6 +78,53 @@ export class AppController implements AfterViewInit, OnInit {
         document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
 
+    /**
+     * googleTagManagerInit
+     * @description 구글 태그 매니저 초기화
+     * @private
+     */
+    private googleTagManagerInit() {
+        // 구글 태그 매니저 초기화 코드 head 추가
+        const initScript = this.renderer.createElement('script');
+
+        initScript.text = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${environment.GOOGLE_TAG_MANAGER_KEY}');`;
+
+        this.renderer.appendChild(document.head, initScript);
+
+        // 구글 태그 매니저 (noscript) 초기화 코드 body 추가
+        const noscript = this.renderer.createElement('noscript');
+        const iframe = this.renderer.createElement('iframe');
+
+        this.renderer.setAttribute(iframe, 'src', `https://www.googletagmanager.com/ns.html?id=${environment.GOOGLE_TAG_MANAGER_KEY}`);
+        this.renderer.setAttribute(iframe, 'height', '0');
+        this.renderer.setAttribute(iframe, 'width', '0');
+        this.renderer.setAttribute(iframe, 'style', 'display:none;visibility:hidden');
+        this.renderer.appendChild(noscript, iframe);
+        this.renderer.appendChild(document.body, noscript);
+    }
+
+    /**
+     * googleAnalyticsInit
+     * @description 구글 애널리틱스 (G4) 초기화
+     * @private
+     */
+    private googleAnalyticsInit() {
+        // 구글 애널리틱스 스크립트 head 추가
+        let script = this.renderer.createElement('script');
+
+        script.async = true;
+        script .src = `https://www.googletagmanager.com/gtag/js?id=${environment.GOOGLE_ANALYTICS_KEY}`;
+
+        this.renderer.appendChild(document.head, script);
+
+        // 구글 애널리틱스 초기화 스크립트 head 추가
+        const initScript = this.renderer.createElement('script');
+
+        initScript.text = `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', ${environment.GOOGLE_ANALYTICS_KEY});`;
+
+        this.renderer.appendChild(document.head, initScript);
+    }
+
     /** Host Event */
     // 리사이즈 호스트 이벤트 핸들러
     @HostListener('window:resize', ['$event'])
@@ -111,24 +158,10 @@ export class AppController implements AfterViewInit, OnInit {
         // 타이틀 태그 설정
         // this.titleService.setTitle('새로운 제목');
 
-        // GTM 초기화 코드
-        const script = this.renderer.createElement('script');
-
-        script.text = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${environment.GOOGLE_TAG_MANAGER_KEY}');`;
-        // script.async = true;
-
-        this.renderer.appendChild(document.head, script);
-
-        // GTM (noscript) 초기화 코드
-        const noscript = this.renderer.createElement('noscript');
-        const iframe = this.renderer.createElement('iframe');
-
-        this.renderer.setAttribute(iframe, 'src', `https://www.googletagmanager.com/ns.html?id=${environment.GOOGLE_TAG_MANAGER_KEY}`);
-        this.renderer.setAttribute(iframe, 'height', '0');
-        this.renderer.setAttribute(iframe, 'width', '0');
-        this.renderer.setAttribute(iframe, 'style', 'display:none;visibility:hidden');
-        this.renderer.appendChild(noscript, iframe);
-        this.renderer.appendChild(document.body, noscript);
+        // GTM 초기화
+        this.googleTagManagerInit();
+        // 구글 애널리틱스 초기화
+        this.googleAnalyticsInit();
 
         // IOS 더블 탭 확대 이슈 방지
         FastClick.attach(document.body);

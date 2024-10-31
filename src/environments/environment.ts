@@ -11,6 +11,7 @@ type TCommonEnvironmentKey =
   | 'TITLE'
   | 'OG_DESCRIPTION'
   | 'GOOGLE_TAG_MANAGER_KEY'
+  | 'GOOGLE_ANALYTICS_KEY'
   | 'GOOGLE_SITE_VERIFICATION_KEY';
 
 /**
