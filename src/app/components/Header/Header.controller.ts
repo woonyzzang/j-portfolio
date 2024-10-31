@@ -92,7 +92,7 @@ export class HeaderController implements OnInit {
                         // console.log(document.querySelector(location?.hash).getBoundingClientRect().top); // offset().top
                         // console.log((<HTMLAnchorElement>document.querySelector(location?.hash)).offsetTop); // position().top
                         $container.scrollTo(0, (<HTMLAnchorElement>document.querySelector(location?.hash)).offsetTop);
-                    }, 10);
+                    }, 100);
                 }
             });
     }
