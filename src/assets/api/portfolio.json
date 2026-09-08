@@ -604,5 +604,60 @@
         "year": "July 2024",
         "start": "2024-07-01",
         "end": "2024-09-04"
+    },
+    {
+        "category": ["new", "web"],
+        "link": "https://cts.bubblecon.io/",
+        "imageUrl": "bubblecon/cts.jpg",
+        "name": "Content Test Suite 솔루션",
+        "title": "CTS",
+        "company": "BUBBLECON",
+        "year": "February 2025",
+        "start": "2025-02-05",
+        "end": "Present"
+    },
+    {
+        "category": ["new", "accessibility", "web"],
+        "link": "https://cass.bubblecon.io/",
+        "imageUrl": "bubblecon/lmap.jpg",
+        "name": "MAP 솔루션",
+        "title": "학습맵",
+        "company": "BUBBLECON",
+        "year": "February 2025",
+        "start": "2025-02-06",
+        "end": "Present"
+    },
+    {
+        "category": ["new", "accessibility", "responsive", "web", "mobile"],
+        "link": "https://cmi5-player.bubblecon.io/",
+        "imageUrl": "bubblecon/cmi5-player.jpg",
+        "name": "CMI5 Player 솔루션",
+        "title": "통합학습플레이어",
+        "company": "BUBBLECON",
+        "year": "March 2025",
+        "start": "2025-03-07",
+        "end": "Present"
+    },
+    {
+        "category": ["new", "accessibility", "web"],
+        "link": "https://addon.bubblecon.io/",
+        "imageUrl": "bubblecon/stclass.jpg",
+        "name": "stclass 구글 클래스룸 앱",
+        "title": "stclass",
+        "company": "BUBBLECON",
+        "year": "May 2025",
+        "start": "2024-05-19",
+        "end": "Present"
+    },
+    {
+        "category": ["new", "accessibility", "web"],
+        "link": "https://courseware.bubblecon.io/",
+        "imageUrl": "bubblecon/courseware.jpg",
+        "name": "Courseware 솔루션",
+        "title": "코스웨어 저작도구",
+        "company": "BUBBLECON",
+        "year": "April 2026",
+        "start": "2026-04-20",
+        "end": "Present"
     }
 ]

@@ -734,7 +734,7 @@
                 "title": "오늘의 스코어",
                 "start": "20.01.04",
                 "end": "21.11.30",
-                "role": "PL",
+                "role": "TL",
                 "works": {
                     "guide": true,
                     "markup": true,
@@ -753,7 +753,7 @@
                 "title": "Epoch SDK (인증, 로깅, 애널리틱스, 결제, 코인)",
                 "start": "22.05.01",
                 "end": "23.12.31",
-                "role": "PL",
+                "role": "TL",
                 "works": {
                     "guide": true,
                     "markup": false,
@@ -767,7 +767,7 @@
                 "title": "글로벌 윈조이 카지노",
                 "start": "22.07.01",
                 "end": "23.12.31",
-                "role": "PL",
+                "role": "TL",
                 "works": {
                     "guide": true,
                     "markup": false,
@@ -781,7 +781,7 @@
                 "title": "아쿠아 베가스 카지노",
                 "start": "22.12.01",
                 "end": "23.04.07",
-                "role": "PL",
+                "role": "TL",
                 "works": {
                     "guide": true,
                     "markup": false,
@@ -800,7 +800,7 @@
                 "title": "KSOP App",
                 "start": "23.05.15",
                 "end": "23.12.31",
-                "role": "PL",
+                "role": "TL",
                 "works": {
                     "guide": true,
                     "markup": false,
@@ -819,7 +819,7 @@
                 "title": "글로벌 윈조이 온라인 (Nuxt -> Next 마이그레이션)",
                 "start": "24.04.01",
                 "end": "24.06.31",
-                "role": "PL",
+                "role": "TL",
                 "works": {
                     "guide": true,
                     "markup": false,
@@ -833,7 +833,7 @@
                 "title": "윈조이 Epoch 모바일 마이그레이션",
                 "start": "24.07.01",
                 "end": "24.09.04",
-                "role": "PL",
+                "role": "TL",
                 "works": {
                     "guide": true,
                     "markup": false,
@@ -842,6 +842,86 @@
                     "backdev": false
                 },
                 "skill": ["React", "Typescript", "Zustand", "Jest", "Storybook", "Playwright", "TurboRepo", "DevOps"]
+            }
+        ]
+    },
+    {
+        "year": 2025,
+        "project": [
+            {
+                "title": "CTS",
+                "start": "25.02.05",
+                "end": "Present",
+                "role": "TL",
+                "works": {
+                    "guide": true,
+                    "markup": false,
+                    "uidev": false,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["React", "Typescript", "Zod", "Zustand", "TanStack Query", "Vitest", "Storybook", "Playwright", "DevOps", "Docker"]
+            },
+            {
+                "title": "학습맵",
+                "start": "25.02.06",
+                "end": "Present",
+                "role": "TL",
+                "works": {
+                    "guide": true,
+                    "markup": false,
+                    "uidev": false,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["React", "Typescript", "Zod", "Zustand", "TanStack Query", "Vitest", "Storybook", "Playwright", "DevOps", "Docker"]
+            },
+            {
+                "title": "통합학습플레이어",
+                "start": "25.03.27",
+                "end": "Present",
+                "role": "TL",
+                "works": {
+                    "guide": true,
+                    "markup": false,
+                    "uidev": false,
+                    "frontdev": true,
+                    "backdev": true
+                },
+                "skill": ["React", "Nest", "Typescript", "Zod", "Zustand", "TanStack Query", "Vitest", "Storybook", "Playwright", "DevOps", "Docker"]
+            },
+            {
+                "title": "stclass",
+                "start": "25.05.19",
+                "end": "Present",
+                "role": "TL",
+                "works": {
+                    "guide": false,
+                    "markup": false,
+                    "uidev": false,
+                    "frontdev": true,
+                    "backdev": true
+                },
+                "skill": ["Express", "EJS", "CSS3","Docker"]
+            }
+        ]
+    },
+    {
+        "year": 2026,
+        "project": [
+            {
+                "title": "코스웨어 저작도구",
+                "start": "26.04.20",
+                "end": "Present",
+                "role": "TL",
+                "works": {
+                    "guide": true,
+                    "markup": false,
+                    "uidev": false,
+                    "frontdev": true,
+                    "backdev": false
+                },
+                "skill": ["React", "Typescript", "Zod", "Zustand", "TanStack Query", "Vitest", "Storybook", "Playwright", "DevOps", "Docker"]
             }
         ]
     }
